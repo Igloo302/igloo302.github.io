@@ -407,9 +407,9 @@
     
     
     
-      <category term="UCAN" scheme="http://yoursite.com/tags/UCAN/"/>
-    
       <category term="设计" scheme="http://yoursite.com/tags/%E8%AE%BE%E8%AE%A1/"/>
+    
+      <category term="UCAN" scheme="http://yoursite.com/tags/UCAN/"/>
     
   </entry>
   
@@ -521,9 +521,9 @@
     
     
     
-      <category term="设计" scheme="http://yoursite.com/tags/%E8%AE%BE%E8%AE%A1/"/>
-    
       <category term="上瘾模型" scheme="http://yoursite.com/tags/%E4%B8%8A%E7%98%BE%E6%A8%A1%E5%9E%8B/"/>
+    
+      <category term="设计" scheme="http://yoursite.com/tags/%E8%AE%BE%E8%AE%A1/"/>
     
   </entry>
   
