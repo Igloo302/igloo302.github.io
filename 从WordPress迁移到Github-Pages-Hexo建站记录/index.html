@@ -32,8 +32,9 @@
 <meta property="og:image" content="http://q6735zi7x.bkt.clouddn.com/static/images/wordpress-export-to-markdown.gif">
 <meta property="og:image" content="http://q6735zi7x.bkt.clouddn.com/static/images/SSHKey.png">
 <meta property="og:image" content="http://q6735zi7x.bkt.clouddn.com/static/images/copyssh.png">
+<meta property="og:image" content="http://q6735zi7x.bkt.clouddn.com//static/images/hexoDocker.jpg">
 <meta property="article:published_time" content="2020-02-25T15:22:56.000Z">
-<meta property="article:modified_time" content="2020-03-18T12:58:46.000Z">
+<meta property="article:modified_time" content="2020-03-18T14:09:12.000Z">
 <meta property="article:author" content="Igloo">
 <meta property="article:tag" content="建站">
 <meta property="article:tag" content="GitHub Pages">
@@ -238,7 +239,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-03-18 12:58:46" itemprop="dateModified" datetime="2020-03-18T12:58:46+00:00">2020-03-18</time>
+                <time title="Modified: 2020-03-18 14:09:12" itemprop="dateModified" datetime="2020-03-18T14:09:12+00:00">2020-03-18</time>
               </span>
 
           
@@ -383,17 +384,48 @@
 <h2 id="用N1部署Hexo"><a href="#用N1部署Hexo" class="headerlink" title="用N1部署Hexo"></a>用N1部署Hexo</h2><p>经过一段时间的使用，遇到的痛点是Hexo只能在电脑上进行编辑和发布，多平台的体验很差。于是考虑使用一台小主机部署Hexo，这样任何时候都可以连接小主机使用Hexo生成静态网页并发布。</p>
 <p>本节参考了<a href="https://blog.csdn.net/Colton_Null" target="_blank" rel="noopener">喝酒不骑马</a>的<a href="https://blog.csdn.net/Colton_Null/article/details/93805908" target="_blank" rel="noopener">如何搭建自己的博客 - 基于 Hexo + Docker + Nginx + Git + Linux</a>，与之不同，我并不打算让小主机来当静态网站服务器，毕竟国内的主机还需要备案，而且所有设备性能也不高。</p>
 <p>我采用的设备依旧是安装了荒野无灯小钢炮系统的N1，这个系统极度精简，而且自带了Docker，除了不支持Wi-Fi以外几乎没有缺点。所有Linux主机的操作方式都是类似的。</p>
-<p>小钢炮自带的SSH软件是dropbear，生成SSH key的方式有所不同。</p>
+<p><del>小钢炮自带的SSH软件是dropbear，生成SSH key的方式有所不同。</del></p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">[root@N1:~]# dropbearkey -t rsa -f ~/.ssh/id_rsa</span><br><span class="line">Generating 2048 bit rsa key, this may take a while...</span><br><span class="line">Public key portion is:</span><br><span class="line">ssh-rsa AAAAB3NzaC1yc2EAAAADAQ......OvWTR/S86OINFETJLOtxwJCMs3kK/NVgrUlQq4rGzwESnwCzahGYzWn8/xCiLKcx4wX0nE8QCvxH6HgFmDo5DScw822jlA8z8++Q4IMv5jX8J root@NanoDisk</span><br><span class="line">Fingerprint: sha1!! eb:d1:b5:f0:9e:72:......9:a9:d2:d2:d8</span><br></pre></td></tr></table></figure>
 
-<p>可以再输入以下命令将公钥保存成文件：</p>
+<p><del>可以再输入以下命令将公钥保存成文件：</del></p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dropbearkey -f ~/.ssh/id_rsa -y &gt; ~/.ssh/id_rsa.pub</span><br></pre></td></tr></table></figure>
 
-<p>将公钥添加到GitHub，然后完善个人信息：</p>
+<p><del>将公钥添加到GitHub，然后完善个人信息：</del></p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.name "Igloo302" //GitHub用户名</span><br><span class="line">git config --global user.email  "shenjy302@live.com" //GitHub邮箱</span><br></pre></td></tr></table></figure>
 
+<p>克隆Blog：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone https:&#x2F;&#x2F;github.com&#x2F;Igloo302&#x2F;blog.git</span><br></pre></td></tr></table></figure>
 
+<p>安装Docker就省略了，然后我们需要创建Dockerfile。</p>
+<blockquote>
+<p>如果我们可以把每一层修改、安装、构建、操作的命令都写入一个脚本，用这个脚本来构建、定制镜像，那么之前提及的无法重复的问题、镜像构建透明性的问题、体积的问题就都会解决。这个脚本就是 Dockerfile。</p>
+<p>使用 Dockerfile 定制镜像 - <a href="https://yeasy.gitbooks.io/docker_practice/image/build.html" target="_blank" rel="noopener">https://yeasy.gitbooks.io/docker_practice/image/build.html</a></p>
+</blockquote>
+<p>在某个目录下创建Dockerfile：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">mkdir Hexo</span><br><span class="line">cd Hexo</span><br><span class="line">vi Dockerfile</span><br></pre></td></tr></table></figure>
 
+<p>文件内容如下：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">FROM node:latest</span><br><span class="line">MAINTAINER Igloo &lt;shenjy302@live.com&gt;</span><br><span class="line">RUN npm install</span><br><span class="line"><span class="meta">#</span><span class="bash"> install hexo</span></span><br><span class="line">RUN npm install hexo-cli -g</span><br><span class="line"><span class="meta">#</span><span class="bash"> <span class="built_in">set</span> home dir</span></span><br><span class="line">WORKDIR /blog</span><br></pre></td></tr></table></figure>
+
+<p>定制镜像是以一个镜像为基础，在其上进行定制，<code>FROM</code> 是指定基础镜像。<code>RUN</code> 指令是用来执行命令行命令的。WORKDIR指定了镜像的工作目录。</p>
+<p>在Dockerfile所在文件夹中执行命令（<code>.</code>代表当前目录）：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker build -t hexo .</span><br></pre></td></tr></table></figure>
+
+<p>稍等片刻，名为hexo的定制镜像就创建好了，创建Docker容器：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker run -itd -p 4000:4000 -v /media/Travel/Document/blog:/blog --name hexo hexo</span><br></pre></td></tr></table></figure>
+
+<p>转发4000端口用于Hexo的预览。</p>
+<p>进入Hexo Docker：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker exec -it hexo /bin/bash</span><br></pre></td></tr></table></figure>
+
+<p><img src="http://q6735zi7x.bkt.clouddn.com//static/images/hexoDocker.jpg" alt=""></p>
+<p>执行<code>hexo</code>，如果报未安装错误就执行：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-cli -g</span><br></pre></td></tr></table></figure>
+
+<p>解决Git问题：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -t rsa -C &quot;shenjy302@live.com&quot;</span><br><span class="line">cat &#x2F;root&#x2F;.ssh&#x2F;id_rsa.pub</span><br><span class="line">git config --global user.name &quot;Igloo302&quot; &#x2F;&#x2F;GitHub用户名</span><br><span class="line">git config --global user.email  &quot;shenjy302@live.com&quot; &#x2F;&#x2F;GitHub邮箱</span><br></pre></td></tr></table></figure>
+
+<p>然后开始熟悉的Hexo d愉快玩耍吧。</p>
 <h2 id="拓展阅读"><a href="#拓展阅读" class="headerlink" title="拓展阅读"></a>拓展阅读</h2><p><a href="http://codewithzhangyi.com/2018/04/19/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E8%87%AA%E5%B7%B1%E7%9A%84%E4%B8%AA%E4%BA%BA%E7%BD%91%E7%AB%99%EF%BC%88%E4%B8%8A%EF%BC%89/" target="_blank" rel="noopener">如何搭建自己的个人网站（上）</a></p>
 <p><a href="https://zhuanlan.zhihu.com/p/92508540" target="_blank" rel="noopener">2019年末，来一发基于Hexo自建博客生态指南！</a></p>
 <p><a href="https://zhuanlan.zhihu.com/p/98570271" target="_blank" rel="noopener">教程 | 一文搭建你的第一个免费专属博客</a></p>
