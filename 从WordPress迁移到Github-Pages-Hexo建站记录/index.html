@@ -34,7 +34,7 @@
 <meta property="og:image" content="http://q6735zi7x.bkt.clouddn.com/static/images/copyssh.png">
 <meta property="og:image" content="http://q6735zi7x.bkt.clouddn.com//static/images/hexoDocker.jpg">
 <meta property="article:published_time" content="2020-02-25T15:22:56.000Z">
-<meta property="article:modified_time" content="2020-03-18T14:43:16.000Z">
+<meta property="article:modified_time" content="2020-03-18T14:48:00.000Z">
 <meta property="article:author" content="Igloo">
 <meta property="article:tag" content="建站">
 <meta property="article:tag" content="GitHub Pages">
@@ -239,7 +239,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-03-18 14:43:16" itemprop="dateModified" datetime="2020-03-18T14:43:16+00:00">2020-03-18</time>
+                <time title="Modified: 2020-03-18 14:48:00" itemprop="dateModified" datetime="2020-03-18T14:48:00+00:00">2020-03-18</time>
               </span>
 
           
@@ -429,7 +429,7 @@
 <p>为了让部署过程更流畅，写了一个脚本update.sh：</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">! /bin/bash</span></span><br><span class="line"></span><br><span class="line">cd /media/Travel/Document/blog</span><br><span class="line">docker exec hexo git pull</span><br><span class="line">docker exec hexo hexo g</span><br><span class="line">docker exec hexo hexo d</span><br><span class="line">docker exec hexo git add . &amp;&amp; git commit -m 'Update From Docker' &amp;&amp; git push origin master</span><br></pre></td></tr></table></figure>
 
-<p>在宿主机运行<code>sh update.sh</code>即可完成部署。</p>
+<p>在宿主机运行<code>sh update.sh</code>，即可完成部署。</p>
 <h2 id="拓展阅读"><a href="#拓展阅读" class="headerlink" title="拓展阅读"></a>拓展阅读</h2><p><a href="http://codewithzhangyi.com/2018/04/19/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E8%87%AA%E5%B7%B1%E7%9A%84%E4%B8%AA%E4%BA%BA%E7%BD%91%E7%AB%99%EF%BC%88%E4%B8%8A%EF%BC%89/" target="_blank" rel="noopener">如何搭建自己的个人网站（上）</a></p>
 <p><a href="https://zhuanlan.zhihu.com/p/92508540" target="_blank" rel="noopener">2019年末，来一发基于Hexo自建博客生态指南！</a></p>
 <p><a href="https://zhuanlan.zhihu.com/p/98570271" target="_blank" rel="noopener">教程 | 一文搭建你的第一个免费专属博客</a></p>
