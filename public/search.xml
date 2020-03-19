@@ -64,15 +64,15 @@
             
             <tag> 7×24 </tag>
             
-            <tag> N1 </tag>
-            
-            <tag> Docker </tag>
-            
             <tag> Home Assistant </tag>
             
             <tag> Android </tag>
             
             <tag> Linux Deploy </tag>
+            
+            <tag> N1 </tag>
+            
+            <tag> Docker </tag>
             
             <tag> IoT </tag>
             
@@ -191,9 +191,9 @@
       
         <tags>
             
-            <tag> 作品集 </tag>
-            
             <tag> 建站 </tag>
+            
+            <tag> 作品集 </tag>
             
             <tag> Hugo </tag>
             
