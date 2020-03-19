@@ -87,15 +87,15 @@
     
       <category term="7×24" scheme="http://yoursite.com/tags/7%C3%9724/"/>
     
-      <category term="N1" scheme="http://yoursite.com/tags/N1/"/>
-    
-      <category term="Docker" scheme="http://yoursite.com/tags/Docker/"/>
-    
       <category term="Home Assistant" scheme="http://yoursite.com/tags/Home-Assistant/"/>
     
       <category term="Android" scheme="http://yoursite.com/tags/Android/"/>
     
       <category term="Linux Deploy" scheme="http://yoursite.com/tags/Linux-Deploy/"/>
+    
+      <category term="N1" scheme="http://yoursite.com/tags/N1/"/>
+    
+      <category term="Docker" scheme="http://yoursite.com/tags/Docker/"/>
     
       <category term="IoT" scheme="http://yoursite.com/tags/IoT/"/>
     
