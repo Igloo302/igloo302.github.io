@@ -199,6 +199,107 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/%E5%9C%A8Hugo%E5%8D%9A%E5%AE%A2%E6%8F%92%E5%85%A5%E4%BF%9D%E6%8C%81%E5%AE%BD%E9%AB%98%E6%AF%94%E7%9A%84iframe%E8%A7%86%E9%A2%91/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Igloo">
+      <meta itemprop="description" content="设计，技术，和生活的其他">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="冰屋里">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/%E5%9C%A8Hugo%E5%8D%9A%E5%AE%A2%E6%8F%92%E5%85%A5%E4%BF%9D%E6%8C%81%E5%AE%BD%E9%AB%98%E6%AF%94%E7%9A%84iframe%E8%A7%86%E9%A2%91/" class="post-title-link" itemprop="url">在Hugo博客插入保持宽高比的iframe视频</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2020-03-21 20:59:48 / Modified: 14:00:10" itemprop="dateCreated datePublished" datetime="2020-03-21T20:59:48+00:00">2020-03-21</time>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+      <span class="post-meta-item-text">Valine: </span>
+    
+    <a title="valine" href="/%E5%9C%A8Hugo%E5%8D%9A%E5%AE%A2%E6%8F%92%E5%85%A5%E4%BF%9D%E6%8C%81%E5%AE%BD%E9%AB%98%E6%AF%94%E7%9A%84iframe%E8%A7%86%E9%A2%91/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/%E5%9C%A8Hugo%E5%8D%9A%E5%AE%A2%E6%8F%92%E5%85%A5%E4%BF%9D%E6%8C%81%E5%AE%BD%E9%AB%98%E6%AF%94%E7%9A%84iframe%E8%A7%86%E9%A2%91/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>在Hugo实现的作品集静态网站插入视频的时候，遇到了一个问题：视频无法根据页面宽度自动调整宽高比，导致视频在手机这种小屏幕上会出现上下黑边。</p>
+<p>这个问题可以使用CSS来解决。最简单的方式就是将视频的iframe放在一个保持宽高比的div中（代码源自<a href="https://www.webhek.com/post/responsive-video-iframes-keeping-aspect-ratio-with-only-css.html" target="_blank" rel="noopener">此处</a>）：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* 这个规则规定了iframe父元素容器的尺寸，16:9的近似值为56%*/</span>  </span><br><span class="line"><span class="selector-class">.selfadapting-video</span> &#123;   </span><br><span class="line">    <span class="attribute">position</span>: relative;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">100%</span>;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">0</span>;</span><br><span class="line">    <span class="attribute">padding-bottom</span>: <span class="number">56%</span>; <span class="comment">/* 高度应该是宽度的56% */</span></span><br><span class="line">  &#125;   </span><br><span class="line">    </span><br><span class="line">  <span class="comment">/* 设定iframe的宽度和高度，让iframe占满整个父元素容器 */</span></span><br><span class="line">  <span class="selector-class">.selfadapting-video</span> <span class="selector-tag">iframe</span> &#123;   </span><br><span class="line">    <span class="attribute">position</span>: absolute;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">100%</span>;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">100%</span>;</span><br><span class="line">    <span class="attribute">left</span>: <span class="number">0</span>;</span><br><span class="line">    <span class="attribute">top</span>: <span class="number">0</span>;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+
+<p>如果使用的是Hugo，打开<code>~\themes\主题名\static\css</code>，在custom.css中添加。</p>
+<p><del>如果是Hexo+next主题，首先在`</del>\themes\next\source\css\main.styl`中添加一行以使用自定义css~~</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">@import</span> <span class="string">"_custom"</span>;</span><br></pre></td></tr></table></figure>
+
+<p><del>然后在`</del>\themes\next\source\css`新建文件<code>custom.styl</code>并添加上述CSS。~~</p>
+<p>删去iframe中关于高度和宽度的设定，将其添加到<code>&lt;div class=&quot;selfadapting-video-bilibili&quot;&gt; ... &lt;/div&gt;</code>之中：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"selfadapting-video"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">iframe</span> <span class="attr">src</span>=<span class="string">'https://player.youku.com/embed/XNDU5NTkzNjQ4MA=='</span>  <span class="attr">scrolling</span>=<span class="string">"no"</span> <span class="attr">border</span>=<span class="string">"0"</span> <span class="attr">frameborder</span>=<span class="string">"no"</span> <span class="attr">framespacing</span>=<span class="string">"0"</span> <span class="attr">allowfullscreen</span>=<span class="string">"true"</span> <span class="attr">style</span>=<span class="string">"max-width: 100%"</span>&gt;</span><span class="tag">&lt;/<span class="name">iframe</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>对于优酷、Youtube这种，这个CSS已经可以用了，但是我常用的B站的iframe有一个特殊的机制：</p>
+<iframe id=sbrxp src="//player.bilibili.com/player.html?aid=95644725&cid=163369904&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
+
+<p>在屏幕宽度较大时，B站的iframe会包含额外的顶部广告栏bilibili-player-video-recommend和底部控制栏bilibili-player-video-control，也就是说需要在宽度不同时实现不同的padding-bottom。</p>
+<p>以<a href="https://igloo302.github.io/portfolio/portfolio/ivision/" target="_blank" rel="noopener">这个主题为例</a>，本身这个页面已经实现了响应式布局，也就是针对不同的页面适配不同的<a href="https://code.z01.com/v4/layout/grid.html" target="_blank" rel="noopener">栅格</a>，具体的栅格设定可以在Html文件中看到：</p>
+<p>![](<a href="http://img.osland.me/blog/hugo" target="_blank" rel="noopener">http://img.osland.me/blog/hugo</a> grid.png)</p>
+<p>这样我们就可以根据Bootstrap的网格系统来计算一下在屏幕宽度为多少的时候应该修改视频的比例……当然这样有点麻烦。一个投机取巧的方式是打开Chrome，右击检查，将检查页面放置在右侧，拖动检查页面的宽度，此时网页的右上角会显示出网页的分辨率，此时只要观察视频在什么时候发生比例变化就可以了。</p>
+<p><img src="http://img.osland.me/blog/Bilibili-iframe.png" alt=""></p>
+<p>经过尝试，发现屏幕宽度为728px、767px、992px时画面会自适应而发生视频宽度突变。所以修改CSS，使用@media来定义不同宽度时的视频比例。</p>
+<blockquote>
+<p>使用 @media 查询，你可以针对不同的媒体类型定义不同的样式。</p>
+<p>@media 可以针对不同的屏幕尺寸设置不同的样式，特别是如果你需要设置设计响应式的页面，@media 是非常有用的。</p>
+<p>当你重置浏览器大小的过程中，页面也会根据浏览器的宽度和高度重新渲染页面。</p>
+</blockquote>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* your styles go here */</span></span><br><span class="line"></span><br><span class="line"><span class="comment">/* 这个规则规定了iframe父元素容器的尺寸，16:9的近似值为56%*/</span></span><br><span class="line"></span><br><span class="line"><span class="selector-class">.selfadapting-video-bilibili</span> &#123;</span><br><span class="line">    <span class="attribute">position</span>: relative;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">100%</span>;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* 设定iframe的宽度和高度，让iframe占满整个父元素容器 */</span></span><br><span class="line"></span><br><span class="line"><span class="selector-class">.selfadapting-video-bilibili</span> <span class="selector-tag">iframe</span> &#123;</span><br><span class="line">    <span class="attribute">position</span>: absolute;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">100%</span>;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">100%</span>;</span><br><span class="line">    <span class="attribute">left</span>: <span class="number">0</span>;</span><br><span class="line">    <span class="attribute">top</span>: <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">@media</span> <span class="keyword">only</span> screen <span class="keyword">and</span> (<span class="attribute">max-width:</span> <span class="number">728px</span>) &#123;</span><br><span class="line">    <span class="selector-class">.selfadapting-video-bilibili</span> &#123;</span><br><span class="line">        <span class="attribute">padding-bottom</span>: <span class="number">56%</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">@media</span> <span class="keyword">only</span> screen <span class="keyword">and</span> (<span class="attribute">min-width:</span> <span class="number">729px</span>) <span class="keyword">and</span> (<span class="attribute">max-width:</span> <span class="number">767px</span>) &#123;</span><br><span class="line">    <span class="selector-class">.selfadapting-video-bilibili</span> &#123;</span><br><span class="line">        <span class="attribute">padding-bottom</span>: <span class="number">73%</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">@media</span> <span class="keyword">only</span> screen <span class="keyword">and</span> (<span class="attribute">min-width:</span> <span class="number">768px</span>) <span class="keyword">and</span> (<span class="attribute">max-width:</span> <span class="number">991px</span>) &#123;</span><br><span class="line">    <span class="selector-class">.selfadapting-video-bilibili</span> &#123;</span><br><span class="line">        <span class="attribute">padding-bottom</span>: <span class="number">56%</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">@media</span> <span class="keyword">only</span> screen <span class="keyword">and</span> (<span class="attribute">min-width:</span> <span class="number">992px</span>) &#123;</span><br><span class="line">    <span class="selector-class">.selfadapting-video-bilibili</span> &#123;</span><br><span class="line">        <span class="attribute">padding-bottom</span>: <span class="number">71%</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>这个方法基本解决了我的问题，大家可以根据这个方法和思路来调节自己的css。不过更理想的方案可能是对子级iframe进行操作……</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/%E4%B8%80%E6%AC%A1%E6%96%87%E8%89%BA%E5%A4%8D%E5%85%B4/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -317,7 +418,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-03-18 12:58:46" itemprop="dateModified" datetime="2020-03-18T12:58:46+00:00">2020-03-18</time>
+                <time title="Modified: 2020-03-21 14:00:10" itemprop="dateModified" datetime="2020-03-21T14:00:10+00:00">2020-03-21</time>
               </span>
 
           
@@ -403,7 +504,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-03-18 12:58:46" itemprop="dateModified" datetime="2020-03-18T12:58:46+00:00">2020-03-18</time>
+                <time title="Modified: 2020-03-21 14:00:10" itemprop="dateModified" datetime="2020-03-21T14:00:10+00:00">2020-03-21</time>
               </span>
 
           
@@ -576,7 +677,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-03-18 12:58:46" itemprop="dateModified" datetime="2020-03-18T12:58:46+00:00">2020-03-18</time>
+                <time title="Modified: 2020-03-21 14:00:10" itemprop="dateModified" datetime="2020-03-21T14:00:10+00:00">2020-03-21</time>
               </span>
 
           
@@ -662,7 +763,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-03-18 12:58:46" itemprop="dateModified" datetime="2020-03-18T12:58:46+00:00">2020-03-18</time>
+                <time title="Modified: 2020-03-21 14:00:10" itemprop="dateModified" datetime="2020-03-21T14:00:10+00:00">2020-03-21</time>
               </span>
 
           
@@ -748,7 +849,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-03-18 12:58:46" itemprop="dateModified" datetime="2020-03-18T12:58:46+00:00">2020-03-18</time>
+                <time title="Modified: 2020-03-21 14:00:10" itemprop="dateModified" datetime="2020-03-21T14:00:10+00:00">2020-03-21</time>
               </span>
 
           
@@ -776,8 +877,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <img src="http://q6735zi7x.bkt.clouddn.com/static/images/hikvision.png">
-
+          <p><img src="http://img.osland.me/static/images/hikvision.png" alt=""></p>
 <p>因为疫情而被封在家里，就着手去改善一些居家体验（顺便玩）。当时装修的时候预埋了监控线但没有安装，想着干脆自己动手吧。安装的过程一波三折，最终算是圆满完成，记录一下分享给大家。</p>
           <!--noindex-->
             <div class="post-button">
@@ -836,7 +936,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-03-19 06:16:07" itemprop="dateModified" datetime="2020-03-19T06:16:07+00:00">2020-03-19</time>
+                <time title="Modified: 2020-03-21 14:00:10" itemprop="dateModified" datetime="2020-03-21T14:00:10+00:00">2020-03-21</time>
               </span>
 
           
@@ -922,7 +1022,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-03-18 12:58:46" itemprop="dateModified" datetime="2020-03-18T12:58:46+00:00">2020-03-18</time>
+                <time title="Modified: 2020-03-21 14:00:10" itemprop="dateModified" datetime="2020-03-21T14:00:10+00:00">2020-03-21</time>
               </span>
 
           
@@ -950,8 +1050,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <img src="http://q6735zi7x.bkt.clouddn.com/static/images/reserved-unsplash.jpg">
-
+          <p><img src="http://img.osland.me/static/images/reserved-unsplash.jpg" alt=""></p>
 <blockquote>
 <p>Photo by <a href="https://unsplash.com/@aquartey_?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText" target="_blank" rel="noopener">Alfred Quartey</a> on <a href="https://unsplash.com/s/photos/vip-club?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText" target="_blank" rel="noopener">Unsplash</a></p>
 </blockquote>
@@ -959,93 +1058,6 @@
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/%E4%BC%9A%E5%91%98%E7%9A%84%E8%AF%9E%E7%94%9F/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/%E4%BB%8EWordPress%E8%BF%81%E7%A7%BB%E5%88%B0Github-Pages-Hexo%E5%BB%BA%E7%AB%99%E8%AE%B0%E5%BD%95/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Igloo">
-      <meta itemprop="description" content="设计，技术，和生活的其他">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="冰屋里">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/%E4%BB%8EWordPress%E8%BF%81%E7%A7%BB%E5%88%B0Github-Pages-Hexo%E5%BB%BA%E7%AB%99%E8%AE%B0%E5%BD%95/" class="post-title-link" itemprop="url">从WordPress迁移到GitHub Pages：Hexo建站记录</a>
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2020-02-25 15:22:56" itemprop="dateCreated datePublished" datetime="2020-02-25T15:22:56+00:00">2020-02-25</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-03-19 04:00:08" itemprop="dateModified" datetime="2020-03-19T04:00:08+00:00">2020-03-19</time>
-              </span>
-
-          
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="fa fa-comment-o"></i>
-      </span>
-      <span class="post-meta-item-text">Valine: </span>
-    
-    <a title="valine" href="/%E4%BB%8EWordPress%E8%BF%81%E7%A7%BB%E5%88%B0Github-Pages-Hexo%E5%BB%BA%E7%AB%99%E8%AE%B0%E5%BD%95/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/%E4%BB%8EWordPress%E8%BF%81%E7%A7%BB%E5%88%B0Github-Pages-Hexo%E5%BB%BA%E7%AB%99%E8%AE%B0%E5%BD%95/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>年纪渐长，记忆的衰退有时并不是生理性的。要往脑子里塞的东西越来越多，越来越奇形怪状，有效就没法好好放进去了。只能留一点，放一点。于是难免有漏网之鱼。到后来就觉得可惜。</p>
-<p>老戴说，社交网络很难作为自己的记忆留存，的确，碎片化的转评赞，只能用来让“别人”来窥探一个不完整的自己。我有一个完整的叙述在几个庞大又缺乏整理的OneNote笔记本里，作为知识的采集和消化，这绰绰有余，但作为输出和理解，这远远不够。</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/%E4%BB%8EWordPress%E8%BF%81%E7%A7%BB%E5%88%B0Github-Pages-Hexo%E5%BB%BA%E7%AB%99%E8%AE%B0%E5%BD%95/#more" rel="contents">
                 Read more &raquo;
               </a>
             </div>
@@ -1135,12 +1147,12 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">41</span>
+          <span class="site-state-item-count">42</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
       <div class="site-state-item site-state-tags">
-        <span class="site-state-item-count">53</span>
+        <span class="site-state-item-count">56</span>
         <span class="site-state-item-name">tags</span>
       </div>
   </nav>

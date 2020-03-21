@@ -30,18 +30,18 @@
 <meta property="og:description" content="「一台7×24小时运行的电脑可以用来做什么？」系列第二篇。作为一个数字收集癖和整理癖患者，从十几年前在VeryCD上用迅雷慢慢下载TLF组的奥斯卡全集，几KB的速度下几周，到现在对比不同的压制组作品的质量，千兆的网络压得磁盘跟不上下载速度，硬盘容量存不下想要收藏的电影。回望过去，观看的速度永远跟不上下载的速度，甚至现在都不再需要下载再看了，这个过程见证了一段网络、影视、数码的发展历史。">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://jellyfin.org/images/screenshots/home_full.png">
-<meta property="og:image" content="http://q6735zi7x.bkt.clouddn.com/dockerjellyfin.png">
-<meta property="og:image" content="http://q6735zi7x.bkt.clouddn.com/jellyfinmetadata.png">
-<meta property="og:image" content="http://q6735zi7x.bkt.clouddn.com/jellyfin.png">
-<meta property="og:image" content="http://q6735zi7x.bkt.clouddn.com/tmm.png">
-<meta property="og:image" content="http://q6735zi7x.bkt.clouddn.com/tmm1.png">
-<meta property="og:image" content="http://q6735zi7x.bkt.clouddn.com/tmm2.png">
-<meta property="og:image" content="http://q6735zi7x.bkt.clouddn.com/R18Library.png">
-<meta property="og:image" content="http://q6735zi7x.bkt.clouddn.com/R18Cover.png">
-<meta property="og:image" content="http://q6735zi7x.bkt.clouddn.com/R18Cover2.png">
-<meta property="og:image" content="http://q6735zi7x.bkt.clouddn.com/Kodi+Jellyfin.png">
+<meta property="og:image" content="http://img.osland.me/dockerjellyfin.png">
+<meta property="og:image" content="http://img.osland.me/jellyfinmetadata.png">
+<meta property="og:image" content="http://img.osland.me/jellyfin.png">
+<meta property="og:image" content="http://img.osland.me/tmm.png">
+<meta property="og:image" content="http://img.osland.me/tmm1.png">
+<meta property="og:image" content="http://img.osland.me/tmm2.png">
+<meta property="og:image" content="http://img.osland.me/R18Library.png">
+<meta property="og:image" content="http://img.osland.me/R18Cover.png">
+<meta property="og:image" content="http://img.osland.me/R18Cover2.png">
+<meta property="og:image" content="http://img.osland.me/Kodi+Jellyfin.png">
 <meta property="article:published_time" content="2020-03-09T21:49:10.000Z">
-<meta property="article:modified_time" content="2020-03-18T12:58:46.000Z">
+<meta property="article:modified_time" content="2020-03-21T14:00:10.000Z">
 <meta property="article:author" content="Igloo">
 <meta property="article:tag" content="7×24">
 <meta property="article:tag" content="N1">
@@ -249,7 +249,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-03-18 12:58:46" itemprop="dateModified" datetime="2020-03-18T12:58:46+00:00">2020-03-18</time>
+                <time title="Modified: 2020-03-21 14:00:10" itemprop="dateModified" datetime="2020-03-21T14:00:10+00:00">2020-03-21</time>
               </span>
 
           
@@ -299,7 +299,7 @@
 
 <p>我使用的是docker镜像是<code>jellyfin/jellyfin:nightly</code>。</p>
 <p>新建Container，端口映射8096/tcp，然后设置/cache，/media和/config三个分区即可。</p>
-<p><img src="http://q6735zi7x.bkt.clouddn.com/dockerjellyfin.png" alt=""></p>
+<p><img src="http://img.osland.me/dockerjellyfin.png" alt=""></p>
 <p>使用指令一键安装：</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker run -d -p 8096:8096 -v /your/config:/config -v /your/media:/media -v /your/cache:/cache jellyfin/jellyfin:nightly</span><br></pre></td></tr></table></figure>
 
@@ -309,29 +309,29 @@
 <p>更详细的安装过程也可以参考这篇<a href="https://post.smzdm.com/p/a6lnxg3g/" target="_blank" rel="noopener">教程</a>。</p>
 <h2 id="整理电影资料库"><a href="#整理电影资料库" class="headerlink" title="整理电影资料库"></a>整理电影资料库</h2><p>把混乱的影片文件夹变成精美的海报墙，就需要去获取包括海报、同人画、片名、年份、剧情介绍、演员等等信息，称为「元数据」。</p>
 <h3 id="使用Jellyfin自带的元数据下载器"><a href="#使用Jellyfin自带的元数据下载器" class="headerlink" title="使用Jellyfin自带的元数据下载器"></a>使用Jellyfin自带的元数据下载器</h3><p>元数据下载器可以将电影信息从TheMovieDb等网站中自动下载下来，只需要在添加媒体库的时候，勾选元数据下载器：</p>
-<p><img src="http://q6735zi7x.bkt.clouddn.com/jellyfinmetadata.png" alt=""></p>
+<p><img src="http://img.osland.me/jellyfinmetadata.png" alt=""></p>
 <p>除了自带的几个元数据下载器之外，还可以添加插件，如AniDB让其支持更多的影片数据网站。</p>
 <p>如果片名识别出错，可以<code>右击-「识别」</code>输入片名搜索。</p>
-<p><img src="http://q6735zi7x.bkt.clouddn.com/jellyfin.png" alt=""></p>
+<p><img src="http://img.osland.me/jellyfin.png" alt=""></p>
 <h3 id="tinyMediaManager"><a href="#tinyMediaManager" class="headerlink" title="tinyMediaManager"></a>tinyMediaManager</h3><p>Jellyfin的元数据下载能力并不能让人满意。tinyMediaManager是一款非常优秀的元数据下载器，支持Windows、macOS和Linux。</p>
-<p><img src="http://q6735zi7x.bkt.clouddn.com/tmm.png" alt=""></p>
+<p><img src="http://img.osland.me/tmm.png" alt=""></p>
 <p>在<a href="http://release.tinymediamanager.org/" target="_blank" rel="noopener">官网</a>下载最新版，解压后运行tinyMediaManagerUpd.exe打开。在<code>「设置」-「电影」-「媒体库目录」</code>和<code>「设置」-「电视节目」-「媒体库目录」</code>中添加媒体文件夹，点击上方的<code>「更新源」-「更新数据源」</code>，然后全选所有电影，右击选择<code>「搜索并刮削所选电影 - 自动匹配」</code>。</p>
-<p><img src="http://q6735zi7x.bkt.clouddn.com/tmm1.png" alt=""></p>
-<p><img src="http://q6735zi7x.bkt.clouddn.com/tmm2.png" alt=""></p>
+<p><img src="http://img.osland.me/tmm1.png" alt=""></p>
+<p><img src="http://img.osland.me/tmm2.png" alt=""></p>
 <p>元数据将被保存为nfo文件和图片文件，Jellyfin会自动识别这些文件。</p>
 <h3 id="R18-WARNING"><a href="#R18-WARNING" class="headerlink" title="R18 WARNING"></a>R18 WARNING</h3><p>我并没有收集X片的习惯，只是<del>出于好玩</del>尝试了一下用Jellyfin管理迷片。Pockies同学撰写了<strong>2篇</strong>非常详细可靠的文章：</p>
 <blockquote>
 <p><strong>Pockies</strong> - <a href="https://pockies.github.io/2020/01/09/av-data-capture-jellyfin-kodi/" target="_blank" rel="noopener"><em>利用AV Data Capture+Jellyfin+Kodi打造更优雅的本地AV（毛片）+普通影片媒体库</em></a><br><strong>Pockies</strong> - <a href="https://pockies.github.io/2019/03/25/everaver-emby-kodi/" target="_blank" rel="noopener"><em>利用EverAver+Emby+Kodi打造本地AV（毛片）媒体库</em></a></p>
 </blockquote>
 <p>和正经影片电视唯一的不同只有Capture Data（或者叫刮削），因为目前没有适用于迷片的Jellyfin的刮削插件，因此我们需要手动将迷片的信息，包括演员、车牌号、名称、剧情介绍和封面设置好。当然这个手动不是自己去网上收集，而是使用一些<strong>爱心人士</strong>开发的小软件将信息保存在NFO文件和JPG文件中，供Jellyfin识别。具体的使用方式就参考Pockies同学的文章吧。</p>
-<p><img src="http://q6735zi7x.bkt.clouddn.com/R18Library.png" alt=""></p>
+<p><img src="http://img.osland.me/R18Library.png" alt=""></p>
 <p>在Jellyfin中设置完片库之后，可以设置一张自定义的封面：</p>
-<p><img src="http://q6735zi7x.bkt.clouddn.com/R18Cover.png" alt=""></p>
-<p><img src="http://q6735zi7x.bkt.clouddn.com/R18Cover2.png" alt=""></p>
+<p><img src="http://img.osland.me/R18Cover.png" alt=""></p>
+<p><img src="http://img.osland.me/R18Cover2.png" alt=""></p>
 <h2 id="Kodi-Jellyfin插件"><a href="#Kodi-Jellyfin插件" class="headerlink" title="Kodi + Jellyfin插件"></a>Kodi + Jellyfin插件</h2><p>除了在网页上直接播放外，Kodi的Jellyfin插件可以提供更好的观看体验，尤其是在Android电视盒子上。</p>
 <p>在<a href="https://github.com/jellyfin/jellyfin-kodi/releases" target="_blank" rel="noopener">GitHub</a>下载最新的Jellyfin插件（不用解压），打开Kodi，插件-从ZIP文件安装-选择jellyfin-kodi-xxx.zip。安装成功后按照引导操作即可。</p>
 <p>为了让插件自动同步服务器的媒体内容，可以在Jellyfin服务器安装Kodi Sync Quene插件，同时在Kodi的Jellyfin插件设置中打开Sync-Enable Kodi Sync Queue</p>
-<p><img src="http://q6735zi7x.bkt.clouddn.com/Kodi+Jellyfin.png" alt=""></p>
+<p><img src="http://img.osland.me/Kodi+Jellyfin.png" alt=""></p>
 <p>Enjoy now!</p>
 
     </div>
@@ -443,12 +443,12 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">41</span>
+          <span class="site-state-item-count">42</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
       <div class="site-state-item site-state-tags">
-        <span class="site-state-item-count">53</span>
+        <span class="site-state-item-count">56</span>
         <span class="site-state-item-name">tags</span>
       </div>
   </nav>

@@ -29,14 +29,14 @@
 <meta property="og:site_name" content="冰屋里">
 <meta property="og:description" content="N1是已经暴雷快两年的斐讯留下来的经典矿渣遗产。2GB RAM，四核心ARM SOC，4K 输出，千兆网口，读写30MB+的USB 2.0，决定了N1绝不甘心当一个吃灰的挖矿机。在一众技术大佬的研究下，N1成功转型为电视盒子、NAS、下载机、高清播放器、复古游戏机，以及本文要介绍的旁路由。">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="http://q6735zi7x.bkt.clouddn.com/static/images/%E6%97%81%E8%B7%AF%E7%94%B1%E7%BD%91%E7%BB%9C%E6%8B%93%E6%89%91.png">
-<meta property="og:image" content="http://q6735zi7x.bkt.clouddn.com/static/images/sshop.jpg">
-<meta property="og:image" content="http://q6735zi7x.bkt.clouddn.com/static/images/n1lan.png">
-<meta property="og:image" content="http://q6735zi7x.bkt.clouddn.com/static/images/n1lan2.png">
-<meta property="og:image" content="http://q6735zi7x.bkt.clouddn.com/static/images/router.png">
-<meta property="og:image" content="http://q6735zi7x.bkt.clouddn.com/static/images/netinfo.png">
+<meta property="og:image" content="http://img.osland.me/static/images/%E6%97%81%E8%B7%AF%E7%94%B1%E7%BD%91%E7%BB%9C%E6%8B%93%E6%89%91.png">
+<meta property="og:image" content="http://img.osland.me/static/images/sshop.jpg">
+<meta property="og:image" content="http://img.osland.me/static/images/n1lan.png">
+<meta property="og:image" content="http://img.osland.me/static/images/n1lan2.png">
+<meta property="og:image" content="http://img.osland.me/static/images/router.png">
+<meta property="og:image" content="http://img.osland.me/static/images/netinfo.png">
 <meta property="article:published_time" content="2020-02-24T14:38:04.000Z">
-<meta property="article:modified_time" content="2020-03-18T12:58:46.000Z">
+<meta property="article:modified_time" content="2020-03-21T14:00:10.000Z">
 <meta property="article:author" content="Igloo">
 <meta property="article:tag" content="7×24">
 <meta property="article:tag" content="N1">
@@ -44,7 +44,7 @@
 <meta property="article:tag" content="路由器">
 <meta property="article:tag" content="Phicomm">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://q6735zi7x.bkt.clouddn.com/static/images/%E6%97%81%E8%B7%AF%E7%94%B1%E7%BD%91%E7%BB%9C%E6%8B%93%E6%89%91.png">
+<meta name="twitter:image" content="http://img.osland.me/static/images/%E6%97%81%E8%B7%AF%E7%94%B1%E7%BD%91%E7%BB%9C%E6%8B%93%E6%89%91.png">
 
 <link rel="canonical" href="http://yoursite.com/7%C3%9724-%E6%96%90%E8%AE%AFN1%E7%9A%84%E6%97%81%E8%B7%AF%E7%94%B1%E7%8E%A9%E6%B3%95/">
 
@@ -243,7 +243,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-03-18 12:58:46" itemprop="dateModified" datetime="2020-03-18T12:58:46+00:00">2020-03-18</time>
+                <time title="Modified: 2020-03-21 14:00:10" itemprop="dateModified" datetime="2020-03-21T14:00:10+00:00">2020-03-21</time>
               </span>
 
           
@@ -283,7 +283,7 @@
 
 <p>我们平时使用的家用路由器需要负责网关服务器、DHCP服务器、PPPOE拨号、DNS服务器、发射WIFI信号等工作，所谓旁路由（并不是专业的叫法，民间约定俗成）就是把这些功能中的一部分让渡给这台设备去处理。</p>
 <p>大多数的家用路由器的性能都是及其羸弱的，运行去广告、V2Ray、SS这种服务的时候难以发挥出最好的效果，有了一台旁路由，我们就可以把这些高难度任务交给它，让主路由安安心心地拨号、分配IP地址（DHCP）。连接方式如图：</p>
-<p><img src="http://q6735zi7x.bkt.clouddn.com/static/images/%E6%97%81%E8%B7%AF%E7%94%B1%E7%BD%91%E7%BB%9C%E6%8B%93%E6%89%91.png" alt="旁路由网络拓扑"></p>
+<p><img src="http://img.osland.me/static/images/%E6%97%81%E8%B7%AF%E7%94%B1%E7%BD%91%E7%BB%9C%E6%8B%93%E6%89%91.png" alt="旁路由网络拓扑"></p>
 <p>因为这个网络拓扑本质上实现了一次单线复用，所以也适用于弱电箱较小，无法容纳高性能网络设备的情况，比方说我就将N1放在了有网口的书房，同时打开N1的WiFi用于补足书房信号不足的问题。</p>
 <h2 id="所需设备"><a href="#所需设备" class="headerlink" title="所需设备"></a>所需设备</h2><ul>
 <li>正常运行的家庭网络</li>
@@ -320,22 +320,22 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">.\adb.exe connect 192.168.x.xxx</span><br><span class="line">.\adb.exe shell reboot update</span><br></pre></td></tr></table></figure>
 
 <p>此时将N1和电脑通过网线连接，SSH访问<code>192.168.1.1</code>，用户为<code>root</code>，密码为<code>password</code>。</p>
-<p><img src="http://q6735zi7x.bkt.clouddn.com/static/images/sshop.jpg" alt="sshop"></p>
+<p><img src="http://img.osland.me/static/images/sshop.jpg" alt="sshop"></p>
 <p>输入以下命令开始将OpenWRT安装到N1的EMMC（内置存储）中</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd &#x2F;root</span><br><span class="line"> .&#x2F;inst-to-emmc.sh</span><br></pre></td></tr></table></figure>
 
 <p>等到SSH显示<code>All done, please reboot!</code>时OP就刷好了，拔掉U盘后重启就可以启动OpenWRT了。</p>
 <h2 id="设置旁路由"><a href="#设置旁路由" class="headerlink" title="设置旁路由"></a>设置旁路由</h2><p>我的目标是旁路由负责网关和DNS，主路由负责拨号和DHCP，这样所有的外网流量都会从N1走，就能进行翻墙和去广告了。</p>
 <h3 id="设置-N1"><a href="#设置-N1" class="headerlink" title="设置 N1"></a>设置 N1</h3><p>依旧PC直连N1，进入<code>192.168.1.1</code>，密码为<code>password</code>，进入「网络」-「接口」，编辑LAN设置，按照下图设置。</p>
-<p><img src="http://q6735zi7x.bkt.clouddn.com/static/images/n1lan.png" alt=""></p>
+<p><img src="http://img.osland.me/static/images/n1lan.png" alt=""></p>
 <p>同时关闭DHCP「忽略此接口」</p>
-<p><img src="http://q6735zi7x.bkt.clouddn.com/static/images/n1lan2.png" alt="n1lan2"></p>
+<p><img src="http://img.osland.me/static/images/n1lan2.png" alt="n1lan2"></p>
 <p>保存&amp;应用修改。</p>
 <h3 id="设置主路由"><a href="#设置主路由" class="headerlink" title="设置主路由"></a>设置主路由</h3><p>将N1连接到主路由的LAN上，进入主路由后台进入<code>192.168.6.1</code>，我使用的是高恪，进入「网络设置」-「DHCP」，将网关和主DNS修改为<code>192.168.6.2</code>（旁路由N1的IP）</p>
-<p><img src="http://q6735zi7x.bkt.clouddn.com/static/images/router.png" alt="router"></p>
+<p><img src="http://img.osland.me/static/images/router.png" alt="router"></p>
 <p><del>如果主路由是OpenWRT的话，在「网络」-「接口」-「LAN」-「DHCP 服务器」-「高级设置」，在「DHCP 选项」中，添加两条参数，<code>3,192.168.6.2</code>（表示DHCP服务网关指向N1），<code>6,192.168.6.2</code> （表示DNS指向N1），可以达到相同的效果。（未测试）</del></p>
 <p>最后，在防火墙设置中添加<code>iptables -t nat -I POSTROUTING -o eth0 -j MASQUERADE</code>。</p>
-<p><img src="http://q6735zi7x.bkt.clouddn.com/static/images/netinfo.png" alt="netinfo"></p>
+<p><img src="http://img.osland.me/static/images/netinfo.png" alt="netinfo"></p>
 <p>查看当前的连接信息，默认网关和DNS服务器都为<code>192.168.6.2</code>即宣告成功。至此，N1旁路由就设置好了，进入<code>192.168.6.2</code>去配置翻墙吧。</p>
 <h2 id="关于7×24"><a href="#关于7×24" class="headerlink" title="关于7×24"></a>关于7×24</h2><p>本篇为7×24的第一篇。这将会组成一个系列企划，试图回答问题——「一台7×24小时运行的电脑可以用来做什么？」</p>
 <p>一台可以持续运行（低功耗）又功能强大（高性能）的计算机越来越容易获取。从Android手机到电视盒子，从NAS到闲置的x86家用电脑，以ARM和Linux为核心的计算机已经遍布我们的生活，我将以「不折腾，毋宁死」的精神，发掘各种小电脑的玩法。</p>
@@ -450,12 +450,12 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">41</span>
+          <span class="site-state-item-count">42</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
       <div class="site-state-item site-state-tags">
-        <span class="site-state-item-count">53</span>
+        <span class="site-state-item-count">56</span>
         <span class="site-state-item-name">tags</span>
       </div>
   </nav>
