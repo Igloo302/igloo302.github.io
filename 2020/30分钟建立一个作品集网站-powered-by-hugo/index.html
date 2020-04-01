@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+  <meta http-equiv="content-type" content="text/html;charset=utf-8">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noodp"/>
+  <meta name="author" content="Covey.Liu">
+  
+  
+  
+  <link rel="prev" href="https://example.com/2020/%E4%BC%9A%E5%91%98%E7%9A%84%E8%AF%9E%E7%94%9F/" />
+  <link rel="next" href="https://example.com/2020/%E5%AE%89%E8%A3%85%E6%88%B7%E5%A4%96%E7%9B%91%E6%8E%A7%E7%B3%BB%E7%BB%9F%E5%B0%8F%E8%AE%B0%E6%97%A0%E9%A2%84%E5%9F%8B%E7%BA%BFnas%E5%BD%95%E5%83%8F%E6%9C%BA/" />
+  <link rel="canonical" href="https://example.com/2020/30%E5%88%86%E9%92%9F%E5%BB%BA%E7%AB%8B%E4%B8%80%E4%B8%AA%E4%BD%9C%E5%93%81%E9%9B%86%E7%BD%91%E7%AB%99-powered-by-hugo/" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+  <title>
+       
+       
+           30分钟建立一个作品集网站 powered by Hugo | LeaveIt
+       
+  </title>
+  <meta name="title" content="30分钟建立一个作品集网站 powered by Hugo | LeaveIt">
+    
+  
+  <link rel="stylesheet" href="/font/iconfont.css">
+  <link rel="stylesheet" href="/css/main.min.css">
+
+
+  
+  
+ 
+
+<script type="application/ld+json">
+ "@context" : "http://schema.org",
+    "@type" : "BlogPosting",
+    "mainEntityOfPage": {
+         "@type": "WebPage",
+         "@id": "https:\/\/example.com"
+    },
+    "articleSection" : "posts",
+    "name" : "30分钟建立一个作品集网站 powered by Hugo",
+    "headline" : "30分钟建立一个作品集网站 powered by Hugo",
+    "description" : "昨天看到猪场的暑期实习开始“招标”了，头上划过几道黑线。赋闲在家快一个半月，简历和作品集都没有好好准备。上次用Hexo重建了这个Blog的时候，看到了很好看的Hugo博客，还有一个LeaveIt主题非常可爱，就心水不已。翻了翻Hugo的Theme页面，好看的真不少，可能是英语用户比较多吧:)\n干脆单独建一个项目，拿Hugo把作品集重建一下吧，之后有时间的话，会尝试做一版自己的主题将Blog和Portfolio整合在一起。\n安装环境   Windows 10\n  装好Chocolatey\n  安装Hugo和初始化 在各种平台的安装放在看这里，因为我装好了Chocolatey ，所以直接一步执行：\nchoco install hugo -confirm 输入命令检查是否安装成功：\nhugo version 进入一个想要放Hugo文件夹的目录，Shift\x2b右键打开PowerShell，输入命令：\nhugo new site portfolio # 站点名称 这样Hugo会自动创建一个名为portfolio的文件夹，里面包含了站点所需的所有文件：\n设置主题 可以在Hugo Themes中找到数百款不同风格的Hugo主题，还可以根据站点的类型选择Tag。在portfolio标签下面意外发现了我之间使用的Bootstrap主题Freelancer :)\nB站UP TenGuSan 提过，作品集需要适配手机的屏幕和比例，最基本的一点就是不能要求阅读者ZOOM IN \x26amp; OUT。题外话，这个角度上，小红书的缩放功非常优秀。\n我找到了两款比较符合自己喜好的：\nCreative portfolio会相对更加简洁一点。\nParsa Hugo可以展示重点项目、Instagram照片，完全可以用来当作一个完整的Blog。\n选择自己喜欢的Theme，找到Git地址，输入以下命令：\ncd .\\portfolio\\ git init git submodule add https:\/\/github.com\/kishaningithub\/hugo-creative-portfolio-theme.git themes\/creative 主题已经下载到themes\/Creative文件夹下了，将portfolio\\themes\\creative\\exampleSite中的所有文件复制到portfolio\\目录中（复制并替换），打开根目录的配置文件config.toml，将theme = \x26quot;hugo-creative-portfolio-theme\x26quot;修改为theme = \x26quot;creative\x26quot;。\n运行命令便可以在http:\/\/localhost:1313\/中访问这个Sample Site了。\nhugo server 部署到GitHub Pages 我们还是使用GitHub Pages作为托管服务器。直接运行hugo命令，就会创建public文件夹，里面就是这个静态网站所有的文件了，像此前hexo教程中一样，直接push这个文件夹到Github的username.github.io就可以访问了。\n但是会有两个问题：\n 我已经使用了username.",
+    "inLanguage" : "en-us",
+    "author" : "Covey.Liu",
+    "creator" : "Covey.Liu",
+    "publisher": "Covey.Liu",
+    "accountablePerson" : "Covey.Liu",
+    "copyrightHolder" : "Covey.Liu",
+    "copyrightYear" : "2020",
+    "datePublished": "2020-02-29 11:25:06 \x2b0000 UTC",
+    "dateModified" : "2020-02-29 11:25:06 \x2b0000 UTC",
+    "url" : "https:\/\/example.com\/2020\/30%E5%88%86%E9%92%9F%E5%BB%BA%E7%AB%8B%E4%B8%80%E4%B8%AA%E4%BD%9C%E5%93%81%E9%9B%86%E7%BD%91%E7%AB%99-powered-by-hugo\/",
+    "wordCount" : "340",
+    "keywords" : [ "作品集","建站","Hugo", "LeaveIt"]
+}
+</script>
+
+</head>
+
+  
+
+
+  <body class="">
+    <div class="wrapper">
+        <nav class="navbar">
+    <div class="container">
+        <div class="navbar-header header-logo">
+        	<a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-xihuan"></i></a>&nbsp;<a href="https://example.com">LeaveIt</a>
+        </div>
+        <div class="menu navbar-right">
+                
+                
+                <a class="menu-item" href="/posts/" title="">Blog</a>
+                
+                <a class="menu-item" href="/categories/" title="">Categories</a>
+                
+                <a class="menu-item" href="/tags/" title="">Tags</a>
+                
+                <a class="menu-item" href="/about/" title="">About</a>
+                
+                <a class="menu-item" href="/about/" title="About Hugo">About Hugo</a>
+                
+        </div>
+    </div>
+</nav>
+<nav class="navbar-mobile" id="nav-mobile" style="display: none">
+     <div class="container">
+        <div class="navbar-header">
+            <div>  <a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-xihuan"></i></a>&nbsp;<a href="https://example.com">LeaveIt</a></div>
+            <div class="menu-toggle">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+     
+          <div class="menu" id="mobile-menu">
+                
+                
+                <a class="menu-item" href="/posts/" title="">Blog</a>
+                
+                <a class="menu-item" href="/categories/" title="">Categories</a>
+                
+                <a class="menu-item" href="/tags/" title="">Tags</a>
+                
+                <a class="menu-item" href="/about/" title="">About</a>
+                
+                <a class="menu-item" href="/about/" title="About Hugo">About Hugo</a>
+                
+        </div>
+    </div>
+</nav>
+    	 <main class="main">
+          <div class="container">
+      		
+<article class="post-warp" itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">30分钟建立一个作品集网站 powered by Hugo</h1>
+        <div class="post-meta">
+                Written by <a itemprop="name" href="https://example.com" rel="author">Covey.Liu</a> with ♥ 
+                <span class="post-time">
+                on <time datetime=2020-02-29 itemprop="datePublished">February 29, 2020</time>
+                </span>
+                in
+                
+        </div>
+    </header>
+    <div class="post-content">
+        
+
+        
+            
+        
+
+        
+        
+     
+          
+          
+          
+
+          
+          
+          
+
+          <p>昨天看到猪场的暑期实习开始“招标”了，头上划过几道黑线。赋闲在家快一个半月，简历和作品集都没有好好准备。上次用Hexo重建了这个Blog的时候，看到了很好看的Hugo博客，还有一个<a href="https://github.com/liuzc/LeaveIt">LeaveIt</a>主题非常可爱，就心水不已。翻了翻Hugo的Theme页面，好看的真不少，可能是英语用户比较多吧:)</p>
+<!-- raw HTML omitted -->
+<p><img src="http://img.osland.me/static/images/LeaveIt.png" alt=""></p>
+<p>干脆单独建一个项目，拿Hugo把作品集重建一下吧，之后有时间的话，会尝试做一版自己的主题将Blog和Portfolio整合在一起。</p>
+<h2 id="安装环境">安装环境</h2>
+<ul>
+<li>
+<p>Windows 10</p>
+</li>
+<li>
+<p>装好Chocolatey</p>
+</li>
+</ul>
+<h2 id="安装hugo和初始化">安装Hugo和初始化</h2>
+<p>在各种平台的安装放在<a href="https://gohugo.io/getting-started/installing">看这里</a>，因为我装好了Chocolatey ，所以直接一步执行：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">choco install hugo -confirm
+</code></pre></div><p>输入命令检查是否安装成功：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">hugo version
+</code></pre></div><p>进入一个想要放Hugo文件夹的目录，Shift+右键打开PowerShell，输入命令：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">hugo new site portfolio <span style="color:#75715e"># 站点名称</span>
+</code></pre></div><p><img src="http://img.osland.me/static/images/installhugo.jpg" alt=""></p>
+<p>这样Hugo会自动创建一个名为portfolio的文件夹，里面包含了站点所需的所有文件：</p>
+<p><img src="http://img.osland.me/static/images/hugo.jpg" alt=""></p>
+<h2 id="设置主题">设置主题</h2>
+<p>可以在<a href="https://themes.gohugo.io/">Hugo Themes</a>中找到数百款不同风格的Hugo主题，还可以根据站点的类型选择Tag。在portfolio标签下面意外发现了我之间使用的Bootstrap主题<a href="https://themes.gohugo.io/freelancer/">Freelancer</a> :)</p>
+<p>B站UP <a href="https://space.bilibili.com/19526512">TenGuSan</a> 提过，作品集需要适配手机的屏幕和比例，最基本的一点就是不能要求阅读者ZOOM IN &amp; OUT。题外话，这个角度上，小红书的缩放功非常优秀。</p>
+<p><img src="http://img.osland.me/static/images/kate-torline-VeiqoYAEeis-unsplash.jpg" alt=""></p>
+<p>我找到了两款比较符合自己喜好的：</p>
+<p><a href="https://themes.gohugo.io/hugo-creative-portfolio-theme/">Creative portfolio</a>会相对更加简洁一点。</p>
+<p><img src="https://d33wubrfki0l68.cloudfront.net/647382e14a2ff62682a118e1581360a832d905bc/c2e2d/hugo-creative-portfolio-theme/screenshot-hugo-creative-portfolio-theme_huae92bd9f36dca86a00d2df27da4a735b_565314_1500x1000_fill_catmullrom_top_2.png" alt=""></p>
+<p><a href="https://themes.gohugo.io/parsa-hugo-personal-blog-theme/">Parsa Hugo</a>可以展示重点项目、Instagram照片，完全可以用来当作一个完整的Blog。</p>
+<p><img src="http://img.osland.me/static/images/screenshot-parsa-hugo-personal-blog-theme_hu221e51f5dc506473d05b0e369ddfdb5d_1712445_1500x1000_fill_catmullrom_top_2.png" alt=""></p>
+<p>选择自己喜欢的Theme，找到Git地址，输入以下命令：</p>
+<pre><code>cd .\portfolio\
+git init
+git submodule add https://github.com/kishaningithub/hugo-creative-portfolio-theme.git themes/creative
+</code></pre><p>主题已经下载到themes/Creative文件夹下了，将<code>portfolio\themes\creative\exampleSite</code>中的所有文件复制到<code>portfolio\</code>目录中（复制并替换），打开根目录的配置文件config.toml，将<code>theme = &quot;hugo-creative-portfolio-theme&quot;</code>修改为<code>theme = &quot;creative&quot;</code>。</p>
+<p>运行命令便可以在<a href="http://localhost:1313/">http://localhost:1313/</a>中访问这个Sample Site了。</p>
+<pre><code>hugo server
+</code></pre><h2 id="部署到github-pages">部署到GitHub Pages</h2>
+<p>我们还是使用GitHub Pages作为托管服务器。直接运行<code>hugo</code>命令，就会创建public文件夹，里面就是这个静态网站所有的文件了，像此前hexo教程中一样，直接push这个文件夹到Github的username.github.io就可以访问了。</p>
+<p>但是会有两个问题：</p>
+<ol>
+<li>我已经使用了username.github.io托管Hexo的博客了，如何创建第二个静态网站？</li>
+<li>能否把整个hugo的项目上传到GitHub托管？</li>
+</ol>
+<p>我们先解决第一个问题。虽然GitHub只允许创建一个Github个人主页，也就是之前使用username.github.io，但是对于项目主页是不限数量的，在没有兹定于域名的情况下，项目主页的访问链接是username.github.io/projectname（作为过渡方案，这个域名对我来说完全OK啊）</p>
+<p>那么，在GitHub创建名为portfolio的项目，获得Git地址<code>git@github.com:Igloo302/portfolio.git</code></p>
+<p><img src="http://img.osland.me/static/images/Hugogithub.jpg" alt=""></p>
+<p>打开配置文件，将<code>baseurl = &quot;https://example.org/&quot;</code>修改为<code>baseurl = &quot;https://igloo302.github.io/portfolio/&quot;</code>，然后将public文件夹push到这个空间就可以通过<code>Igloo302.github.io/portfolio</code>访问了，命令如下：</p>
+<pre><code>cd public
+git add .
+git commit -m &quot;init commit&quot;
+git remote add origin git@github.com:Igloo302/portfolio.git
+git push -u origin master
+</code></pre><p>把整个项目文件上传到GitHub也并不困难。</p>
+<p>参考<a href="https://gohugo.io/hosting-and-deployment/hosting-on-github/">Hugo官方文档</a>，有两种方法可以让Github托管整个项目文件的同时支持打开其中子文件的静态页面。</p>
+<ol>
+<li>将静态页面放在<code>/docs</code>的子目录中</li>
+<li>单独建立一个<code>gh-pages branch</code>存储静态页面的内容</li>
+</ol>
+<p>第二种方式相对比较繁琐，我们采用第一种方法。打开配置文件config.toml，添加行：</p>
+<pre><code>publishDir = &quot;docs&quot;
+</code></pre><p>回到portfolio的根目录，删除public文件夹，输入命令hugo，静态页面将创建在docs子目录中。运行命令</p>
+<pre><code>git add .
+git commit -m &quot;init commit&quot;
+git remote add origin git@github.com:Igloo302/portfolio.git
+git push -u origin master
+</code></pre><p>在GitHub的设置中按照下图设置：</p>
+<p><img src="http://img.osland.me/static/images/githubsetting.jpg" alt=""></p>
+<p>注意：Docs文件夹作为Docs的方法仅适用于利用项目页面（username.github.io/projectname）的情况，如果使用的是个人主页username.github.io，只允许老老实实在Master分支中上传静态网站的所有文件：</p>
+<p><img src="http://img.osland.me/static/images/GithubPageMaster.png" alt=""></p>
+<h2 id="创建作品页面">创建作品页面</h2>
+<h3 id="新建md">新建MD</h3>
+<p>编辑<code>themes\creative\archetypes\archetypes\portfolio.md</code>，将其修改为：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-markdown" data-lang="markdown">+++
+title = &#34;{{ replace .Name &#34;-&#34; &#34; &#34; | title }}&#34;
+date = {{ .Date }}
+showonlyimage = false
+draft = false
+image = &#34;&#34;
+weight = 0
++++
+</code></pre></div><p>输入命令：</p>
+<pre><code>hugo new portfolio/first-portfolio.md
+</code></pre><p>Hugo会自动以<code>archetypes/portfolio.md</code>为模板在<code>content/portfolio</code>目录下生成一篇名为<code>first-portfolio.md</code>的草稿。</p>
+<h3 id="常用命令">常用命令</h3>
+<pre><code># 生成静态网页
+hugo 
+
+# 本地预览
+hugo server -D # 显示草稿
+
+# 改变文章draft状态：
+hugo undraft content/portfolio/*.md
+
+# Git部署
+git add .
+git commit -m &quot;commit&quot;
+git push
+</code></pre><h2 id="额外功能">额外功能</h2>
+<h3 id="插入视频">插入视频</h3>
+<p>和Hexo一样获取视频的iframe html代码，直接复制到MD文件中，但是运行时却被渲染成了<code>&lt;!-- raw HTML omitted --&gt;</code>。尝试了使用自定义Bilibili的Shortcode的方法可以正常添加视频。</p>
+<p>在<a href="https://discourse.gohugo.io/t/raw-html-getting-omitted-in-0-60-0/22032">Raw HTML getting omitted in 0.60.0</a>找到了这个问题的原因：Hugo的默认MD渲染器goldmark的默认设置中禁止了unsafe的html代码，在配置文件中增加以下行就能解决问题：</p>
+<pre><code>[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+</code></pre><p>使用Shortcode可以让MD更加清晰简洁，用Shortcode添加Bilibili视频，需要在\layouts\shortcodes目录创建bilibili.html文件，内容为：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">iframe</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">sbrxp</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;//player.bilibili.com/player.html?aid={{ .Get &#34;</span><span style="color:#a6e22e">aid</span><span style="color:#960050;background-color:#1e0010">&#34;</span> <span style="color:#960050;background-color:#1e0010">}}&amp;</span><span style="color:#a6e22e">cid</span><span style="color:#f92672">=</span><span style="color:#e6db74">{{</span> <span style="color:#960050;background-color:#1e0010">.</span><span style="color:#a6e22e">Get</span> <span style="color:#960050;background-color:#1e0010">&#34;</span><span style="color:#a6e22e">cid</span><span style="color:#960050;background-color:#1e0010">&#34;</span> <span style="color:#960050;background-color:#1e0010">}}&amp;</span><span style="color:#a6e22e">page</span><span style="color:#f92672">=</span><span style="color:#e6db74">1&#34;</span> <span style="color:#a6e22e">scrolling</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;no&#34;</span> <span style="color:#a6e22e">border</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;0&#34;</span> <span style="color:#a6e22e">frameborder</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;no&#34;</span> <span style="color:#a6e22e">framespacing</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;0&#34;</span> <span style="color:#a6e22e">allowfullscreen</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;true&#34;</span> <span style="color:#a6e22e">style</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;width: 640px; height: 430px; max-width: 100%&#34;</span>&gt; &lt;/<span style="color:#f92672">iframe</span>&gt;
+</code></pre></div><p>在.md调用：</p>
+<p><img src="http://img.osland.me/blog/image-20200401142717221.png" alt="image-20200401142717221"></p>
+<p>想要插入的视频保持比例，可以参考这篇<a href="https://igloo302.github.io/%E5%9C%A8Hugo%E5%8D%9A%E5%AE%A2%E6%8F%92%E5%85%A5%E4%BF%9D%E6%8C%81%E5%AE%BD%E9%AB%98%E6%AF%94%E7%9A%84iframe%E8%A7%86%E9%A2%91/">博文</a>。</p>
+<h2 id="用hugo建立blog">用Hugo建立Blog</h2>
+<p>强势加更。上次看到就很心水<a href="https://liuzhichao.com/">柳志超</a>大神设计和实现的Hugo主题，<a href="https://liuzhichao.com/2018/hugo-theme-leaveit/">leavelt</a>，因此就想着把Blog搬迁到Hugo（还是闲着没事做hhh）。</p>
+<p><img src="https://cdn.liuzhichao.com/images/2018/09/screenshot.png" alt=""></p>
+<p>思路也很简单：</p>
+<ol>
+<li>用一个仓库存储Hugo所有的源文件</li>
+<li>将静态网站发布到username.github.io</li>
+</ol>
+<h3 id="配置hugo">配置Hugo</h3>
+<p>因为这次是在macOS下面设置的，所以记录一下流程（其实也没大差）</p>
+<ol>
+<li>安装HomeBrew</li>
+</ol>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">mkdir homebrew <span style="color:#f92672">&amp;&amp;</span> curl -L https://github.com/Homebrew/brew/tarball/master | tar xz --strip <span style="color:#ae81ff">1</span> -C homebrew
+</code></pre></div><ol start="2">
+<li>安装Hugo</li>
+</ol>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">brew install hugo
+</code></pre></div><ol start="3">
+<li>创建一个新的网站</li>
+</ol>
+<pre><code>hugo new site blog
+</code></pre><ol start="3">
+<li>下载主题</li>
+</ol>
+<pre><code>cd blog/themes
+git submodule add https://github.com/liuzc/LeaveIt.git
+</code></pre><p>更好的方式是fork主题，然后:</p>
+<pre><code>git submodule add git@github.com:Igloo302/LeaveIt.git
+</code></pre><p>将exampleSite中文件复制并覆盖到blog目录</p>
+<p>按习惯在配置文件中添加<code>publishDir = &quot;docs&quot;</code></p>
+<ol start="4">
+<li>运行<code>Hugo server</code>预览网站</li>
+</ol>
+<h3 id="部署到github">部署到GitHub</h3>
+<h4 id="将hugo源文件上传到github">将Hugo源文件上传到GitHub</h4>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">git init
+</code></pre></div><p><del>排除public文件夹，编辑<code>.gitignore</code>添加<code>public/</code>。</del></p>
+<p>在GitHub创建一个新的仓库名为blog</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">git add .
+git commit -m <span style="color:#e6db74">&#34;init commit hugo&#34;</span>
+git remote add origin git@github.com:Igloo302/blog.git
+git push -u origin master
+</code></pre></div><p>注意：这样主题文件夹作为submodule是不会push到名为blog的仓库的，因此如果需要更改主题，建议fork源仓库。</p>
+<h4 id="将静态网页部署到github-page">将静态网页部署到GitHub Page</h4>
+<p>我们还是使用submodule的方法：</p>
+<pre><code>git submodule add git@github.com:Igloo302/igloo302.github.io.git docs
+</code></pre><p>如果仓库非空，删除原来的内容：</p>
+<pre><code>rm -rf docs/*
+</code></pre><p>生成静态网站：</p>
+<pre><code>hugo
+</code></pre><p>进入子模块更新</p>
+<pre><code>cd docs
+git commit -a -m 'update submodule'
+git push
+</code></pre><h2 id="to-be-done">To Be Done</h2>
+<ul>
+<li>Hugo配置</li>
+<li><a href="https://igloo302.github.io/portfolio">https://igloo302.github.io/portfolio</a>会被重定向到<a href="https://igloo302.github.io/portfolio/portfolio/">https://igloo302.github.io/portfolio/portfolio/</a>看着非常别扭。</li>
+</ul>
+<h2 id="参考文档">参考文档</h2>
+<p><a href="https://zhuanlan.zhihu.com/p/37752930">如何使用Hugo在GitHub Pages上搭建免费个人网站</a></p>
+<p><a href="http://chitanda.me/2015/11/03/multiple-git-pages-in-one-github-account/#%E6%80%BB%E7%BB%93">单个GitHub帐号下添加多个GitHub Pages的相关问题</a></p>
+
+    </div>
+
+    <div class="post-copyright">
+             
+            <p class="copyright-item">
+                <span>Author:</span>
+                <span>Covey.Liu </span>
+                </p>
+            
+           
+             
+            <p class="copyright-item">
+                    <span>Link:</span>
+                    <a href=https://example.com/2020/30%E5%88%86%E9%92%9F%E5%BB%BA%E7%AB%8B%E4%B8%80%E4%B8%AA%E4%BD%9C%E5%93%81%E9%9B%86%E7%BD%91%E7%AB%99-powered-by-hugo/>https://example.com/2020/30%E5%88%86%E9%92%9F%E5%BB%BA%E7%AB%8B%E4%B8%80%E4%B8%AA%E4%BD%9C%E5%93%81%E9%9B%86%E7%BD%91%E7%AB%99-powered-by-hugo/</span>
+            </p>
+            
+             
+            <p class="copyright-item lincese">
+                本文采用<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/" target="_blank">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可
+            </p>
+            
+    </div>
+
+  
+    <div class="post-tags">
+        
+            <section>
+            <i class="iconfont icon-tag"></i>Tag(s): 
+            
+            <span class="tag"><a href="https://example.com/tags/%E4%BD%9C%E5%93%81%E9%9B%86/">
+                    #作品集</a></span>
+            
+            <span class="tag"><a href="https://example.com/tags/%E5%BB%BA%E7%AB%99/">
+                    #建站</a></span>
+            
+            <span class="tag"><a href="https://example.com/tags/hugo/">
+                    #Hugo</a></span>
+            
+            </section>
+        
+        <section>
+                <a href="javascript:window.history.back();">back</a></span> · 
+                <span><a href="https://example.com">home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav">
+        
+        <a href="https://example.com/2020/%E4%BC%9A%E5%91%98%E7%9A%84%E8%AF%9E%E7%94%9F/" class="prev" rel="prev" title="会员的诞生"><i class="iconfont icon-left"></i>&nbsp;会员的诞生</a>
+         
+        
+        <a href="https://example.com/2020/%E5%AE%89%E8%A3%85%E6%88%B7%E5%A4%96%E7%9B%91%E6%8E%A7%E7%B3%BB%E7%BB%9F%E5%B0%8F%E8%AE%B0%E6%97%A0%E9%A2%84%E5%9F%8B%E7%BA%BFnas%E5%BD%95%E5%83%8F%E6%9C%BA/" class="next" rel="next" title="安装户外监控系统小记 | 无预埋线 | NAS录像机">安装户外监控系统小记 | 无预埋线 | NAS录像机&nbsp;<i class="iconfont icon-right"></i></a>
+        
+    </div>
+
+    <div class="post-comment">
+          
+                 
+          
+    </div>
+</article>
+          </div>
+		   </main>
+      <footer class="footer">
+    <div class="copyright">
+        &copy;
+        
+        <span itemprop="copyrightYear">2011 - 2020</span>
+        
+        <span class="with-love">
+    	 <i class="iconfont icon-love"></i> 
+         </span>
+         
+            <span class="author" itemprop="copyrightHolder"><a href="https://example.com">Covey.Liu</a> | </span> 
+         
+
+         
+		  <span>Powered by <a href="https://gohugo.io/" target="_blank" rel="external nofollow">Hugo</a> & <a href="https://github.com/liuzc/leaveit" target="_blank" rel="external nofollow">LeaveIt</a></span> 
+    </div>
+</footer>
+
+
+
+
+
+
+
+
+
+
+
+
+    
+     <link href="//lib.baomitu.com/lightgallery/1.6.11/css/lightgallery.min.css" rel="stylesheet">  
+      
+     <script src="/js/vendor_gallery.min.js" async="" ></script>
+    
+  
+
+
+
+     </div>
+  </body>
+</html>

@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>N1 on LeaveIt</title>
+    <link>https://example.com/tags/n1/</link>
+    <description>Recent content in N1 on LeaveIt</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 15 Mar 2020 22:18:04 +0000</lastBuildDate>
+    
+	<atom:link href="https://example.com/tags/n1/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>7×24: 私人黄金屋Calibre Web</title>
+      <link>https://example.com/2020/724-calibre-web/</link>
+      <pubDate>Sun, 15 Mar 2020 22:18:04 +0000</pubDate>
+      
+      <guid>https://example.com/2020/724-calibre-web/</guid>
+      <description>Calibre是我一直在使用的一款书籍管理软件，但是Calibre总体设计是一款本地桌面软件，对于书库的多平台管理不太友好。Calibre Web使用了Calibre的数据库，是一个轻量化的Web版的Calibre，本节介绍一下如何在Docker上部署Calibre Web和基本的配置。
+Calibre Web推荐了两个Docker镜像，technosoft2000/calibre-web支持linux/amd64，linuxserver/calibre-web的电子书转换功能只有x86-64可以用（安装后发现calibre-web可以使用外部的转换器）。
+在N1上安装linuxserver/calibre-web的指令：
+docker run \ --name=calibre-web \ -e PUID=0 \ -e PGID=0 \ -e TZ=Asia/Shanghai \ -p 8083:8083\ -v /media/Travel/Document/calibre-web:/config \ -v /media/Travel/Document/Calibre:/books \ --restart unless-stopped \ linuxserver/calibre-web注意，此处将PUID和PGID都设置成了0，是一个不太靠谱的做法。正确的做法是和qB一样，创建一个同名用户，将这个Docker容器指定到这个用户。不过用户权限的细节我不是特别明白，所以就先指定到root用户了。
+打开your-ip:8083，将书库设为/books。
+初始登录账号密码为Username: admin，Password: admin123。
+登录后点击右上角的admin，输入自定义的用户名和密码，语言可以修改为中文。在管理页面可以详细设置不同的用户和权限。
+Calibre Web默认是关闭上传功能的，在管理-配置-基本配置-特性配置中打开上传。
+所有配置方法都可以在官方Wiki中找到。</description>
+    </item>
+    
+    <item>
+      <title>7×24: IoT = Internet of Trash? Home Assistant打造全屋智能</title>
+      <link>https://example.com/2020/724-home-assistant/</link>
+      <pubDate>Sun, 15 Mar 2020 16:56:53 +0000</pubDate>
+      
+      <guid>https://example.com/2020/724-home-assistant/</guid>
+      <description>几年前在国外住过一个别墅，里面的智能家居设计给我留下了深刻的印象：吧台上有一个控制平板，统一控制各个房间的照明和空调温度，通过音箱播放流媒体歌曲，控制电视机播放的Netflix电视剧；每个房间还有独立的分机控制开关来单独控制各自房间的设备。
+虽然说起来并不新鲜，甚至并没有突破IoT=网络开关这个初级阶段，但是这种高度一致化的交互方式，在家庭空间尺度上和互联网内容亲密互动的感觉，都带来了超越产品功能本身的愉快体验。
+对于智能家居和IoT，很容易想到国内的米家，天猫精灵等互联网、电商以及传统白电厂商搞出的各个体系，其中米家推出了全面的家电产品、控制器以及传感器元件，价格也不太贵，综合体验可能是最好的。但是他们共有的问题就是不同的体系都在使用自己的私有协议，无法互相协作使用。
+比方说我家里就有天猫精灵，小米的扫地机，博联的灯，美的的空调，Sony的电视……这种智能家居充其量只是可以用手机App（还不是一个App）控制的电器罢了。
+如何改变这种现状呢？让国内的厂商现在放弃分蛋糕自然是不可能，那就要本文的主角登场了——
+和图标的设计一样，Home Assistant的目标是成为全屋的大脑。作为一个开源项目，开发者们将不同厂商，不同协议的IoT设备整合进这个平台，互相之间得以联动。这种联动具有很强的拓展性，可以在上面实现摄像头的人脸、宠物识别，使用TTS引擎播放特殊的文案，给你的手机推送消息等等，而不再局限于硬件厂商给你的（付费）功能。
+官方Domo展示了HA一部分的有趣的应用。
+这边会有几个乱七八糟的概念：
+ Home Assistant 是一款基于 Python 的智能家居开源系统。
+——Home Assistant 中文文档
+Hass.io：一个完整的UI管理的家庭自动化生态系统，它运行Home Assistant，Hass.io Supervisor和附加组件。它预先安装在HassOS上，但可以安装在任何Linux系统上。它利用了由Hass.io Supervisor管理的Docker。
+Hass.io Supervisor：Hass.io Supervisor是管理Hass.io安装的程序，负责安装和更新Home Assistant，附加组件本身以及更新（如果使用的话）HassOS操作系统。
+HassOS：HassOS，家庭助理操作系统，是一种嵌入式，简约的操作系统，旨在在单板计算机（如Raspberry Pi）或虚拟机上运行Hass.io生态系统。Hass.io Supervisor可以使其保持最新状态，从而无需管理操作系统
+——HAChina 中文网
+ 这四个定义中居然出现了三个「系统」…这个概念确实比较混乱，如果我们拿一台安装Armbian系统，安装Kodi的树莓派来类比的话，大概类似下图，Home-Assistant（或者叫Home Assistant Core）是最核心的功能，相当于Kodi的核心功能。
+Hass.io包含了HA和附加组件，会有一键安装插件等功能，相当于一个完整的Kodi。
+ Hass.io 原生提供各项功能的插件 Add-on，入口为侧边栏 『Hass.io』。Add-on 的提供方式形似应用商店，一键安装与自动配置相关功能。
+——Home Assistant 中文文档
+ 而HassOS是一个专门为树莓派设计的，预装Hass.io的定制系统。
+目前官方推荐的安装方法是拿一个树莓派来安装Hass.io/HassOS，这是最简单的，就和其他的树莓派系统一样（下载镜像刷到TF卡里面运行），可以降低使用的门槛，而且树莓派本身有GPIO，但是相对来说，成本也是比较高的。
+总结来说——
+   设备 方法 功能完整 安装难度     树莓派、英特尔NUC等官方支持的硬件 Hass.io/HassOS ✦✦✦✦✦ ✦✧✧✧✧   主流发行版Linux主机 Home Assistant Supervised ✦✦✦✦✦✧ ✦✦✧✧✧   / Docker安装（群晖NAS稍有不同） ✦✦✦✧✧✧ ✦✦✧✧✧   不限 Python venv(as another user) 或者venv(as your user) ✦✦✦✧✧✧ ✦✦✦✦✧          接下来介绍一下我尝试的两种方法。</description>
+    </item>
+    
+    <item>
+      <title>7×24: 荒野无灯N1小钢炮PT下载机简单调教</title>
+      <link>https://example.com/2020/724-%E8%8D%92%E9%87%8E%E6%97%A0%E7%81%AFn1%E5%B0%8F%E9%92%A2%E7%82%AEpt%E4%B8%8B%E8%BD%BD%E6%9C%BA%E7%AE%80%E5%8D%95%E8%B0%83%E6%95%99/</link>
+      <pubDate>Sun, 15 Mar 2020 11:33:05 +0000</pubDate>
+      
+      <guid>https://example.com/2020/724-%E8%8D%92%E9%87%8E%E6%97%A0%E7%81%AFn1%E5%B0%8F%E9%92%A2%E7%82%AEpt%E4%B8%8B%E8%BD%BD%E6%9C%BA%E7%AE%80%E5%8D%95%E8%B0%83%E6%95%99/</guid>
+      <description>本文关于安装完荒野无灯N1之后，将原生的qBittorrent和Filebrowser改为Docker版本。
+Docker qBittorrent 替换原生qBittorrent ，重新安装荒野无灯编译的Docker版qBittorrent。
+ 参考资料 小钢炮使用docker版qb 4.1.6 简明教程 qBittorrent docker镜像：简介里没有说明的部分 N1小钢炮下载系统 篇七：如何在小钢炮系统的Docker里安装灯大原味qBittorrent及优化设置
+  禁用原生qBittorrent  mv /etc/init.d/S92qbittorrent /etc/S92qbittorrent.disabledkillall qbittorrent-nox备份配置文件到外置存储  cp -r /var/lib/qbittorrent/.config/qBittorrent /media/Travel/Document/qBittorrent/configcp -r /var/lib/qbittorrent/.local/share/data/qBittorrent /media/Travel/Document/qBittorrent/data安装qBittorrent的脚本，保存成.sh文件运行，把网络设置成host模式会有更好的性能表现，而且UPnP/NAT-PMP可以自动映射  IMAGE_NAME=80x86/qbittorrentWEB_PORT=$(nvram get app.qb.listen_port)DOWNLOAD_PATH=$(cat /var/lib/qbittorrent/.config/qBittorrent/qBittorrent.conf | grep -i &amp;#39;Downloads\\SavePath&amp;#39; | cut -d&amp;#39;=&amp;#39; -f2)BT_PORT=$(cat /var/lib/qbittorrent/.config/qBittorrent/qBittorrent.conf | grep -i &amp;#39;Connection\\PortRangeMin&amp;#39; | cut -d&amp;#39;=&amp;#39; -f2)QBT_AUTH_SERVER_ADDR=&amp;#34;127.0.0.1&amp;#34;if [ &amp;#34;$DOWNLOAD_PATH&amp;#34; = &amp;#34;/downloads&amp;#34; ] || [ &amp;#34;$DOWNLOAD_PATH&amp;#34; = &amp;#34;/downloads/&amp;#34; ]; thenecho &amp;#34;please set correct DOWNLOAD_PATH&amp;#34;exit -1fidocker run -d --name qbittorrent \ -e PUID=$(id -u qbittorrent) \ -e PGID=$(cat /etc/group | grep -e &amp;#39;^users&amp;#39; | cut -d&amp;#39;:&amp;#39; -f3) \ -e WEB_PORT=$WEB_PORT \ -e BT_PORT=$BT_PORT \ -e QBT_AUTH_SERVER_ADDR=$QBT_AUTH_SERVER_ADDR \ --restart unless-stopped \ --network host \ -v /var/lib/qbittorrent/.</description>
+    </item>
+    
+    <item>
+      <title>7×24: Jellyfin&#43;Kodi打造个人媒体中心</title>
+      <link>https://example.com/2020/724-jellyfin-kodi%E6%89%93%E9%80%A0%E4%B8%AA%E4%BA%BA%E5%AA%92%E4%BD%93%E4%B8%AD%E5%BF%83/</link>
+      <pubDate>Mon, 09 Mar 2020 21:49:10 +0000</pubDate>
+      
+      <guid>https://example.com/2020/724-jellyfin-kodi%E6%89%93%E9%80%A0%E4%B8%AA%E4%BA%BA%E5%AA%92%E4%BD%93%E4%B8%AD%E5%BF%83/</guid>
+      <description>「一台7×24小时运行的电脑可以用来做什么？」系列第二篇。作为一个数字收集癖和整理癖患者，从十几年前在VeryCD上用迅雷慢慢下载TLF组的奥斯卡全集，几KB的速度下几周，到现在对比不同的压制组作品的质量，千兆的网络压得磁盘跟不上下载速度，硬盘容量存不下想要收藏的电影。回望过去，观看的速度永远跟不上下载的速度，甚至现在都不再需要下载再看了，这个过程见证了一段网络、影视、数码的发展历史。
+Docker安装Jellyfin  Jellyfin is the volunteer-built media solution that puts you in control of your media. Stream to any device from your own server, with no strings attached. Your media, your server, your way.
+ Jellyfin的功能简单来说就是作为媒体服务器，统一管理影片，它的界面是这样的：
+相比一堆乱七八糟的文件夹又清晰又高级。
+我使用的主机是N1，搭载了荒野无灯开发的小钢炮ROM，已经自带了Jellyfin，不过更新会比较麻烦，因此重新使用Docker安装。
+首先禁用自带的jellyfin：
+# 禁用启动项mv /etc/init.d/S99jellyfin /etc/S99jellyfin.disabled# 关闭运行的jellyfinkillall jellyfin我使用的是docker镜像是jellyfin/jellyfin:nightly。
+新建Container，端口映射8096/tcp，然后设置/cache，/media和/config三个分区即可。
+使用指令一键安装：
+docker run -d -p 8096:8096 -v /your/config:/config -v /your/media:/media -v /your/cache:/cache jellyfin/jellyfin:nightly此外，也可以采用linuxserver/jellyfin的镜像：
+docker create \ --name=jellyfin \ -e PUID=$(id -u jellyfin) \ -e PGID=$(cat /etc/group | grep -e &amp;#39;^users&amp;#39; | cut -d&amp;#39;:&amp;#39; -f3) \ -e TZ=Europe/London \ -e UMASK_SET=022 `#optional` \-p 8096:8096 \ -p 8920:8920 `#optional` \-v /path/to/library:/config \ -v /path/to/tvseries:/data/tvshows \ -v /path/to/movies:/data/movies \ -v /opt/vc/lib:/opt/vc/lib `#optional` \--device /dev/dri:/dev/dri `#optional` \--device /dev/vchiq:/dev/vchiq `#optional` \--device /dev/video10:/dev/video10 `#optional` \--device /dev/video11:/dev/video11 `#optional` \--device /dev/video12:/dev/video12 `#optional` \--restart unless-stopped \ linuxserver/jellyfin更详细的安装过程也可以参考这篇教程。</description>
+    </item>
+    
+    <item>
+      <title>7×24-斐讯N1的旁路由玩法</title>
+      <link>https://example.com/2020/724-%E6%96%90%E8%AE%AFn1%E7%9A%84%E6%97%81%E8%B7%AF%E7%94%B1%E7%8E%A9%E6%B3%95/</link>
+      <pubDate>Mon, 24 Feb 2020 14:38:04 +0000</pubDate>
+      
+      <guid>https://example.com/2020/724-%E6%96%90%E8%AE%AFn1%E7%9A%84%E6%97%81%E8%B7%AF%E7%94%B1%E7%8E%A9%E6%B3%95/</guid>
+      <description>N1是已经暴雷快两年的斐讯留下来的经典矿渣遗产。2GB RAM，四核心ARM SOC，4K 输出，千兆网口，读写30MB+的USB 2.0，决定了N1绝不甘心当一个吃灰的挖矿机。在一众技术大佬的研究下，N1成功转型为电视盒子、NAS、下载机、高清播放器、复古游戏机，以及本文要介绍的旁路由。
+我们平时使用的家用路由器需要负责网关服务器、DHCP服务器、PPPOE拨号、DNS服务器、发射WIFI信号等工作，所谓旁路由（并不是专业的叫法，民间约定俗成）就是把这些功能中的一部分让渡给这台设备去处理。
+大多数的家用路由器的性能都是及其羸弱的，运行去广告、V2Ray、SS这种服务的时候难以发挥出最好的效果，有了一台旁路由，我们就可以把这些高难度任务交给它，让主路由安安心心地拨号、分配IP地址（DHCP）。连接方式如图：
+因为这个网络拓扑本质上实现了一次单线复用，所以也适用于弱电箱较小，无法容纳高性能网络设备的情况，比方说我就将N1放在了有网口的书房，同时打开N1的WiFi用于补足书房信号不足的问题。
+所需设备  正常运行的家庭网络 斐讯N1 双公头USB数据线（可使用两根没有的MicroUSB数据线DIY） 1GB以上U盘或TF卡+读卡器（USB 2.0最佳） USB鼠标 显示器和HDMI线 刷机包，包括N1降级工具（链接: https://pan.baidu.com/s/11-7FbdmTDBTcb-qberyQLw 提取码: 6h3s）、OpenWRT固件 Windows或Mac电脑  N1降级 如果买到的N1版本高于2.19，则需要将boot、bootloader、recovery降级，简要步骤如下：
+ 加电开机后用鼠标多次点击版本号，弹出Toast 「打开ADB」。 将N1连上Wifi或有线网络，记录IP地址 用双头USB线将N1和电脑相连 运行T1_N1降级工具v1.1.exe自动降级或手动刷入老版本boot、bootloader、recovery。  手动刷入方法：
+ 打开adb所在文件夹，按住Shift同时右键空白处，点击「在此处打开Powershell窗口」 依次输入以下代码  # adb连接N1 .\adb.exe connect 192.168.x.xxx# 重启到fastboot .\adb.exe reboot fastboot# 刷入boot、bootloader、recovery fastboot flash boot .\N1\N1boot.imgfastboot flash bootloader .\N1\N1bootloader.imgfastboot flash recovery .\N1\N1recovery.img 安装OpenWRT 目前有2种方式安装OpenWRT/LEDE，分别为
+ 安装Armbian系统，在Docker（可以理解为虚拟机）中安装OpenWRT 只安装OpenWRT  同时，两种安装方式都可以通过线刷和U盘刷/卡刷两种方式刷入N1。</description>
+    </item>
+    
+  </channel>
+</rss>

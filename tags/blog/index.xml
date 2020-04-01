@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Blog on LeaveIt</title>
+    <link>https://example.com/tags/blog/</link>
+    <description>Recent content in Blog on LeaveIt</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 21 Mar 2020 20:59:48 +0000</lastBuildDate>
+    
+	<atom:link href="https://example.com/tags/blog/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>在Hugo博客插入保持宽高比的iframe视频</title>
+      <link>https://example.com/2020/%E5%9C%A8hugo%E5%8D%9A%E5%AE%A2%E6%8F%92%E5%85%A5%E4%BF%9D%E6%8C%81%E5%AE%BD%E9%AB%98%E6%AF%94%E7%9A%84iframe%E8%A7%86%E9%A2%91/</link>
+      <pubDate>Sat, 21 Mar 2020 20:59:48 +0000</pubDate>
+      
+      <guid>https://example.com/2020/%E5%9C%A8hugo%E5%8D%9A%E5%AE%A2%E6%8F%92%E5%85%A5%E4%BF%9D%E6%8C%81%E5%AE%BD%E9%AB%98%E6%AF%94%E7%9A%84iframe%E8%A7%86%E9%A2%91/</guid>
+      <description>在Hugo实现的作品集静态网站插入视频的时候，遇到了一个问题：视频无法根据页面宽度自动调整宽高比，导致视频在手机这种小屏幕上会出现上下黑边。
+这个问题可以使用CSS来解决。最简单的方式就是将视频的iframe放在一个保持宽高比的div中（代码源自此处）：
+/* 这个规则规定了iframe父元素容器的尺寸，16:9的近似值为56%*/ .selfadapting-video { position: relative;width: 100%;height: 0;padding-bottom: 56%; /* 高度应该是宽度的56% */} /* 设定iframe的宽度和高度，让iframe占满整个父元素容器 */.selfadapting-video iframe { position: absolute;width: 100%;height: 100%;left: 0;top: 0;}如果使用的是Hugo，打开~\themes\主题名\static\css，在custom.css中添加。
+如果是Hexo+next主题，首先在~\themes\next\source\css\main.styl中添加一行以使用自定义css
+@import &amp;#34;_custom&amp;#34;;然后在~\themes\next\source\css\新建文件custom.styl并添加上述CSS。
+删去iframe中关于高度和宽度的设定，将其添加到 &amp;lt;div class=&amp;quot;selfadapting-video-bilibili&amp;quot;&amp;gt; ... &amp;lt;/div&amp;gt;之中：
+&amp;lt;div class=&amp;#34;selfadapting-video&amp;#34;&amp;gt;&amp;lt;iframe src=&amp;#39;https://player.youku.com/embed/XNDU5NTkzNjQ4MA==&amp;#39; scrolling=&amp;#34;no&amp;#34; border=&amp;#34;0&amp;#34; frameborder=&amp;#34;no&amp;#34; framespacing=&amp;#34;0&amp;#34; allowfullscreen=&amp;#34;true&amp;#34; style=&amp;#34;max-width: 100%&amp;#34;&amp;gt;&amp;lt;/iframe&amp;gt;&amp;lt;/div&amp;gt;对于优酷、Youtube这种，这个CSS已经可以用了，但是我常用的B站的iframe有一个特殊的机制：
+在屏幕宽度较大时，B站的iframe会包含额外的顶部广告栏bilibili-player-video-recommend和底部控制栏bilibili-player-video-control，也就是说需要在宽度不同时实现不同的padding-bottom。
+以这个主题为例，本身这个页面已经实现了响应式布局，也就是针对不同的页面适配不同的栅格，具体的栅格设定可以在Html文件中看到：
+这样我们就可以根据Bootstrap的网格系统来计算一下在屏幕宽度为多少的时候应该修改视频的比例……当然这样有点麻烦。一个投机取巧的方式是打开Chrome，右击检查，将检查页面放置在右侧，拖动检查页面的宽度，此时网页的右上角会显示出网页的分辨率，此时只要观察视频在什么时候发生比例变化就可以了。
+经过尝试，发现屏幕宽度为728px、767px、992px时画面会自适应而发生视频宽度突变。所以修改CSS，使用@media来定义不同宽度时的视频比例。
+ 使用 @media 查询，你可以针对不同的媒体类型定义不同的样式。
+@media 可以针对不同的屏幕尺寸设置不同的样式，特别是如果你需要设置设计响应式的页面，@media 是非常有用的。
+当你重置浏览器大小的过程中，页面也会根据浏览器的宽度和高度重新渲染页面。</description>
+    </item>
+    
+  </channel>
+</rss>

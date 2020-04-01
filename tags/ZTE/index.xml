@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>ZTE on LeaveIt</title>
+    <link>https://example.com/tags/zte/</link>
+    <description>Recent content in ZTE on LeaveIt</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 15 Mar 2020 12:16:14 +0000</lastBuildDate>
+    
+	<atom:link href="https://example.com/tags/zte/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>物尽其用|中兴B860AV1.1-T2 IPTV盒子破解</title>
+      <link>https://example.com/2020/%E7%89%A9%E5%B0%BD%E5%85%B6%E7%94%A8-%E4%B8%AD%E5%85%B4b860av1-1-t2-iptv%E7%9B%92%E5%AD%90%E7%A0%B4%E8%A7%A3/</link>
+      <pubDate>Sun, 15 Mar 2020 12:16:14 +0000</pubDate>
+      
+      <guid>https://example.com/2020/%E7%89%A9%E5%B0%BD%E5%85%B6%E7%94%A8-%E4%B8%AD%E5%85%B4b860av1-1-t2-iptv%E7%9B%92%E5%AD%90%E7%A0%B4%E8%A7%A3/</guid>
+      <description>注意：仅在杭州电信B860AV1.1-T2测试。
+软破法 所谓软破就是不需要使用特殊的硬件，通过打开B860AV1.1的ADB来修改系统。
+  配置网络
+打开盒子，点击遥控器的「设置」，密码为6321。将盒子连接到有线网络或者Wifi（忽略鉴权相关设置）
+  打开ADB
+在设置中，找到打开ADB，需要输入密码。下载ADB密码计算器
+  通过ADB连接盒子，在电脑上输入命令：
+  adb connect 192.168.1.xxxadb shellsumount -o remount -o rw /system后续的操作和拆机法相同。  拆机法 该方法为通用方法，需要准备硬件USB转TTL线（一般型号CH340G），如果板子上没有焊好针脚的话，还需要点焊枪等工具。
+  拆机接线
+2号接GND线，5接TX线，6接RX线，针脚排列见图（图源见水印）
+  将USB口连接到电脑，打开设备管理器 - 端口 - COM - 属性 - 端口设置，将波特率改成115200 打开Putty，连接模式设置为serial（串口），填入设备管理器中的Serial line和Speed，点击Open   给盒子通电，putty开始跑码，同时插入存有桌面Apk文件的U盘
+  输入命令
+  # 打开adbstart adbd# 查看U盘路径df# 复制桌面App到系统中cp launcher.apk /data/app# （如果安装是当贝桌面）打开当贝桌面am start com.</description>
+    </item>
+    
+  </channel>
+</rss>

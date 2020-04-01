@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>NAS on LeaveIt</title>
+    <link>https://example.com/tags/nas/</link>
+    <description>Recent content in NAS on LeaveIt</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 15 Mar 2020 11:33:05 +0000</lastBuildDate>
+    
+	<atom:link href="https://example.com/tags/nas/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>7×24: 荒野无灯N1小钢炮PT下载机简单调教</title>
+      <link>https://example.com/2020/724-%E8%8D%92%E9%87%8E%E6%97%A0%E7%81%AFn1%E5%B0%8F%E9%92%A2%E7%82%AEpt%E4%B8%8B%E8%BD%BD%E6%9C%BA%E7%AE%80%E5%8D%95%E8%B0%83%E6%95%99/</link>
+      <pubDate>Sun, 15 Mar 2020 11:33:05 +0000</pubDate>
+      
+      <guid>https://example.com/2020/724-%E8%8D%92%E9%87%8E%E6%97%A0%E7%81%AFn1%E5%B0%8F%E9%92%A2%E7%82%AEpt%E4%B8%8B%E8%BD%BD%E6%9C%BA%E7%AE%80%E5%8D%95%E8%B0%83%E6%95%99/</guid>
+      <description>本文关于安装完荒野无灯N1之后，将原生的qBittorrent和Filebrowser改为Docker版本。
+Docker qBittorrent 替换原生qBittorrent ，重新安装荒野无灯编译的Docker版qBittorrent。
+ 参考资料 小钢炮使用docker版qb 4.1.6 简明教程 qBittorrent docker镜像：简介里没有说明的部分 N1小钢炮下载系统 篇七：如何在小钢炮系统的Docker里安装灯大原味qBittorrent及优化设置
+  禁用原生qBittorrent  mv /etc/init.d/S92qbittorrent /etc/S92qbittorrent.disabledkillall qbittorrent-nox备份配置文件到外置存储  cp -r /var/lib/qbittorrent/.config/qBittorrent /media/Travel/Document/qBittorrent/configcp -r /var/lib/qbittorrent/.local/share/data/qBittorrent /media/Travel/Document/qBittorrent/data安装qBittorrent的脚本，保存成.sh文件运行，把网络设置成host模式会有更好的性能表现，而且UPnP/NAT-PMP可以自动映射  IMAGE_NAME=80x86/qbittorrentWEB_PORT=$(nvram get app.qb.listen_port)DOWNLOAD_PATH=$(cat /var/lib/qbittorrent/.config/qBittorrent/qBittorrent.conf | grep -i &amp;#39;Downloads\\SavePath&amp;#39; | cut -d&amp;#39;=&amp;#39; -f2)BT_PORT=$(cat /var/lib/qbittorrent/.config/qBittorrent/qBittorrent.conf | grep -i &amp;#39;Connection\\PortRangeMin&amp;#39; | cut -d&amp;#39;=&amp;#39; -f2)QBT_AUTH_SERVER_ADDR=&amp;#34;127.0.0.1&amp;#34;if [ &amp;#34;$DOWNLOAD_PATH&amp;#34; = &amp;#34;/downloads&amp;#34; ] || [ &amp;#34;$DOWNLOAD_PATH&amp;#34; = &amp;#34;/downloads/&amp;#34; ]; thenecho &amp;#34;please set correct DOWNLOAD_PATH&amp;#34;exit -1fidocker run -d --name qbittorrent \ -e PUID=$(id -u qbittorrent) \ -e PGID=$(cat /etc/group | grep -e &amp;#39;^users&amp;#39; | cut -d&amp;#39;:&amp;#39; -f3) \ -e WEB_PORT=$WEB_PORT \ -e BT_PORT=$BT_PORT \ -e QBT_AUTH_SERVER_ADDR=$QBT_AUTH_SERVER_ADDR \ --restart unless-stopped \ --network host \ -v /var/lib/qbittorrent/.</description>
+    </item>
+    
+    <item>
+      <title>7×24: Jellyfin&#43;Kodi打造个人媒体中心</title>
+      <link>https://example.com/2020/724-jellyfin-kodi%E6%89%93%E9%80%A0%E4%B8%AA%E4%BA%BA%E5%AA%92%E4%BD%93%E4%B8%AD%E5%BF%83/</link>
+      <pubDate>Mon, 09 Mar 2020 21:49:10 +0000</pubDate>
+      
+      <guid>https://example.com/2020/724-jellyfin-kodi%E6%89%93%E9%80%A0%E4%B8%AA%E4%BA%BA%E5%AA%92%E4%BD%93%E4%B8%AD%E5%BF%83/</guid>
+      <description>「一台7×24小时运行的电脑可以用来做什么？」系列第二篇。作为一个数字收集癖和整理癖患者，从十几年前在VeryCD上用迅雷慢慢下载TLF组的奥斯卡全集，几KB的速度下几周，到现在对比不同的压制组作品的质量，千兆的网络压得磁盘跟不上下载速度，硬盘容量存不下想要收藏的电影。回望过去，观看的速度永远跟不上下载的速度，甚至现在都不再需要下载再看了，这个过程见证了一段网络、影视、数码的发展历史。
+Docker安装Jellyfin  Jellyfin is the volunteer-built media solution that puts you in control of your media. Stream to any device from your own server, with no strings attached. Your media, your server, your way.
+ Jellyfin的功能简单来说就是作为媒体服务器，统一管理影片，它的界面是这样的：
+相比一堆乱七八糟的文件夹又清晰又高级。
+我使用的主机是N1，搭载了荒野无灯开发的小钢炮ROM，已经自带了Jellyfin，不过更新会比较麻烦，因此重新使用Docker安装。
+首先禁用自带的jellyfin：
+# 禁用启动项mv /etc/init.d/S99jellyfin /etc/S99jellyfin.disabled# 关闭运行的jellyfinkillall jellyfin我使用的是docker镜像是jellyfin/jellyfin:nightly。
+新建Container，端口映射8096/tcp，然后设置/cache，/media和/config三个分区即可。
+使用指令一键安装：
+docker run -d -p 8096:8096 -v /your/config:/config -v /your/media:/media -v /your/cache:/cache jellyfin/jellyfin:nightly此外，也可以采用linuxserver/jellyfin的镜像：
+docker create \ --name=jellyfin \ -e PUID=$(id -u jellyfin) \ -e PGID=$(cat /etc/group | grep -e &amp;#39;^users&amp;#39; | cut -d&amp;#39;:&amp;#39; -f3) \ -e TZ=Europe/London \ -e UMASK_SET=022 `#optional` \-p 8096:8096 \ -p 8920:8920 `#optional` \-v /path/to/library:/config \ -v /path/to/tvseries:/data/tvshows \ -v /path/to/movies:/data/movies \ -v /opt/vc/lib:/opt/vc/lib `#optional` \--device /dev/dri:/dev/dri `#optional` \--device /dev/vchiq:/dev/vchiq `#optional` \--device /dev/video10:/dev/video10 `#optional` \--device /dev/video11:/dev/video11 `#optional` \--device /dev/video12:/dev/video12 `#optional` \--restart unless-stopped \ linuxserver/jellyfin更详细的安装过程也可以参考这篇教程。</description>
+    </item>
+    
+  </channel>
+</rss>

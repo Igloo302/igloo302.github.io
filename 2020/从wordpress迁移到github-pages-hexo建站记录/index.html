@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+  <meta http-equiv="content-type" content="text/html;charset=utf-8">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noodp"/>
+  <meta name="author" content="Covey.Liu">
+  
+  
+  
+  <link rel="prev" href="https://example.com/2020/git%E7%BD%91%E7%BB%9C%E5%8A%A0%E9%80%9F-%E4%B8%BAgit%E8%AE%BE%E7%BD%AE%E4%BB%A3%E7%90%86/" />
+  <link rel="next" href="https://example.com/2020/%E4%BC%9A%E5%91%98%E7%9A%84%E8%AF%9E%E7%94%9F/" />
+  <link rel="canonical" href="https://example.com/2020/%E4%BB%8Ewordpress%E8%BF%81%E7%A7%BB%E5%88%B0github-pages-hexo%E5%BB%BA%E7%AB%99%E8%AE%B0%E5%BD%95/" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+  <title>
+       
+       
+           从WordPress迁移到GitHub Pages：Hexo建站记录 | LeaveIt
+       
+  </title>
+  <meta name="title" content="从WordPress迁移到GitHub Pages：Hexo建站记录 | LeaveIt">
+    
+  
+  <link rel="stylesheet" href="/font/iconfont.css">
+  <link rel="stylesheet" href="/css/main.min.css">
+
+
+  
+  
+ 
+
+<script type="application/ld+json">
+ "@context" : "http://schema.org",
+    "@type" : "BlogPosting",
+    "mainEntityOfPage": {
+         "@type": "WebPage",
+         "@id": "https:\/\/example.com"
+    },
+    "articleSection" : "posts",
+    "name" : "从WordPress迁移到GitHub Pages：Hexo建站记录",
+    "headline" : "从WordPress迁移到GitHub Pages：Hexo建站记录",
+    "description" : "年纪渐长，记忆的衰退有时并不是生理性的。要往脑子里塞的东西越来越多，越来越奇形怪状，有效就没法好好放进去了。只能留一点，放一点。于是难免有漏网之鱼。到后来就觉得可惜。\n老戴说，社交网络很难作为自己的记忆留存，的确，碎片化的转评赞，只能用来让“别人”来窥探一个不完整的自己。我有一个完整的叙述在几个庞大又缺乏整理的OneNote笔记本里，作为知识的采集和消化，这绰绰有余，但作为输出和理解，这远远不够。\n这个站其实16年或者更早就有了，写些乱七八糟的东西，也不管自己的文笔是多么糟糕了。但是Lost Years之后手愈加生了。我自知不是一个很好的创作者，和16 personalities的结论恰恰相反。但是从意愿上来说，讲述是一件让人愉快的事情。\n言归正传，本文记录一下自己如何把之前的WordPress迁移到GitHub Pages并用Hexo建站和简单调试的过程，以供自己未来查阅，注意，此非教程，但如若对读者有些帮助，也不赖。\n 之前的写过一些文章，拍过几张照片，都存在了一个搭建在VPS的WordPress上，相比GitHub Pages来说麻烦不少，另外，GitHub虽然访问速度不快，但是至少暂时不会完全被墙。\nWordPress Export -\x26gt; Markdown 从WordPress我们可以导出XML文件，里面包含了所有的Posts。使用wordpress-export-to-markdown这个开源工具可以将其转换成适用于静态博客的Markdown以及下载保存文中其中的图片。\n安装依赖Node.js，以默认设置安装即可，然后在PowerShell运行命令：\nnpx wordpress-export-to-markdown\r等待脚本下载完成，选择XML文件的路径后就可导出Markdown文件，为了让文章链接更加简洁，Year和Month的文件夹都没有创建。如果之前没有使用图床的话，可以将Save images attached to posts?设为Yes。\nGitHub Pages \x2b Hexo 创建repository 在GitHub创建一个名为\x26quot;你的GitHub ID.github.io\x26quot;的repository，即可拥有GitHub提供了免费的静态网站托管空间。\n安装Git和Hexo Hexo是一个在国内流行的开源建站工具，开发者来自台湾，所以中文支持很好。\n Hexo is a fast, simple \x26amp; powerful blog framework powered by Node.js.\n 虽然Hexo没有像WordPress那样非常宜人，甚至略显臃肿的后台，但是使用起来门槛并不高。\nNode.js我们已经安装好了，直接输入命令安装Hexo：\nnpm install hexo-cli -g\r在等待安装hexo的时候，完成Git的安装。\n配置SSH Keys Hexo需要和GitHub的仓库进行通讯，我们需要创建一个SSH Keys密钥对，将公钥交给GitHub用于Git操作时的签名和加密。\n 不要去硬记。 你只要想：既然是加密，那肯定是不希望别人知道我的消息，所以只有我才能解密，所以可得出公钥负责加密，私钥负责解密；同理，既然是签名，那肯定是不希望有人冒充我发消息，只有我才能发布这个签名，所以可得出私钥负责签名，公钥负责验证。\n_ 匿名用户 RSA的公钥和私钥到底哪个才是用来加密和哪个用来解密？\n 其他关于公钥和私钥的理解可以看这篇博文。\n# 生成一个新的SSH Key\rssh-keygen -t rsa -C \x26#34;你的邮箱\x26#34;\rGenerating public\/private rsa key pair.",
+    "inLanguage" : "en-us",
+    "author" : "Covey.Liu",
+    "creator" : "Covey.Liu",
+    "publisher": "Covey.Liu",
+    "accountablePerson" : "Covey.Liu",
+    "copyrightHolder" : "Covey.Liu",
+    "copyrightYear" : "2020",
+    "datePublished": "2020-02-25 15:22:56 \x2b0000 UTC",
+    "dateModified" : "2020-02-25 15:22:56 \x2b0000 UTC",
+    "url" : "https:\/\/example.com\/2020\/%E4%BB%8Ewordpress%E8%BF%81%E7%A7%BB%E5%88%B0github-pages-hexo%E5%BB%BA%E7%AB%99%E8%AE%B0%E5%BD%95\/",
+    "wordCount" : "904",
+    "keywords" : [ "建站","GitHub Pages","Hexo", "LeaveIt"]
+}
+</script>
+
+</head>
+
+  
+
+
+  <body class="">
+    <div class="wrapper">
+        <nav class="navbar">
+    <div class="container">
+        <div class="navbar-header header-logo">
+        	<a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-xihuan"></i></a>&nbsp;<a href="https://example.com">LeaveIt</a>
+        </div>
+        <div class="menu navbar-right">
+                
+                
+                <a class="menu-item" href="/posts/" title="">Blog</a>
+                
+                <a class="menu-item" href="/categories/" title="">Categories</a>
+                
+                <a class="menu-item" href="/tags/" title="">Tags</a>
+                
+                <a class="menu-item" href="/about/" title="">About</a>
+                
+                <a class="menu-item" href="/about/" title="About Hugo">About Hugo</a>
+                
+        </div>
+    </div>
+</nav>
+<nav class="navbar-mobile" id="nav-mobile" style="display: none">
+     <div class="container">
+        <div class="navbar-header">
+            <div>  <a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-xihuan"></i></a>&nbsp;<a href="https://example.com">LeaveIt</a></div>
+            <div class="menu-toggle">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+     
+          <div class="menu" id="mobile-menu">
+                
+                
+                <a class="menu-item" href="/posts/" title="">Blog</a>
+                
+                <a class="menu-item" href="/categories/" title="">Categories</a>
+                
+                <a class="menu-item" href="/tags/" title="">Tags</a>
+                
+                <a class="menu-item" href="/about/" title="">About</a>
+                
+                <a class="menu-item" href="/about/" title="About Hugo">About Hugo</a>
+                
+        </div>
+    </div>
+</nav>
+    	 <main class="main">
+          <div class="container">
+      		
+<article class="post-warp" itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">从WordPress迁移到GitHub Pages：Hexo建站记录</h1>
+        <div class="post-meta">
+                Written by <a itemprop="name" href="https://example.com" rel="author">Covey.Liu</a> with ♥ 
+                <span class="post-time">
+                on <time datetime=2020-02-25 itemprop="datePublished">February 25, 2020</time>
+                </span>
+                in
+                
+        </div>
+    </header>
+    <div class="post-content">
+        
+
+        
+            
+        
+
+        
+        
+     
+          
+          
+          
+
+          
+          
+          
+
+          <p>年纪渐长，记忆的衰退有时并不是生理性的。要往脑子里塞的东西越来越多，越来越奇形怪状，有效就没法好好放进去了。只能留一点，放一点。于是难免有漏网之鱼。到后来就觉得可惜。</p>
+<p>老戴说，社交网络很难作为自己的记忆留存，的确，碎片化的转评赞，只能用来让“别人”来窥探一个不完整的自己。我有一个完整的叙述在几个庞大又缺乏整理的OneNote笔记本里，作为知识的采集和消化，这绰绰有余，但作为输出和理解，这远远不够。</p>
+<!-- raw HTML omitted -->
+<p>这个站其实16年或者更早就有了，写些乱七八糟的东西，也不管自己的文笔是多么糟糕了。但是Lost Years之后手愈加生了。我自知不是一个很好的创作者，和16 personalities的结论恰恰相反。但是从意愿上来说，讲述是一件让人愉快的事情。</p>
+<p>言归正传，本文记录一下自己如何把之前的WordPress迁移到GitHub Pages并用Hexo建站和简单调试的过程，以供自己未来查阅，注意，此非教程，但如若对读者有些帮助，也不赖。</p>
+<hr>
+<p>之前的写过一些文章，拍过几张照片，都存在了一个搭建在VPS的WordPress上，相比GitHub Pages来说麻烦不少，另外，GitHub虽然访问速度不快，但是至少暂时不会完全被墙。</p>
+<h2 id="wordpress-export---markdown">WordPress Export -&gt; Markdown</h2>
+<p>从WordPress我们可以<a href="https://wordpress.org/support/article/tools-export-screen/">导出XML文件</a>，里面包含了所有的Posts。使用<a href="https://github.com/lonekorean/wordpress-export-to-markdown">wordpress-export-to-markdown</a>这个开源工具可以将其转换成适用于静态博客的Markdown以及下载保存文中其中的图片。</p>
+<p>安装依赖<a href="https://nodejs.org/">Node.js</a>，以默认设置安装即可，然后在PowerShell运行命令：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-powershell" data-lang="powershell">npx wordpress-export-to-markdown
+</code></pre></div><p>等待脚本下载完成，选择XML文件的路径后就可导出Markdown文件，为了让文章链接更加简洁，Year和Month的文件夹都没有创建。如果之前没有使用图床的话，可以将<code>Save images attached to posts?</code>设为Yes。</p>
+<p><img src="http://img.osland.me/static/images/wordpress-export-to-markdown.gif" alt="wordpress-export-to-markdown"></p>
+<h2 id="github-pages--hexo">GitHub Pages + Hexo</h2>
+<h3 id="创建repository">创建repository</h3>
+<p>在GitHub创建一个名为&quot;你的GitHub ID.github.io&quot;的repository，即可拥有GitHub提供了免费的静态网站托管空间。</p>
+<h3 id="安装git和hexo">安装Git和Hexo</h3>
+<p><a href="https://hexo.io/">Hexo</a>是一个在国内流行的开源建站工具，开发者来自台湾，所以中文支持很好。</p>
+<blockquote>
+<p><em>Hexo</em> is a fast, simple &amp; powerful blog framework powered by Node.js.</p>
+</blockquote>
+<p>虽然Hexo没有像WordPress那样非常宜人，甚至略显臃肿的后台，但是使用起来门槛并不高。</p>
+<p>Node.js我们已经安装好了，直接输入命令安装Hexo：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">npm install hexo-cli -g
+</code></pre></div><p>在等待安装hexo的时候，完成<a href="https://git-scm.com/">Git</a>的安装。</p>
+<h3 id="配置ssh-keys">配置SSH Keys</h3>
+<p>Hexo需要和GitHub的仓库进行通讯，我们需要创建一个SSH Keys密钥对，将公钥交给GitHub用于Git操作时的签名和加密。</p>
+<blockquote>
+<p>不要去硬记。
+你只要想：既然是加密，那肯定是不希望别人知道我的消息，所以只有我才能解密，所以可得出<strong>公钥负责加密，私钥负责解密</strong>；同理，既然是签名，那肯定是不希望有人冒充我发消息，只有我才能发布这个签名，所以可得出<strong>私钥负责签名，公钥负责验证</strong>。</p>
+<p>_ 匿名用户 <a href="https://www.zhihu.com/question/25912483">RSA的公钥和私钥到底哪个才是用来加密和哪个用来解密？</a></p>
+</blockquote>
+<p>其他关于公钥和私钥的理解可以看<a href="https://songlee24.github.io/2015/05/03/public-key-and-private-key/">这篇博文</a>。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#75715e"># 生成一个新的SSH Key</span>
+ssh-keygen -t rsa -C <span style="color:#e6db74">&#34;你的邮箱&#34;</span>
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">Generating public/private rsa key pair.
+Enter file in which to save the key <span style="color:#f92672">(</span>C:<span style="color:#ae81ff">\U</span>sers<span style="color:#ae81ff">\s</span>henj/.ssh/id_rsa<span style="color:#f92672">)</span>: // 回车
+Enter passphrase <span style="color:#f92672">(</span>empty <span style="color:#66d9ef">for</span> no passphrase<span style="color:#f92672">)</span>: // 密码可以为空
+Enter same passphrase again:
+Your identification has been saved in C:<span style="color:#ae81ff">\U</span>sers<span style="color:#ae81ff">\i</span>gloo/.ssh/id_rsa.
+Your public key has been saved in C:<span style="color:#ae81ff">\U</span>sers<span style="color:#ae81ff">\i</span>gloo/.ssh/id_rsa.pub.
+</code></pre></div><p>在 C:\Users\用户名/.ssh/中用记事本打开id_rsa.pub文件，打开GitHub，点击右上角头像 - Setting - SSH and GPG keys，将id_rsa.pub文件中的所有内容复制进去，Title任意设置。</p>
+<p><img src="http://img.osland.me/static/images/SSHKey.png" alt=""></p>
+<p>完善以下个人信息</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">git config --global user.name <span style="color:#e6db74">&#34;Igloo302&#34;</span> //GitHub用户名
+git config --global user.email  <span style="color:#e6db74">&#34;shenjy302@live.com&#34;</span> //GitHub邮箱
+</code></pre></div><p>这样SSH Key就配置完成了。</p>
+<h3 id="搭建hexo">搭建Hexo</h3>
+<h3 id="初始化">初始化</h3>
+<p>在电脑里创建任意一个文件夹，用来存放站点文件。在文件夹中空白处右键，选择<code>Git Bash Here</code>。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#75715e"># 初始化Hexo</span>
+hexo init
+<span style="color:#75715e"># 安装一些依赖包</span>
+npm install
+</code></pre></div><p>执行后就会创建一个Hexo站点所需的目录，输入以下命令就能浏览器打开localhost:4000预览博客了：</p>
+<pre><code>hexo g
+hexo s
+</code></pre><h3 id="更换主题">更换主题</h3>
+<p>默认的主题Lanscape并不好看，我们可以去<a href="https://hexo.io/themes/">官网</a>或者GitHub上寻找自己喜欢的主题。以<a href="https://github.com/theme-next/hexo-theme-next">hexo-theme-next</a>主题为例，克隆主题文件到的themes/next目录</p>
+<pre><code>git clone https://github.com/theme-next/hexo-theme-next themes/next
+</code></pre><p>根目录下的<code>_config.yml</code>文件包含了所有Hexo的设置，找到theme将其设置为next：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json"><span style="color:#960050;background-color:#1e0010">#</span> <span style="color:#960050;background-color:#1e0010">Extensions</span>
+<span style="color:#960050;background-color:#1e0010">##</span> <span style="color:#960050;background-color:#1e0010">Plugins:</span> <span style="color:#960050;background-color:#1e0010">https://hexo.io/plugins/</span>
+<span style="color:#960050;background-color:#1e0010">##</span> <span style="color:#960050;background-color:#1e0010">Themes:</span> <span style="color:#960050;background-color:#1e0010">https://hexo.io/themes/</span>
+<span style="color:#960050;background-color:#1e0010">theme:</span> <span style="color:#960050;background-color:#1e0010">next</span>
+</code></pre></div><p>再运行<code>hexo g</code>和<code>hexo s</code>，新的主题已经生效了。</p>
+<h3 id="恢复wordpress的文章">恢复WordPress的文章</h3>
+<p>把刚刚导出的Markdown文件复制到/source/_posts目录，预览网站，文章已经恢复了，创建的时间也得到了保留。</p>
+<h3 id="部署到github">部署到GitHub</h3>
+<p>打开GitHub进入username.github.io仓库，复制SSH地址：</p>
+<p><img src="http://img.osland.me/static/images/copyssh.png" alt="copyssh"></p>
+<p>打开_config.yml，将SSH地址复制到Deloy的repository后面并保存。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#75715e"># Deployment</span>
+<span style="color:#75715e">## Docs: https://hexo.io/docs/deployment.html</span>
+deploy:
+  <span style="color:#66d9ef">type</span>: git
+  <span style="color:#66d9ef">repository</span>: git@github.com:Igloo302/igloo302.github.io.git
+  <span style="color:#66d9ef">branch</span>: master
+</code></pre></div><p>运行运行<code>hexo g</code>和<code>hexo d</code>，输入SSH密码，站点就被push到GitHub了，浏览<code>username.github.io</code>试试吧。</p>
+<h2 id="插件和设置">插件和设置</h2>
+<h3 id="七牛图床">七牛图床</h3>
+<blockquote>
+<p>注意：七牛云提供的测试域名只能使用30天，之后必须更换为<strong>已经备案的域名</strong></p>
+</blockquote>
+<h4 id="typorapicgo">Typora+PicGo</h4>
+<p>为了未来迁移更方便，<strong>不建议使用七牛云插件</strong>，也可以直接使用PicGo获取MD的图片链接，类似：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-markdown" data-lang="markdown">![](http://img.osland.me/portfolio/animal.jpeg)
+</code></pre></div><p>Typora可以支持PicGo的调用，配合使用很方便。</p>
+<h4 id="七牛云插件">七牛云插件</h4>
+<p>参考这篇教程：<a href="https://zhuanlan.zhihu.com/p/34747279">Hexo七牛云图床使用</a>。</p>
+<p>简单来需要这几步：</p>
+<ol>
+<li>注册一个七牛云的对象存储空间</li>
+<li>安装七牛云插件：</li>
+</ol>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">npm install hexo-qiniu-sync --save
+</code></pre></div><ol start="3">
+<li>添加插件配置信息到 <code>_config.yml</code>文件中</li>
+</ol>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#75715e">#七牛云存储设置</span>
+<span style="color:#75715e">##offline       是否离线. 离线状态将使用本地地址渲染</span>
+<span style="color:#75715e">##sync          是否同步</span>
+<span style="color:#75715e">##bucket        空间名称.</span>
+<span style="color:#75715e">##access_key    上传密钥AccessKey</span>
+<span style="color:#75715e">##secret_key    上传密钥SecretKey</span>
+<span style="color:#75715e">##secret_file   秘钥文件路径，可以将上述两个属性配置到文件内，防止泄露，json格式。绝对路径相对路径均可</span>
+<span style="color:#75715e">##dirPrefix     上传的资源子目录前缀.如设置，需与urlPrefix同步 </span>
+<span style="color:#75715e">##urlPrefix     外链前缀.</span>
+<span style="color:#75715e">##up_host      上传服务器路径,如选择华北区域的话配置为http://up-z1.qiniu.com</span>
+<span style="color:#75715e">##local_dir     本地目录.</span>
+<span style="color:#75715e">##update_exist  是否更新已经上传过的文件(仅文件大小不同或在上次上传后进行更新的才会重新上传)</span>
+<span style="color:#75715e">##image/js/css  子参数folder为不同静态资源种类的目录名称，一般不需要改动</span>
+<span style="color:#75715e">##image.extend  这是个特殊参数，用于生成缩略图或加水印等操作。具体请参考http://developer.qiniu.com/docs/v6/api/reference/fop/image/ </span>
+<span style="color:#75715e">##              可使用基本图片处理、高级图片处理、图片水印处理这3个接口。例如 ?imageView2/2/w/500 即生成宽度最多500px的缩略图</span>
+qiniu:
+  <span style="color:#66d9ef">offline</span>: <span style="color:#66d9ef">false</span>
+  <span style="color:#66d9ef">sync</span>: <span style="color:#66d9ef">true</span>
+  <span style="color:#66d9ef">bucket</span>: xxxxx
+  <span style="color:#75715e"># secret_file: sec/qn.json or C:</span>
+  <span style="color:#66d9ef">access_key</span>: xxxxxxxx
+  <span style="color:#66d9ef">secret_key</span>: xxxxxxxx
+  <span style="color:#66d9ef">dirPrefix</span>: static
+  <span style="color:#66d9ef">urlPrefix</span>: http://xxxxxx.bkt.clouddn.com/static
+  <span style="color:#66d9ef">up_host</span>: http://upload.qiniu.com
+  <span style="color:#66d9ef">local_dir</span>: static
+  <span style="color:#66d9ef">update_exist</span>: <span style="color:#66d9ef">true</span>
+  <span style="color:#66d9ef">image</span>: 
+    <span style="color:#66d9ef">folder</span>: images
+    <span style="color:#66d9ef">extend</span>: 
+  js:
+    <span style="color:#66d9ef">folder</span>: js
+  css:
+    <span style="color:#66d9ef">folder</span>: css
+</code></pre></div><ol start="4">
+<li>把需要上传的图片放到Hexo目录 - static - images文件夹</li>
+<li>在文中使用shorcode使用图片</li>
+</ol>
+<pre><code>{% qiniu xxx.png %}
+</code></pre><h4 id="批量替换图片外链">批量替换图片外链</h4>
+<p>在更换了已经备案的域名之后，需要把之前的临时链接更改为新域名，同时把之前的七牛云插件的shortcode更换为外链。手动去更改这些文件中的url和shortcode显然太劳神费力的，所以我写了一个<a href="/code/modifyURL.py">python脚本</a>实现批量替换（参考了<a href="https://juejin.im/post/5bde4f136fb9a049cb182f1b">KURANADO</a>的代码）</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> os
+<span style="color:#f92672">import</span> io
+<span style="color:#f92672">import</span> sys
+
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">modifyURL</span>(file): 
+    <span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#39;filename:</span><span style="color:#e6db74">%s</span><span style="color:#e6db74">&#39;</span> <span style="color:#f92672">%</span> file)
+    content <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;&#34;</span>
+    <span style="color:#66d9ef">with</span> io<span style="color:#f92672">.</span>open(os<span style="color:#f92672">.</span>path<span style="color:#f92672">.</span>join(file_dir, file), <span style="color:#e6db74">&#34;r&#34;</span>, encoding<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;utf-8&#34;</span>, errors<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;ignore&#39;</span>) <span style="color:#66d9ef">as</span> f:
+        <span style="color:#66d9ef">for</span> line <span style="color:#f92672">in</span> f:
+            <span style="color:#75715e"># 替换链接</span>
+            <span style="color:#66d9ef">if</span> old_str <span style="color:#f92672">in</span> line:
+                line <span style="color:#f92672">=</span> line<span style="color:#f92672">.</span>replace(old_str, new_str)
+                <span style="color:#66d9ef">print</span>(line)
+            <span style="color:#75715e"># 替换shortcode</span>
+            <span style="color:#66d9ef">if</span> line<span style="color:#f92672">.</span>startswith(<span style="color:#e6db74">&#39;{% qnimg&#39;</span>):
+                line <span style="color:#f92672">=</span> line<span style="color:#f92672">.</span>replace(<span style="color:#e6db74">&#39;{% qnimg&#39;</span>, <span style="color:#e6db74">&#39;&#39;</span>)
+                line <span style="color:#f92672">=</span> line<span style="color:#f92672">.</span>replace(<span style="color:#e6db74">&#39;%}&#39;</span>, <span style="color:#e6db74">&#39;&#39;</span>)
+                line <span style="color:#f92672">=</span> line<span style="color:#f92672">.</span>replace(<span style="color:#e6db74">&#39; &#39;</span>, <span style="color:#e6db74">&#39;&#39;</span>)
+                line <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;![](&#39;</span> <span style="color:#f92672">+</span> new_str <span style="color:#f92672">+</span> line<span style="color:#f92672">.</span>strip(<span style="color:#e6db74">&#39;</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#39;</span>) <span style="color:#f92672">+</span> <span style="color:#e6db74">&#39;)&#39;</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">&#39;</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#39;</span>
+                <span style="color:#66d9ef">print</span>(line)
+            content <span style="color:#f92672">+=</span> line
+    <span style="color:#66d9ef">with</span> io<span style="color:#f92672">.</span>open(os<span style="color:#f92672">.</span>path<span style="color:#f92672">.</span>join(file_dir, file), <span style="color:#e6db74">&#34;w&#34;</span>, encoding<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;utf-8&#34;</span>, errors<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;ignore&#39;</span>) <span style="color:#66d9ef">as</span> f:
+        f<span style="color:#f92672">.</span>write(content)
+
+<span style="color:#75715e"># 确认目录</span>
+file_dir <span style="color:#f92672">=</span> sys<span style="color:#f92672">.</span>path[<span style="color:#ae81ff">0</span>]<span style="color:#f92672">.</span>replace(<span style="color:#e6db74">&#39;</span><span style="color:#ae81ff">\\</span><span style="color:#e6db74">&#39;</span>, <span style="color:#e6db74">&#39;/&#39;</span>)
+file_dir <span style="color:#f92672">=</span> input(<span style="color:#e6db74">&#39;当前目录为&#39;</span> <span style="color:#f92672">+</span> file_dir <span style="color:#f92672">+</span> <span style="color:#e6db74">&#39;，请输入工作目录或直接回车在当前目录执行&#39;</span>)
+<span style="color:#66d9ef">if</span> file_dir <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;&#39;</span>:
+    file_dir <span style="color:#f92672">=</span> sys<span style="color:#f92672">.</span>path[<span style="color:#ae81ff">0</span>]<span style="color:#f92672">.</span>replace(<span style="color:#e6db74">&#39;</span><span style="color:#ae81ff">\\</span><span style="color:#e6db74">&#39;</span>, <span style="color:#e6db74">&#39;/&#39;</span>)
+<span style="color:#66d9ef">else</span>:
+    <span style="color:#66d9ef">if</span> <span style="color:#f92672">not</span> os<span style="color:#f92672">.</span>path<span style="color:#f92672">.</span>exists(file_dir):
+        <span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#39;目录无效，请确认后重试&#39;</span>)
+        os<span style="color:#f92672">.</span>_exit(<span style="color:#ae81ff">0</span>)
+
+<span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#39;请输入除图片名外完整的图片外链链接&#39;</span>)
+old_str <span style="color:#f92672">=</span> input(<span style="color:#e6db74">&#39;旧链接(格式为 http://img.osland.me/static/images/ )：&#39;</span>)
+new_str <span style="color:#f92672">=</span> input(<span style="color:#e6db74">&#39;新链接(格式为 http://img.osland.me/static/images/ ):&#39;</span>)
+comfirm <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;&#39;</span>
+<span style="color:#66d9ef">while</span> comfirm <span style="color:#f92672">!=</span> <span style="color:#e6db74">&#39;y&#39;</span>:
+    comfirm <span style="color:#f92672">=</span> input(file_dir <span style="color:#f92672">+</span> <span style="color:#e6db74">&#39;中所有Markdown文件的&#39;</span> <span style="color:#f92672">+</span> old_str <span style="color:#f92672">+</span> <span style="color:#e6db74">&#39;会被替换为&#39;</span> <span style="color:#f92672">+</span> new_str <span style="color:#f92672">+</span> <span style="color:#e6db74">&#39;，输入y后回车确认&#39;</span>)
+
+<span style="color:#75715e"># 遍历目录下文件</span>
+<span style="color:#66d9ef">for</span> folder, subFolder, filenames <span style="color:#f92672">in</span> os<span style="color:#f92672">.</span>walk(file_dir):
+    <span style="color:#66d9ef">for</span> filename <span style="color:#f92672">in</span> filenames:
+        <span style="color:#66d9ef">if</span> os<span style="color:#f92672">.</span>path<span style="color:#f92672">.</span>splitext(filename)[<span style="color:#ae81ff">1</span>] <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;.md&#39;</span>:
+            <span style="color:#75715e"># 执行URL修改</span>
+            modifyURL(filename)
+
+<span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#39;完成&#39;</span>)
+
+</code></pre></div><p>执行方式如图</p>
+<p><img src="http://img.osland.me/blog/modifyURL.png" alt="modifyURL"></p>
+<h3 id="绑定域名">绑定域名</h3>
+<h3 id="评论">评论</h3>
+<p>对比了几种评论的方式，基于GitHub Issue的需要GitHub登录才能评论，<a href="www.disqus.com">disqus</a>需要翻墙，基于LeanCloud的无后端评论系统Valine](valine.js.org)应该是比较合适的。</p>
+<p>设置方法<a href="https://www.playpi.org/2019032001.html">参考</a>：注册LeanCloud并创建应用，在设置-应用 Keys，可以看到应用的 <code>appid</code> 和 <code>appkey</code>，将其填写到Next主题的配置文件中：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#75715e"># Valine</span>
+<span style="color:#75715e"># For more information: https://valine.js.org, https://github.com/xCss/Valine</span>
+valine:
+  <span style="color:#66d9ef">enable</span>: <span style="color:#66d9ef">true</span>
+  <span style="color:#66d9ef">appid</span>: SIOuMPbxxxxxzGzoHsz
+  <span style="color:#66d9ef">appkey</span>: uv74bsFWxxxxV8MIjM
+  <span style="color:#66d9ef">notify</span>: <span style="color:#66d9ef">false</span> <span style="color:#75715e"># Mail notifier</span>
+  <span style="color:#66d9ef">verify</span>: <span style="color:#66d9ef">false</span> <span style="color:#75715e"># Verification code</span>
+  <span style="color:#66d9ef">placeholder</span>: Mann Tracht, Un Gott Lacht. <span style="color:#75715e"># Comment box placeholder 占位符</span>
+  <span style="color:#66d9ef">avatar</span>: mm <span style="color:#75715e"># Gravatar style</span>
+  <span style="color:#66d9ef">guest_info</span>: nick,mail <span style="color:#75715e"># nick,mail,link Custom comment header 需要填写的内容</span>
+  <span style="color:#66d9ef">pageSize</span>: <span style="color:#ae81ff">10</span> <span style="color:#75715e"># Pagination size</span>
+  <span style="color:#66d9ef">language: # Language, available values</span>: en, zh-cn
+  <span style="color:#66d9ef">visitor</span>: <span style="color:#66d9ef">false</span> <span style="color:#75715e"># Article reading statistic</span>
+  <span style="color:#66d9ef">comment_count</span>: <span style="color:#66d9ef">true</span> <span style="color:#75715e"># If false, comment count will only be displayed in post page, not in home page</span>
+  <span style="color:#66d9ef">recordIP</span>: <span style="color:#66d9ef">true</span> <span style="color:#75715e"># Whether to record the commenter IP</span>
+  <span style="color:#66d9ef">serverURLs</span>: <span style="color:#75715e"># When the custom domain name is enabled, fill it in here (it will be detected automatically by default, no need to fill in)</span>
+  <span style="color:#75715e">#post_meta_order: 0</span>
+</code></pre></div><blockquote>
+<p>由于Valine 是无后端评论系统，所以也就没有开发评论数据管理功能。请自行登录<code>Leancloud应用</code>管理。</p>
+<p>具体步骤：<code>登录</code>&gt;<code>选择你创建的应用</code>&gt;<code>存储</code>&gt;选择Class <code>Comment</code>，然后就可以尽情的发挥你的权利啦(～￣▽￣)～</p>
+<p>快速开始 - <a href="https://valine.js.org/quickstart.html">https://valine.js.org/quickstart.html</a></p>
+</blockquote>
+<h3 id="github托管所有文件">GitHub托管所有文件</h3>
+<p>此前的设置中只把Hexo文件夹Publish目录的静态网页文件上传到了GitHub空间，这对于文件的备份造成了一定的挑战。因此我再创建了一个GitHub Repository来存储所有的文件，细节略。最终效果是可以通过<code>git add . &amp;&amp; git commit -m 'Update' &amp;&amp; git push origin master</code>将所有文件上传到名为blog的空间中~~，同时username.github.io/blog也可以用于访问静态主页（暂未详细考虑）~~。</p>
+<p>一个不太合理的方式：可以考虑将主题文件夹下的.git删除，以起到将主题文件夹上传的功能。但是这样会对之后主题的升级造成困难，更合理的方法参考<a href="https://github.com/theme-next/hexo-theme-next/blob/master/docs/DATA-FILES.md">官方</a>，或者fork主题+submodule。</p>
+<h3 id="自动化部署脚本">自动化部署脚本</h3>
+<p>每次Git Bash一堆指令确实有点麻烦，写了一个批处理的脚本（Windows）：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-powershell" data-lang="powershell">echo <span style="color:#e6db74">&#34;Hexo Deployment&#34;</span>
+<span style="color:#e6db74">&#34;C:\Program Files\Git\bin\sh.exe&#34;</span>  --login -i -c <span style="color:#e6db74">&#34;hexo g&#34;</span>
+<span style="color:#e6db74">&#34;C:\Program Files\Git\bin\sh.exe&#34;</span>  --login -i -c <span style="color:#e6db74">&#34;hexo d&#34;</span>
+
+echo <span style="color:#e6db74">&#34;Push to GitHub&#34;</span>
+git add . &amp;&amp; git commit -m <span style="color:#e6db74">&#39;Update&#39;</span> &amp;&amp; git push origin master
+</code></pre></div><p>保存成update.bat在Hexo根目录下运行即可（写得比较粗糙，见笑）。</p>
+<h4 id="将博客添加到百度和google索引">将博客添加到百度和Google索引</h4>
+<h5 id="生成站点地图">生成站点地图</h5>
+<ol>
+<li>安装sitemap插件</li>
+</ol>
+<pre><code>npm install hexo-generator-sitemap --save 
+npm install hexo-generator-baidu-sitemap --save
+</code></pre><ol start="2">
+<li>在配置文件中找url，修改为<code>url: https://igloo302.github.io</code></li>
+<li>再次执行<code>hexo g</code>后就会在网站目录中生成sitemap.xml和baidusitemap.xml</li>
+</ol>
+<h4 id="google">Google</h4>
+<ol start="2">
+<li>在<a href="https://search.google.com/search-console/welcome">Google Search Console</a>中添加自己的网址：</li>
+</ol>
+<p>![Google console](<a href="http://img.osland.me/blog/Google">http://img.osland.me/blog/Google</a> console.png)</p>
+<ol start="4">
+<li>下载HTML，添加到\source目录，并在配置文件中的<code>skip_render:</code> 后添加<code>'googlea53bxxxx.html'</code>（包含引号），如果是多个文件写成<code>['a.html', 'b,html']</code></li>
+</ol>
+<p><img src="http://img.osland.me/blog/%E6%89%80%E6%9C%89%E6%9D%83.png" alt="所有权"></p>
+<ol start="2">
+<li>找到索引-站点地图，输入sitemap.xml</li>
+</ol>
+<p><img src="http://img.osland.me/blog/Googlesitemap.png" alt="Googlesitemap"></p>
+<h5 id="百度">百度</h5>
+<ol>
+<li><a href="https://ziyuan.baidu.com/linksubmit/index">提交链接</a>，和Google一样的方式验证</li>
+<li>在资源提交-连接提交中找到自动提交-sitemap，地址填写为<code>xxxxx.github.io/baidusitemap.xml</code></li>
+</ol>
+<h2 id="用hexo写博文">用Hexo写博文</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#75715e"># 创建新文章</span>
+hexo new <span style="color:#e6db74">&#39;一篇文章&#39;</span>
+</code></pre></div><p>找到/source/_posts目录下的<code>一篇文章.md</code>，就可以写博文了。</p>
+<p>如果不想直接显示，可以先创建草稿再发布：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#75715e"># 创建草稿</span>
+hexo new draft <span style="color:#e6db74">&#39;一篇草稿&#39;</span>
+
+<span style="color:#75715e"># 发布</span>
+hexo publish <span style="color:#e6db74">&#39;一篇草稿&#39;</span>
+</code></pre></div><p>其他常用指令</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">在.md文档中加入 &lt;!-- more --&gt; 可以显示“阅读全文”
+</code></pre></div><h2 id="用n1部署hexo">用N1部署Hexo</h2>
+<p>经过一段时间的使用，遇到的痛点是Hexo只能在电脑上进行编辑和发布，多平台的体验很差。于是考虑使用一台小主机部署Hexo，这样任何时候都可以连接小主机使用Hexo生成静态网页并发布。</p>
+<p>本节参考了<a href="https://blog.csdn.net/Colton_Null">喝酒不骑马</a>的<a href="https://blog.csdn.net/Colton_Null/article/details/93805908">如何搭建自己的博客 - 基于 Hexo + Docker + Nginx + Git + Linux</a>，与之不同，我并不打算让小主机来当静态网站服务器，毕竟国内的主机还需要备案，而且所有设备性能也不高。</p>
+<p>我采用的设备依旧是安装了荒野无灯小钢炮系统的N1，这个系统极度精简，而且自带了Docker，除了不支持Wi-Fi以外几乎没有缺点。所有Linux主机的操作方式都是类似的。</p>
+<p>小钢炮自带的SSH软件是dropbear，生成SSH key的方式有所不同。查询ssh的帮助信息可知，默认的认证文件为.ssh/id_dropbear，因此我们需要创建一个私钥</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#f92672">[</span>root@N1:~<span style="color:#f92672">]</span><span style="color:#75715e"># dropbearkey -t rsa -f ~/.ssh/id_dropbear</span>
+Generating <span style="color:#ae81ff">2048</span> bit rsa key, this may take a <span style="color:#66d9ef">while</span>...
+Public key portion is:
+ssh-rsa AAAAB3NzaC1yc2EAAAADAQ...sk
+Fingerprint: sha1!! eb:d1:b5:f0:9e:72:......9:a9:d2:d2:d8
+</code></pre></div><p>可以再输入以下命令将公钥保存成文件：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">dropbearkey -f ~/.ssh/id_dropbear -y &gt; ~/.ssh/id_dropbear.pub
+cat ~/.ssh/id_dropbear.pub
+</code></pre></div><p>将公钥添加到GitHub，然后完善个人信息：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">git config --global user.name <span style="color:#e6db74">&#34;Igloo302&#34;</span> //GitHub用户名
+git config --global user.email  <span style="color:#e6db74">&#34;shenjy302@live.com&#34;</span> //GitHub邮箱
+</code></pre></div><p>克隆Blog：</p>
+<pre><code>git clone git@github.com:Igloo302/blog.git
+</code></pre><p>安装Docker就省略了，然后我们需要创建Dockerfile。</p>
+<blockquote>
+<p>如果我们可以把每一层修改、安装、构建、操作的命令都写入一个脚本，用这个脚本来构建、定制镜像，那么之前提及的无法重复的问题、镜像构建透明性的问题、体积的问题就都会解决。这个脚本就是 Dockerfile。</p>
+<p>使用 Dockerfile 定制镜像 - <a href="https://yeasy.gitbooks.io/docker_practice/image/build.html">https://yeasy.gitbooks.io/docker_practice/image/build.html</a></p>
+</blockquote>
+<p>在某个目录下创建Dockerfile：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">mkdir Hexo
+cd Hexo
+vi Dockerfile
+</code></pre></div><p>文件内容如下：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">FROM node:latest
+MAINTAINER Igloo &lt;shenjy302@live.com&gt;
+RUN npm install
+<span style="color:#75715e"># install hexo</span>
+RUN npm install hexo-cli -g
+<span style="color:#75715e"># set home dir</span>
+WORKDIR /blog
+</code></pre></div><p>定制镜像是以一个镜像为基础，在其上进行定制，<code>FROM</code> 是指定基础镜像。<code>RUN</code> 指令是用来执行命令行命令的。WORKDIR指定了镜像的工作目录。</p>
+<p>在Dockerfile所在文件夹中执行命令（<code>.</code>代表当前目录）：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">docker build -t hexo .
+</code></pre></div><p>稍等片刻，名为hexo的定制镜像就创建好了，创建Docker容器：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">docker run -itd -p 4000:4000 -v /media/Travel/Document/blog:/blog --name hexo hexo
+</code></pre></div><p>转发4000端口用于Hexo的预览。</p>
+<p>进入Hexo Docker：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">docker exec -it hexo /bin/bash
+</code></pre></div><p><img src="http://img.osland.me//static/images/hexoDocker.jpg" alt=""></p>
+<p>执行<code>hexo</code>，如果报hexo未安装的错误就执行：</p>
+<pre><code>npm install hexo-cli -g
+</code></pre><p>和之前的操作一样，解决Git验证和加密：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">ssh-keygen -t rsa -C <span style="color:#e6db74">&#34;shenjy302@live.com&#34;</span>
+cat /root/.ssh/id_rsa.pub
+git config --global user.name <span style="color:#e6db74">&#34;Igloo302&#34;</span> //GitHub用户名
+git config --global user.email  <span style="color:#e6db74">&#34;shenjy302@live.com&#34;</span> //GitHub邮箱
+</code></pre></div><p>为了让部署过程更流畅，写了一个脚本update.sh：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#75715e">#! /bin/bash
+</span><span style="color:#75715e"></span>
+cd /media/Travel/Document/blog
+git pull
+docker exec hexo hexo g
+docker exec hexo hexo d
+git add . 
+git commit -m <span style="color:#e6db74">&#39;Update From Docker&#39;</span> 
+git push origin master
+</code></pre></div><p>在宿主机运行脚本，即可完成部署，性能比较差，所以花费的时间自然更长一点。</p>
+<p><img src="http://img.osland.me/blog/UpdatefromDocker.jpg" alt="UpdatefromDocker"></p>
+<p>使用crontab设定自动执行：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#75715e"># 每二小时发布一次</span>
+* */2 * * * sh /xxxx/update.sh
+</code></pre></div><p>这样设置之后，就可以在任何设备上pull blog这个仓库的最新状态（Android上可以使用Termux），编辑完成后push到GitHub，Docker每两个小时都会执行一次Hexo静态网页的生成和部署。</p>
+<p><img src="http://img.osland.me/blog/blog-git-push.jpg" alt="blog-git-push"></p>
+<h2 id="拓展阅读">拓展阅读</h2>
+<p><a href="http://codewithzhangyi.com/2018/04/19/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E8%87%AA%E5%B7%B1%E7%9A%84%E4%B8%AA%E4%BA%BA%E7%BD%91%E7%AB%99%EF%BC%88%E4%B8%8A%EF%BC%89/">如何搭建自己的个人网站（上）</a></p>
+<p><a href="https://zhuanlan.zhihu.com/p/92508540">2019年末，来一发基于Hexo自建博客生态指南！</a></p>
+<p><a href="https://zhuanlan.zhihu.com/p/98570271">教程 | 一文搭建你的第一个免费专属博客</a></p>
+<p><a href="https://www.vincentqin.tech/posts/build-a-website-using-hexo/">HEXO建站备忘录</a></p>
+
+    </div>
+
+    <div class="post-copyright">
+             
+            <p class="copyright-item">
+                <span>Author:</span>
+                <span>Covey.Liu </span>
+                </p>
+            
+           
+             
+            <p class="copyright-item">
+                    <span>Link:</span>
+                    <a href=https://example.com/2020/%E4%BB%8Ewordpress%E8%BF%81%E7%A7%BB%E5%88%B0github-pages-hexo%E5%BB%BA%E7%AB%99%E8%AE%B0%E5%BD%95/>https://example.com/2020/%E4%BB%8Ewordpress%E8%BF%81%E7%A7%BB%E5%88%B0github-pages-hexo%E5%BB%BA%E7%AB%99%E8%AE%B0%E5%BD%95/</span>
+            </p>
+            
+             
+            <p class="copyright-item lincese">
+                本文采用<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/" target="_blank">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可
+            </p>
+            
+    </div>
+
+  
+    <div class="post-tags">
+        
+            <section>
+            <i class="iconfont icon-tag"></i>Tag(s): 
+            
+            <span class="tag"><a href="https://example.com/tags/%E5%BB%BA%E7%AB%99/">
+                    #建站</a></span>
+            
+            <span class="tag"><a href="https://example.com/tags/github-pages/">
+                    #GitHub Pages</a></span>
+            
+            <span class="tag"><a href="https://example.com/tags/hexo/">
+                    #Hexo</a></span>
+            
+            </section>
+        
+        <section>
+                <a href="javascript:window.history.back();">back</a></span> · 
+                <span><a href="https://example.com">home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav">
+        
+        <a href="https://example.com/2020/git%E7%BD%91%E7%BB%9C%E5%8A%A0%E9%80%9F-%E4%B8%BAgit%E8%AE%BE%E7%BD%AE%E4%BB%A3%E7%90%86/" class="prev" rel="prev" title="Git网络加速|为Git设置代理"><i class="iconfont icon-left"></i>&nbsp;Git网络加速|为Git设置代理</a>
+         
+        
+        <a href="https://example.com/2020/%E4%BC%9A%E5%91%98%E7%9A%84%E8%AF%9E%E7%94%9F/" class="next" rel="next" title="会员的诞生">会员的诞生&nbsp;<i class="iconfont icon-right"></i></a>
+        
+    </div>
+
+    <div class="post-comment">
+          
+                 
+          
+    </div>
+</article>
+          </div>
+		   </main>
+      <footer class="footer">
+    <div class="copyright">
+        &copy;
+        
+        <span itemprop="copyrightYear">2011 - 2020</span>
+        
+        <span class="with-love">
+    	 <i class="iconfont icon-love"></i> 
+         </span>
+         
+            <span class="author" itemprop="copyrightHolder"><a href="https://example.com">Covey.Liu</a> | </span> 
+         
+
+         
+		  <span>Powered by <a href="https://gohugo.io/" target="_blank" rel="external nofollow">Hugo</a> & <a href="https://github.com/liuzc/leaveit" target="_blank" rel="external nofollow">LeaveIt</a></span> 
+    </div>
+</footer>
+
+
+
+
+
+
+
+
+
+
+
+
+    
+     <link href="//lib.baomitu.com/lightgallery/1.6.11/css/lightgallery.min.css" rel="stylesheet">  
+      
+     <script src="/js/vendor_gallery.min.js" async="" ></script>
+    
+  
+
+
+
+     </div>
+  </body>
+</html>

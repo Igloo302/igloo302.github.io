@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>媒体中心 on LeaveIt</title>
+    <link>https://example.com/tags/%E5%AA%92%E4%BD%93%E4%B8%AD%E5%BF%83/</link>
+    <description>Recent content in 媒体中心 on LeaveIt</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 09 Mar 2020 21:49:10 +0000</lastBuildDate>
+    
+	<atom:link href="https://example.com/tags/%E5%AA%92%E4%BD%93%E4%B8%AD%E5%BF%83/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>7×24: Jellyfin&#43;Kodi打造个人媒体中心</title>
+      <link>https://example.com/2020/724-jellyfin-kodi%E6%89%93%E9%80%A0%E4%B8%AA%E4%BA%BA%E5%AA%92%E4%BD%93%E4%B8%AD%E5%BF%83/</link>
+      <pubDate>Mon, 09 Mar 2020 21:49:10 +0000</pubDate>
+      
+      <guid>https://example.com/2020/724-jellyfin-kodi%E6%89%93%E9%80%A0%E4%B8%AA%E4%BA%BA%E5%AA%92%E4%BD%93%E4%B8%AD%E5%BF%83/</guid>
+      <description>「一台7×24小时运行的电脑可以用来做什么？」系列第二篇。作为一个数字收集癖和整理癖患者，从十几年前在VeryCD上用迅雷慢慢下载TLF组的奥斯卡全集，几KB的速度下几周，到现在对比不同的压制组作品的质量，千兆的网络压得磁盘跟不上下载速度，硬盘容量存不下想要收藏的电影。回望过去，观看的速度永远跟不上下载的速度，甚至现在都不再需要下载再看了，这个过程见证了一段网络、影视、数码的发展历史。
+Docker安装Jellyfin  Jellyfin is the volunteer-built media solution that puts you in control of your media. Stream to any device from your own server, with no strings attached. Your media, your server, your way.
+ Jellyfin的功能简单来说就是作为媒体服务器，统一管理影片，它的界面是这样的：
+相比一堆乱七八糟的文件夹又清晰又高级。
+我使用的主机是N1，搭载了荒野无灯开发的小钢炮ROM，已经自带了Jellyfin，不过更新会比较麻烦，因此重新使用Docker安装。
+首先禁用自带的jellyfin：
+# 禁用启动项mv /etc/init.d/S99jellyfin /etc/S99jellyfin.disabled# 关闭运行的jellyfinkillall jellyfin我使用的是docker镜像是jellyfin/jellyfin:nightly。
+新建Container，端口映射8096/tcp，然后设置/cache，/media和/config三个分区即可。
+使用指令一键安装：
+docker run -d -p 8096:8096 -v /your/config:/config -v /your/media:/media -v /your/cache:/cache jellyfin/jellyfin:nightly此外，也可以采用linuxserver/jellyfin的镜像：
+docker create \ --name=jellyfin \ -e PUID=$(id -u jellyfin) \ -e PGID=$(cat /etc/group | grep -e &amp;#39;^users&amp;#39; | cut -d&amp;#39;:&amp;#39; -f3) \ -e TZ=Europe/London \ -e UMASK_SET=022 `#optional` \-p 8096:8096 \ -p 8920:8920 `#optional` \-v /path/to/library:/config \ -v /path/to/tvseries:/data/tvshows \ -v /path/to/movies:/data/movies \ -v /opt/vc/lib:/opt/vc/lib `#optional` \--device /dev/dri:/dev/dri `#optional` \--device /dev/vchiq:/dev/vchiq `#optional` \--device /dev/video10:/dev/video10 `#optional` \--device /dev/video11:/dev/video11 `#optional` \--device /dev/video12:/dev/video12 `#optional` \--restart unless-stopped \ linuxserver/jellyfin更详细的安装过程也可以参考这篇教程。</description>
+    </item>
+    
+  </channel>
+</rss>

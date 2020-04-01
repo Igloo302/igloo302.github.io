@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+  <meta http-equiv="content-type" content="text/html;charset=utf-8">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noodp"/>
+  <meta name="author" content="Covey.Liu">
+  
+  
+  
+  <link rel="prev" href="https://example.com/2020/%E7%89%A9%E5%B0%BD%E5%85%B6%E7%94%A8-%E4%B8%AD%E5%85%B4b860av1-1-t2-iptv%E7%9B%92%E5%AD%90%E7%A0%B4%E8%A7%A3/" />
+  <link rel="next" href="https://example.com/2020/724-calibre-web/" />
+  <link rel="canonical" href="https://example.com/2020/724-home-assistant/" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+  <title>
+       
+       
+           7×24: IoT = Internet of Trash? Home Assistant打造全屋智能 | LeaveIt
+       
+  </title>
+  <meta name="title" content="7×24: IoT = Internet of Trash? Home Assistant打造全屋智能 | LeaveIt">
+    
+  
+  <link rel="stylesheet" href="/font/iconfont.css">
+  <link rel="stylesheet" href="/css/main.min.css">
+
+
+  
+  
+ 
+
+<script type="application/ld+json">
+ "@context" : "http://schema.org",
+    "@type" : "BlogPosting",
+    "mainEntityOfPage": {
+         "@type": "WebPage",
+         "@id": "https:\/\/example.com"
+    },
+    "articleSection" : "posts",
+    "name" : "7×24: IoT = Internet of Trash? Home Assistant打造全屋智能",
+    "headline" : "7×24: IoT = Internet of Trash? Home Assistant打造全屋智能",
+    "description" : "几年前在国外住过一个别墅，里面的智能家居设计给我留下了深刻的印象：吧台上有一个控制平板，统一控制各个房间的照明和空调温度，通过音箱播放流媒体歌曲，控制电视机播放的Netflix电视剧；每个房间还有独立的分机控制开关来单独控制各自房间的设备。\n虽然说起来并不新鲜，甚至并没有突破IoT=网络开关这个初级阶段，但是这种高度一致化的交互方式，在家庭空间尺度上和互联网内容亲密互动的感觉，都带来了超越产品功能本身的愉快体验。\n对于智能家居和IoT，很容易想到国内的米家，天猫精灵等互联网、电商以及传统白电厂商搞出的各个体系，其中米家推出了全面的家电产品、控制器以及传感器元件，价格也不太贵，综合体验可能是最好的。但是他们共有的问题就是不同的体系都在使用自己的私有协议，无法互相协作使用。\n比方说我家里就有天猫精灵，小米的扫地机，博联的灯，美的的空调，Sony的电视……这种智能家居充其量只是可以用手机App（还不是一个App）控制的电器罢了。\n如何改变这种现状呢？让国内的厂商现在放弃分蛋糕自然是不可能，那就要本文的主角登场了——\n和图标的设计一样，Home Assistant的目标是成为全屋的大脑。作为一个开源项目，开发者们将不同厂商，不同协议的IoT设备整合进这个平台，互相之间得以联动。这种联动具有很强的拓展性，可以在上面实现摄像头的人脸、宠物识别，使用TTS引擎播放特殊的文案，给你的手机推送消息等等，而不再局限于硬件厂商给你的（付费）功能。\n官方Domo展示了HA一部分的有趣的应用。\n这边会有几个乱七八糟的概念：\n Home Assistant 是一款基于 Python 的智能家居开源系统。\n——Home Assistant 中文文档\nHass.io：一个完整的UI管理的家庭自动化生态系统，它运行Home Assistant，Hass.io Supervisor和附加组件。它预先安装在HassOS上，但可以安装在任何Linux系统上。它利用了由Hass.io Supervisor管理的Docker。\nHass.io Supervisor：Hass.io Supervisor是管理Hass.io安装的程序，负责安装和更新Home Assistant，附加组件本身以及更新（如果使用的话）HassOS操作系统。\nHassOS：HassOS，家庭助理操作系统，是一种嵌入式，简约的操作系统，旨在在单板计算机（如Raspberry Pi）或虚拟机上运行Hass.io生态系统。Hass.io Supervisor可以使其保持最新状态，从而无需管理操作系统\n——HAChina 中文网\n 这四个定义中居然出现了三个「系统」…这个概念确实比较混乱，如果我们拿一台安装Armbian系统，安装Kodi的树莓派来类比的话，大概类似下图，Home-Assistant（或者叫Home Assistant Core）是最核心的功能，相当于Kodi的核心功能。\nHass.io包含了HA和附加组件，会有一键安装插件等功能，相当于一个完整的Kodi。\n Hass.io 原生提供各项功能的插件 Add-on，入口为侧边栏 『Hass.io』。Add-on 的提供方式形似应用商店，一键安装与自动配置相关功能。\n——Home Assistant 中文文档\n 而HassOS是一个专门为树莓派设计的，预装Hass.io的定制系统。\n目前官方推荐的安装方法是拿一个树莓派来安装Hass.io\/HassOS，这是最简单的，就和其他的树莓派系统一样（下载镜像刷到TF卡里面运行），可以降低使用的门槛，而且树莓派本身有GPIO，但是相对来说，成本也是比较高的。\n总结来说——\n   设备 方法 功能完整 安装难度     树莓派、英特尔NUC等官方支持的硬件 Hass.io\/HassOS ✦✦✦✦✦ ✦✧✧✧✧   主流发行版Linux主机 Home Assistant Supervised ✦✦✦✦✦✧ ✦✦✧✧✧   \/ Docker安装（群晖NAS稍有不同） ✦✦✦✧✧✧ ✦✦✧✧✧   不限 Python venv(as another user) 或者venv(as your user) ✦✦✦✧✧✧ ✦✦✦✦✧          接下来介绍一下我尝试的两种方法。",
+    "inLanguage" : "en-us",
+    "author" : "Covey.Liu",
+    "creator" : "Covey.Liu",
+    "publisher": "Covey.Liu",
+    "accountablePerson" : "Covey.Liu",
+    "copyrightHolder" : "Covey.Liu",
+    "copyrightYear" : "2020",
+    "datePublished": "2020-03-15 16:56:53 \x2b0000 UTC",
+    "dateModified" : "2020-03-15 16:56:53 \x2b0000 UTC",
+    "url" : "https:\/\/example.com\/2020\/724-home-assistant\/",
+    "wordCount" : "335",
+    "keywords" : [ "7×24","Home Assistant","Android","Linux Deploy","N1","Docker","IoT","智能家居", "LeaveIt"]
+}
+</script>
+
+</head>
+
+  
+
+
+  <body class="">
+    <div class="wrapper">
+        <nav class="navbar">
+    <div class="container">
+        <div class="navbar-header header-logo">
+        	<a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-xihuan"></i></a>&nbsp;<a href="https://example.com">LeaveIt</a>
+        </div>
+        <div class="menu navbar-right">
+                
+                
+                <a class="menu-item" href="/posts/" title="">Blog</a>
+                
+                <a class="menu-item" href="/categories/" title="">Categories</a>
+                
+                <a class="menu-item" href="/tags/" title="">Tags</a>
+                
+                <a class="menu-item" href="/about/" title="">About</a>
+                
+                <a class="menu-item" href="/about/" title="About Hugo">About Hugo</a>
+                
+        </div>
+    </div>
+</nav>
+<nav class="navbar-mobile" id="nav-mobile" style="display: none">
+     <div class="container">
+        <div class="navbar-header">
+            <div>  <a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-xihuan"></i></a>&nbsp;<a href="https://example.com">LeaveIt</a></div>
+            <div class="menu-toggle">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+     
+          <div class="menu" id="mobile-menu">
+                
+                
+                <a class="menu-item" href="/posts/" title="">Blog</a>
+                
+                <a class="menu-item" href="/categories/" title="">Categories</a>
+                
+                <a class="menu-item" href="/tags/" title="">Tags</a>
+                
+                <a class="menu-item" href="/about/" title="">About</a>
+                
+                <a class="menu-item" href="/about/" title="About Hugo">About Hugo</a>
+                
+        </div>
+    </div>
+</nav>
+    	 <main class="main">
+          <div class="container">
+      		
+<article class="post-warp" itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">7×24: IoT = Internet of Trash? Home Assistant打造全屋智能</h1>
+        <div class="post-meta">
+                Written by <a itemprop="name" href="https://example.com" rel="author">Covey.Liu</a> with ♥ 
+                <span class="post-time">
+                on <time datetime=2020-03-15 itemprop="datePublished">March 15, 2020</time>
+                </span>
+                in
+                
+        </div>
+    </header>
+    <div class="post-content">
+        
+
+        
+            
+        
+
+        
+        
+     
+          
+          
+          
+
+          
+          
+          
+
+          <p>几年前在国外住过一个别墅，里面的智能家居设计给我留下了深刻的印象：吧台上有一个控制平板，统一控制各个房间的照明和空调温度，通过音箱播放流媒体歌曲，控制电视机播放的Netflix电视剧；每个房间还有独立的分机控制开关来单独控制各自房间的设备。</p>
+<p>虽然说起来并不新鲜，甚至并没有突破IoT=网络开关这个初级阶段，但是这种高度一致化的交互方式，在家庭空间尺度上和互联网内容亲密互动的感觉，都带来了超越产品功能本身的愉快体验。</p>
+<!-- raw HTML omitted -->
+<p>对于智能家居和IoT，很容易想到国内的米家，天猫精灵等互联网、电商以及传统白电厂商搞出的各个体系，其中米家推出了全面的家电产品、控制器以及传感器元件，价格也不太贵，综合体验可能是最好的。但是他们共有的问题就是不同的体系都在使用自己的私有协议，无法互相协作使用。</p>
+<p>比方说我家里就有天猫精灵，小米的扫地机，博联的灯，美的的空调，Sony的电视……这种智能家居充其量只是可以用手机App（还不是一个App）控制的电器罢了。</p>
+<p>如何改变这种现状呢？让国内的厂商现在放弃分蛋糕自然是不可能，那就要本文的主角登场了——</p>
+<p><img src="http://img.osland.me/homeassistant-logo.png" alt="homeassistant-logo"></p>
+<p>和图标的设计一样，Home Assistant的目标是成为全屋的大脑。作为一个开源项目，开发者们将不同厂商，不同协议的IoT设备整合进这个平台，互相之间得以联动。这种联动具有很强的拓展性，可以在上面实现摄像头的人脸、宠物识别，使用TTS引擎播放特殊的文案，给你的手机推送消息等等，而不再局限于硬件厂商给你的（付费）功能。</p>
+<p><img src="http://img.osland.me/ha-demo.jpg" alt="ha-demo"></p>
+<p><a href="https://demo.home-assistant.io/">官方Domo</a>展示了HA一部分的有趣的应用。</p>
+<p>这边会有几个乱七八糟的概念：</p>
+<blockquote>
+<p><a href="https://github.com/home-assistant">Home Assistant</a> 是一款基于 Python 的智能家居开源系统。</p>
+<p>——<a href="https://home-assistant.cc/">Home Assistant 中文文档</a></p>
+<p><a href="https://www.home-assistant.io/hassio/">Hass.io</a>：一个完整的UI管理的家庭自动化生态系统，它运行Home Assistant，Hass.io Supervisor和附加组件。它预先安装在HassOS上，但可以安装在任何Linux系统上。它利用了由Hass.io Supervisor管理的Docker。</p>
+<p><strong>Hass.io Supervisor</strong>：Hass.io Supervisor是管理Hass.io安装的程序，负责安装和更新Home Assistant，附加组件本身以及更新（如果使用的话）HassOS操作系统。</p>
+<p><strong>HassOS</strong>：HassOS，家庭助理操作系统，是一种嵌入式，简约的操作系统，旨在在单板计算机（如Raspberry Pi）或虚拟机上运行Hass.io生态系统。Hass.io Supervisor可以使其保持最新状态，从而无需管理操作系统</p>
+<p>——<a href="https://www.hachina.io/">HAChina 中文网</a></p>
+</blockquote>
+<p>这四个定义中居然出现了三个「系统」…这个概念确实比较混乱，如果我们拿一台安装Armbian系统，安装Kodi的树莓派来类比的话，大概类似下图，Home-Assistant（或者叫Home Assistant Core）是最核心的功能，相当于Kodi的核心功能。</p>
+<p>Hass.io包含了HA和附加组件，会有一键安装插件等功能，相当于一个完整的Kodi。</p>
+<blockquote>
+<p>Hass.io 原生提供各项功能的插件 Add-on，入口为侧边栏 『Hass.io』。Add-on 的提供方式形似应用商店，一键安装与自动配置相关功能。</p>
+<p>——<a href="https://home-assistant.cc/hassio/addon/">Home Assistant 中文文档</a></p>
+</blockquote>
+<p>而HassOS是一个专门为树莓派设计的，预装Hass.io的定制系统。</p>
+<p><img src="http://img.osland.me/ha.png" alt="ha"></p>
+<p>目前<a href="https://www.home-assistant.io/getting-started/">官方推荐的安装方法</a>是拿一个树莓派来安装<a href="https://www.home-assistant.io/hassio/">Hass.io</a>/HassOS，这是最简单的，就和其他的树莓派系统一样（下载镜像刷到TF卡里面运行），可以降低使用的门槛，而且树莓派本身有GPIO，但是相对来说，成本也是比较高的。</p>
+<p>总结来说——</p>
+<table>
+<thead>
+<tr>
+<th>设备</th>
+<th>方法</th>
+<th>功能完整</th>
+<th>安装难度</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>树莓派、英特尔NUC等<a href="https://www.home-assistant.io/hassio/installation/">官方支持的硬件</a></td>
+<td><a href="https://www.home-assistant.io/getting-started">Hass.io/HassOS</a></td>
+<td>✦✦✦✦✦</td>
+<td>✦✧✧✧✧</td>
+</tr>
+<tr>
+<td>主流发行版Linux主机</td>
+<td><a href="https://www.home-assistant.io/hassio/installation/#alternative-install-home-assistant-supervised-on-a-generic-linux-host">Home Assistant Supervised</a></td>
+<td>✦✦✦✦✦✧</td>
+<td>✦✦✧✧✧</td>
+</tr>
+<tr>
+<td>/</td>
+<td><a href="https://www.home-assistant.io/docs/installation/docker/">Docker安装</a>（群晖NAS<a href="https://www.home-assistant.io/docs/installation/docker/#synology-nas">稍有不同</a>）</td>
+<td>✦✦✦✧✧✧</td>
+<td>✦✦✧✧✧</td>
+</tr>
+<tr>
+<td>不限</td>
+<td>Python <a href="https://www.home-assistant.io/docs/installation/raspberry-pi/">venv(as another user)</a> 或者<a href="https://www.home-assistant.io/docs/installation/virtualenv/">venv(as your user)</a></td>
+<td>✦✦✦✧✧✧</td>
+<td>✦✦✦✦✧</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>接下来介绍一下我尝试的两种方法。</p>
+<h2 id="android手机linux-deploypython">Android手机+Linux Deploy+Python</h2>
+<p>有Python开发经验的小伙伴肯定使用过PIP，作为同样是Python开发的Home-Assistant，自然也是可以使用python pip来安装的。（截止2020年03月，HA官方将该方法列为替代安装方法，Hass.io取代纯安装HA Core应该也是趋势，对于本节的硬件情况，<a href="https://www.home-assistant.io/hassio/installation/#alternative-install-home-assistant-supervised-on-a-generic-linux-host">Home Assistant Supervised</a>和<a href="https://www.home-assistant.io/docs/installation/docker/">Docker安装</a>是更好的选择）</p>
+<p>大家家里都有旧Android手机，Linux Deploy这个神器可以在Android系统中安装一个完整的Linux系统，比如ubuntu、fedora等。</p>
+<h3 id="linux-deploy">Linux Deploy</h3>
+<ol>
+<li>Root手机，安装BusyBox和Linux Deploy，打开Linux Deploy - 设置 - 更新环境</li>
+<li>点击Linux Deploy右下角的配置进行设定：
+<ol>
+<li>发行版设置为ubuntu</li>
+<li>源地址：http://mirrors.ustc.edu.cn/ubuntu-ports/</li>
+<li>设定账号密码</li>
+<li>勾选启用SSH</li>
+</ol>
+</li>
+<li>返回主界面，点击右上角 - 安装，然后就是慢慢等到显示<code>&lt;&lt;&lt; deploy</code>字样了。</li>
+</ol>
+<h3 id="安装home-assistant">安装Home-Assistant</h3>
+<p>这个过程其实和任何ubunut系统无太大差异。</p>
+<ol>
+<li>
+<p>SSH访问手机上运行的ubuntu。</p>
+</li>
+<li>
+<p>Python 3应该已经默认安装了，以<code>python -v</code>查看版本</p>
+</li>
+<li>
+<p>安装相关依赖</p>
+</li>
+</ol>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">sudo apt-get install build-essential libssl-dev libffi-dev python3-dev
+</code></pre></div><ol start="4">
+<li>安装pip3</li>
+</ol>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">sudo apt-get install -y python3-pip
+</code></pre></div><ol start="5">
+<li>
+<p>更换pip源</p>
+<p>默认的pip源比较慢，按照这个<a href="https://blog.csdn.net/xuezhangjun0121/article/details/81664260">教程</a>换成国内源，在<code>~/.pip/pip.conf</code>中添加</p>
+</li>
+</ol>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#f92672">[</span>global<span style="color:#f92672">]</span>
+index-url <span style="color:#f92672">=</span> https://pypi.tuna.tsinghua.edu.cn/simple
+</code></pre></div><ol start="6">
+<li>安装Home-Assistant</li>
+</ol>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">sudo pip3 install homeassistant -i &lt;https://pypi.tuna.tsinghua.edu.cn/simple&gt;
+</code></pre></div><ol start="7">
+<li>设置自启动：<a href="https://home-assistant.cc/installation/autostart/">自启</a></li>
+</ol>
+<p>重启后就可以通过<code>192.168.x.x:8123</code>访问HA了。</p>
+<h3 id="参考资料">参考资料</h3>
+<p><a href="https://bbs.hassbian.com/forum.php?mod=viewthread&amp;tid=27">Ubuntu安装HomeAssistant教程</a></p>
+<p><a href="https://post.smzdm.com/p/553097/">没有树莓派？没关系，手机也行！闲置安卓设备打造智能家庭中枢</a></p>
+<h2 id="n1linuxdocker">N1(Linux)+Docker</h2>
+<p>荒野无灯的N1小钢炮ROM自带了Docker，让安装HA变得很简单。</p>
+<p>修改一下docker的源，打开或创建/etc/docker/daemon.json（Linux） 或%programdata%\docker\config\daemon.json（Windows），向其中添加<code>registry-mirrors</code>项，使用交大的源，最终配置类似：</p>
+<pre><code>{
+  &quot;registry-mirrors&quot;: [&quot;https://docker.mirrors.sjtug.sjtu.edu.cn&quot;]
+}
+</code></pre><p>重启docker即可生效。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#75715e"># 拉取HA镜像</span>
+docker pull homeassistant/home-assistants
+
+<span style="color:#75715e"># 创建HA容器</span>
+docker run -d --restart<span style="color:#f92672">=</span>always <span style="color:#ae81ff">\</span>
+	 --name<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;home-assistant&#34;</span> <span style="color:#ae81ff">\</span>
+	-e TZ<span style="color:#f92672">=</span>Asia/Shanghai <span style="color:#ae81ff">\</span>
+	-v /media/Travel/Document/home-assistant:/config <span style="color:#ae81ff">\</span>
+	-v /etc/localtime:/etc/localtime:ro <span style="color:#ae81ff">\</span>
+	--net<span style="color:#f92672">=</span>host <span style="color:#ae81ff">\</span>
+	homeassistant/home-assistant
+</code></pre></div><p><code>/media/Travel/Document/home-assistant</code>更改为配置文件的存储目录。</p>
+<h2 id="ha配置">HA配置</h2>
+<h3 id="基本设定">基本设定</h3>
+<p>打开配置文件configuration.yaml，添加以下内容</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">homeassistant:
+  <span style="color:#75715e"># 名称，可为中文</span>
+  <span style="color:#66d9ef">name</span>: Home
+  <span style="color:#75715e"># 纬度</span>
+  <span style="color:#66d9ef">latitude</span>: !secret latitude
+  <span style="color:#75715e"># 经度</span>
+  <span style="color:#66d9ef">longitude</span>: !secret longitude
+  <span style="color:#75715e"># 海拔</span>
+  <span style="color:#66d9ef">elevation</span>: <span style="color:#ae81ff">10</span>
+  <span style="color:#75715e"># 度量单位，这里选择“米”</span>
+  <span style="color:#66d9ef">unit_system</span>: metric
+  <span style="color:#75715e"># 时区</span>
+  <span style="color:#66d9ef">time_zone</span>: Asia/Shanghai
+  <span style="color:#75715e"># 设备个性化</span>
+  <span style="color:#66d9ef">customize</span>: !include customize.yaml
+</code></pre></div><p>使用<a href="https://support.google.com/earth/answer/7420934?co=GENIE.Platform%3DDesktop&amp;hl=zh-Hans">Google Earth</a>查询坐标和海拔后，打开secrets.yaml添加</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#66d9ef">latitude</span>: 3xxxxx
+<span style="color:#66d9ef">longitude</span>: 1xxxxx
+</code></pre></div><h3 id="broadlink-sp-mini3天猫精灵定制版">BroadLink SP mini3天猫精灵定制版</h3>
+<p>之前买天猫精灵送了一个定制版的Wi-Fi插座，经过尝试添加到HA的方法如下：</p>
+<ol>
+<li>天猫精灵解绑，下载智慧星App，以BroadLink SP mini3天猫精灵定制版连接。</li>
+<li>打开天猫精灵App，在技能中搜索BroadLink，绑定智慧星账号</li>
+<li>在HA的配置configuration.yaml中添加</li>
+</ol>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"> switch:
+  - <span style="color:#66d9ef">platform</span>: broadlink
+    <span style="color:#66d9ef">host</span>: <span style="color:#ae81ff">192.168.6</span>.xxx
+    <span style="color:#66d9ef">mac</span>: <span style="color:#e6db74">&#39;78:0F:77:xx:xx:xx&#39;</span>
+    <span style="color:#66d9ef">type</span>:  sp2
+    <span style="color:#66d9ef">friendly_name</span>: <span style="color:#e6db74">&#39;SwitchName&#39;</span>
+    <span style="color:#66d9ef">scan_interval</span>: <span style="color:#ae81ff">5</span>
+</code></pre></div><h3 id="天猫精灵">天猫精灵</h3>
+<blockquote>
+<p>认真研读了官方文档，又拾起了多年不用的php，重写了天猫精灵的接入代码，又精益求精、不断优化，提高响应速度，在开发、测试了将近20天后，终于有了现在这个比较满意的版本。同时接到官方的通知，得知天猫精灵APP即将改版（现在新版已经发布），技能一律以品牌形式展示，技能也作了相应调整。</p>
+<p><a href="https://bbs.hassbian.com/home.php?mod=space&amp;uid=4">囧</a> - <strong><a href="eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiI2NDhmODRhMWE5ZmM0ZjE2YmIyNGY3MzFlZjlmMjUyNiIsImlhdCI6MTU4NDM0Mzk3MSwiZXhwIjoxODk5NzAzOTcxfQ.gL9ikMJUhQy1EnZ_vpKmnYK51y4xwLfUulILeq2xc00">论坛新版天猫精灵接入技能正式发布！</a></strong></p>
+</blockquote>
+<h3 id="homebridge">Homebridge</h3>
+<p>虽然Home Assistant已经原生支持了<a href="https://www.home-assistant.io/integrations/homekit">HomeKit</a>，但暂时不支持监控摄像头的显示，因此还是需要使用Homebridge。</p>
+<p>用oznu的<a href="https://hub.docker.com/r/oznu/homebridge">Homebridge镜像</a>创建容器：</p>
+<pre><code>docker run \
+  --net=host \
+  --name=homebridge \
+  -e PUID=0 -e PGID=0 \
+  -e TZ=Asia/Shanghai \
+  -v /media/Travel/Document/homebridge:/homebridge \
+  oznu/homebridge
+</code></pre><p>注意：注意，此处将PUID和PGID都设置成了0，是一个不太靠谱的做法。正确的做法是和qB一样，创建一个同名用户，将这个Docker容器指定到这个用户。不过用户权限的细节我不是特别明白，所以就先指定到root用户了。</p>
+<p>当显示出二维码的时候，安装成功，按Ctrl+C退出，然后输入以下命令</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#75715e"># 运行容器</span>
+docker start homebridge
+
+<span style="color:#75715e"># 安装homebridge-homeassistant插件</span>
+docker exec homebridge npm install homebridge-homeassistant
+</code></pre></div><p>修改Homebridge的配置文件config.json，以下是我的配置文件：</p>
+<pre><code>{
+    &quot;bridge&quot;: {
+        &quot;name&quot;: &quot;Homebridge&quot;,
+        &quot;username&quot;: &quot;……&quot;,
+        &quot;port&quot;: 51856,
+        &quot;pin&quot;: &quot;031-45-154&quot;
+    },
+    &quot;accessories&quot;: [],
+    &quot;platforms&quot;: [{
+        &quot;platform&quot;: &quot;HomeAssistant&quot;,
+        &quot;name&quot;: &quot;HomeAssistant&quot;,
+        &quot;host&quot;: &quot;http://127.0.0.1:8123&quot;, 
+        &quot;password&quot;: &quot;&quot;,
+        &quot;supported_types&quot;: [&quot;media_player&quot;, &quot;binary_sensor&quot;, &quot;climate&quot;, &quot;cover&quot;, &quot;fan&quot;, &quot;group&quot;, &quot;input_boolean&quot;, &quot;light&quot;, &quot;lock&quot;, &quot;remote&quot;, &quot;scene&quot;, &quot;sensor&quot;, &quot;switch&quot;],
+        &quot;default_visibility&quot;: &quot;visible&quot;, 
+        &quot;logging&quot;: false,
+        &quot;verify_ssl&quot;: false
+    }]
+}
+</code></pre><p>重启HomeBridge容器就生效了，去iOS中的HomeKit添加配件。</p>
+<p>参考：<a href="https://liangshuang.name/2017/07/24/homebridge-homeassistant-in-docker/">使用Docker安装Home Bridge与Home Assistant，用Siri控制智能家居</a></p>
+<hr>
+<p>持续更新……</p>
+
+    </div>
+
+    <div class="post-copyright">
+             
+            <p class="copyright-item">
+                <span>Author:</span>
+                <span>Covey.Liu </span>
+                </p>
+            
+           
+             
+            <p class="copyright-item">
+                    <span>Link:</span>
+                    <a href=https://example.com/2020/724-home-assistant/>https://example.com/2020/724-home-assistant/</span>
+            </p>
+            
+             
+            <p class="copyright-item lincese">
+                本文采用<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/" target="_blank">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可
+            </p>
+            
+    </div>
+
+  
+    <div class="post-tags">
+        
+            <section>
+            <i class="iconfont icon-tag"></i>Tag(s): 
+            
+            <span class="tag"><a href="https://example.com/tags/724/">
+                    #7×24</a></span>
+            
+            <span class="tag"><a href="https://example.com/tags/home-assistant/">
+                    #Home Assistant</a></span>
+            
+            <span class="tag"><a href="https://example.com/tags/android/">
+                    #Android</a></span>
+            
+            <span class="tag"><a href="https://example.com/tags/linux-deploy/">
+                    #Linux Deploy</a></span>
+            
+            <span class="tag"><a href="https://example.com/tags/n1/">
+                    #N1</a></span>
+            
+            <span class="tag"><a href="https://example.com/tags/docker/">
+                    #Docker</a></span>
+            
+            <span class="tag"><a href="https://example.com/tags/iot/">
+                    #IoT</a></span>
+            
+            <span class="tag"><a href="https://example.com/tags/%E6%99%BA%E8%83%BD%E5%AE%B6%E5%B1%85/">
+                    #智能家居</a></span>
+            
+            </section>
+        
+        <section>
+                <a href="javascript:window.history.back();">back</a></span> · 
+                <span><a href="https://example.com">home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav">
+        
+        <a href="https://example.com/2020/%E7%89%A9%E5%B0%BD%E5%85%B6%E7%94%A8-%E4%B8%AD%E5%85%B4b860av1-1-t2-iptv%E7%9B%92%E5%AD%90%E7%A0%B4%E8%A7%A3/" class="prev" rel="prev" title="物尽其用|中兴B860AV1.1-T2 IPTV盒子破解"><i class="iconfont icon-left"></i>&nbsp;物尽其用|中兴B860AV1.1-T2 IPTV盒子破解</a>
+         
+        
+        <a href="https://example.com/2020/724-calibre-web/" class="next" rel="next" title="7×24: 私人黄金屋Calibre Web">7×24: 私人黄金屋Calibre Web&nbsp;<i class="iconfont icon-right"></i></a>
+        
+    </div>
+
+    <div class="post-comment">
+          
+                 
+          
+    </div>
+</article>
+          </div>
+		   </main>
+      <footer class="footer">
+    <div class="copyright">
+        &copy;
+        
+        <span itemprop="copyrightYear">2011 - 2020</span>
+        
+        <span class="with-love">
+    	 <i class="iconfont icon-love"></i> 
+         </span>
+         
+            <span class="author" itemprop="copyrightHolder"><a href="https://example.com">Covey.Liu</a> | </span> 
+         
+
+         
+		  <span>Powered by <a href="https://gohugo.io/" target="_blank" rel="external nofollow">Hugo</a> & <a href="https://github.com/liuzc/leaveit" target="_blank" rel="external nofollow">LeaveIt</a></span> 
+    </div>
+</footer>
+
+
+
+
+
+
+
+
+
+
+
+
+    
+     <link href="//lib.baomitu.com/lightgallery/1.6.11/css/lightgallery.min.css" rel="stylesheet">  
+      
+     <script src="/js/vendor_gallery.min.js" async="" ></script>
+    
+  
+
+
+
+     </div>
+  </body>
+</html>

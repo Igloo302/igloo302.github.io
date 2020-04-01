@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+  <meta http-equiv="content-type" content="text/html;charset=utf-8">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noodp"/>
+  <meta name="author" content="Covey.Liu">
+  
+  
+  
+  <link rel="prev" href="https://example.com/2020/%E5%AE%89%E8%A3%85%E6%88%B7%E5%A4%96%E7%9B%91%E6%8E%A7%E7%B3%BB%E7%BB%9F%E5%B0%8F%E8%AE%B0%E6%97%A0%E9%A2%84%E5%9F%8B%E7%BA%BFnas%E5%BD%95%E5%83%8F%E6%9C%BA/" />
+  <link rel="next" href="https://example.com/2020/724-%E8%8D%92%E9%87%8E%E6%97%A0%E7%81%AFn1%E5%B0%8F%E9%92%A2%E7%82%AEpt%E4%B8%8B%E8%BD%BD%E6%9C%BA%E7%AE%80%E5%8D%95%E8%B0%83%E6%95%99/" />
+  <link rel="canonical" href="https://example.com/2020/724-jellyfin-kodi%E6%89%93%E9%80%A0%E4%B8%AA%E4%BA%BA%E5%AA%92%E4%BD%93%E4%B8%AD%E5%BF%83/" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+  <title>
+       
+       
+           7×24: Jellyfin&#43;Kodi打造个人媒体中心 | LeaveIt
+       
+  </title>
+  <meta name="title" content="7×24: Jellyfin&#43;Kodi打造个人媒体中心 | LeaveIt">
+    
+  
+  <link rel="stylesheet" href="/font/iconfont.css">
+  <link rel="stylesheet" href="/css/main.min.css">
+
+
+  
+  
+ 
+
+<script type="application/ld+json">
+ "@context" : "http://schema.org",
+    "@type" : "BlogPosting",
+    "mainEntityOfPage": {
+         "@type": "WebPage",
+         "@id": "https:\/\/example.com"
+    },
+    "articleSection" : "posts",
+    "name" : "7×24: Jellyfin\x2bKodi打造个人媒体中心",
+    "headline" : "7×24: Jellyfin\x2bKodi打造个人媒体中心",
+    "description" : "「一台7×24小时运行的电脑可以用来做什么？」系列第二篇。作为一个数字收集癖和整理癖患者，从十几年前在VeryCD上用迅雷慢慢下载TLF组的奥斯卡全集，几KB的速度下几周，到现在对比不同的压制组作品的质量，千兆的网络压得磁盘跟不上下载速度，硬盘容量存不下想要收藏的电影。回望过去，观看的速度永远跟不上下载的速度，甚至现在都不再需要下载再看了，这个过程见证了一段网络、影视、数码的发展历史。\nDocker安装Jellyfin  Jellyfin is the volunteer-built media solution that puts you in control of your media. Stream to any device from your own server, with no strings attached. Your media, your server, your way.\n Jellyfin的功能简单来说就是作为媒体服务器，统一管理影片，它的界面是这样的：\n相比一堆乱七八糟的文件夹又清晰又高级。\n我使用的主机是N1，搭载了荒野无灯开发的小钢炮ROM，已经自带了Jellyfin，不过更新会比较麻烦，因此重新使用Docker安装。\n首先禁用自带的jellyfin：\n# 禁用启动项\rmv \/etc\/init.d\/S99jellyfin \/etc\/S99jellyfin.disabled\r# 关闭运行的jellyfin\rkillall jellyfin\r我使用的是docker镜像是jellyfin\/jellyfin:nightly。\n新建Container，端口映射8096\/tcp，然后设置\/cache，\/media和\/config三个分区即可。\n使用指令一键安装：\ndocker run -d -p 8096:8096 -v \/your\/config:\/config -v \/your\/media:\/media -v \/your\/cache:\/cache jellyfin\/jellyfin:nightly\r此外，也可以采用linuxserver\/jellyfin的镜像：\ndocker create \\\r --name=jellyfin \\\r -e PUID=$(id -u jellyfin) \\\r -e PGID=$(cat \/etc\/group | grep -e \x26#39;^users\x26#39; | cut -d\x26#39;:\x26#39; -f3) \\\r -e TZ=Europe\/London \\\r -e UMASK_SET=022 `#optional` \\\r-p 8096:8096 \\\r -p 8920:8920 `#optional` \\\r-v \/path\/to\/library:\/config \\\r -v \/path\/to\/tvseries:\/data\/tvshows \\\r -v \/path\/to\/movies:\/data\/movies \\\r -v \/opt\/vc\/lib:\/opt\/vc\/lib `#optional` \\\r--device \/dev\/dri:\/dev\/dri `#optional` \\\r--device \/dev\/vchiq:\/dev\/vchiq `#optional` \\\r--device \/dev\/video10:\/dev\/video10 `#optional` \\\r--device \/dev\/video11:\/dev\/video11 `#optional` \\\r--device \/dev\/video12:\/dev\/video12 `#optional` \\\r--restart unless-stopped \\\r linuxserver\/jellyfin\r更详细的安装过程也可以参考这篇教程。",
+    "inLanguage" : "en-us",
+    "author" : "Covey.Liu",
+    "creator" : "Covey.Liu",
+    "publisher": "Covey.Liu",
+    "accountablePerson" : "Covey.Liu",
+    "copyrightHolder" : "Covey.Liu",
+    "copyrightYear" : "2020",
+    "datePublished": "2020-03-09 21:49:10 \x2b0000 UTC",
+    "dateModified" : "2020-03-09 21:49:10 \x2b0000 UTC",
+    "url" : "https:\/\/example.com\/2020\/724-jellyfin-kodi%E6%89%93%E9%80%A0%E4%B8%AA%E4%BA%BA%E5%AA%92%E4%BD%93%E4%B8%AD%E5%BF%83\/",
+    "wordCount" : "176",
+    "keywords" : [ "7×24","NAS","N1","Jellyfin","Kodi","媒体中心", "LeaveIt"]
+}
+</script>
+
+</head>
+
+  
+
+
+  <body class="">
+    <div class="wrapper">
+        <nav class="navbar">
+    <div class="container">
+        <div class="navbar-header header-logo">
+        	<a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-xihuan"></i></a>&nbsp;<a href="https://example.com">LeaveIt</a>
+        </div>
+        <div class="menu navbar-right">
+                
+                
+                <a class="menu-item" href="/posts/" title="">Blog</a>
+                
+                <a class="menu-item" href="/categories/" title="">Categories</a>
+                
+                <a class="menu-item" href="/tags/" title="">Tags</a>
+                
+                <a class="menu-item" href="/about/" title="">About</a>
+                
+                <a class="menu-item" href="/about/" title="About Hugo">About Hugo</a>
+                
+        </div>
+    </div>
+</nav>
+<nav class="navbar-mobile" id="nav-mobile" style="display: none">
+     <div class="container">
+        <div class="navbar-header">
+            <div>  <a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-xihuan"></i></a>&nbsp;<a href="https://example.com">LeaveIt</a></div>
+            <div class="menu-toggle">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+     
+          <div class="menu" id="mobile-menu">
+                
+                
+                <a class="menu-item" href="/posts/" title="">Blog</a>
+                
+                <a class="menu-item" href="/categories/" title="">Categories</a>
+                
+                <a class="menu-item" href="/tags/" title="">Tags</a>
+                
+                <a class="menu-item" href="/about/" title="">About</a>
+                
+                <a class="menu-item" href="/about/" title="About Hugo">About Hugo</a>
+                
+        </div>
+    </div>
+</nav>
+    	 <main class="main">
+          <div class="container">
+      		
+<article class="post-warp" itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">7×24: Jellyfin&#43;Kodi打造个人媒体中心</h1>
+        <div class="post-meta">
+                Written by <a itemprop="name" href="https://example.com" rel="author">Covey.Liu</a> with ♥ 
+                <span class="post-time">
+                on <time datetime=2020-03-09 itemprop="datePublished">March 9, 2020</time>
+                </span>
+                in
+                
+        </div>
+    </header>
+    <div class="post-content">
+        
+
+        
+            
+        
+
+        
+        
+     
+          
+          
+          
+
+          
+          
+          
+
+          <p>「一台<strong>7×24</strong>小时运行的电脑可以用来做什么？」系列第二篇。作为一个数字收集癖和整理癖患者，从十几年前在VeryCD上用迅雷慢慢下载TLF组的奥斯卡全集，几KB的速度下几周，到现在对比不同的压制组作品的质量，千兆的网络压得磁盘跟不上下载速度，硬盘容量存不下想要收藏的电影。回望过去，观看的速度永远跟不上下载的速度，甚至现在都不再需要下载再看了，这个过程见证了一段网络、影视、数码的发展历史。</p>
+<!-- raw HTML omitted -->
+<h2 id="docker安装jellyfin">Docker安装Jellyfin</h2>
+<blockquote>
+<p>Jellyfin is the volunteer-built media solution that puts <em>you</em> in control of your media. Stream to any device from your own server, with no strings attached. Your media, your server, your way.</p>
+</blockquote>
+<p>Jellyfin的功能简单来说就是作为媒体服务器，统一管理影片，它的界面是这样的：</p>
+<p><img src="https://jellyfin.org/images/screenshots/home_full.png" alt=""></p>
+<p>相比一堆乱七八糟的文件夹又清晰又高级。</p>
+<p>我使用的主机是N1，搭载了荒野无灯开发的小钢炮ROM，已经自带了Jellyfin，不过更新会比较麻烦，因此重新使用Docker安装。</p>
+<p>首先禁用自带的jellyfin：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#75715e"># 禁用启动项</span>
+mv /etc/init.d/S99jellyfin /etc/S99jellyfin.disabled
+<span style="color:#75715e"># 关闭运行的jellyfin</span>
+killall jellyfin
+</code></pre></div><p>我使用的是docker镜像是<code>jellyfin/jellyfin:nightly</code>。</p>
+<p>新建Container，端口映射8096/tcp，然后设置/cache，/media和/config三个分区即可。</p>
+<p><img src="http://img.osland.me/dockerjellyfin.png" alt=""></p>
+<p>使用指令一键安装：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">docker run -d -p 8096:8096 -v /your/config:/config -v /your/media:/media -v /your/cache:/cache jellyfin/jellyfin:nightly
+</code></pre></div><p>此外，也可以采用<code>linuxserver/jellyfin</code>的镜像：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">docker create <span style="color:#ae81ff">\</span>
+  --name<span style="color:#f92672">=</span>jellyfin <span style="color:#ae81ff">\</span>
+  -e PUID<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>id -u jellyfin<span style="color:#66d9ef">)</span> <span style="color:#ae81ff">\</span>
+  -e PGID<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>cat /etc/group | grep -e <span style="color:#e6db74">&#39;^users&#39;</span> | cut -d<span style="color:#e6db74">&#39;:&#39;</span> -f3<span style="color:#66d9ef">)</span> <span style="color:#ae81ff">\</span>
+  -e TZ<span style="color:#f92672">=</span>Europe/London <span style="color:#ae81ff">\</span>
+  -e UMASK_SET<span style="color:#f92672">=</span><span style="color:#ae81ff">022</span> <span style="color:#e6db74">`</span><span style="color:#75715e">#optional` \</span>
+  -p 8096:8096 <span style="color:#ae81ff">\</span>
+  -p 8920:8920 <span style="color:#e6db74">`</span><span style="color:#75715e">#optional` \</span>
+  -v /path/to/library:/config <span style="color:#ae81ff">\</span>
+  -v /path/to/tvseries:/data/tvshows <span style="color:#ae81ff">\</span>
+  -v /path/to/movies:/data/movies <span style="color:#ae81ff">\</span>
+  -v /opt/vc/lib:/opt/vc/lib <span style="color:#e6db74">`</span><span style="color:#75715e">#optional` \</span>
+  --device /dev/dri:/dev/dri <span style="color:#e6db74">`</span><span style="color:#75715e">#optional` \</span>
+  --device /dev/vchiq:/dev/vchiq <span style="color:#e6db74">`</span><span style="color:#75715e">#optional` \</span>
+  --device /dev/video10:/dev/video10 <span style="color:#e6db74">`</span><span style="color:#75715e">#optional` \</span>
+  --device /dev/video11:/dev/video11 <span style="color:#e6db74">`</span><span style="color:#75715e">#optional` \</span>
+  --device /dev/video12:/dev/video12 <span style="color:#e6db74">`</span><span style="color:#75715e">#optional` \</span>
+  --restart unless-stopped <span style="color:#ae81ff">\</span>
+  linuxserver/jellyfin
+</code></pre></div><p>更详细的安装过程也可以参考这篇<a href="https://post.smzdm.com/p/a6lnxg3g/">教程</a>。</p>
+<h2 id="整理电影资料库">整理电影资料库</h2>
+<p>把混乱的影片文件夹变成精美的海报墙，就需要去获取包括海报、同人画、片名、年份、剧情介绍、演员等等信息，称为「元数据」。</p>
+<h3 id="使用jellyfin自带的元数据下载器">使用Jellyfin自带的元数据下载器</h3>
+<p>元数据下载器可以将电影信息从TheMovieDb等网站中自动下载下来，只需要在添加媒体库的时候，勾选元数据下载器：</p>
+<p><img src="http://img.osland.me/jellyfinmetadata.png" alt=""></p>
+<p>除了自带的几个元数据下载器之外，还可以添加插件，如AniDB让其支持更多的影片数据网站。</p>
+<p>如果片名识别出错，可以<code>右击-「识别」</code>输入片名搜索。</p>
+<p><img src="http://img.osland.me/jellyfin.png" alt=""></p>
+<h3 id="tinymediamanager">tinyMediaManager</h3>
+<p>Jellyfin的元数据下载能力并不能让人满意。tinyMediaManager是一款非常优秀的元数据下载器，支持Windows、macOS和Linux。</p>
+<p><img src="http://img.osland.me/tmm.png" alt=""></p>
+<p>在<a href="http://release.tinymediamanager.org/">官网</a>下载最新版，解压后运行tinyMediaManagerUpd.exe打开。在<code>「设置」-「电影」-「媒体库目录」</code>和<code>「设置」-「电视节目」-「媒体库目录」</code>中添加媒体文件夹，点击上方的<code>「更新源」-「更新数据源」</code>，然后全选所有电影，右击选择<code>「搜索并刮削所选电影 - 自动匹配」</code>。</p>
+<p><img src="http://img.osland.me/tmm1.png" alt=""></p>
+<p><img src="http://img.osland.me/tmm2.png" alt=""></p>
+<p>元数据将被保存为nfo文件和图片文件，Jellyfin会自动识别这些文件。</p>
+<h3 id="r18-warning">R18 WARNING</h3>
+<p>我并没有收集X片的习惯，只是<del>出于好玩</del>尝试了一下用Jellyfin管理迷片。Pockies同学撰写了<strong>2篇</strong>非常详细可靠的文章：</p>
+<blockquote>
+<p><strong>Pockies</strong> - <a href="https://pockies.github.io/2020/01/09/av-data-capture-jellyfin-kodi/"><em>利用AV Data Capture+Jellyfin+Kodi打造更优雅的本地AV（毛片）+普通影片媒体库</em></a>
+<strong>Pockies</strong> - <a href="https://pockies.github.io/2019/03/25/everaver-emby-kodi/"><em>利用EverAver+Emby+Kodi打造本地AV（毛片）媒体库</em></a></p>
+</blockquote>
+<p>和正经影片电视唯一的不同只有Capture Data（或者叫刮削），因为目前没有适用于迷片的Jellyfin的刮削插件，因此我们需要手动将迷片的信息，包括演员、车牌号、名称、剧情介绍和封面设置好。当然这个手动不是自己去网上收集，而是使用一些<strong>爱心人士</strong>开发的小软件将信息保存在NFO文件和JPG文件中，供Jellyfin识别。具体的使用方式就参考Pockies同学的文章吧。</p>
+<p><img src="http://img.osland.me/R18Library.png" alt=""></p>
+<p>在Jellyfin中设置完片库之后，可以设置一张自定义的封面：</p>
+<p><img src="http://img.osland.me/R18Cover.png" alt=""></p>
+<p><img src="http://img.osland.me/R18Cover2.png" alt=""></p>
+<h2 id="kodi--jellyfin插件">Kodi + Jellyfin插件</h2>
+<p>除了在网页上直接播放外，Kodi的Jellyfin插件可以提供更好的观看体验，尤其是在Android电视盒子上。</p>
+<p>在<a href="https://github.com/jellyfin/jellyfin-kodi/releases">GitHub</a>下载最新的Jellyfin插件（不用解压），打开Kodi，插件-从ZIP文件安装-选择jellyfin-kodi-xxx.zip。安装成功后按照引导操作即可。</p>
+<p>为了让插件自动同步服务器的媒体内容，可以在Jellyfin服务器安装Kodi Sync Quene插件，同时在Kodi的Jellyfin插件设置中打开Sync-Enable Kodi Sync Queue</p>
+<p><img src="http://img.osland.me/Kodi+Jellyfin.png" alt=""></p>
+<p>Enjoy now!</p>
+
+    </div>
+
+    <div class="post-copyright">
+             
+            <p class="copyright-item">
+                <span>Author:</span>
+                <span>Covey.Liu </span>
+                </p>
+            
+           
+             
+            <p class="copyright-item">
+                    <span>Link:</span>
+                    <a href=https://example.com/2020/724-jellyfin-kodi%E6%89%93%E9%80%A0%E4%B8%AA%E4%BA%BA%E5%AA%92%E4%BD%93%E4%B8%AD%E5%BF%83/>https://example.com/2020/724-jellyfin-kodi%E6%89%93%E9%80%A0%E4%B8%AA%E4%BA%BA%E5%AA%92%E4%BD%93%E4%B8%AD%E5%BF%83/</span>
+            </p>
+            
+             
+            <p class="copyright-item lincese">
+                本文采用<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/" target="_blank">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可
+            </p>
+            
+    </div>
+
+  
+    <div class="post-tags">
+        
+            <section>
+            <i class="iconfont icon-tag"></i>Tag(s): 
+            
+            <span class="tag"><a href="https://example.com/tags/724/">
+                    #7×24</a></span>
+            
+            <span class="tag"><a href="https://example.com/tags/nas/">
+                    #NAS</a></span>
+            
+            <span class="tag"><a href="https://example.com/tags/n1/">
+                    #N1</a></span>
+            
+            <span class="tag"><a href="https://example.com/tags/jellyfin/">
+                    #Jellyfin</a></span>
+            
+            <span class="tag"><a href="https://example.com/tags/kodi/">
+                    #Kodi</a></span>
+            
+            <span class="tag"><a href="https://example.com/tags/%E5%AA%92%E4%BD%93%E4%B8%AD%E5%BF%83/">
+                    #媒体中心</a></span>
+            
+            </section>
+        
+        <section>
+                <a href="javascript:window.history.back();">back</a></span> · 
+                <span><a href="https://example.com">home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav">
+        
+        <a href="https://example.com/2020/%E5%AE%89%E8%A3%85%E6%88%B7%E5%A4%96%E7%9B%91%E6%8E%A7%E7%B3%BB%E7%BB%9F%E5%B0%8F%E8%AE%B0%E6%97%A0%E9%A2%84%E5%9F%8B%E7%BA%BFnas%E5%BD%95%E5%83%8F%E6%9C%BA/" class="prev" rel="prev" title="安装户外监控系统小记 | 无预埋线 | NAS录像机"><i class="iconfont icon-left"></i>&nbsp;安装户外监控系统小记 | 无预埋线 | NAS录像机</a>
+         
+        
+        <a href="https://example.com/2020/724-%E8%8D%92%E9%87%8E%E6%97%A0%E7%81%AFn1%E5%B0%8F%E9%92%A2%E7%82%AEpt%E4%B8%8B%E8%BD%BD%E6%9C%BA%E7%AE%80%E5%8D%95%E8%B0%83%E6%95%99/" class="next" rel="next" title="7×24: 荒野无灯N1小钢炮PT下载机简单调教">7×24: 荒野无灯N1小钢炮PT下载机简单调教&nbsp;<i class="iconfont icon-right"></i></a>
+        
+    </div>
+
+    <div class="post-comment">
+          
+                 
+          
+    </div>
+</article>
+          </div>
+		   </main>
+      <footer class="footer">
+    <div class="copyright">
+        &copy;
+        
+        <span itemprop="copyrightYear">2011 - 2020</span>
+        
+        <span class="with-love">
+    	 <i class="iconfont icon-love"></i> 
+         </span>
+         
+            <span class="author" itemprop="copyrightHolder"><a href="https://example.com">Covey.Liu</a> | </span> 
+         
+
+         
+		  <span>Powered by <a href="https://gohugo.io/" target="_blank" rel="external nofollow">Hugo</a> & <a href="https://github.com/liuzc/leaveit" target="_blank" rel="external nofollow">LeaveIt</a></span> 
+    </div>
+</footer>
+
+
+
+
+
+
+
+
+
+
+
+
+    
+     <link href="//lib.baomitu.com/lightgallery/1.6.11/css/lightgallery.min.css" rel="stylesheet">  
+      
+     <script src="/js/vendor_gallery.min.js" async="" ></script>
+    
+  
+
+
+
+     </div>
+  </body>
+</html>

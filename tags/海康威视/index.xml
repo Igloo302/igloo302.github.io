@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>海康威视 on LeaveIt</title>
+    <link>https://example.com/tags/%E6%B5%B7%E5%BA%B7%E5%A8%81%E8%A7%86/</link>
+    <description>Recent content in 海康威视 on LeaveIt</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 05 Mar 2020 14:31:28 +0000</lastBuildDate>
+    
+	<atom:link href="https://example.com/tags/%E6%B5%B7%E5%BA%B7%E5%A8%81%E8%A7%86/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>安装户外监控系统小记 | 无预埋线 | NAS录像机</title>
+      <link>https://example.com/2020/%E5%AE%89%E8%A3%85%E6%88%B7%E5%A4%96%E7%9B%91%E6%8E%A7%E7%B3%BB%E7%BB%9F%E5%B0%8F%E8%AE%B0%E6%97%A0%E9%A2%84%E5%9F%8B%E7%BA%BFnas%E5%BD%95%E5%83%8F%E6%9C%BA/</link>
+      <pubDate>Thu, 05 Mar 2020 14:31:28 +0000</pubDate>
+      
+      <guid>https://example.com/2020/%E5%AE%89%E8%A3%85%E6%88%B7%E5%A4%96%E7%9B%91%E6%8E%A7%E7%B3%BB%E7%BB%9F%E5%B0%8F%E8%AE%B0%E6%97%A0%E9%A2%84%E5%9F%8B%E7%BA%BFnas%E5%BD%95%E5%83%8F%E6%9C%BA/</guid>
+      <description>因为疫情而被封在家里，就着手去改善一些居家体验（顺便玩）。当时装修的时候预埋了监控线但没有安装，想着干脆自己动手吧。安装的过程一波三折，最终算是圆满完成，记录一下分享给大家。
+起初，一检查，没想到这预留的三路监控线居然是带电源的模拟线，这个时代再去使用模拟摄像头实在是心有不甘，拉POE明线肯定是不能接受的，所以综合考虑还是使用WiFi摄像头。
+因为画质要求不高，1080P，差不多看得清就行，就选择了最便宜的海康威视小筒DS-IPC-E22H-IW。因为本来埋的模拟线带有两根电源线，所以如果能利用一下这两根电源线的话，就能集中供电。不过花了半天剥线，把摄像头原装的电源剪了接起来，电却怎么也不通，估计是预埋的线太差了或者中间断了。
+空调插座取电 没有网还行，没有电这可麻烦了，思忖再三，目光逐渐聚焦在了空调孔上——能不能从空调插座取电，把摄像头装在空调孔外侧呢？
+一般来说，空调这种16A的大电器是要单独一路的，不过摄像头功率都在10W之类，在空调插座再取一个10A的二孔插座应该也无妨。
+买了一个10A的二孔模块，和16A插座并联换上：
+因为此处需要安装两台监控，所以再购入了一个一转三的迷你扩展插座孔，就能解决问题了。
+NAS存储录像 海康的Wifi摄像头是可以每台单独插卡的，但是正好家庭网络中有接入SMB协议的硬盘，平时是用来存电影的，利用SMB协议存储所有的视频文件是更具性价比的选择。
+下载Windows端的萤石工作室，登录萤石云账号，点击左下角“设备管理”：
+点击“高级配置”，在“系统”-“常用”中把每台摄像头设置成不同的设备号：
+在“存储”-“NAS”中设置所要存储录像文件的NAS分区的信息：
+注意，海康威视摄像头要求使用硬盘的整个分区，因此需要提前对硬盘进行分区，起初我设置了类似于/dev/sda1/camera/这样的目录，但是始终通不过测试，修改了Samba协议的配置，把用来存录像的分区的分享名设置为Camera，大致流程如下：
+ SSH登录NAS 备份SMB配置文件  cp /opt/etc/samba/smb.conf /opt/etc/samba/smb.conf.bak在smb.conf最后添加：  [Camera]path = /mnt/media_rw/482C42E92C42D21C #根据硬盘的分区调整writeable = yesbrowseable = yesavailable = yes重启SMB  Smbcontrol smbd reload-config再在海康威视中配置NAS信息，在“存储”-“常用”页面格式化硬盘即可（多台摄像头只需要格式化一次）：
+至此设置就完成了。
+固件问题 但是理论上海康的摄像头是可以直接在浏览器中设置的——在路由器中查看摄像头的IP，使用Windows的IE或macOS的Safari登录后台，但是却收到了这个错误：
+摄像头硬件是DS-IPC-E22H-IW/IWT，固件版本5.5.93，官网上最新的固件也是这个。后台不能访问的问题咨询了客服，要到了5.5.96的固件，是20年01月20日的最新版本，所有DS-IPC-E系列的固件通用（链接: https://pan.baidu.com/s/1x2193nxHoId-6XK9yRsJwg 提取码: eq42）。
+用萤石工作室更新固件后就能访问后台了，用户名admin，密码Hik+机身上的6位验证码。
+不过DS-IPC-E22H-IW版本在更新了这个固件之后出现了夜晚画面昏暗的问题，可能是测试版固件不完善。</description>
+    </item>
+    
+  </channel>
+</rss>

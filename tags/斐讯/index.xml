@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>斐讯 on LeaveIt</title>
+    <link>https://example.com/tags/%E6%96%90%E8%AE%AF/</link>
+    <description>Recent content in 斐讯 on LeaveIt</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 24 Feb 2020 14:38:04 +0000</lastBuildDate>
+    
+	<atom:link href="https://example.com/tags/%E6%96%90%E8%AE%AF/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>7×24-斐讯N1的旁路由玩法</title>
+      <link>https://example.com/2020/724-%E6%96%90%E8%AE%AFn1%E7%9A%84%E6%97%81%E8%B7%AF%E7%94%B1%E7%8E%A9%E6%B3%95/</link>
+      <pubDate>Mon, 24 Feb 2020 14:38:04 +0000</pubDate>
+      
+      <guid>https://example.com/2020/724-%E6%96%90%E8%AE%AFn1%E7%9A%84%E6%97%81%E8%B7%AF%E7%94%B1%E7%8E%A9%E6%B3%95/</guid>
+      <description>N1是已经暴雷快两年的斐讯留下来的经典矿渣遗产。2GB RAM，四核心ARM SOC，4K 输出，千兆网口，读写30MB+的USB 2.0，决定了N1绝不甘心当一个吃灰的挖矿机。在一众技术大佬的研究下，N1成功转型为电视盒子、NAS、下载机、高清播放器、复古游戏机，以及本文要介绍的旁路由。
+我们平时使用的家用路由器需要负责网关服务器、DHCP服务器、PPPOE拨号、DNS服务器、发射WIFI信号等工作，所谓旁路由（并不是专业的叫法，民间约定俗成）就是把这些功能中的一部分让渡给这台设备去处理。
+大多数的家用路由器的性能都是及其羸弱的，运行去广告、V2Ray、SS这种服务的时候难以发挥出最好的效果，有了一台旁路由，我们就可以把这些高难度任务交给它，让主路由安安心心地拨号、分配IP地址（DHCP）。连接方式如图：
+因为这个网络拓扑本质上实现了一次单线复用，所以也适用于弱电箱较小，无法容纳高性能网络设备的情况，比方说我就将N1放在了有网口的书房，同时打开N1的WiFi用于补足书房信号不足的问题。
+所需设备  正常运行的家庭网络 斐讯N1 双公头USB数据线（可使用两根没有的MicroUSB数据线DIY） 1GB以上U盘或TF卡+读卡器（USB 2.0最佳） USB鼠标 显示器和HDMI线 刷机包，包括N1降级工具（链接: https://pan.baidu.com/s/11-7FbdmTDBTcb-qberyQLw 提取码: 6h3s）、OpenWRT固件 Windows或Mac电脑  N1降级 如果买到的N1版本高于2.19，则需要将boot、bootloader、recovery降级，简要步骤如下：
+ 加电开机后用鼠标多次点击版本号，弹出Toast 「打开ADB」。 将N1连上Wifi或有线网络，记录IP地址 用双头USB线将N1和电脑相连 运行T1_N1降级工具v1.1.exe自动降级或手动刷入老版本boot、bootloader、recovery。  手动刷入方法：
+ 打开adb所在文件夹，按住Shift同时右键空白处，点击「在此处打开Powershell窗口」 依次输入以下代码  # adb连接N1 .\adb.exe connect 192.168.x.xxx# 重启到fastboot .\adb.exe reboot fastboot# 刷入boot、bootloader、recovery fastboot flash boot .\N1\N1boot.imgfastboot flash bootloader .\N1\N1bootloader.imgfastboot flash recovery .\N1\N1recovery.img 安装OpenWRT 目前有2种方式安装OpenWRT/LEDE，分别为
+ 安装Armbian系统，在Docker（可以理解为虚拟机）中安装OpenWRT 只安装OpenWRT  同时，两种安装方式都可以通过线刷和U盘刷/卡刷两种方式刷入N1。</description>
+    </item>
+    
+  </channel>
+</rss>
