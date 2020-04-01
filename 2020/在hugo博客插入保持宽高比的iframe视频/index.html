@@ -5,7 +5,7 @@
   <meta http-equiv="X-UA-Compatible" content="chrome=1">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="robots" content="noodp"/>
-  <meta name="author" content="Covey.Liu">
+  <meta name="author" content="Igloo">
   
   
   
@@ -22,10 +22,10 @@
   <title>
        
        
-           在Hugo博客插入保持宽高比的iframe视频 | LeaveIt
+           在Hugo博客插入保持宽高比的iframe视频 | 冰屋里
        
   </title>
-  <meta name="title" content="在Hugo博客插入保持宽高比的iframe视频 | LeaveIt">
+  <meta name="title" content="在Hugo博客插入保持宽高比的iframe视频 | 冰屋里">
     
   
   <link rel="stylesheet" href="/font/iconfont.css">
@@ -46,19 +46,19 @@
     "articleSection" : "posts",
     "name" : "在Hugo博客插入保持宽高比的iframe视频",
     "headline" : "在Hugo博客插入保持宽高比的iframe视频",
-    "description" : "在Hugo实现的作品集静态网站插入视频的时候，遇到了一个问题：视频无法根据页面宽度自动调整宽高比，导致视频在手机这种小屏幕上会出现上下黑边。\n这个问题可以使用CSS来解决。最简单的方式就是将视频的iframe放在一个保持宽高比的div中（代码源自此处）：\n\/* 这个规则规定了iframe父元素容器的尺寸，16:9的近似值为56%*\/ .selfadapting-video { position: relative;\rwidth: 100%;\rheight: 0;\rpadding-bottom: 56%; \/* 高度应该是宽度的56% *\/\r} \/* 设定iframe的宽度和高度，让iframe占满整个父元素容器 *\/\r.selfadapting-video iframe { position: absolute;\rwidth: 100%;\rheight: 100%;\rleft: 0;\rtop: 0;\r}\r如果使用的是Hugo，打开~\\themes\\主题名\\static\\css，在custom.css中添加。\n如果是Hexo\x2bnext主题，首先在~\\themes\\next\\source\\css\\main.styl中添加一行以使用自定义css\n@import \x26#34;_custom\x26#34;;\r然后在~\\themes\\next\\source\\css\\新建文件custom.styl并添加上述CSS。\n删去iframe中关于高度和宽度的设定，将其添加到 \x26lt;div class=\x26quot;selfadapting-video-bilibili\x26quot;\x26gt; ... \x26lt;\/div\x26gt;之中：\n\x26lt;div class=\x26#34;selfadapting-video\x26#34;\x26gt;\r\x26lt;iframe src=\x26#39;https:\/\/player.youku.com\/embed\/XNDU5NTkzNjQ4MA==\x26#39; scrolling=\x26#34;no\x26#34; border=\x26#34;0\x26#34; frameborder=\x26#34;no\x26#34; framespacing=\x26#34;0\x26#34; allowfullscreen=\x26#34;true\x26#34; style=\x26#34;max-width: 100%\x26#34;\x26gt;\x26lt;\/iframe\x26gt;\r\x26lt;\/div\x26gt;\r对于优酷、Youtube这种，这个CSS已经可以用了，但是我常用的B站的iframe有一个特殊的机制：\n在屏幕宽度较大时，B站的iframe会包含额外的顶部广告栏bilibili-player-video-recommend和底部控制栏bilibili-player-video-control，也就是说需要在宽度不同时实现不同的padding-bottom。\n以这个主题为例，本身这个页面已经实现了响应式布局，也就是针对不同的页面适配不同的栅格，具体的栅格设定可以在Html文件中看到：\n这样我们就可以根据Bootstrap的网格系统来计算一下在屏幕宽度为多少的时候应该修改视频的比例……当然这样有点麻烦。一个投机取巧的方式是打开Chrome，右击检查，将检查页面放置在右侧，拖动检查页面的宽度，此时网页的右上角会显示出网页的分辨率，此时只要观察视频在什么时候发生比例变化就可以了。\n经过尝试，发现屏幕宽度为728px、767px、992px时画面会自适应而发生视频宽度突变。所以修改CSS，使用@media来定义不同宽度时的视频比例。\n 使用 @media 查询，你可以针对不同的媒体类型定义不同的样式。\n@media 可以针对不同的屏幕尺寸设置不同的样式，特别是如果你需要设置设计响应式的页面，@media 是非常有用的。\n当你重置浏览器大小的过程中，页面也会根据浏览器的宽度和高度重新渲染页面。",
+    "description" : "在Hugo实现的作品集静态网站插入视频的时候，遇到了一个问题：视频无法根据页面宽度自动调整宽高比，导致视频在手机这种小屏幕上会出现上下黑边。\n这个问题可以使用CSS来解决。最简单的方式就是将视频的iframe放在一个保持宽高比的div中（代码源自此处）：\n\/* 这个规则规定了iframe父元素容器的尺寸，16:9的近似值为56%*\/ .selfadapting-video { position: relative;\rwidth: 100%;\rheight: 0;\rpadding-bottom: 56%; \/* 高度应该是宽度的56% *\/\r} \/* 设定iframe的宽度和高度，让iframe占满整个父元素容器 *\/\r.selfadapting-video iframe { position: absolute;\rwidth: 100%;\rheight: 100%;\rleft: 0;\rtop: 0;\r}\r如果使用的是Hugo，打开~\\themes\\主题名\\static\\css，在custom.css中添加。\n如果是Hexo\x2bnext主题，首先在~\\themes\\next\\source\\css\\main.styl中添加一行以使用自定义css\n@import \x26#34;_custom\x26#34;;\r然后在~\\themes\\next\\source\\css\\新建文件custom.styl并添加上述CSS。\n删去iframe中关于高度和宽度的设定，将其添加到 \x26lt;div class=\x26quot;selfadapting-video-bilibili\x26quot;\x26gt; ... \x26lt;\/div\x26gt;之中：\n\x26lt;div class=\x26#34;selfadapting-video\x26#34;\x26gt;\r\x26lt;iframe src=\x26#39;https:\/\/player.youku.com\/embed\/XNDU5NTkzNjQ4MA==\x26#39; scrolling=\x26#34;no\x26#34; border=\x26#34;0\x26#34; frameborder=\x26#34;no\x26#34; framespacing=\x26#34;0\x26#34; allowfullscreen=\x26#34;true\x26#34; style=\x26#34;max-width: 100%\x26#34;\x26gt;\x26lt;\/iframe\x26gt;\r\x26lt;\/div\x26gt;\r对于优酷、Youtube这种，这个CSS已经可以用了，但是我常用的B站的iframe有一个特殊的机制：\n\r在屏幕宽度较大时，B站的iframe会包含额外的顶部广告栏bilibili-player-video-recommend和底部控制栏bilibili-player-video-control，也就是说需要在宽度不同时实现不同的padding-bottom。\n以这个主题为例，本身这个页面已经实现了响应式布局，也就是针对不同的页面适配不同的栅格，具体的栅格设定可以在Html文件中看到：\n这样我们就可以根据Bootstrap的网格系统来计算一下在屏幕宽度为多少的时候应该修改视频的比例……当然这样有点麻烦。一个投机取巧的方式是打开Chrome，右击检查，将检查页面放置在右侧，拖动检查页面的宽度，此时网页的右上角会显示出网页的分辨率，此时只要观察视频在什么时候发生比例变化就可以了。\n经过尝试，发现屏幕宽度为728px、767px、992px时画面会自适应而发生视频宽度突变。所以修改CSS，使用@media来定义不同宽度时的视频比例。\n 使用 @media 查询，你可以针对不同的媒体类型定义不同的样式。\n@media 可以针对不同的屏幕尺寸设置不同的样式，特别是如果你需要设置设计响应式的页面，@media 是非常有用的。",
     "inLanguage" : "en-us",
-    "author" : "Covey.Liu",
-    "creator" : "Covey.Liu",
-    "publisher": "Covey.Liu",
-    "accountablePerson" : "Covey.Liu",
-    "copyrightHolder" : "Covey.Liu",
+    "author" : "Igloo",
+    "creator" : "Igloo",
+    "publisher": "Igloo",
+    "accountablePerson" : "Igloo",
+    "copyrightHolder" : "Igloo",
     "copyrightYear" : "2020",
     "datePublished": "2020-03-21 20:59:48 \x2b0000 UTC",
     "dateModified" : "2020-03-21 20:59:48 \x2b0000 UTC",
     "url" : "https:\/\/example.com\/2020\/%E5%9C%A8hugo%E5%8D%9A%E5%AE%A2%E6%8F%92%E5%85%A5%E4%BF%9D%E6%8C%81%E5%AE%BD%E9%AB%98%E6%AF%94%E7%9A%84iframe%E8%A7%86%E9%A2%91\/",
     "wordCount" : "162",
-    "keywords" : [ "Hugo","Blog","CSS","iframe", "LeaveIt"]
+    "keywords" : [ "Hugo","Blog","CSS","iframe", "冰屋里"]
 }
 </script>
 
@@ -72,12 +72,14 @@
         <nav class="navbar">
     <div class="container">
         <div class="navbar-header header-logo">
-        	<a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-xihuan"></i></a>&nbsp;<a href="https://example.com">LeaveIt</a>
+        	<a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-xihuan"></i></a>&nbsp;<a href="https://example.com">冰屋里</a>
         </div>
         <div class="menu navbar-right">
                 
                 
                 <a class="menu-item" href="/posts/" title="">Blog</a>
+                
+                <a class="menu-item" href="/portfolio/" title="">Portfolio</a>
                 
                 <a class="menu-item" href="/categories/" title="">Categories</a>
                 
@@ -85,15 +87,13 @@
                 
                 <a class="menu-item" href="/about/" title="">About</a>
                 
-                <a class="menu-item" href="/about/" title="About Hugo">About Hugo</a>
-                
         </div>
     </div>
 </nav>
 <nav class="navbar-mobile" id="nav-mobile" style="display: none">
      <div class="container">
         <div class="navbar-header">
-            <div>  <a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-xihuan"></i></a>&nbsp;<a href="https://example.com">LeaveIt</a></div>
+            <div>  <a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-xihuan"></i></a>&nbsp;<a href="https://example.com">冰屋里</a></div>
             <div class="menu-toggle">
                 <span></span><span></span><span></span>
             </div>
@@ -104,25 +104,25 @@
                 
                 <a class="menu-item" href="/posts/" title="">Blog</a>
                 
+                <a class="menu-item" href="/portfolio/" title="">Portfolio</a>
+                
                 <a class="menu-item" href="/categories/" title="">Categories</a>
                 
                 <a class="menu-item" href="/tags/" title="">Tags</a>
                 
                 <a class="menu-item" href="/about/" title="">About</a>
                 
-                <a class="menu-item" href="/about/" title="About Hugo">About Hugo</a>
-                
         </div>
     </div>
 </nav>
     	 <main class="main">
           <div class="container">
-      		
+          
 <article class="post-warp" itemscope itemtype="http://schema.org/Article">
     <header class="post-header">
         <h1 class="post-title" itemprop="name headline">在Hugo博客插入保持宽高比的iframe视频</h1>
         <div class="post-meta">
-                Written by <a itemprop="name" href="https://example.com" rel="author">Covey.Liu</a> with ♥ 
+                Written by <a itemprop="name" href="https://example.com" rel="author">Igloo</a> with ♥ 
                 <span class="post-time">
                 on <time datetime=2020-03-21 itemprop="datePublished">March 21, 2020</time>
                 </span>
@@ -149,7 +149,7 @@
           
 
           <p>在Hugo实现的作品集静态网站插入视频的时候，遇到了一个问题：视频无法根据页面宽度自动调整宽高比，导致视频在手机这种小屏幕上会出现上下黑边。</p>
-<!-- raw HTML omitted -->
+<!-- more -->
 <p>这个问题可以使用CSS来解决。最简单的方式就是将视频的iframe放在一个保持宽高比的div中（代码源自<a href="https://www.webhek.com/post/responsive-video-iframes-keeping-aspect-ratio-with-only-css.html">此处</a>）：</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-css" data-lang="css"><span style="color:#75715e">/* 这个规则规定了iframe父元素容器的尺寸，16:9的近似值为56%*/</span>  
 .<span style="color:#a6e22e">selfadapting-video</span> {   
@@ -176,7 +176,7 @@
 &lt;<span style="color:#f92672">iframe</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#39;https://player.youku.com/embed/XNDU5NTkzNjQ4MA==&#39;</span>  <span style="color:#a6e22e">scrolling</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;no&#34;</span> <span style="color:#a6e22e">border</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;0&#34;</span> <span style="color:#a6e22e">frameborder</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;no&#34;</span> <span style="color:#a6e22e">framespacing</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;0&#34;</span> <span style="color:#a6e22e">allowfullscreen</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;true&#34;</span> <span style="color:#a6e22e">style</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;max-width: 100%&#34;</span>&gt;&lt;/<span style="color:#f92672">iframe</span>&gt;
 &lt;/<span style="color:#f92672">div</span>&gt;
 </code></pre></div><p>对于优酷、Youtube这种，这个CSS已经可以用了，但是我常用的B站的iframe有一个特殊的机制：</p>
-<!-- raw HTML omitted -->
+<iframe id=sbrxp src="//player.bilibili.com/player.html?aid=95644725&cid=163369904&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
 <p>在屏幕宽度较大时，B站的iframe会包含额外的顶部广告栏bilibili-player-video-recommend和底部控制栏bilibili-player-video-control，也就是说需要在宽度不同时实现不同的padding-bottom。</p>
 <p>以<a href="https://igloo302.github.io/portfolio/portfolio/ivision/">这个主题为例</a>，本身这个页面已经实现了响应式布局，也就是针对不同的页面适配不同的<a href="https://code.z01.com/v4/layout/grid.html">栅格</a>，具体的栅格设定可以在Html文件中看到：</p>
 <p><img src="http://img.osland.me/blog/hugo%20grid.png" alt=""></p>
@@ -235,26 +235,6 @@
 
     </div>
 
-    <div class="post-copyright">
-             
-            <p class="copyright-item">
-                <span>Author:</span>
-                <span>Covey.Liu </span>
-                </p>
-            
-           
-             
-            <p class="copyright-item">
-                    <span>Link:</span>
-                    <a href=https://example.com/2020/%E5%9C%A8hugo%E5%8D%9A%E5%AE%A2%E6%8F%92%E5%85%A5%E4%BF%9D%E6%8C%81%E5%AE%BD%E9%AB%98%E6%AF%94%E7%9A%84iframe%E8%A7%86%E9%A2%91/>https://example.com/2020/%E5%9C%A8hugo%E5%8D%9A%E5%AE%A2%E6%8F%92%E5%85%A5%E4%BF%9D%E6%8C%81%E5%AE%BD%E9%AB%98%E6%AF%94%E7%9A%84iframe%E8%A7%86%E9%A2%91/</span>
-            </p>
-            
-             
-            <p class="copyright-item lincese">
-                本文采用<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/" target="_blank">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可
-            </p>
-            
-    </div>
 
   
     <div class="post-tags">
@@ -295,21 +275,39 @@
           
                  
           
+                  
+                  
+                  <div id="vcomments"></div>
+                  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+                  <script src='//unpkg.com/valine/dist/Valine.min.js'></script>
+                  <script type="text/javascript">
+                    new Valine({
+                      el: '#vcomments',
+                      appId: 'SIOuMPbRjrVKLs1aBbSS30Ne-gzGzoHsz',
+                      appKey: 'uv74bsFWliyb0LPw2XV8MIjM',
+                      notify:  false ,
+                      verify:  false ,
+                      avatar: 'mm',
+                      placeholder: 'Mann Tracht, Un Gott Lacht.',
+                      visitor:  true 
+                      });
+                  </script>
+                  
     </div>
 </article>
           </div>
-		   </main>
+       </main>      
       <footer class="footer">
     <div class="copyright">
         &copy;
         
-        <span itemprop="copyrightYear">2011 - 2020</span>
+        <span itemprop="copyrightYear">2016 - 2020</span>
         
         <span class="with-love">
     	 <i class="iconfont icon-love"></i> 
          </span>
          
-            <span class="author" itemprop="copyrightHolder"><a href="https://example.com">Covey.Liu</a> | </span> 
+            <span class="author" itemprop="copyrightHolder"><a href="https://example.com">Igloo</a> | </span> 
          
 
          

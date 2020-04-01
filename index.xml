@@ -1,11 +1,11 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>LeaveIt on LeaveIt</title>
+    <title>冰屋里 on 冰屋里</title>
     <link>https://example.com/</link>
-    <description>Recent content in LeaveIt on LeaveIt</description>
+    <description>Recent content in 冰屋里 on 冰屋里</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 09 Apr 2014 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 01 Jan 2016 00:00:00 +0000</lastBuildDate>
     <atom:link href="/" rel="self" type="application/rss+xml" />
     
     <item>
@@ -18,21 +18,30 @@
     </item>
     
     <item>
-      <title>About Hugo</title>
+      <title>About</title>
       <link>https://example.com/about/</link>
-      <pubDate>Wed, 09 Apr 2014 00:00:00 +0000</pubDate>
+      <pubDate>Fri, 01 Jan 2016 00:00:00 +0000</pubDate>
       
       <guid>https://example.com/about/</guid>
-      <description>&lt;p&gt;Hugo is the &lt;strong&gt;world’s fastest framework for building websites&lt;/strong&gt;. It is written in Go.&lt;/p&gt;
-&lt;p&gt;It makes use of a variety of open source projects including:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://github.com/russross/blackfriday&#34;&gt;https://github.com/russross/blackfriday&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://github.com/alecthomas/chroma&#34;&gt;https://github.com/alecthomas/chroma&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://github.com/muesli/smartcrop&#34;&gt;https://github.com/muesli/smartcrop&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://github.com/spf13/cobra&#34;&gt;https://github.com/spf13/cobra&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://github.com/spf13/viper&#34;&gt;https://github.com/spf13/viper&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;Learn more and contribute on &lt;a href=&#34;https://github.com/gohugoio&#34;&gt;GitHub&lt;/a&gt;.&lt;/p&gt;
+      <description>&lt;p&gt;2016年的第一天&lt;/p&gt;
+&lt;p&gt;晚上九点黄金时间&lt;/p&gt;
+&lt;p&gt;我盯着右下角好一会&lt;/p&gt;
+&lt;p&gt;依旧安静的9:00PM&lt;/p&gt;
+&lt;p&gt;时间就是这样神奇的东西&lt;/p&gt;
+&lt;p&gt;注意着它它总慢&lt;/p&gt;
+&lt;p&gt;放任它它便不停流&lt;/p&gt;
+&lt;p&gt;不停留&lt;/p&gt;
+&lt;p&gt;这就是开始的原因&lt;/p&gt;
+&lt;p&gt;时间太少&lt;/p&gt;
+&lt;p&gt;生命太短&lt;/p&gt;
+&lt;p&gt;世界却太大&lt;/p&gt;
+&lt;p&gt;这就是为什么读书 旅行 思考 书写&lt;/p&gt;
+&lt;p&gt;还没有想过要在这里写什么&lt;/p&gt;
+&lt;p&gt;仅仅希望多一个&lt;/p&gt;
+&lt;p&gt;让人牵挂的地方&lt;/p&gt;
+&lt;p&gt;&lt;del&gt;同时的还有微信公众号&lt;/del&gt;&lt;/p&gt;
+&lt;p&gt;&lt;del&gt;叫做「冰屋」&lt;/del&gt;&lt;/p&gt;
+&lt;p&gt;&lt;del&gt;只是因为微信不允许「寂寞」的出现&lt;/del&gt;&lt;/p&gt;
 </description>
     </item>
     

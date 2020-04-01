@@ -5,7 +5,7 @@
   <meta http-equiv="X-UA-Compatible" content="chrome=1">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="robots" content="noodp"/>
-  <meta name="author" content="Covey.Liu">
+  <meta name="author" content="Igloo">
   
   
   
@@ -22,10 +22,10 @@
   <title>
        
        
-           7×24: IoT = Internet of Trash? Home Assistant打造全屋智能 | LeaveIt
+           7×24: IoT = Internet of Trash? Home Assistant打造全屋智能 | 冰屋里
        
   </title>
-  <meta name="title" content="7×24: IoT = Internet of Trash? Home Assistant打造全屋智能 | LeaveIt">
+  <meta name="title" content="7×24: IoT = Internet of Trash? Home Assistant打造全屋智能 | 冰屋里">
     
   
   <link rel="stylesheet" href="/font/iconfont.css">
@@ -48,17 +48,17 @@
     "headline" : "7×24: IoT = Internet of Trash? Home Assistant打造全屋智能",
     "description" : "几年前在国外住过一个别墅，里面的智能家居设计给我留下了深刻的印象：吧台上有一个控制平板，统一控制各个房间的照明和空调温度，通过音箱播放流媒体歌曲，控制电视机播放的Netflix电视剧；每个房间还有独立的分机控制开关来单独控制各自房间的设备。\n虽然说起来并不新鲜，甚至并没有突破IoT=网络开关这个初级阶段，但是这种高度一致化的交互方式，在家庭空间尺度上和互联网内容亲密互动的感觉，都带来了超越产品功能本身的愉快体验。\n对于智能家居和IoT，很容易想到国内的米家，天猫精灵等互联网、电商以及传统白电厂商搞出的各个体系，其中米家推出了全面的家电产品、控制器以及传感器元件，价格也不太贵，综合体验可能是最好的。但是他们共有的问题就是不同的体系都在使用自己的私有协议，无法互相协作使用。\n比方说我家里就有天猫精灵，小米的扫地机，博联的灯，美的的空调，Sony的电视……这种智能家居充其量只是可以用手机App（还不是一个App）控制的电器罢了。\n如何改变这种现状呢？让国内的厂商现在放弃分蛋糕自然是不可能，那就要本文的主角登场了——\n和图标的设计一样，Home Assistant的目标是成为全屋的大脑。作为一个开源项目，开发者们将不同厂商，不同协议的IoT设备整合进这个平台，互相之间得以联动。这种联动具有很强的拓展性，可以在上面实现摄像头的人脸、宠物识别，使用TTS引擎播放特殊的文案，给你的手机推送消息等等，而不再局限于硬件厂商给你的（付费）功能。\n官方Domo展示了HA一部分的有趣的应用。\n这边会有几个乱七八糟的概念：\n Home Assistant 是一款基于 Python 的智能家居开源系统。\n——Home Assistant 中文文档\nHass.io：一个完整的UI管理的家庭自动化生态系统，它运行Home Assistant，Hass.io Supervisor和附加组件。它预先安装在HassOS上，但可以安装在任何Linux系统上。它利用了由Hass.io Supervisor管理的Docker。\nHass.io Supervisor：Hass.io Supervisor是管理Hass.io安装的程序，负责安装和更新Home Assistant，附加组件本身以及更新（如果使用的话）HassOS操作系统。\nHassOS：HassOS，家庭助理操作系统，是一种嵌入式，简约的操作系统，旨在在单板计算机（如Raspberry Pi）或虚拟机上运行Hass.io生态系统。Hass.io Supervisor可以使其保持最新状态，从而无需管理操作系统\n——HAChina 中文网\n 这四个定义中居然出现了三个「系统」…这个概念确实比较混乱，如果我们拿一台安装Armbian系统，安装Kodi的树莓派来类比的话，大概类似下图，Home-Assistant（或者叫Home Assistant Core）是最核心的功能，相当于Kodi的核心功能。\nHass.io包含了HA和附加组件，会有一键安装插件等功能，相当于一个完整的Kodi。\n Hass.io 原生提供各项功能的插件 Add-on，入口为侧边栏 『Hass.io』。Add-on 的提供方式形似应用商店，一键安装与自动配置相关功能。\n——Home Assistant 中文文档\n 而HassOS是一个专门为树莓派设计的，预装Hass.io的定制系统。\n目前官方推荐的安装方法是拿一个树莓派来安装Hass.io\/HassOS，这是最简单的，就和其他的树莓派系统一样（下载镜像刷到TF卡里面运行），可以降低使用的门槛，而且树莓派本身有GPIO，但是相对来说，成本也是比较高的。\n总结来说——\n   设备 方法 功能完整 安装难度     树莓派、英特尔NUC等官方支持的硬件 Hass.io\/HassOS ✦✦✦✦✦ ✦✧✧✧✧   主流发行版Linux主机 Home Assistant Supervised ✦✦✦✦✦✧ ✦✦✧✧✧   \/ Docker安装（群晖NAS稍有不同） ✦✦✦✧✧✧ ✦✦✧✧✧   不限 Python venv(as another user) 或者venv(as your user) ✦✦✦✧✧✧ ✦✦✦✦✧          接下来介绍一下我尝试的两种方法。",
     "inLanguage" : "en-us",
-    "author" : "Covey.Liu",
-    "creator" : "Covey.Liu",
-    "publisher": "Covey.Liu",
-    "accountablePerson" : "Covey.Liu",
-    "copyrightHolder" : "Covey.Liu",
+    "author" : "Igloo",
+    "creator" : "Igloo",
+    "publisher": "Igloo",
+    "accountablePerson" : "Igloo",
+    "copyrightHolder" : "Igloo",
     "copyrightYear" : "2020",
     "datePublished": "2020-03-15 16:56:53 \x2b0000 UTC",
     "dateModified" : "2020-03-15 16:56:53 \x2b0000 UTC",
     "url" : "https:\/\/example.com\/2020\/724-home-assistant\/",
     "wordCount" : "335",
-    "keywords" : [ "7×24","Home Assistant","Android","Linux Deploy","N1","Docker","IoT","智能家居", "LeaveIt"]
+    "keywords" : [ "7×24","Home Assistant","Android","Linux Deploy","N1","Docker","IoT","智能家居", "冰屋里"]
 }
 </script>
 
@@ -72,12 +72,14 @@
         <nav class="navbar">
     <div class="container">
         <div class="navbar-header header-logo">
-        	<a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-xihuan"></i></a>&nbsp;<a href="https://example.com">LeaveIt</a>
+        	<a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-xihuan"></i></a>&nbsp;<a href="https://example.com">冰屋里</a>
         </div>
         <div class="menu navbar-right">
                 
                 
                 <a class="menu-item" href="/posts/" title="">Blog</a>
+                
+                <a class="menu-item" href="/portfolio/" title="">Portfolio</a>
                 
                 <a class="menu-item" href="/categories/" title="">Categories</a>
                 
@@ -85,15 +87,13 @@
                 
                 <a class="menu-item" href="/about/" title="">About</a>
                 
-                <a class="menu-item" href="/about/" title="About Hugo">About Hugo</a>
-                
         </div>
     </div>
 </nav>
 <nav class="navbar-mobile" id="nav-mobile" style="display: none">
      <div class="container">
         <div class="navbar-header">
-            <div>  <a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-xihuan"></i></a>&nbsp;<a href="https://example.com">LeaveIt</a></div>
+            <div>  <a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-xihuan"></i></a>&nbsp;<a href="https://example.com">冰屋里</a></div>
             <div class="menu-toggle">
                 <span></span><span></span><span></span>
             </div>
@@ -104,25 +104,25 @@
                 
                 <a class="menu-item" href="/posts/" title="">Blog</a>
                 
+                <a class="menu-item" href="/portfolio/" title="">Portfolio</a>
+                
                 <a class="menu-item" href="/categories/" title="">Categories</a>
                 
                 <a class="menu-item" href="/tags/" title="">Tags</a>
                 
                 <a class="menu-item" href="/about/" title="">About</a>
                 
-                <a class="menu-item" href="/about/" title="About Hugo">About Hugo</a>
-                
         </div>
     </div>
 </nav>
     	 <main class="main">
           <div class="container">
-      		
+          
 <article class="post-warp" itemscope itemtype="http://schema.org/Article">
     <header class="post-header">
         <h1 class="post-title" itemprop="name headline">7×24: IoT = Internet of Trash? Home Assistant打造全屋智能</h1>
         <div class="post-meta">
-                Written by <a itemprop="name" href="https://example.com" rel="author">Covey.Liu</a> with ♥ 
+                Written by <a itemprop="name" href="https://example.com" rel="author">Igloo</a> with ♥ 
                 <span class="post-time">
                 on <time datetime=2020-03-15 itemprop="datePublished">March 15, 2020</time>
                 </span>
@@ -150,7 +150,7 @@
 
           <p>几年前在国外住过一个别墅，里面的智能家居设计给我留下了深刻的印象：吧台上有一个控制平板，统一控制各个房间的照明和空调温度，通过音箱播放流媒体歌曲，控制电视机播放的Netflix电视剧；每个房间还有独立的分机控制开关来单独控制各自房间的设备。</p>
 <p>虽然说起来并不新鲜，甚至并没有突破IoT=网络开关这个初级阶段，但是这种高度一致化的交互方式，在家庭空间尺度上和互联网内容亲密互动的感觉，都带来了超越产品功能本身的愉快体验。</p>
-<!-- raw HTML omitted -->
+<!-- more -->
 <p>对于智能家居和IoT，很容易想到国内的米家，天猫精灵等互联网、电商以及传统白电厂商搞出的各个体系，其中米家推出了全面的家电产品、控制器以及传感器元件，价格也不太贵，综合体验可能是最好的。但是他们共有的问题就是不同的体系都在使用自己的私有协议，无法互相协作使用。</p>
 <p>比方说我家里就有天猫精灵，小米的扫地机，博联的灯，美的的空调，Sony的电视……这种智能家居充其量只是可以用手机App（还不是一个App）控制的电器罢了。</p>
 <p>如何改变这种现状呢？让国内的厂商现在放弃分蛋糕自然是不可能，那就要本文的主角登场了——</p>
@@ -376,26 +376,6 @@ docker exec homebridge npm install homebridge-homeassistant
 
     </div>
 
-    <div class="post-copyright">
-             
-            <p class="copyright-item">
-                <span>Author:</span>
-                <span>Covey.Liu </span>
-                </p>
-            
-           
-             
-            <p class="copyright-item">
-                    <span>Link:</span>
-                    <a href=https://example.com/2020/724-home-assistant/>https://example.com/2020/724-home-assistant/</span>
-            </p>
-            
-             
-            <p class="copyright-item lincese">
-                本文采用<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/" target="_blank">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可
-            </p>
-            
-    </div>
 
   
     <div class="post-tags">
@@ -448,21 +428,39 @@ docker exec homebridge npm install homebridge-homeassistant
           
                  
           
+                  
+                  
+                  <div id="vcomments"></div>
+                  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+                  <script src='//unpkg.com/valine/dist/Valine.min.js'></script>
+                  <script type="text/javascript">
+                    new Valine({
+                      el: '#vcomments',
+                      appId: 'SIOuMPbRjrVKLs1aBbSS30Ne-gzGzoHsz',
+                      appKey: 'uv74bsFWliyb0LPw2XV8MIjM',
+                      notify:  false ,
+                      verify:  false ,
+                      avatar: 'mm',
+                      placeholder: 'Mann Tracht, Un Gott Lacht.',
+                      visitor:  true 
+                      });
+                  </script>
+                  
     </div>
 </article>
           </div>
-		   </main>
+       </main>      
       <footer class="footer">
     <div class="copyright">
         &copy;
         
-        <span itemprop="copyrightYear">2011 - 2020</span>
+        <span itemprop="copyrightYear">2016 - 2020</span>
         
         <span class="with-love">
     	 <i class="iconfont icon-love"></i> 
          </span>
          
-            <span class="author" itemprop="copyrightHolder"><a href="https://example.com">Covey.Liu</a> | </span> 
+            <span class="author" itemprop="copyrightHolder"><a href="https://example.com">Igloo</a> | </span> 
          
 
          

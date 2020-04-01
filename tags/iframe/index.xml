@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>iframe on LeaveIt</title>
+    <title>iframe on 冰屋里</title>
     <link>https://example.com/tags/iframe/</link>
-    <description>Recent content in iframe on LeaveIt</description>
+    <description>Recent content in iframe on 冰屋里</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sat, 21 Mar 2020 20:59:48 +0000</lastBuildDate>
@@ -24,13 +24,12 @@
 @import &amp;#34;_custom&amp;#34;;然后在~\themes\next\source\css\新建文件custom.styl并添加上述CSS。
 删去iframe中关于高度和宽度的设定，将其添加到 &amp;lt;div class=&amp;quot;selfadapting-video-bilibili&amp;quot;&amp;gt; ... &amp;lt;/div&amp;gt;之中：
 &amp;lt;div class=&amp;#34;selfadapting-video&amp;#34;&amp;gt;&amp;lt;iframe src=&amp;#39;https://player.youku.com/embed/XNDU5NTkzNjQ4MA==&amp;#39; scrolling=&amp;#34;no&amp;#34; border=&amp;#34;0&amp;#34; frameborder=&amp;#34;no&amp;#34; framespacing=&amp;#34;0&amp;#34; allowfullscreen=&amp;#34;true&amp;#34; style=&amp;#34;max-width: 100%&amp;#34;&amp;gt;&amp;lt;/iframe&amp;gt;&amp;lt;/div&amp;gt;对于优酷、Youtube这种，这个CSS已经可以用了，但是我常用的B站的iframe有一个特殊的机制：
-在屏幕宽度较大时，B站的iframe会包含额外的顶部广告栏bilibili-player-video-recommend和底部控制栏bilibili-player-video-control，也就是说需要在宽度不同时实现不同的padding-bottom。
+在屏幕宽度较大时，B站的iframe会包含额外的顶部广告栏bilibili-player-video-recommend和底部控制栏bilibili-player-video-control，也就是说需要在宽度不同时实现不同的padding-bottom。
 以这个主题为例，本身这个页面已经实现了响应式布局，也就是针对不同的页面适配不同的栅格，具体的栅格设定可以在Html文件中看到：
 这样我们就可以根据Bootstrap的网格系统来计算一下在屏幕宽度为多少的时候应该修改视频的比例……当然这样有点麻烦。一个投机取巧的方式是打开Chrome，右击检查，将检查页面放置在右侧，拖动检查页面的宽度，此时网页的右上角会显示出网页的分辨率，此时只要观察视频在什么时候发生比例变化就可以了。
 经过尝试，发现屏幕宽度为728px、767px、992px时画面会自适应而发生视频宽度突变。所以修改CSS，使用@media来定义不同宽度时的视频比例。
  使用 @media 查询，你可以针对不同的媒体类型定义不同的样式。
-@media 可以针对不同的屏幕尺寸设置不同的样式，特别是如果你需要设置设计响应式的页面，@media 是非常有用的。
-当你重置浏览器大小的过程中，页面也会根据浏览器的宽度和高度重新渲染页面。</description>
+@media 可以针对不同的屏幕尺寸设置不同的样式，特别是如果你需要设置设计响应式的页面，@media 是非常有用的。</description>
     </item>
     
   </channel>

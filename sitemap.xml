@@ -1162,6 +1162,26 @@
     </url>
   
     <url>
+      <loc>https://example.com/about/</loc>
+      
+      <lastmod>2016-01-01T00:00:00+00:00</lastmod>
+      
+      
+      
+      
+    </url>
+  
+    <url>
+      <loc>https://example.com/</loc>
+      
+      <lastmod>2016-01-01T00:00:00+00:00</lastmod>
+      
+      
+      
+      
+    </url>
+  
+    <url>
       <loc>https://example.com/2014/creating-a-new-theme/</loc>
       
       <lastmod>2014-09-28T00:00:00+00:00</lastmod>
@@ -1245,26 +1265,6 @@
       <loc>https://example.com/tags/themes/</loc>
       
       <lastmod>2014-07-28T00:00:00+00:00</lastmod>
-      
-      
-      
-      
-    </url>
-  
-    <url>
-      <loc>https://example.com/about/</loc>
-      
-      <lastmod>2014-04-09T00:00:00+00:00</lastmod>
-      
-      
-      
-      
-    </url>
-  
-    <url>
-      <loc>https://example.com/</loc>
-      
-      <lastmod>2014-04-09T00:00:00+00:00</lastmod>
       
       
       
