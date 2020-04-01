@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>实习 on 冰屋里</title>
-    <link>https://example.com/tags/%E5%AE%9E%E4%B9%A0/</link>
+    <link>https://igloo302.github.io/tags/%E5%AE%9E%E4%B9%A0/</link>
     <description>Recent content in 实习 on 冰屋里</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sun, 29 Mar 2020 14:52:20 +0000</lastBuildDate>
     
-	<atom:link href="https://example.com/tags/%E5%AE%9E%E4%B9%A0/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://igloo302.github.io/tags/%E5%AE%9E%E4%B9%A0/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>「因为人工，所以智能」——迟迟迟迟到的智能语音产品实习随笔</title>
-      <link>https://example.com/2020/%E5%9B%A0%E4%B8%BA%E4%BA%BA%E5%B7%A5%E6%89%80%E4%BB%A5%E6%99%BA%E8%83%BD%E8%BF%9F%E8%BF%9F%E8%BF%9F%E8%BF%9F%E5%88%B0%E7%9A%84%E6%99%BA%E8%83%BD%E8%AF%AD%E9%9F%B3%E4%BA%A7%E5%93%81%E5%AE%9E%E4%B9%A0%E9%9A%8F%E7%AC%94/</link>
+      <link>https://igloo302.github.io/2020/%E5%9B%A0%E4%B8%BA%E4%BA%BA%E5%B7%A5%E6%89%80%E4%BB%A5%E6%99%BA%E8%83%BD%E8%BF%9F%E8%BF%9F%E8%BF%9F%E8%BF%9F%E5%88%B0%E7%9A%84%E6%99%BA%E8%83%BD%E8%AF%AD%E9%9F%B3%E4%BA%A7%E5%93%81%E5%AE%9E%E4%B9%A0%E9%9A%8F%E7%AC%94/</link>
       <pubDate>Sun, 29 Mar 2020 14:52:20 +0000</pubDate>
       
-      <guid>https://example.com/2020/%E5%9B%A0%E4%B8%BA%E4%BA%BA%E5%B7%A5%E6%89%80%E4%BB%A5%E6%99%BA%E8%83%BD%E8%BF%9F%E8%BF%9F%E8%BF%9F%E8%BF%9F%E5%88%B0%E7%9A%84%E6%99%BA%E8%83%BD%E8%AF%AD%E9%9F%B3%E4%BA%A7%E5%93%81%E5%AE%9E%E4%B9%A0%E9%9A%8F%E7%AC%94/</guid>
+      <guid>https://igloo302.github.io/2020/%E5%9B%A0%E4%B8%BA%E4%BA%BA%E5%B7%A5%E6%89%80%E4%BB%A5%E6%99%BA%E8%83%BD%E8%BF%9F%E8%BF%9F%E8%BF%9F%E8%BF%9F%E5%88%B0%E7%9A%84%E6%99%BA%E8%83%BD%E8%AF%AD%E9%9F%B3%E4%BA%A7%E5%93%81%E5%AE%9E%E4%B9%A0%E9%9A%8F%E7%AC%94/</guid>
       <description>此前供职的实习公司是做车联网的头部公司之一，负责的业务板块是OS的语音产品，也就是常说的车载语音助手。虽然实习的时间并不长，但是因为产品组缺人手，业务又很繁杂（为什么繁杂之后也会谈到），所以业务的参与度并不低。
 离职的时候，mentor给我的一个建议是，在一周两周内做好实习的总结，将工作和想法记录一下。虽然嘴上答应得好好的，但这件事情就一直在To-Do List里面躺了一二三四个月。迫于进入新一轮的找实习找工作的压力，赶紧把这件要紧事给补上，开启回忆模式。
 这篇实习总结将会从四个方面展开——

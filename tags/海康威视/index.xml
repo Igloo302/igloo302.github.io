@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>海康威视 on 冰屋里</title>
-    <link>https://example.com/tags/%E6%B5%B7%E5%BA%B7%E5%A8%81%E8%A7%86/</link>
+    <link>https://igloo302.github.io/tags/%E6%B5%B7%E5%BA%B7%E5%A8%81%E8%A7%86/</link>
     <description>Recent content in 海康威视 on 冰屋里</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Thu, 05 Mar 2020 14:31:28 +0000</lastBuildDate>
     
-	<atom:link href="https://example.com/tags/%E6%B5%B7%E5%BA%B7%E5%A8%81%E8%A7%86/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://igloo302.github.io/tags/%E6%B5%B7%E5%BA%B7%E5%A8%81%E8%A7%86/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>安装户外监控系统小记 | 无预埋线 | NAS录像机</title>
-      <link>https://example.com/2020/%E5%AE%89%E8%A3%85%E6%88%B7%E5%A4%96%E7%9B%91%E6%8E%A7%E7%B3%BB%E7%BB%9F%E5%B0%8F%E8%AE%B0%E6%97%A0%E9%A2%84%E5%9F%8B%E7%BA%BFnas%E5%BD%95%E5%83%8F%E6%9C%BA/</link>
+      <link>https://igloo302.github.io/2020/%E5%AE%89%E8%A3%85%E6%88%B7%E5%A4%96%E7%9B%91%E6%8E%A7%E7%B3%BB%E7%BB%9F%E5%B0%8F%E8%AE%B0%E6%97%A0%E9%A2%84%E5%9F%8B%E7%BA%BFnas%E5%BD%95%E5%83%8F%E6%9C%BA/</link>
       <pubDate>Thu, 05 Mar 2020 14:31:28 +0000</pubDate>
       
-      <guid>https://example.com/2020/%E5%AE%89%E8%A3%85%E6%88%B7%E5%A4%96%E7%9B%91%E6%8E%A7%E7%B3%BB%E7%BB%9F%E5%B0%8F%E8%AE%B0%E6%97%A0%E9%A2%84%E5%9F%8B%E7%BA%BFnas%E5%BD%95%E5%83%8F%E6%9C%BA/</guid>
+      <guid>https://igloo302.github.io/2020/%E5%AE%89%E8%A3%85%E6%88%B7%E5%A4%96%E7%9B%91%E6%8E%A7%E7%B3%BB%E7%BB%9F%E5%B0%8F%E8%AE%B0%E6%97%A0%E9%A2%84%E5%9F%8B%E7%BA%BFnas%E5%BD%95%E5%83%8F%E6%9C%BA/</guid>
       <description>因为疫情而被封在家里，就着手去改善一些居家体验（顺便玩）。当时装修的时候预埋了监控线但没有安装，想着干脆自己动手吧。安装的过程一波三折，最终算是圆满完成，记录一下分享给大家。
 起初，一检查，没想到这预留的三路监控线居然是带电源的模拟线，这个时代再去使用模拟摄像头实在是心有不甘，拉POE明线肯定是不能接受的，所以综合考虑还是使用WiFi摄像头。
 因为画质要求不高，1080P，差不多看得清就行，就选择了最便宜的海康威视小筒DS-IPC-E22H-IW。因为本来埋的模拟线带有两根电源线，所以如果能利用一下这两根电源线的话，就能集中供电。不过花了半天剥线，把摄像头原装的电源剪了接起来，电却怎么也不通，估计是预埋的线太差了或者中间断了。

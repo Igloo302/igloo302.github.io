@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Phicomm on 冰屋里</title>
-    <link>https://example.com/tags/phicomm/</link>
+    <link>https://igloo302.github.io/tags/phicomm/</link>
     <description>Recent content in Phicomm on 冰屋里</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Mon, 24 Feb 2020 14:38:04 +0000</lastBuildDate>
     
-	<atom:link href="https://example.com/tags/phicomm/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://igloo302.github.io/tags/phicomm/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>7×24-斐讯N1的旁路由玩法</title>
-      <link>https://example.com/2020/724-%E6%96%90%E8%AE%AFn1%E7%9A%84%E6%97%81%E8%B7%AF%E7%94%B1%E7%8E%A9%E6%B3%95/</link>
+      <link>https://igloo302.github.io/2020/724-%E6%96%90%E8%AE%AFn1%E7%9A%84%E6%97%81%E8%B7%AF%E7%94%B1%E7%8E%A9%E6%B3%95/</link>
       <pubDate>Mon, 24 Feb 2020 14:38:04 +0000</pubDate>
       
-      <guid>https://example.com/2020/724-%E6%96%90%E8%AE%AFn1%E7%9A%84%E6%97%81%E8%B7%AF%E7%94%B1%E7%8E%A9%E6%B3%95/</guid>
+      <guid>https://igloo302.github.io/2020/724-%E6%96%90%E8%AE%AFn1%E7%9A%84%E6%97%81%E8%B7%AF%E7%94%B1%E7%8E%A9%E6%B3%95/</guid>
       <description>N1是已经暴雷快两年的斐讯留下来的经典矿渣遗产。2GB RAM，四核心ARM SOC，4K 输出，千兆网口，读写30MB+的USB 2.0，决定了N1绝不甘心当一个吃灰的挖矿机。在一众技术大佬的研究下，N1成功转型为电视盒子、NAS、下载机、高清播放器、复古游戏机，以及本文要介绍的旁路由。
 我们平时使用的家用路由器需要负责网关服务器、DHCP服务器、PPPOE拨号、DNS服务器、发射WIFI信号等工作，所谓旁路由（并不是专业的叫法，民间约定俗成）就是把这些功能中的一部分让渡给这台设备去处理。
 大多数的家用路由器的性能都是及其羸弱的，运行去广告、V2Ray、SS这种服务的时候难以发挥出最好的效果，有了一台旁路由，我们就可以把这些高难度任务交给它，让主路由安安心心地拨号、分配IP地址（DHCP）。连接方式如图：

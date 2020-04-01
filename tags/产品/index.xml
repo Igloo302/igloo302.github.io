@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>产品 on 冰屋里</title>
-    <link>https://example.com/tags/%E4%BA%A7%E5%93%81/</link>
+    <link>https://igloo302.github.io/tags/%E4%BA%A7%E5%93%81/</link>
     <description>Recent content in 产品 on 冰屋里</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sun, 29 Mar 2020 14:52:20 +0000</lastBuildDate>
     
-	<atom:link href="https://example.com/tags/%E4%BA%A7%E5%93%81/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://igloo302.github.io/tags/%E4%BA%A7%E5%93%81/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>「因为人工，所以智能」——迟迟迟迟到的智能语音产品实习随笔</title>
-      <link>https://example.com/2020/%E5%9B%A0%E4%B8%BA%E4%BA%BA%E5%B7%A5%E6%89%80%E4%BB%A5%E6%99%BA%E8%83%BD%E8%BF%9F%E8%BF%9F%E8%BF%9F%E8%BF%9F%E5%88%B0%E7%9A%84%E6%99%BA%E8%83%BD%E8%AF%AD%E9%9F%B3%E4%BA%A7%E5%93%81%E5%AE%9E%E4%B9%A0%E9%9A%8F%E7%AC%94/</link>
+      <link>https://igloo302.github.io/2020/%E5%9B%A0%E4%B8%BA%E4%BA%BA%E5%B7%A5%E6%89%80%E4%BB%A5%E6%99%BA%E8%83%BD%E8%BF%9F%E8%BF%9F%E8%BF%9F%E8%BF%9F%E5%88%B0%E7%9A%84%E6%99%BA%E8%83%BD%E8%AF%AD%E9%9F%B3%E4%BA%A7%E5%93%81%E5%AE%9E%E4%B9%A0%E9%9A%8F%E7%AC%94/</link>
       <pubDate>Sun, 29 Mar 2020 14:52:20 +0000</pubDate>
       
-      <guid>https://example.com/2020/%E5%9B%A0%E4%B8%BA%E4%BA%BA%E5%B7%A5%E6%89%80%E4%BB%A5%E6%99%BA%E8%83%BD%E8%BF%9F%E8%BF%9F%E8%BF%9F%E8%BF%9F%E5%88%B0%E7%9A%84%E6%99%BA%E8%83%BD%E8%AF%AD%E9%9F%B3%E4%BA%A7%E5%93%81%E5%AE%9E%E4%B9%A0%E9%9A%8F%E7%AC%94/</guid>
+      <guid>https://igloo302.github.io/2020/%E5%9B%A0%E4%B8%BA%E4%BA%BA%E5%B7%A5%E6%89%80%E4%BB%A5%E6%99%BA%E8%83%BD%E8%BF%9F%E8%BF%9F%E8%BF%9F%E8%BF%9F%E5%88%B0%E7%9A%84%E6%99%BA%E8%83%BD%E8%AF%AD%E9%9F%B3%E4%BA%A7%E5%93%81%E5%AE%9E%E4%B9%A0%E9%9A%8F%E7%AC%94/</guid>
       <description>此前供职的实习公司是做车联网的头部公司之一，负责的业务板块是OS的语音产品，也就是常说的车载语音助手。虽然实习的时间并不长，但是因为产品组缺人手，业务又很繁杂（为什么繁杂之后也会谈到），所以业务的参与度并不低。
 离职的时候，mentor给我的一个建议是，在一周两周内做好实习的总结，将工作和想法记录一下。虽然嘴上答应得好好的，但这件事情就一直在To-Do List里面躺了一二三四个月。迫于进入新一轮的找实习找工作的压力，赶紧把这件要紧事给补上，开启回忆模式。
 这篇实习总结将会从四个方面展开——
@@ -33,10 +33,10 @@
     
     <item>
       <title>一次文艺复兴</title>
-      <link>https://example.com/2020/%E4%B8%80%E6%AC%A1%E6%96%87%E8%89%BA%E5%A4%8D%E5%85%B4/</link>
+      <link>https://igloo302.github.io/2020/%E4%B8%80%E6%AC%A1%E6%96%87%E8%89%BA%E5%A4%8D%E5%85%B4/</link>
       <pubDate>Tue, 17 Mar 2020 15:16:05 +0000</pubDate>
       
-      <guid>https://example.com/2020/%E4%B8%80%E6%AC%A1%E6%96%87%E8%89%BA%E5%A4%8D%E5%85%B4/</guid>
+      <guid>https://igloo302.github.io/2020/%E4%B8%80%E6%AC%A1%E6%96%87%E8%89%BA%E5%A4%8D%E5%85%B4/</guid>
       <description>今天后知后觉知道了交大柠檬这个产品，和最近刚刚重置的水源社区（去年底看到有学联（？）有发布类似的人员招募贴，不知道是不是他们的作品）。
 文艺复兴，不错。
 互联网、社交、信息、内容交织在一起，Z世代应该恰好经历「互联网社交」从小众垂直玩物到大众发言，以及现在愈发明显的中心化趋势。如今，曾经如日中天的贴吧、个人博客、垂直BBS风烛残年，个中人员和文化已然被解构重组，个人的声浪被淹没在KOL、MCN之中，曾经围绕物理的生活和心理的兴趣的讨论社群似乎渐渐凋亡。（就事论事，产品话题，不要过度解读，下同，谢谢）
@@ -62,10 +62,10 @@
     
     <item>
       <title>会员的诞生</title>
-      <link>https://example.com/2020/%E4%BC%9A%E5%91%98%E7%9A%84%E8%AF%9E%E7%94%9F/</link>
+      <link>https://igloo302.github.io/2020/%E4%BC%9A%E5%91%98%E7%9A%84%E8%AF%9E%E7%94%9F/</link>
       <pubDate>Fri, 28 Feb 2020 12:07:31 +0000</pubDate>
       
-      <guid>https://example.com/2020/%E4%BC%9A%E5%91%98%E7%9A%84%E8%AF%9E%E7%94%9F/</guid>
+      <guid>https://igloo302.github.io/2020/%E4%BC%9A%E5%91%98%E7%9A%84%E8%AF%9E%E7%94%9F/</guid>
       <description>Photo by Alfred Quartey on Unsplash
  在笔记本中翻到一些之前思考会员制的段落，拿出来再思考并总结一下。说来也巧，此前的记录时间是19年5月5日，这半年里，会员制商超Costco在上海落地，淘宝的88超级会员玩起了活动降门槛，视频网站在庆余年做SSVIP被网友吐槽，会员似乎已经变味了，那么，究竟什么是会员，会员到底在玩什么？
 如果我们用商品是否定期需要（稳定的复购）和商品的价格波动幅度来区分我们的消费行为，一个普通城市年轻人大致如下：

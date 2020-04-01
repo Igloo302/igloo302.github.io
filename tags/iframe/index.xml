@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>iframe on 冰屋里</title>
-    <link>https://example.com/tags/iframe/</link>
+    <link>https://igloo302.github.io/tags/iframe/</link>
     <description>Recent content in iframe on 冰屋里</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sat, 21 Mar 2020 20:59:48 +0000</lastBuildDate>
     
-	<atom:link href="https://example.com/tags/iframe/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://igloo302.github.io/tags/iframe/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>在Hugo博客插入保持宽高比的iframe视频</title>
-      <link>https://example.com/2020/%E5%9C%A8hugo%E5%8D%9A%E5%AE%A2%E6%8F%92%E5%85%A5%E4%BF%9D%E6%8C%81%E5%AE%BD%E9%AB%98%E6%AF%94%E7%9A%84iframe%E8%A7%86%E9%A2%91/</link>
+      <link>https://igloo302.github.io/2020/%E5%9C%A8hugo%E5%8D%9A%E5%AE%A2%E6%8F%92%E5%85%A5%E4%BF%9D%E6%8C%81%E5%AE%BD%E9%AB%98%E6%AF%94%E7%9A%84iframe%E8%A7%86%E9%A2%91/</link>
       <pubDate>Sat, 21 Mar 2020 20:59:48 +0000</pubDate>
       
-      <guid>https://example.com/2020/%E5%9C%A8hugo%E5%8D%9A%E5%AE%A2%E6%8F%92%E5%85%A5%E4%BF%9D%E6%8C%81%E5%AE%BD%E9%AB%98%E6%AF%94%E7%9A%84iframe%E8%A7%86%E9%A2%91/</guid>
+      <guid>https://igloo302.github.io/2020/%E5%9C%A8hugo%E5%8D%9A%E5%AE%A2%E6%8F%92%E5%85%A5%E4%BF%9D%E6%8C%81%E5%AE%BD%E9%AB%98%E6%AF%94%E7%9A%84iframe%E8%A7%86%E9%A2%91/</guid>
       <description>在Hugo实现的作品集静态网站插入视频的时候，遇到了一个问题：视频无法根据页面宽度自动调整宽高比，导致视频在手机这种小屏幕上会出现上下黑边。
 这个问题可以使用CSS来解决。最简单的方式就是将视频的iframe放在一个保持宽高比的div中（代码源自此处）：
 /* 这个规则规定了iframe父元素容器的尺寸，16:9的近似值为56%*/ .selfadapting-video { position: relative;width: 100%;height: 0;padding-bottom: 56%; /* 高度应该是宽度的56% */} /* 设定iframe的宽度和高度，让iframe占满整个父元素容器 */.selfadapting-video iframe { position: absolute;width: 100%;height: 100%;left: 0;top: 0;}如果使用的是Hugo，打开~\themes\主题名\static\css，在custom.css中添加。

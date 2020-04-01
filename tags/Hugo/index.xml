@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Hugo on 冰屋里</title>
-    <link>https://example.com/tags/hugo/</link>
+    <link>https://igloo302.github.io/tags/hugo/</link>
     <description>Recent content in Hugo on 冰屋里</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sat, 21 Mar 2020 20:59:48 +0000</lastBuildDate>
     
-	<atom:link href="https://example.com/tags/hugo/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://igloo302.github.io/tags/hugo/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>在Hugo博客插入保持宽高比的iframe视频</title>
-      <link>https://example.com/2020/%E5%9C%A8hugo%E5%8D%9A%E5%AE%A2%E6%8F%92%E5%85%A5%E4%BF%9D%E6%8C%81%E5%AE%BD%E9%AB%98%E6%AF%94%E7%9A%84iframe%E8%A7%86%E9%A2%91/</link>
+      <link>https://igloo302.github.io/2020/%E5%9C%A8hugo%E5%8D%9A%E5%AE%A2%E6%8F%92%E5%85%A5%E4%BF%9D%E6%8C%81%E5%AE%BD%E9%AB%98%E6%AF%94%E7%9A%84iframe%E8%A7%86%E9%A2%91/</link>
       <pubDate>Sat, 21 Mar 2020 20:59:48 +0000</pubDate>
       
-      <guid>https://example.com/2020/%E5%9C%A8hugo%E5%8D%9A%E5%AE%A2%E6%8F%92%E5%85%A5%E4%BF%9D%E6%8C%81%E5%AE%BD%E9%AB%98%E6%AF%94%E7%9A%84iframe%E8%A7%86%E9%A2%91/</guid>
+      <guid>https://igloo302.github.io/2020/%E5%9C%A8hugo%E5%8D%9A%E5%AE%A2%E6%8F%92%E5%85%A5%E4%BF%9D%E6%8C%81%E5%AE%BD%E9%AB%98%E6%AF%94%E7%9A%84iframe%E8%A7%86%E9%A2%91/</guid>
       <description>在Hugo实现的作品集静态网站插入视频的时候，遇到了一个问题：视频无法根据页面宽度自动调整宽高比，导致视频在手机这种小屏幕上会出现上下黑边。
 这个问题可以使用CSS来解决。最简单的方式就是将视频的iframe放在一个保持宽高比的div中（代码源自此处）：
 /* 这个规则规定了iframe父元素容器的尺寸，16:9的近似值为56%*/ .selfadapting-video { position: relative;width: 100%;height: 0;padding-bottom: 56%; /* 高度应该是宽度的56% */} /* 设定iframe的宽度和高度，让iframe占满整个父元素容器 */.selfadapting-video iframe { position: absolute;width: 100%;height: 100%;left: 0;top: 0;}如果使用的是Hugo，打开~\themes\主题名\static\css，在custom.css中添加。
@@ -34,10 +34,10 @@
     
     <item>
       <title>30分钟建立一个作品集网站 powered by Hugo</title>
-      <link>https://example.com/2020/30%E5%88%86%E9%92%9F%E5%BB%BA%E7%AB%8B%E4%B8%80%E4%B8%AA%E4%BD%9C%E5%93%81%E9%9B%86%E7%BD%91%E7%AB%99-powered-by-hugo/</link>
+      <link>https://igloo302.github.io/2020/30%E5%88%86%E9%92%9F%E5%BB%BA%E7%AB%8B%E4%B8%80%E4%B8%AA%E4%BD%9C%E5%93%81%E9%9B%86%E7%BD%91%E7%AB%99-powered-by-hugo/</link>
       <pubDate>Sat, 29 Feb 2020 11:25:06 +0000</pubDate>
       
-      <guid>https://example.com/2020/30%E5%88%86%E9%92%9F%E5%BB%BA%E7%AB%8B%E4%B8%80%E4%B8%AA%E4%BD%9C%E5%93%81%E9%9B%86%E7%BD%91%E7%AB%99-powered-by-hugo/</guid>
+      <guid>https://igloo302.github.io/2020/30%E5%88%86%E9%92%9F%E5%BB%BA%E7%AB%8B%E4%B8%80%E4%B8%AA%E4%BD%9C%E5%93%81%E9%9B%86%E7%BD%91%E7%AB%99-powered-by-hugo/</guid>
       <description>昨天看到猪场的暑期实习开始“招标”了，头上划过几道黑线。赋闲在家快一个半月，简历和作品集都没有好好准备。上次用Hexo重建了这个Blog的时候，看到了很好看的Hugo博客，还有一个LeaveIt主题非常可爱，就心水不已。翻了翻Hugo的Theme页面，好看的真不少，可能是英语用户比较多吧:)
 干脆单独建一个项目，拿Hugo把作品集重建一下吧，之后有时间的话，会尝试做一版自己的主题将Blog和Portfolio整合在一起。
 安装环境   Windows 10
@@ -61,20 +61,20 @@ hugo server 部署到GitHub Pages 我们还是使用GitHub Pages作为托管服�
     
     <item>
       <title>Creating a New Theme</title>
-      <link>https://example.com/2014/creating-a-new-theme/</link>
+      <link>https://igloo302.github.io/2014/creating-a-new-theme/</link>
       <pubDate>Sun, 28 Sep 2014 00:00:00 +0000</pubDate>
       
-      <guid>https://example.com/2014/creating-a-new-theme/</guid>
+      <guid>https://igloo302.github.io/2014/creating-a-new-theme/</guid>
       <description>Introduction This tutorial will show you how to create a simple theme in Hugo. I assume that you are familiar with HTML, the bash command line, and that you are comfortable using Markdown to format content. I&amp;rsquo;ll explain how Hugo uses templates and how you can organize your templates to create a theme. I won&amp;rsquo;t cover using CSS to style your theme.
 We&amp;rsquo;ll start with creating a new site with a very basic template.</description>
     </item>
     
     <item>
       <title>Getting Started with Hugo</title>
-      <link>https://example.com/2014/hugoisforlovers/</link>
+      <link>https://igloo302.github.io/2014/hugoisforlovers/</link>
       <pubDate>Wed, 02 Apr 2014 00:00:00 +0000</pubDate>
       
-      <guid>https://example.com/2014/hugoisforlovers/</guid>
+      <guid>https://igloo302.github.io/2014/hugoisforlovers/</guid>
       <description>Step 1. Install Hugo Goto hugo releases and download the appropriate version for your os and architecture.
 Save it somewhere specific as we will be using it in the next step.
 More complete instructions are available at installing hugo

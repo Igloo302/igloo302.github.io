@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Calibre on 冰屋里</title>
-    <link>https://example.com/tags/calibre/</link>
+    <link>https://igloo302.github.io/tags/calibre/</link>
     <description>Recent content in Calibre on 冰屋里</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sun, 15 Mar 2020 22:18:04 +0000</lastBuildDate>
     
-	<atom:link href="https://example.com/tags/calibre/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://igloo302.github.io/tags/calibre/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>7×24: 私人黄金屋Calibre Web</title>
-      <link>https://example.com/2020/724-calibre-web/</link>
+      <link>https://igloo302.github.io/2020/724-calibre-web/</link>
       <pubDate>Sun, 15 Mar 2020 22:18:04 +0000</pubDate>
       
-      <guid>https://example.com/2020/724-calibre-web/</guid>
+      <guid>https://igloo302.github.io/2020/724-calibre-web/</guid>
       <description>Calibre是我一直在使用的一款书籍管理软件，但是Calibre总体设计是一款本地桌面软件，对于书库的多平台管理不太友好。Calibre Web使用了Calibre的数据库，是一个轻量化的Web版的Calibre，本节介绍一下如何在Docker上部署Calibre Web和基本的配置。
 Calibre Web推荐了两个Docker镜像，technosoft2000/calibre-web支持linux/amd64，linuxserver/calibre-web的电子书转换功能只有x86-64可以用（安装后发现calibre-web可以使用外部的转换器）。
 在N1上安装linuxserver/calibre-web的指令：
