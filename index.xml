@@ -5,7 +5,7 @@
     <description>Recent content in 冰屋里 on 冰屋里</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 01 Jan 2016 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 29 Mar 2020 14:52:20 +0000</lastBuildDate>
     <atom:link href="/" rel="self" type="application/rss+xml" />
     
     <item>
@@ -18,12 +18,33 @@
     </item>
     
     <item>
+      <title>Portfolios</title>
+      <link>https://igloo302.github.io/portfolio/</link>
+      <pubDate>Fri, 06 Mar 2020 21:19:35 +0800</pubDate>
+      
+      <guid>https://igloo302.github.io/portfolio/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Drafts</title>
+      <link>https://igloo302.github.io/draft/</link>
+      <pubDate>Sat, 29 Feb 2020 17:45:43 +0800</pubDate>
+      
+      <guid>https://igloo302.github.io/draft/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>About</title>
       <link>https://igloo302.github.io/about/</link>
       <pubDate>Fri, 01 Jan 2016 00:00:00 +0000</pubDate>
       
       <guid>https://igloo302.github.io/about/</guid>
-      <description>&lt;p&gt;2016年的第一天&lt;/p&gt;
+      <description>&lt;blockquote&gt;
+&lt;p&gt;Steve Jobs Quote: “The people who are crazy enough to think they can change the world are the ones who do.”&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;2016年的第一天&lt;/p&gt;
 &lt;p&gt;晚上九点黄金时间&lt;/p&gt;
 &lt;p&gt;我盯着右下角好一会&lt;/p&gt;
 &lt;p&gt;依旧安静的9:00PM&lt;/p&gt;
@@ -42,6 +63,7 @@
 &lt;p&gt;&lt;del&gt;同时的还有微信公众号&lt;/del&gt;&lt;/p&gt;
 &lt;p&gt;&lt;del&gt;叫做「冰屋」&lt;/del&gt;&lt;/p&gt;
 &lt;p&gt;&lt;del&gt;只是因为微信不允许「寂寞」的出现&lt;/del&gt;&lt;/p&gt;
+&lt;p&gt;&lt;button type=&#34;button&#34; class=&#34;btn btn-default  btn-m btn-block&#34;&gt;&lt;a href=&#34;https://igloo302.github.io/docs/简历.pdf&#34;&gt;⏬下载简历&lt;/button&gt;&lt;/p&gt;
 </description>
     </item>
     
