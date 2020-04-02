@@ -6,7 +6,7 @@
     <description>Recent content in Portfolios on 冰屋里</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 06 Mar 2020 21:19:35 +0800</lastBuildDate>
+    <lastBuildDate>Sat, 29 Feb 2020 19:22:02 +0800</lastBuildDate>
     
 	<atom:link href="https://igloo302.github.io/portfolio/index.xml" rel="self" type="application/rss+xml" />
     
@@ -14,52 +14,76 @@
     <item>
       <title>iVision 盲人视觉辅助系统</title>
       <link>https://igloo302.github.io/portfolio/ivision/</link>
-      <pubDate>Sat, 29 Feb 2020 18:42:15 +0800</pubDate>
+      <pubDate>Wed, 29 May 2019 18:42:15 +0800</pubDate>
       
       <guid>https://igloo302.github.io/portfolio/ivision/</guid>
-      <description>&lt;p&gt;iVision⼀款辅助视障⼈群⽣活的AR+ML应用，以满⾜视障⼈群寻物、导航、避险/障的需求。&lt;/p&gt;</description>
+      <description> 2019.05-2019.10
+发起人
+产品设计|语音交互设计|代码实现|可用性测试
+ 产品使⽤语⾳和触摸进⾏交互，通过摄像头捕捉前⽅场景，结合AR获取三位空间点云，同时使⽤深度学习框架获取画⾯中常⽤的兴趣物坐标，结合两者数据以获知物体的空间位置，最终利⽤基于⾳频增强现实技术的3D声效将物体位置反馈给视障⽤户，以满⾜视障⼈群寻物、导航、避险/障的需求。
+https://github.com/Igloo302/iVision
+      </description>
     </item>
     
     <item>
       <title>流浪动物共养计划</title>
       <link>https://igloo302.github.io/portfolio/animal/</link>
-      <pubDate>Sat, 29 Feb 2020 18:53:19 +0800</pubDate>
+      <pubDate>Mon, 29 Oct 2018 18:53:19 +0800</pubDate>
       
       <guid>https://igloo302.github.io/portfolio/animal/</guid>
-      <description>&lt;p&gt;流浪动物共养计划以共同养育、TNR管控流浪动物为核心的关于流浪动物问题解决方案的公益探索实践。&lt;/p&gt;</description>
+      <description>2018
+发起人
+商业模式设计
+ 该项目利用自动贩售、互联网社交平台等技术，在线下设立自助猫狗粮售卖点和猫狗住所，并在此基础上建立网上流浪动物讨论社群作为公益宣传渠道和志愿者来源，通过实物猫狗粮售卖利润、网上领养流浪动物的“云养猫/狗”游戏化增值服务、鼓励公益捐款等方式引入商业资本并将其投入流浪动物的TNR（Trap Neuter Release 诱捕、绝育、放生）管控和健康服务（免疫、驱虫、救助、义诊）之中。
+该项目主张流浪动物的所有权不该属于个人，动物应该与人以一种更平等的方式相处。通过上述商业模式，取代效率低下的收容+领养和人道缺失的扑杀的处理手段，实现流浪动物的人道主义救助和数量管控，加强人与流浪动物的联系，以期建立一种流浪动物和谐共生的崭新的未来城市生活方式。</description>
     </item>
     
     <item>
       <title>Magic Flashlight: 增强现实设计系列</title>
       <link>https://igloo302.github.io/portfolio/magicflashlight/</link>
-      <pubDate>Sat, 29 Feb 2020 17:45:43 +0800</pubDate>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://igloo302.github.io/portfolio/magicflashlight/</guid>
-      <description>&lt;p&gt;增强现实是一柄Magic Flashlight，要有光，而不仅有光。&lt;/p&gt;</description>
+      <description>&lt;blockquote&gt;
+&lt;p&gt;2018-2020&lt;/p&gt;
+&lt;p&gt;游戏交互设计&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;增强现实是一柄Magic Flashlight，要有光，而不仅有光。&lt;/p&gt;
+&lt;p&gt;增强「现实」并不会让「现实」有所不同，它改变视网膜接受的信号，以欺骗人的大脑。这意味着，增强现实的边界将是视觉-大脑-乃至身体的边界。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://img.osland.me/portfolio/MagicFlashlight.jpg&#34; alt=&#34;MagicFlashlight&#34;&gt;&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>ARKit: Crazy Museum ARKit交互设计实践教程</title>
       <link>https://igloo302.github.io/portfolio/arkitcourse/</link>
-      <pubDate>Sat, 29 Feb 2020 21:19:35 +0800</pubDate>
+      <pubDate>Sat, 29 Feb 2020 00:00:00 +0000</pubDate>
       
       <guid>https://igloo302.github.io/portfolio/arkitcourse/</guid>
-      <description>&lt;p&gt;零基础ARKit交互设计实践教程&lt;a href=&#34;https://www.iosarkit.xyz/&#34;&gt;https://www.iosarkit.xyz/&lt;/a&gt;。&lt;/p&gt;</description>
+      <description> 2019.10-2020.01 教程撰写编辑
+ 本教程为零基础的ARKit入门教程，由本人负责编辑并维护。
+当我在逛博物馆的时候，精美的展品总会让我赞叹不已，但是，总会因为知识储备的不足，而错失很多展品背后的奇妙故事和知识。如果有一款AR应用，可以帮助我们更好地理解展品背后的故事，让沉默的展品说话，甚至让展品以人格化的方式互动，那会不会带来更有趣和有价值的观展体验呢？
+本教程将引导读者利用ARKit的各种强大功能，构建一款恐龙博物馆AR互动App。
+ 该项目由苹果电脑贸易（上海）有限公司、上海交通大学创新设计研究院创新设计思维工作室联合创建。
+ </description>
     </item>
     
     <item>
       <title>智音：汽车销售顾问管理评估系统</title>
       <link>https://igloo302.github.io/portfolio/smartvoice/</link>
-      <pubDate>Fri, 06 Mar 2020 21:19:35 +0800</pubDate>
+      <pubDate>Wed, 06 Mar 2019 21:19:35 +0800</pubDate>
       
       <guid>https://igloo302.github.io/portfolio/smartvoice/</guid>
-      <description>&lt;p&gt;智音是针对汽车销售场景的销售员话术培训考核和销售评估的系统，将智能语音技术融入销售顾问的培训学习、技能考核和实际销售中的话术评估以及CRM之中，提升人工效率，带来价值提升。&lt;/p&gt;</description>
+      <description> 2019
+产品设计
+ 智音是针对汽车销售场景的销售员话术培训考核和销售评估的系统，将智能语音技术融入销售顾问的培训学习、技能考核和实际销售中的话术评估以及CRM之中，提升人工效率，带来价值提升。
+今日的汽车销售场景，顾客对于品牌有着更高的期望，在客户生命周期的每一阶段都需要获得顺畅的旅程，这之中销售顾问扮演了重要的角色。 本项目将智能语音技术融入销售顾问的培训学习、技能考核和实际销售中的话术评估以及CRM之中，提升人工效率，带来价值提升。
+飞机稿分析  对话者多人分离技术目前难以达到商用标准 情绪识别功能需要语音技术提供商支持，该能力如何充分利用待讨论 在销售场景中保证收音质量，可能需要利用外设麦克风 和现有管理系统如何配合待确认  </description>
     </item>
     
     <item>
       <title>都9102年了，我们将会如何“阅读”？</title>
       <link>https://igloo302.github.io/portfolio/howtoread/</link>
-      <pubDate>Sat, 29 Feb 2020 19:01:21 +0800</pubDate>
+      <pubDate>Sat, 29 Dec 2018 00:00:00 +0000</pubDate>
       
       <guid>https://igloo302.github.io/portfolio/howtoread/</guid>
       <description>Thanks Chufan for the guidance.
@@ -69,37 +93,50 @@
     <item>
       <title>「蛋白客」共享蛋白粉机</title>
       <link>https://igloo302.github.io/portfolio/danbk/</link>
-      <pubDate>Sat, 29 Feb 2020 18:45:13 +0800</pubDate>
+      <pubDate>Tue, 20 Feb 2018 00:00:00 +0000</pubDate>
       
       <guid>https://igloo302.github.io/portfolio/danbk/</guid>
-      <description>&lt;p&gt;每一个健身房都应该有一台蛋白客。&lt;/p&gt;</description>
+      <description> 2018.2-2018.6
+发起人
+市场调研|产品设计|技术实现|可用性测试
+ 每一个健身房都应该有一台蛋白客。
+近年来，随着国民对健康生活的要求不断提高，越来越多的人开始尝试健身运动。健身的核心是增肌，而增肌过程中最重要的是补充蛋白质。目前，中国运动营养品细分市场中蛋白粉市场规模近10亿人民币。然而，蛋白粉的购买、饮用过程中，却存在诸多的不便，集中反映在携带不便、清洗过程繁琐等方面。基于这种的现状，对健身者需求进行调研分析，设计出一款提供蛋白粉现场自动制售的智能化产品。
+蛋白客可以提供自动蛋白粉冲调服务，同时根据用户的偏好和健康数据进行口味个性化调节和科学剂量建议，从而满足合理的营养摄入需要，为健身蛋白粉补充提供从购买-冲调-应用的系统化解决方案。
+  </description>
     </item>
     
     <item>
       <title>Jumper Cable Redesign</title>
       <link>https://igloo302.github.io/portfolio/cable/</link>
-      <pubDate>Sat, 29 Feb 2020 18:31:09 +0800</pubDate>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://igloo302.github.io/portfolio/cable/</guid>
-      <description>&lt;p&gt;The Simplest is the hardest.&lt;/p&gt;</description>
+      <description>&lt;blockquote&gt;
+&lt;p&gt;2018&lt;/p&gt;
+&lt;p&gt;产品概念设计&lt;/p&gt;
+&lt;/blockquote&gt;</description>
     </item>
     
     <item>
       <title>FOR HER. SUV智能踏板</title>
       <link>https://igloo302.github.io/portfolio/forher/</link>
-      <pubDate>Sat, 29 Feb 2020 19:14:21 +0800</pubDate>
+      <pubDate>Wed, 28 Feb 2018 00:00:00 +0000</pubDate>
       
       <guid>https://igloo302.github.io/portfolio/forher/</guid>
-      <description>&lt;p&gt;什么时候，一个年轻的都市女性选择会购买一辆全尺寸的SUV？&lt;/p&gt;</description>
+      <description>2018
+用户访谈|产品概念设计
+ 97%的女性参与掌握家庭财权，58.8%的女性参与购车的决策，博得女性的欢心显得极为重要。这是一款为女性设计的SUV选装的智能踏板，旨在解决女性上下大型SUV时不便的问题，同时，该踏板还提供了地面显示的功能，让硬朗的SUV更懂她的心。</description>
     </item>
     
     <item>
       <title>TreeTalk 树说</title>
       <link>https://igloo302.github.io/portfolio/treetalk/</link>
-      <pubDate>Sat, 29 Feb 2020 19:05:33 +0800</pubDate>
+      <pubDate>Tue, 29 Jan 2019 19:05:33 +0800</pubDate>
       
       <guid>https://igloo302.github.io/portfolio/treetalk/</guid>
-      <description>&lt;p&gt;在孤独的城市里，有一棵懂你的树。&lt;/p&gt;</description>
+      <description> 2019.01
+应用产品设计|交互设计
+ </description>
     </item>
     
     <item>
@@ -108,13 +145,16 @@
       <pubDate>Sat, 29 Feb 2020 19:22:02 +0800</pubDate>
       
       <guid>https://igloo302.github.io/portfolio/else/</guid>
-      <description>&lt;p&gt;其他项目&lt;/p&gt;</description>
+      <description>One 电梯开关门按键再设计 设计理念 当我们按下关门/开门的按钮，我们在想什么？ 只有两种可能的意图，保持或逆转状态，在最简单的行动载体——One Button上，如何让流程最为简单，降低认知时间，消灭确定和修正的时间是本设计的发力点。
+操作过程 按压中间的按钮，逆转当前状态，关闭的门打开，打开的门关闭，大开中的门开始关闭，关闭中的门开始打开。 转动外围拨盘，应对开门等待的情况，在灯光的时间指示下，让大门延迟关闭。
+如何解决按错的问题 一个按钮降低认知时间，同时通过意图分析可以发现，一个按钮的设计可以应对各种情况。轮盘的设计是一种妥协，个人认为用手挡住门边即是目前最好的解决方案。
+运动社交平台Tino TINO体诺与运动场馆官方合作，提供各个运动场地地订场服务，同时，我们还提供包括并不限于餐饮、交通和运动器材等运动周边产品租售服务，让用户可以在TINO解决他地所有运动需求。此外，我们还建立了运动UGC社区，用户可以在平台上发布运动心得体育，开启健康运动生活。 动画作品 您的浏览器不支持 video 标签。  脚尖下的源源 文化记录片</description>
     </item>
     
     <item>
       <title>如何设计一枚代表爱情的戒指</title>
       <link>https://igloo302.github.io/portfolio/lovering/</link>
-      <pubDate>Sat, 29 Feb 2020 19:10:54 +0800</pubDate>
+      <pubDate>Sun, 29 Dec 2019 19:10:54 +0800</pubDate>
       
       <guid>https://igloo302.github.io/portfolio/lovering/</guid>
       <description></description>
