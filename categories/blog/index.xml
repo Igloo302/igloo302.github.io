@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Blog on 冰屋里</title>
+    <link>https://igloo302.github.io/categories/blog/</link>
+    <description>Recent content in Blog on 冰屋里</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 21 Mar 2020 20:59:48 +0000</lastBuildDate>
+    
+	<atom:link href="https://igloo302.github.io/categories/blog/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>在Hugo博客插入保持宽高比的iframe视频</title>
+      <link>https://igloo302.github.io/2020/%E5%9C%A8hugo%E5%8D%9A%E5%AE%A2%E6%8F%92%E5%85%A5%E4%BF%9D%E6%8C%81%E5%AE%BD%E9%AB%98%E6%AF%94%E7%9A%84iframe%E8%A7%86%E9%A2%91/</link>
+      <pubDate>Sat, 21 Mar 2020 20:59:48 +0000</pubDate>
+      
+      <guid>https://igloo302.github.io/2020/%E5%9C%A8hugo%E5%8D%9A%E5%AE%A2%E6%8F%92%E5%85%A5%E4%BF%9D%E6%8C%81%E5%AE%BD%E9%AB%98%E6%AF%94%E7%9A%84iframe%E8%A7%86%E9%A2%91/</guid>
+      <description>在Hugo实现的作品集静态网站插入视频的时候，遇到了一个问题：视频无法根据页面宽度自动调整宽高比，导致视频在手机这种小屏幕上会出现上下黑边。
+这个问题可以使用CSS来解决。最简单的方式就是将视频的iframe放在一个保持宽高比的div中（代码源自此处）：
+/* 这个规则规定了iframe父元素容器的尺寸，16:9的近似值为56%*/ .selfadapting-video { position: relative; width: 100%; height: 0; padding-bottom: 56%; /* 高度应该是宽度的56% */ } /* 设定iframe的宽度和高度，让iframe占满整个父元素容器 */ .selfadapting-video iframe { position: absolute; width: 100%; height: 100%; left: 0; top: 0; } 如果使用的是Hugo，打开~\themes\主题名\static\css，在custom.css中添加。
+如果是Hexo+next主题，首先在~\themes\next\source\css\main.styl中添加一行以使用自定义css
+@import &amp;#34;_custom&amp;#34;; 然后在~\themes\next\source\css\新建文件custom.styl并添加上述CSS。
+删去iframe中关于高度和宽度的设定，将其添加到 &amp;lt;div class=&amp;quot;selfadapting-video-bilibili&amp;quot;&amp;gt; ... &amp;lt;/div&amp;gt;之中：
+&amp;lt;div class=&amp;#34;selfadapting-video&amp;#34;&amp;gt; &amp;lt;iframe src=&amp;#39;https://player.youku.com/embed/XNDU5NTkzNjQ4MA==&amp;#39; scrolling=&amp;#34;no&amp;#34; border=&amp;#34;0&amp;#34; frameborder=&amp;#34;no&amp;#34; framespacing=&amp;#34;0&amp;#34; allowfullscreen=&amp;#34;true&amp;#34; style=&amp;#34;max-width: 100%&amp;#34;&amp;gt;&amp;lt;/iframe&amp;gt; &amp;lt;/div&amp;gt; 效果如下：
+  对于优酷、Youtube这种，这个CSS已经可以用了，但是我常用的B站的iframe有一个特殊的机制：
+  在屏幕宽度较大时，B站的iframe会包含额外的顶部广告栏bilibili-player-video-recommend和底部控制栏bilibili-player-video-control，也就是说需要在宽度不同时实现不同的padding-bottom。
+以这个主题为例，本身这个页面已经实现了响应式布局，也就是针对不同的页面适配不同的栅格，具体的栅格设定可以在Html文件中看到：
+这样我们就可以根据Bootstrap的网格系统来计算一下在屏幕宽度为多少的时候应该修改视频的比例……当然这样有点麻烦。一个投机取巧的方式是打开Chrome，右击检查，将检查页面放置在右侧，拖动检查页面的宽度，此时网页的右上角会显示出网页的分辨率，此时只要观察视频在什么时候发生比例变化就可以了。
+经过尝试，发现屏幕宽度为728px、767px、992px时画面会自适应而发生视频宽度突变。所以修改CSS，使用@media来定义不同宽度时的视频比例。
+ 使用 @media 查询，你可以针对不同的媒体类型定义不同的样式。</description>
+    </item>
+    
+    <item>
+      <title>30分钟建立一个作品集网站 powered by Hugo</title>
+      <link>https://igloo302.github.io/2020/30%E5%88%86%E9%92%9F%E5%BB%BA%E7%AB%8B%E4%B8%80%E4%B8%AA%E4%BD%9C%E5%93%81%E9%9B%86%E7%BD%91%E7%AB%99-powered-by-hugo/</link>
+      <pubDate>Sat, 29 Feb 2020 11:25:06 +0000</pubDate>
+      
+      <guid>https://igloo302.github.io/2020/30%E5%88%86%E9%92%9F%E5%BB%BA%E7%AB%8B%E4%B8%80%E4%B8%AA%E4%BD%9C%E5%93%81%E9%9B%86%E7%BD%91%E7%AB%99-powered-by-hugo/</guid>
+      <description>昨天看到猪场的暑期实习开始“招标”了，头上划过几道黑线。赋闲在家快一个半月，简历和作品集都没有好好准备。上次用Hexo重建了这个Blog的时候，看到了很好看的Hugo博客，还有一个LeaveIt主题非常可爱，就心水不已。翻了翻Hugo的Theme页面，好看的真不少，可能是英语用户比较多吧:)
+干脆单独建一个项目，拿Hugo把作品集重建一下吧，之后有时间的话，会尝试做一版自己的主题将Blog和Portfolio整合在一起。
+安装环境   Windows 10
+  装好Chocolatey
+  安装Hugo和初始化 在各种平台的安装放在看这里，因为我装好了Chocolatey ，所以直接一步执行：
+choco install hugo -confirm 输入命令检查是否安装成功：
+hugo version 进入一个想要放Hugo文件夹的目录，Shift+右键打开PowerShell，输入命令：
+hugo new site portfolio # 站点名称 这样Hugo会自动创建一个名为portfolio的文件夹，里面包含了站点所需的所有文件：
+设置主题 可以在Hugo Themes中找到数百款不同风格的Hugo主题，还可以根据站点的类型选择Tag。在portfolio标签下面意外发现了我之间使用的Bootstrap主题Freelancer :)
+B站UP TenGuSan 提过，作品集需要适配手机的屏幕和比例，最基本的一点就是不能要求阅读者ZOOM IN &amp;amp; OUT。题外话，这个角度上，小红书的缩放功非常优秀。
+我找到了两款比较符合自己喜好的：
+Creative portfolio会相对更加简洁一点。
+Parsa Hugo可以展示重点项目、Instagram照片，完全可以用来当作一个完整的Blog。
+选择自己喜欢的Theme，找到Git地址，输入以下命令：
+cd .\portfolio\ git init git submodule add https://github.com/kishaningithub/hugo-creative-portfolio-theme.git themes/creative 主题已经下载到themes/Creative文件夹下了，将portfolio\themes\creative\exampleSite中的所有文件复制到portfolio\目录中（复制并替换），打开根目录的配置文件config.toml，将theme = &amp;quot;hugo-creative-portfolio-theme&amp;quot;修改为theme = &amp;quot;creative&amp;quot;。
+运行命令便可以在http://localhost:1313/中访问这个Sample Site了。
+hugo server 部署到GitHub Pages 我们还是使用GitHub Pages作为托管服务器。直接运行hugo命令，就会创建public文件夹，里面就是这个静态网站所有的文件了，像此前hexo教程中一样，直接push这个文件夹到Github的username.github.io就可以访问了。
+但是会有两个问题：
+ 我已经使用了username.</description>
+    </item>
+    
+    <item>
+      <title>从WordPress迁移到GitHub Pages：Hexo建站记录</title>
+      <link>https://igloo302.github.io/2020/%E4%BB%8Ewordpress%E8%BF%81%E7%A7%BB%E5%88%B0github-pages-hexo%E5%BB%BA%E7%AB%99%E8%AE%B0%E5%BD%95/</link>
+      <pubDate>Tue, 25 Feb 2020 15:22:56 +0000</pubDate>
+      
+      <guid>https://igloo302.github.io/2020/%E4%BB%8Ewordpress%E8%BF%81%E7%A7%BB%E5%88%B0github-pages-hexo%E5%BB%BA%E7%AB%99%E8%AE%B0%E5%BD%95/</guid>
+      <description>年纪渐长，记忆的衰退有时并不是生理性的。要往脑子里塞的东西越来越多，越来越奇形怪状，有效就没法好好放进去了。只能留一点，放一点。于是难免有漏网之鱼。到后来就觉得可惜。
+老戴说，社交网络很难作为自己的记忆留存，的确，碎片化的转评赞，只能用来让“别人”来窥探一个不完整的自己。我有一个完整的叙述在几个庞大又缺乏整理的OneNote笔记本里，作为知识的采集和消化，这绰绰有余，但作为输出和理解，这远远不够。
+这个站其实16年或者更早就有了，写些乱七八糟的东西，也不管自己的文笔是多么糟糕了。但是Lost Years之后手愈加生了。我自知不是一个很好的创作者，和16 personalities的结论恰恰相反。但是从意愿上来说，讲述是一件让人愉快的事情。
+言归正传，本文记录一下自己如何把之前的WordPress迁移到GitHub Pages并用Hexo建站和简单调试的过程，以供自己未来查阅，注意，此非教程，但如若对读者有些帮助，也不赖。
+ 之前的写过一些文章，拍过几张照片，都存在了一个搭建在VPS的WordPress上，相比GitHub Pages来说麻烦不少，另外，GitHub虽然访问速度不快，但是至少暂时不会完全被墙。
+WordPress Export -&amp;gt; Markdown 从WordPress我们可以导出XML文件，里面包含了所有的Posts。使用wordpress-export-to-markdown这个开源工具可以将其转换成适用于静态博客的Markdown以及下载保存文中其中的图片。
+安装依赖Node.js，以默认设置安装即可，然后在PowerShell运行命令：
+npx wordpress-export-to-markdown 等待脚本下载完成，选择XML文件的路径后就可导出Markdown文件，为了让文章链接更加简洁，Year和Month的文件夹都没有创建。如果之前没有使用图床的话，可以将Save images attached to posts?设为Yes。
+GitHub Pages + Hexo 创建repository 在GitHub创建一个名为&amp;quot;你的GitHub ID.github.io&amp;quot;的repository，即可拥有GitHub提供了免费的静态网站托管空间。
+安装Git和Hexo Hexo是一个在国内流行的开源建站工具，开发者来自台湾，所以中文支持很好。
+ Hexo is a fast, simple &amp;amp; powerful blog framework powered by Node.js.
+ 虽然Hexo没有像WordPress那样非常宜人，甚至略显臃肿的后台，但是使用起来门槛并不高。
+Node.js我们已经安装好了，直接输入命令安装Hexo：
+npm install hexo-cli -g 在等待安装hexo的时候，完成Git的安装。
+配置SSH Keys Hexo需要和GitHub的仓库进行通讯，我们需要创建一个SSH Keys密钥对，将公钥交给GitHub用于Git操作时的签名和加密。
+ 不要去硬记。 你只要想：既然是加密，那肯定是不希望别人知道我的消息，所以只有我才能解密，所以可得出公钥负责加密，私钥负责解密；同理，既然是签名，那肯定是不希望有人冒充我发消息，只有我才能发布这个签名，所以可得出私钥负责签名，公钥负责验证。
+_ 匿名用户 RSA的公钥和私钥到底哪个才是用来加密和哪个用来解密？
+ 其他关于公钥和私钥的理解可以看这篇博文。
+# 生成一个新的SSH Key ssh-keygen -t rsa -C &amp;#34;你的邮箱&amp;#34; Generating public/private rsa key pair.</description>
+    </item>
+    
+  </channel>
+</rss>
