@@ -4,13 +4,20 @@
   <meta http-equiv="content-type" content="text/html;charset=utf-8">
   <meta http-equiv="X-UA-Compatible" content="chrome=1">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="robots" content="noodp"/>
+  <meta name="robots" content="noodp" />
+  
   <meta name="author" content="Igloo">
   
   
   
+  
   <link rel="prev" href="https://igloo302.github.io/2020/%E4%B8%80%E6%AC%A1%E6%96%87%E8%89%BA%E5%A4%8D%E5%85%B4/" />
+  
   <link rel="next" href="https://igloo302.github.io/2020/%E5%9B%A0%E4%B8%BA%E4%BA%BA%E5%B7%A5%E6%89%80%E4%BB%A5%E6%99%BA%E8%83%BD%E8%BF%9F%E8%BF%9F%E8%BF%9F%E8%BF%9F%E5%88%B0%E7%9A%84%E6%99%BA%E8%83%BD%E8%AF%AD%E9%9F%B3%E4%BA%A7%E5%93%81%E5%AE%9E%E4%B9%A0%E9%9A%8F%E7%AC%94/" />
+  
+  <script src="https://kit.fontawesome.com/3dd514082f.js" crossorigin="anonymous"></script>
+
+
   <link rel="canonical" href="https://igloo302.github.io/2020/%E5%9C%A8hugo%E5%8D%9A%E5%AE%A2%E6%8F%92%E5%85%A5%E4%BF%9D%E6%8C%81%E5%AE%BD%E9%AB%98%E6%AF%94%E7%9A%84iframe%E8%A7%86%E9%A2%91/" />
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -20,12 +27,13 @@
   <meta name="msapplication-TileColor" content="#da532c">
   <meta name="theme-color" content="#ffffff">
   <title>
-       
-       
-           在Hugo博客插入保持宽高比的iframe视频 | 冰屋里
-       
+    
+    
+    在Hugo博客插入保持宽高比的iframe视频 | 冰屋里
+    
   </title>
-  <meta name="title" content="在Hugo博客插入保持宽高比的iframe视频 | 冰屋里">
+  <meta name="title"
+    content="在Hugo博客插入保持宽高比的iframe视频 | 冰屋里">
     
   
   <link rel="stylesheet" href="/font/iconfont.css">
@@ -46,7 +54,7 @@
     "articleSection" : "posts",
     "name" : "在Hugo博客插入保持宽高比的iframe视频",
     "headline" : "在Hugo博客插入保持宽高比的iframe视频",
-    "description" : "在Hugo实现的作品集静态网站插入视频的时候，遇到了一个问题：视频无法根据页面宽度自动调整宽高比，导致视频在手机这种小屏幕上会出现上下黑边。\n这个问题可以使用CSS来解决。最简单的方式就是将视频的iframe放在一个保持宽高比的div中（代码源自此处）：\n\/* 这个规则规定了iframe父元素容器的尺寸，16:9的近似值为56%*\/ .selfadapting-video { position: relative;\rwidth: 100%;\rheight: 0;\rpadding-bottom: 56%; \/* 高度应该是宽度的56% *\/\r} \/* 设定iframe的宽度和高度，让iframe占满整个父元素容器 *\/\r.selfadapting-video iframe { position: absolute;\rwidth: 100%;\rheight: 100%;\rleft: 0;\rtop: 0;\r}\r如果使用的是Hugo，打开~\\themes\\主题名\\static\\css，在custom.css中添加。\n如果是Hexo\x2bnext主题，首先在~\\themes\\next\\source\\css\\main.styl中添加一行以使用自定义css\n@import \x26#34;_custom\x26#34;;\r然后在~\\themes\\next\\source\\css\\新建文件custom.styl并添加上述CSS。\n删去iframe中关于高度和宽度的设定，将其添加到 \x26lt;div class=\x26quot;selfadapting-video-bilibili\x26quot;\x26gt; ... \x26lt;\/div\x26gt;之中：\n\x26lt;div class=\x26#34;selfadapting-video\x26#34;\x26gt;\r\x26lt;iframe src=\x26#39;https:\/\/player.youku.com\/embed\/XNDU5NTkzNjQ4MA==\x26#39; scrolling=\x26#34;no\x26#34; border=\x26#34;0\x26#34; frameborder=\x26#34;no\x26#34; framespacing=\x26#34;0\x26#34; allowfullscreen=\x26#34;true\x26#34; style=\x26#34;max-width: 100%\x26#34;\x26gt;\x26lt;\/iframe\x26gt;\r\x26lt;\/div\x26gt;\r对于优酷、Youtube这种，这个CSS已经可以用了，但是我常用的B站的iframe有一个特殊的机制：\n\r在屏幕宽度较大时，B站的iframe会包含额外的顶部广告栏bilibili-player-video-recommend和底部控制栏bilibili-player-video-control，也就是说需要在宽度不同时实现不同的padding-bottom。\n以这个主题为例，本身这个页面已经实现了响应式布局，也就是针对不同的页面适配不同的栅格，具体的栅格设定可以在Html文件中看到：\n这样我们就可以根据Bootstrap的网格系统来计算一下在屏幕宽度为多少的时候应该修改视频的比例……当然这样有点麻烦。一个投机取巧的方式是打开Chrome，右击检查，将检查页面放置在右侧，拖动检查页面的宽度，此时网页的右上角会显示出网页的分辨率，此时只要观察视频在什么时候发生比例变化就可以了。\n经过尝试，发现屏幕宽度为728px、767px、992px时画面会自适应而发生视频宽度突变。所以修改CSS，使用@media来定义不同宽度时的视频比例。\n 使用 @media 查询，你可以针对不同的媒体类型定义不同的样式。\n@media 可以针对不同的屏幕尺寸设置不同的样式，特别是如果你需要设置设计响应式的页面，@media 是非常有用的。",
+    "description" : "在Hugo实现的作品集静态网站插入视频的时候，遇到了一个问题：视频无法根据页面宽度自动调整宽高比，导致视频在手机这种小屏幕上会出现上下黑边。\n这个问题可以使用CSS来解决。最简单的方式就是将视频的iframe放在一个保持宽高比的div中（代码源自此处）：\n\/* 这个规则规定了iframe父元素容器的尺寸，16:9的近似值为56%*\/ .selfadapting-video { position: relative; width: 100%; height: 0; padding-bottom: 56%; \/* 高度应该是宽度的56% *\/ } \/* 设定iframe的宽度和高度，让iframe占满整个父元素容器 *\/ .selfadapting-video iframe { position: absolute; width: 100%; height: 100%; left: 0; top: 0; } 如果使用的是Hugo，打开~\\themes\\主题名\\static\\css，在custom.css中添加。\n如果是Hexo\x2bnext主题，首先在~\\themes\\next\\source\\css\\main.styl中添加一行以使用自定义css\n@import \x26#34;_custom\x26#34;; 然后在~\\themes\\next\\source\\css\\新建文件custom.styl并添加上述CSS。\n删去iframe中关于高度和宽度的设定，将其添加到 \x26lt;div class=\x26quot;selfadapting-video-bilibili\x26quot;\x26gt; ... \x26lt;\/div\x26gt;之中：\n\x26lt;div class=\x26#34;selfadapting-video\x26#34;\x26gt; \x26lt;iframe src=\x26#39;https:\/\/player.youku.com\/embed\/XNDU5NTkzNjQ4MA==\x26#39; scrolling=\x26#34;no\x26#34; border=\x26#34;0\x26#34; frameborder=\x26#34;no\x26#34; framespacing=\x26#34;0\x26#34; allowfullscreen=\x26#34;true\x26#34; style=\x26#34;max-width: 100%\x26#34;\x26gt;\x26lt;\/iframe\x26gt; \x26lt;\/div\x26gt; 效果如下：\n  对于优酷、Youtube这种，这个CSS已经可以用了，但是我常用的B站的iframe有一个特殊的机制：\n  在屏幕宽度较大时，B站的iframe会包含额外的顶部广告栏bilibili-player-video-recommend和底部控制栏bilibili-player-video-control，也就是说需要在宽度不同时实现不同的padding-bottom。\n以这个主题为例，本身这个页面已经实现了响应式布局，也就是针对不同的页面适配不同的栅格，具体的栅格设定可以在Html文件中看到：\n这样我们就可以根据Bootstrap的网格系统来计算一下在屏幕宽度为多少的时候应该修改视频的比例……当然这样有点麻烦。一个投机取巧的方式是打开Chrome，右击检查，将检查页面放置在右侧，拖动检查页面的宽度，此时网页的右上角会显示出网页的分辨率，此时只要观察视频在什么时候发生比例变化就可以了。\n经过尝试，发现屏幕宽度为728px、767px、992px时画面会自适应而发生视频宽度突变。所以修改CSS，使用@media来定义不同宽度时的视频比例。\n 使用 @media 查询，你可以针对不同的媒体类型定义不同的样式。",
     "inLanguage" : "en-us",
     "author" : "Igloo",
     "creator" : "Igloo",
@@ -57,14 +65,13 @@
     "datePublished": "2020-03-21 20:59:48 \x2b0000 UTC",
     "dateModified" : "2020-03-21 20:59:48 \x2b0000 UTC",
     "url" : "https:\/\/igloo302.github.io\/2020\/%E5%9C%A8hugo%E5%8D%9A%E5%AE%A2%E6%8F%92%E5%85%A5%E4%BF%9D%E6%8C%81%E5%AE%BD%E9%AB%98%E6%AF%94%E7%9A%84iframe%E8%A7%86%E9%A2%91\/",
-    "wordCount" : "162",
+    "wordCount" : "164",
     "keywords" : [ "Hugo","Blog","CSS","iframe", "冰屋里"]
 }
 </script>
 
 </head>
 
-  
 
 
   <body class="">
@@ -175,8 +182,14 @@
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;selfadapting-video&#34;</span>&gt;
 &lt;<span style="color:#f92672">iframe</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#39;https://player.youku.com/embed/XNDU5NTkzNjQ4MA==&#39;</span>  <span style="color:#a6e22e">scrolling</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;no&#34;</span> <span style="color:#a6e22e">border</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;0&#34;</span> <span style="color:#a6e22e">frameborder</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;no&#34;</span> <span style="color:#a6e22e">framespacing</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;0&#34;</span> <span style="color:#a6e22e">allowfullscreen</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;true&#34;</span> <span style="color:#a6e22e">style</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;max-width: 100%&#34;</span>&gt;&lt;/<span style="color:#f92672">iframe</span>&gt;
 &lt;/<span style="color:#f92672">div</span>&gt;
-</code></pre></div><p>对于优酷、Youtube这种，这个CSS已经可以用了，但是我常用的B站的iframe有一个特殊的机制：</p>
-<iframe id=sbrxp src="//player.bilibili.com/player.html?aid=95644725&cid=163369904&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
+</code></pre></div><p>效果如下：</p>
+<div class="selfadapting-video">
+<iframe src='https://player.youku.com/embed/XNDU5NTkzNjQ4MA=='  scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" style="max-width: 100%"></iframe>
+</div>
+<p>对于优酷、Youtube这种，这个CSS已经可以用了，但是我常用的B站的iframe有一个特殊的机制：</p>
+<div class="selfadapting-video">
+<iframe id=sbrxp src="//player.bilibili.com/player.html?aid=95644725&cid=163369904&page=2" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
+</div>
 <p>在屏幕宽度较大时，B站的iframe会包含额外的顶部广告栏bilibili-player-video-recommend和底部控制栏bilibili-player-video-control，也就是说需要在宽度不同时实现不同的padding-bottom。</p>
 <p>以<a href="https://igloo302.github.io/portfolio/portfolio/ivision/">这个主题为例</a>，本身这个页面已经实现了响应式布局，也就是针对不同的页面适配不同的<a href="https://code.z01.com/v4/layout/grid.html">栅格</a>，具体的栅格设定可以在Html文件中看到：</p>
 <p><img src="http://img.osland.me/blog/hugo%20grid.png" alt=""></p>
@@ -231,7 +244,11 @@
         <span style="color:#66d9ef">padding-bottom</span>: <span style="color:#ae81ff">71</span><span style="color:#66d9ef">%</span>;
     }
 }
-</code></pre></div><p>这个方法基本解决了我的问题，大家可以根据这个方法和思路来调节自己的css。不过更理想的方案可能是对子级iframe进行操作……</p>
+</code></pre></div><p>可以达到这样的效果</p>
+<div class="selfadapting-video-bilibili">
+<iframe id=sbrxp src="//player.bilibili.com/player.html?aid=95644725&cid=163369904&page=2" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
+</div>
+<p>这个方法基本解决了我的问题，大家可以根据这个方法和思路来调节自己的css。不过更理想的方案可能是对子级iframe进行操作……</p>
 
     </div>
 
