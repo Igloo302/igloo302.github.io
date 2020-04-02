@@ -23,11 +23,11 @@ Docker安装Jellyfin  Jellyfin is the volunteer-built media solution that puts y
 相比一堆乱七八糟的文件夹又清晰又高级。
 我使用的主机是N1，搭载了荒野无灯开发的小钢炮ROM，已经自带了Jellyfin，不过更新会比较麻烦，因此重新使用Docker安装。
 首先禁用自带的jellyfin：
-# 禁用启动项mv /etc/init.d/S99jellyfin /etc/S99jellyfin.disabled# 关闭运行的jellyfinkillall jellyfin我使用的是docker镜像是jellyfin/jellyfin:nightly。
+# 禁用启动项 mv /etc/init.d/S99jellyfin /etc/S99jellyfin.disabled # 关闭运行的jellyfin killall jellyfin 我使用的是docker镜像是jellyfin/jellyfin:nightly。
 新建Container，端口映射8096/tcp，然后设置/cache，/media和/config三个分区即可。
 使用指令一键安装：
-docker run -d -p 8096:8096 -v /your/config:/config -v /your/media:/media -v /your/cache:/cache jellyfin/jellyfin:nightly此外，也可以采用linuxserver/jellyfin的镜像：
-docker create \ --name=jellyfin \ -e PUID=$(id -u jellyfin) \ -e PGID=$(cat /etc/group | grep -e &amp;#39;^users&amp;#39; | cut -d&amp;#39;:&amp;#39; -f3) \ -e TZ=Europe/London \ -e UMASK_SET=022 `#optional` \-p 8096:8096 \ -p 8920:8920 `#optional` \-v /path/to/library:/config \ -v /path/to/tvseries:/data/tvshows \ -v /path/to/movies:/data/movies \ -v /opt/vc/lib:/opt/vc/lib `#optional` \--device /dev/dri:/dev/dri `#optional` \--device /dev/vchiq:/dev/vchiq `#optional` \--device /dev/video10:/dev/video10 `#optional` \--device /dev/video11:/dev/video11 `#optional` \--device /dev/video12:/dev/video12 `#optional` \--restart unless-stopped \ linuxserver/jellyfin更详细的安装过程也可以参考这篇教程。</description>
+docker run -d -p 8096:8096 -v /your/config:/config -v /your/media:/media -v /your/cache:/cache jellyfin/jellyfin:nightly 此外，也可以采用linuxserver/jellyfin的镜像：
+docker create \  --name=jellyfin \  -e PUID=$(id -u jellyfin) \  -e PGID=$(cat /etc/group | grep -e &amp;#39;^users&amp;#39; | cut -d&amp;#39;:&amp;#39; -f3) \  -e TZ=Europe/London \  -e UMASK_SET=022 `#optional` \ -p 8096:8096 \  -p 8920:8920 `#optional` \ -v /path/to/library:/config \  -v /path/to/tvseries:/data/tvshows \  -v /path/to/movies:/data/movies \  -v /opt/vc/lib:/opt/vc/lib `#optional` \ --device /dev/dri:/dev/dri `#optional` \ --device /dev/vchiq:/dev/vchiq `#optional` \ --device /dev/video10:/dev/video10 `#optional` \ --device /dev/video11:/dev/video11 `#optional` \ --device /dev/video12:/dev/video12 `#optional` \ --restart unless-stopped \  linuxserver/jellyfin 更详细的安装过程也可以参考这篇教程。</description>
     </item>
     
   </channel>

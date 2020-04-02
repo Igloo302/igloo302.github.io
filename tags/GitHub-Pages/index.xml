@@ -24,18 +24,18 @@
  之前的写过一些文章，拍过几张照片，都存在了一个搭建在VPS的WordPress上，相比GitHub Pages来说麻烦不少，另外，GitHub虽然访问速度不快，但是至少暂时不会完全被墙。
 WordPress Export -&amp;gt; Markdown 从WordPress我们可以导出XML文件，里面包含了所有的Posts。使用wordpress-export-to-markdown这个开源工具可以将其转换成适用于静态博客的Markdown以及下载保存文中其中的图片。
 安装依赖Node.js，以默认设置安装即可，然后在PowerShell运行命令：
-npx wordpress-export-to-markdown等待脚本下载完成，选择XML文件的路径后就可导出Markdown文件，为了让文章链接更加简洁，Year和Month的文件夹都没有创建。如果之前没有使用图床的话，可以将Save images attached to posts?设为Yes。
+npx wordpress-export-to-markdown 等待脚本下载完成，选择XML文件的路径后就可导出Markdown文件，为了让文章链接更加简洁，Year和Month的文件夹都没有创建。如果之前没有使用图床的话，可以将Save images attached to posts?设为Yes。
 GitHub Pages + Hexo 创建repository 在GitHub创建一个名为&amp;quot;你的GitHub ID.github.io&amp;quot;的repository，即可拥有GitHub提供了免费的静态网站托管空间。
 安装Git和Hexo Hexo是一个在国内流行的开源建站工具，开发者来自台湾，所以中文支持很好。
  Hexo is a fast, simple &amp;amp; powerful blog framework powered by Node.js.
  虽然Hexo没有像WordPress那样非常宜人，甚至略显臃肿的后台，但是使用起来门槛并不高。
 Node.js我们已经安装好了，直接输入命令安装Hexo：
-npm install hexo-cli -g在等待安装hexo的时候，完成Git的安装。
+npm install hexo-cli -g 在等待安装hexo的时候，完成Git的安装。
 配置SSH Keys Hexo需要和GitHub的仓库进行通讯，我们需要创建一个SSH Keys密钥对，将公钥交给GitHub用于Git操作时的签名和加密。
  不要去硬记。 你只要想：既然是加密，那肯定是不希望别人知道我的消息，所以只有我才能解密，所以可得出公钥负责加密，私钥负责解密；同理，既然是签名，那肯定是不希望有人冒充我发消息，只有我才能发布这个签名，所以可得出私钥负责签名，公钥负责验证。
 _ 匿名用户 RSA的公钥和私钥到底哪个才是用来加密和哪个用来解密？
  其他关于公钥和私钥的理解可以看这篇博文。
-# 生成一个新的SSH Keyssh-keygen -t rsa -C &amp;#34;你的邮箱&amp;#34;Generating public/private rsa key pair.</description>
+# 生成一个新的SSH Key ssh-keygen -t rsa -C &amp;#34;你的邮箱&amp;#34; Generating public/private rsa key pair.</description>
     </item>
     
   </channel>

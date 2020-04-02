@@ -23,8 +23,9 @@
 因为这个网络拓扑本质上实现了一次单线复用，所以也适用于弱电箱较小，无法容纳高性能网络设备的情况，比方说我就将N1放在了有网口的书房，同时打开N1的WiFi用于补足书房信号不足的问题。
 所需设备  正常运行的家庭网络 斐讯N1 双公头USB数据线（可使用两根没有的MicroUSB数据线DIY） 1GB以上U盘或TF卡+读卡器（USB 2.0最佳） USB鼠标 显示器和HDMI线 刷机包，包括N1降级工具（链接: https://pan.baidu.com/s/11-7FbdmTDBTcb-qberyQLw 提取码: 6h3s）、OpenWRT固件 Windows或Mac电脑  N1降级 如果买到的N1版本高于2.19，则需要将boot、bootloader、recovery降级，简要步骤如下：
  加电开机后用鼠标多次点击版本号，弹出Toast 「打开ADB」。 将N1连上Wifi或有线网络，记录IP地址 用双头USB线将N1和电脑相连 运行T1_N1降级工具v1.1.exe自动降级或手动刷入老版本boot、bootloader、recovery。  手动刷入方法：
- 打开adb所在文件夹，按住Shift同时右键空白处，点击「在此处打开Powershell窗口」 依次输入以下代码  # adb连接N1 .\adb.exe connect 192.168.x.xxx# 重启到fastboot .\adb.exe reboot fastboot# 刷入boot、bootloader、recovery fastboot flash boot .\N1\N1boot.imgfastboot flash bootloader .\N1\N1bootloader.imgfastboot flash recovery .\N1\N1recovery.img 安装OpenWRT 目前有2种方式安装OpenWRT/LEDE，分别为
- 安装Armbian系统，在Docker（可以理解为虚拟机）中安装OpenWRT 只安装OpenWRT  同时，两种安装方式都可以通过线刷和U盘刷/卡刷两种方式刷入N1。</description>
+ 打开adb所在文件夹，按住Shift同时右键空白处，点击「在此处打开Powershell窗口」 依次输入以下代码  # adb连接N1 .\adb.exe connect 192.168.x.xxx # 重启到fastboot .\adb.exe reboot fastboot # 刷入boot、bootloader、recovery fastboot flash boot .\N1\N1boot.img fastboot flash bootloader .\N1\N1bootloader.img fastboot flash recovery .\N1\N1recovery.img 安装OpenWRT 目前有2种方式安装OpenWRT/LEDE，分别为
+ 安装Armbian系统，在Docker（可以理解为虚拟机）中安装OpenWRT 只安装OpenWRT  同时，两种安装方式都可以通过线刷和U盘刷/卡刷两种方式刷入N1。
+因为笔者不只需要这台旁路由安安静静地负责单纯翻墙和去广告工作，所以选择只安装OpenWRT，固件采用的是flippy编译的OP，这个固件编译lean &amp;amp; lienol维护的源码。</description>
     </item>
     
   </channel>

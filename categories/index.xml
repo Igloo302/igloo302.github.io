@@ -6,9 +6,28 @@
     <description>Recent content in Categories on 冰屋里</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
+    <lastBuildDate>Sat, 21 Mar 2020 20:59:48 +0000</lastBuildDate>
     
 	<atom:link href="https://igloo302.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Blog</title>
+      <link>https://igloo302.github.io/categories/blog/</link>
+      <pubDate>Sat, 21 Mar 2020 20:59:48 +0000</pubDate>
+      
+      <guid>https://igloo302.github.io/categories/blog/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>7×24</title>
+      <link>https://igloo302.github.io/categories/724/</link>
+      <pubDate>Sun, 15 Mar 2020 22:18:04 +0000</pubDate>
+      
+      <guid>https://igloo302.github.io/categories/724/</guid>
+      <description></description>
+    </item>
     
   </channel>
 </rss>

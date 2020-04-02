@@ -54,7 +54,7 @@
     "articleSection" : "posts",
     "name" : "7×24: Jellyfin\x2bKodi打造个人媒体中心",
     "headline" : "7×24: Jellyfin\x2bKodi打造个人媒体中心",
-    "description" : "「一台7×24小时运行的电脑可以用来做什么？」系列第二篇。作为一个数字收集癖和整理癖患者，从十几年前在VeryCD上用迅雷慢慢下载TLF组的奥斯卡全集，几KB的速度下几周，到现在对比不同的压制组作品的质量，千兆的网络压得磁盘跟不上下载速度，硬盘容量存不下想要收藏的电影。回望过去，观看的速度永远跟不上下载的速度，甚至现在都不再需要下载再看了，这个过程见证了一段网络、影视、数码的发展历史。\nDocker安装Jellyfin  Jellyfin is the volunteer-built media solution that puts you in control of your media. Stream to any device from your own server, with no strings attached. Your media, your server, your way.\n Jellyfin的功能简单来说就是作为媒体服务器，统一管理影片，它的界面是这样的：\n相比一堆乱七八糟的文件夹又清晰又高级。\n我使用的主机是N1，搭载了荒野无灯开发的小钢炮ROM，已经自带了Jellyfin，不过更新会比较麻烦，因此重新使用Docker安装。\n首先禁用自带的jellyfin：\n# 禁用启动项\rmv \/etc\/init.d\/S99jellyfin \/etc\/S99jellyfin.disabled\r# 关闭运行的jellyfin\rkillall jellyfin\r我使用的是docker镜像是jellyfin\/jellyfin:nightly。\n新建Container，端口映射8096\/tcp，然后设置\/cache，\/media和\/config三个分区即可。\n使用指令一键安装：\ndocker run -d -p 8096:8096 -v \/your\/config:\/config -v \/your\/media:\/media -v \/your\/cache:\/cache jellyfin\/jellyfin:nightly\r此外，也可以采用linuxserver\/jellyfin的镜像：\ndocker create \\\r --name=jellyfin \\\r -e PUID=$(id -u jellyfin) \\\r -e PGID=$(cat \/etc\/group | grep -e \x26#39;^users\x26#39; | cut -d\x26#39;:\x26#39; -f3) \\\r -e TZ=Europe\/London \\\r -e UMASK_SET=022 `#optional` \\\r-p 8096:8096 \\\r -p 8920:8920 `#optional` \\\r-v \/path\/to\/library:\/config \\\r -v \/path\/to\/tvseries:\/data\/tvshows \\\r -v \/path\/to\/movies:\/data\/movies \\\r -v \/opt\/vc\/lib:\/opt\/vc\/lib `#optional` \\\r--device \/dev\/dri:\/dev\/dri `#optional` \\\r--device \/dev\/vchiq:\/dev\/vchiq `#optional` \\\r--device \/dev\/video10:\/dev\/video10 `#optional` \\\r--device \/dev\/video11:\/dev\/video11 `#optional` \\\r--device \/dev\/video12:\/dev\/video12 `#optional` \\\r--restart unless-stopped \\\r linuxserver\/jellyfin\r更详细的安装过程也可以参考这篇教程。",
+    "description" : "「一台7×24小时运行的电脑可以用来做什么？」系列第二篇。作为一个数字收集癖和整理癖患者，从十几年前在VeryCD上用迅雷慢慢下载TLF组的奥斯卡全集，几KB的速度下几周，到现在对比不同的压制组作品的质量，千兆的网络压得磁盘跟不上下载速度，硬盘容量存不下想要收藏的电影。回望过去，观看的速度永远跟不上下载的速度，甚至现在都不再需要下载再看了，这个过程见证了一段网络、影视、数码的发展历史。\nDocker安装Jellyfin  Jellyfin is the volunteer-built media solution that puts you in control of your media. Stream to any device from your own server, with no strings attached. Your media, your server, your way.\n Jellyfin的功能简单来说就是作为媒体服务器，统一管理影片，它的界面是这样的：\n相比一堆乱七八糟的文件夹又清晰又高级。\n我使用的主机是N1，搭载了荒野无灯开发的小钢炮ROM，已经自带了Jellyfin，不过更新会比较麻烦，因此重新使用Docker安装。\n首先禁用自带的jellyfin：\n# 禁用启动项 mv \/etc\/init.d\/S99jellyfin \/etc\/S99jellyfin.disabled # 关闭运行的jellyfin killall jellyfin 我使用的是docker镜像是jellyfin\/jellyfin:nightly。\n新建Container，端口映射8096\/tcp，然后设置\/cache，\/media和\/config三个分区即可。\n使用指令一键安装：\ndocker run -d -p 8096:8096 -v \/your\/config:\/config -v \/your\/media:\/media -v \/your\/cache:\/cache jellyfin\/jellyfin:nightly 此外，也可以采用linuxserver\/jellyfin的镜像：\ndocker create \\  --name=jellyfin \\  -e PUID=$(id -u jellyfin) \\  -e PGID=$(cat \/etc\/group | grep -e \x26#39;^users\x26#39; | cut -d\x26#39;:\x26#39; -f3) \\  -e TZ=Europe\/London \\  -e UMASK_SET=022 `#optional` \\ -p 8096:8096 \\  -p 8920:8920 `#optional` \\ -v \/path\/to\/library:\/config \\  -v \/path\/to\/tvseries:\/data\/tvshows \\  -v \/path\/to\/movies:\/data\/movies \\  -v \/opt\/vc\/lib:\/opt\/vc\/lib `#optional` \\ --device \/dev\/dri:\/dev\/dri `#optional` \\ --device \/dev\/vchiq:\/dev\/vchiq `#optional` \\ --device \/dev\/video10:\/dev\/video10 `#optional` \\ --device \/dev\/video11:\/dev\/video11 `#optional` \\ --device \/dev\/video12:\/dev\/video12 `#optional` \\ --restart unless-stopped \\  linuxserver\/jellyfin 更详细的安装过程也可以参考这篇教程。",
     "inLanguage" : "en-us",
     "author" : "Igloo",
     "creator" : "Igloo",
@@ -129,33 +129,40 @@
     <header class="post-header">
         <h1 class="post-title" itemprop="name headline">7×24: Jellyfin&#43;Kodi打造个人媒体中心</h1>
         <div class="post-meta">
-                Written by <a itemprop="name" href="https://igloo302.github.io" rel="author">Igloo</a> with ♥ 
-                <span class="post-time">
-                on <time datetime=2020-03-09 itemprop="datePublished">March 9, 2020</time>
-                </span>
-                in
+            Written by <a itemprop="name" href="https://igloo302.github.io"
+                rel="author">Igloo</a>
+            with ♥
+            <span class="post-time">
+                on <time datetime=2020-03-09
+                    itemprop="datePublished">March 9, 2020</time>
+            </span>
+            in
+            <i class="iconfont icon-folder"></i>
+            <span class="post-category">
+                <a href="https://igloo302.github.io/categories/724/"> 7×24 </a>
                 
+            </span>
         </div>
     </header>
     <div class="post-content">
         
 
         
-            
+        
         
 
         
         
-     
-          
-          
-          
 
-          
-          
-          
+        
+        
+        
 
-          <p>「一台<strong>7×24</strong>小时运行的电脑可以用来做什么？」系列第二篇。作为一个数字收集癖和整理癖患者，从十几年前在VeryCD上用迅雷慢慢下载TLF组的奥斯卡全集，几KB的速度下几周，到现在对比不同的压制组作品的质量，千兆的网络压得磁盘跟不上下载速度，硬盘容量存不下想要收藏的电影。回望过去，观看的速度永远跟不上下载的速度，甚至现在都不再需要下载再看了，这个过程见证了一段网络、影视、数码的发展历史。</p>
+        
+        
+        
+
+        <p>「一台<strong>7×24</strong>小时运行的电脑可以用来做什么？」系列第二篇。作为一个数字收集癖和整理癖患者，从十几年前在VeryCD上用迅雷慢慢下载TLF组的奥斯卡全集，几KB的速度下几周，到现在对比不同的压制组作品的质量，千兆的网络压得磁盘跟不上下载速度，硬盘容量存不下想要收藏的电影。回望过去，观看的速度永远跟不上下载的速度，甚至现在都不再需要下载再看了，这个过程见证了一段网络、影视、数码的发展历史。</p>
 <!-- more -->
 <h2 id="docker安装jellyfin">Docker安装Jellyfin</h2>
 <blockquote>
@@ -176,25 +183,25 @@ killall jellyfin
 <p>使用指令一键安装：</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">docker run -d -p 8096:8096 -v /your/config:/config -v /your/media:/media -v /your/cache:/cache jellyfin/jellyfin:nightly
 </code></pre></div><p>此外，也可以采用<code>linuxserver/jellyfin</code>的镜像：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">docker create <span style="color:#ae81ff">\</span>
-  --name<span style="color:#f92672">=</span>jellyfin <span style="color:#ae81ff">\</span>
-  -e PUID<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>id -u jellyfin<span style="color:#66d9ef">)</span> <span style="color:#ae81ff">\</span>
-  -e PGID<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>cat /etc/group | grep -e <span style="color:#e6db74">&#39;^users&#39;</span> | cut -d<span style="color:#e6db74">&#39;:&#39;</span> -f3<span style="color:#66d9ef">)</span> <span style="color:#ae81ff">\</span>
-  -e TZ<span style="color:#f92672">=</span>Europe/London <span style="color:#ae81ff">\</span>
-  -e UMASK_SET<span style="color:#f92672">=</span><span style="color:#ae81ff">022</span> <span style="color:#e6db74">`</span><span style="color:#75715e">#optional` \</span>
-  -p 8096:8096 <span style="color:#ae81ff">\</span>
-  -p 8920:8920 <span style="color:#e6db74">`</span><span style="color:#75715e">#optional` \</span>
-  -v /path/to/library:/config <span style="color:#ae81ff">\</span>
-  -v /path/to/tvseries:/data/tvshows <span style="color:#ae81ff">\</span>
-  -v /path/to/movies:/data/movies <span style="color:#ae81ff">\</span>
-  -v /opt/vc/lib:/opt/vc/lib <span style="color:#e6db74">`</span><span style="color:#75715e">#optional` \</span>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">docker create <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>  --name<span style="color:#f92672">=</span>jellyfin <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>  -e PUID<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>id -u jellyfin<span style="color:#66d9ef">)</span> <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>  -e PGID<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>cat /etc/group | grep -e <span style="color:#e6db74">&#39;^users&#39;</span> | cut -d<span style="color:#e6db74">&#39;:&#39;</span> -f3<span style="color:#66d9ef">)</span> <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>  -e TZ<span style="color:#f92672">=</span>Europe/London <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>  -e UMASK_SET<span style="color:#f92672">=</span><span style="color:#ae81ff">022</span> <span style="color:#e6db74">`</span><span style="color:#75715e">#optional` \</span>
+  -p 8096:8096 <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>  -p 8920:8920 <span style="color:#e6db74">`</span><span style="color:#75715e">#optional` \</span>
+  -v /path/to/library:/config <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>  -v /path/to/tvseries:/data/tvshows <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>  -v /path/to/movies:/data/movies <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>  -v /opt/vc/lib:/opt/vc/lib <span style="color:#e6db74">`</span><span style="color:#75715e">#optional` \</span>
   --device /dev/dri:/dev/dri <span style="color:#e6db74">`</span><span style="color:#75715e">#optional` \</span>
   --device /dev/vchiq:/dev/vchiq <span style="color:#e6db74">`</span><span style="color:#75715e">#optional` \</span>
   --device /dev/video10:/dev/video10 <span style="color:#e6db74">`</span><span style="color:#75715e">#optional` \</span>
   --device /dev/video11:/dev/video11 <span style="color:#e6db74">`</span><span style="color:#75715e">#optional` \</span>
   --device /dev/video12:/dev/video12 <span style="color:#e6db74">`</span><span style="color:#75715e">#optional` \</span>
-  --restart unless-stopped <span style="color:#ae81ff">\</span>
-  linuxserver/jellyfin
+  --restart unless-stopped <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>  linuxserver/jellyfin
 </code></pre></div><p>更详细的安装过程也可以参考这篇<a href="https://post.smzdm.com/p/a6lnxg3g/">教程</a>。</p>
 <h2 id="整理电影资料库">整理电影资料库</h2>
 <p>把混乱的影片文件夹变成精美的海报墙，就需要去获取包括海报、同人画、片名、年份、剧情介绍、演员等等信息，称为「元数据」。</p>
@@ -231,12 +238,34 @@ killall jellyfin
 
     </div>
 
+    <div class="post-copyright">
+        
+        <p class="copyright-item">
+            <span>Author:</span>
+            <span>Igloo </span>
+        </p>
+        
 
-  
+        
+        <p class="copyright-item">
+            <span>Link:</span>
+            <a href=https://igloo302.github.io/2020/724-jellyfin-kodi%E6%89%93%E9%80%A0%E4%B8%AA%E4%BA%BA%E5%AA%92%E4%BD%93%E4%B8%AD%E5%BF%83/>https://igloo302.github.io/2020/724-jellyfin-kodi%E6%89%93%E9%80%A0%E4%B8%AA%E4%BA%BA%E5%AA%92%E4%BD%93%E4%B8%AD%E5%BF%83/</span>
+        </p>
+
+        
+        
+        <p class="copyright-item lincese">
+            本文采用<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/" target="_blank">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可
+        </p>
+        
+    </div>
+
+
+
     <div class="post-tags">
         
-            <section>
-            <i class="iconfont icon-tag"></i>Tag(s): 
+        <section>
+            <i class="iconfont icon-tag"></i>Tag(s):
             
             <span class="tag"><a href="https://igloo302.github.io/tags/724/">
                     #7×24</a></span>
@@ -256,45 +285,59 @@ killall jellyfin
             <span class="tag"><a href="https://igloo302.github.io/tags/%E5%AA%92%E4%BD%93%E4%B8%AD%E5%BF%83/">
                     #媒体中心</a></span>
             
-            </section>
+        </section>
         
         <section>
-                <a href="javascript:window.history.back();">back</a></span> · 
-                <span><a href="https://igloo302.github.io">home</a></span>
+            <a href="javascript:window.history.back();">back</a></span> ·
+            <span><a href="https://igloo302.github.io">home</a></span>
         </section>
     </div>
 
     <div class="post-nav">
         
-        <a href="https://igloo302.github.io/2020/%E5%AE%89%E8%A3%85%E6%88%B7%E5%A4%96%E7%9B%91%E6%8E%A7%E7%B3%BB%E7%BB%9F%E5%B0%8F%E8%AE%B0%E6%97%A0%E9%A2%84%E5%9F%8B%E7%BA%BFnas%E5%BD%95%E5%83%8F%E6%9C%BA/" class="prev" rel="prev" title="安装户外监控系统小记 | 无预埋线 | NAS录像机"><i class="iconfont icon-left"></i>&nbsp;安装户外监控系统小记 | 无预埋线 | NAS录像机</a>
-         
+        <a href="https://igloo302.github.io/2020/%E5%AE%89%E8%A3%85%E6%88%B7%E5%A4%96%E7%9B%91%E6%8E%A7%E7%B3%BB%E7%BB%9F%E5%B0%8F%E8%AE%B0%E6%97%A0%E9%A2%84%E5%9F%8B%E7%BA%BFnas%E5%BD%95%E5%83%8F%E6%9C%BA/" class="prev" rel="prev" title="安装户外监控系统小记 | 无预埋线 | NAS录像机"><i
+                class="iconfont icon-left"></i>&nbsp;安装户外监控系统小记 | 无预埋线 | NAS录像机</a>
         
-        <a href="https://igloo302.github.io/2020/724-%E8%8D%92%E9%87%8E%E6%97%A0%E7%81%AFn1%E5%B0%8F%E9%92%A2%E7%82%AEpt%E4%B8%8B%E8%BD%BD%E6%9C%BA%E7%AE%80%E5%8D%95%E8%B0%83%E6%95%99/" class="next" rel="next" title="7×24: 荒野无灯N1小钢炮PT下载机简单调教">7×24: 荒野无灯N1小钢炮PT下载机简单调教&nbsp;<i class="iconfont icon-right"></i></a>
+        
+        <a href="https://igloo302.github.io/2020/724-%E8%8D%92%E9%87%8E%E6%97%A0%E7%81%AFn1%E5%B0%8F%E9%92%A2%E7%82%AEpt%E4%B8%8B%E8%BD%BD%E6%9C%BA%E7%AE%80%E5%8D%95%E8%B0%83%E6%95%99/" class="next" rel="next"
+            title="7×24: 荒野无灯N1小钢炮PT下载机简单调教">7×24: 荒野无灯N1小钢炮PT下载机简单调教&nbsp;<i class="iconfont icon-right"></i></a>
         
     </div>
 
     <div class="post-comment">
-          
-                 
-          
-                  
-                  
-                  <div id="vcomments"></div>
-                  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
-                  <script src='//unpkg.com/valine/dist/Valine.min.js'></script>
-                  <script type="text/javascript">
-                    new Valine({
-                      el: '#vcomments',
-                      appId: 'SIOuMPbRjrVKLs1aBbSS30Ne-gzGzoHsz',
-                      appKey: 'uv74bsFWliyb0LPw2XV8MIjM',
-                      notify:  false ,
-                      verify:  false ,
-                      avatar: 'mm',
-                      placeholder: 'Mann Tracht, Un Gott Lacht.',
-                      visitor:  true 
-                      });
-                  </script>
-                  
+        
+        
+        
+        
+        
+        <div id="vcomments"></div>
+        <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+        <script src='//unpkg.com/valine/dist/Valine.min.js'></script>
+        <script type="text/javascript">
+            new Valine({
+                el: '#vcomments',
+                appId: 'SIOuMPbRjrVKLs1aBbSS30Ne-gzGzoHsz',
+                appKey: 'uv74bsFWliyb0LPw2XV8MIjM',
+                notify: {
+                    {
+                        .Site.Params.valine.notify
+                    }
+                },
+                verify: {
+                    {
+                        .Site.Params.valine.verify
+                    }
+                },
+                avatar: 'mm',
+                placeholder: 'Mann Tracht, Un Gott Lacht.',
+                visitor: {
+                    {
+                        .Site.Params.valine.visitor
+                    }
+                }
+            });
+        </script>
+        
     </div>
 </article>
           </div>

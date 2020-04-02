@@ -54,7 +54,7 @@
     "articleSection" : "posts",
     "name" : "7×24: 私人黄金屋Calibre Web",
     "headline" : "7×24: 私人黄金屋Calibre Web",
-    "description" : "Calibre是我一直在使用的一款书籍管理软件，但是Calibre总体设计是一款本地桌面软件，对于书库的多平台管理不太友好。Calibre Web使用了Calibre的数据库，是一个轻量化的Web版的Calibre，本节介绍一下如何在Docker上部署Calibre Web和基本的配置。\nCalibre Web推荐了两个Docker镜像，technosoft2000\/calibre-web支持linux\/amd64，linuxserver\/calibre-web的电子书转换功能只有x86-64可以用（安装后发现calibre-web可以使用外部的转换器）。\n在N1上安装linuxserver\/calibre-web的指令：\ndocker run \\\r --name=calibre-web \\\r -e PUID=0 \\\r -e PGID=0 \\\r -e TZ=Asia\/Shanghai \\\r -p 8083:8083\\\r -v \/media\/Travel\/Document\/calibre-web:\/config \\\r -v \/media\/Travel\/Document\/Calibre:\/books \\\r --restart unless-stopped \\\r linuxserver\/calibre-web\r注意，此处将PUID和PGID都设置成了0，是一个不太靠谱的做法。正确的做法是和qB一样，创建一个同名用户，将这个Docker容器指定到这个用户。不过用户权限的细节我不是特别明白，所以就先指定到root用户了。\n打开your-ip:8083，将书库设为\/books。\n初始登录账号密码为Username: admin，Password: admin123。\n登录后点击右上角的admin，输入自定义的用户名和密码，语言可以修改为中文。在管理页面可以详细设置不同的用户和权限。\nCalibre Web默认是关闭上传功能的，在管理-配置-基本配置-特性配置中打开上传。\n所有配置方法都可以在官方Wiki中找到。",
+    "description" : "Calibre是我一直在使用的一款书籍管理软件，但是Calibre总体设计是一款本地桌面软件，对于书库的多平台管理不太友好。Calibre Web使用了Calibre的数据库，是一个轻量化的Web版的Calibre，本节介绍一下如何在Docker上部署Calibre Web和基本的配置。\nCalibre Web推荐了两个Docker镜像，technosoft2000\/calibre-web支持linux\/amd64，linuxserver\/calibre-web的电子书转换功能只有x86-64可以用（安装后发现calibre-web可以使用外部的转换器）。\n在N1上安装linuxserver\/calibre-web的指令：\ndocker run \\  --name=calibre-web \\  -e PUID=0 \\  -e PGID=0 \\  -e TZ=Asia\/Shanghai \\  -p 8083:8083\\  -v \/media\/Travel\/Document\/calibre-web:\/config \\  -v \/media\/Travel\/Document\/Calibre:\/books \\  --restart unless-stopped \\  linuxserver\/calibre-web 注意，此处将PUID和PGID都设置成了0，是一个不太靠谱的做法。正确的做法是和qB一样，创建一个同名用户，将这个Docker容器指定到这个用户。不过用户权限的细节我不是特别明白，所以就先指定到root用户了。\n打开your-ip:8083，将书库设为\/books。\n初始登录账号密码为Username: admin，Password: admin123。\n登录后点击右上角的admin，输入自定义的用户名和密码，语言可以修改为中文。在管理页面可以详细设置不同的用户和权限。\nCalibre Web默认是关闭上传功能的，在管理-配置-基本配置-特性配置中打开上传。\n所有配置方法都可以在官方Wiki中找到。",
     "inLanguage" : "en-us",
     "author" : "Igloo",
     "creator" : "Igloo",
@@ -129,46 +129,53 @@
     <header class="post-header">
         <h1 class="post-title" itemprop="name headline">7×24: 私人黄金屋Calibre Web</h1>
         <div class="post-meta">
-                Written by <a itemprop="name" href="https://igloo302.github.io" rel="author">Igloo</a> with ♥ 
-                <span class="post-time">
-                on <time datetime=2020-03-15 itemprop="datePublished">March 15, 2020</time>
-                </span>
-                in
+            Written by <a itemprop="name" href="https://igloo302.github.io"
+                rel="author">Igloo</a>
+            with ♥
+            <span class="post-time">
+                on <time datetime=2020-03-15
+                    itemprop="datePublished">March 15, 2020</time>
+            </span>
+            in
+            <i class="iconfont icon-folder"></i>
+            <span class="post-category">
+                <a href="https://igloo302.github.io/categories/724/"> 7×24 </a>
                 
+            </span>
         </div>
     </header>
     <div class="post-content">
         
 
         
-            
+        
         
 
         
         
-     
-          
-          
-          
 
-          
-          
-          
+        
+        
+        
 
-          <p>Calibre是我一直在使用的一款书籍管理软件，但是Calibre总体设计是一款本地桌面软件，对于书库的多平台管理不太友好。Calibre Web使用了Calibre的数据库，是一个轻量化的Web版的Calibre，本节介绍一下如何在Docker上部署Calibre Web和基本的配置。</p>
+        
+        
+        
+
+        <p>Calibre是我一直在使用的一款书籍管理软件，但是Calibre总体设计是一款本地桌面软件，对于书库的多平台管理不太友好。Calibre Web使用了Calibre的数据库，是一个轻量化的Web版的Calibre，本节介绍一下如何在Docker上部署Calibre Web和基本的配置。</p>
 <!-- more -->
 <p><a href="https://github.com/janeczku/calibre-web">Calibre Web</a>推荐了两个Docker镜像，technosoft2000/calibre-web支持linux/amd64，linuxserver/calibre-web的电子书转换功能只有x86-64可以用（安装后发现calibre-web可以使用外部的转换器）。</p>
 <p>在N1上安装linuxserver/calibre-web的指令：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">docker run <span style="color:#ae81ff">\</span>
-  --name<span style="color:#f92672">=</span>calibre-web <span style="color:#ae81ff">\</span>
-  -e PUID<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span> <span style="color:#ae81ff">\</span>
-  -e PGID<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span> <span style="color:#ae81ff">\</span>
-  -e TZ<span style="color:#f92672">=</span>Asia/Shanghai <span style="color:#ae81ff">\</span>
-  -p 8083:8083<span style="color:#ae81ff">\</span>
-  -v /media/Travel/Document/calibre-web:/config <span style="color:#ae81ff">\</span>
-  -v /media/Travel/Document/Calibre:/books <span style="color:#ae81ff">\</span>
-  --restart unless-stopped <span style="color:#ae81ff">\</span>
-  linuxserver/calibre-web
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">docker run <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>  --name<span style="color:#f92672">=</span>calibre-web <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>  -e PUID<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span> <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>  -e PGID<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span> <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>  -e TZ<span style="color:#f92672">=</span>Asia/Shanghai <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>  -p 8083:8083<span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>  -v /media/Travel/Document/calibre-web:/config <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>  -v /media/Travel/Document/Calibre:/books <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>  --restart unless-stopped <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>  linuxserver/calibre-web
 </code></pre></div><p>注意，此处将PUID和PGID都设置成了0，是一个不太靠谱的做法。正确的做法是和qB一样，创建一个同名用户，将这个Docker容器指定到这个用户。不过用户权限的细节我不是特别明白，所以就先指定到root用户了。</p>
 <p>打开your-ip:8083，将书库设为/books。</p>
 <p>初始登录账号密码为Username: admin，Password: admin123。</p>
@@ -180,12 +187,34 @@
 
     </div>
 
+    <div class="post-copyright">
+        
+        <p class="copyright-item">
+            <span>Author:</span>
+            <span>Igloo </span>
+        </p>
+        
 
-  
+        
+        <p class="copyright-item">
+            <span>Link:</span>
+            <a href=https://igloo302.github.io/2020/724-calibre-web/>https://igloo302.github.io/2020/724-calibre-web/</span>
+        </p>
+
+        
+        
+        <p class="copyright-item lincese">
+            本文采用<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/" target="_blank">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可
+        </p>
+        
+    </div>
+
+
+
     <div class="post-tags">
         
-            <section>
-            <i class="iconfont icon-tag"></i>Tag(s): 
+        <section>
+            <i class="iconfont icon-tag"></i>Tag(s):
             
             <span class="tag"><a href="https://igloo302.github.io/tags/724/">
                     #7×24</a></span>
@@ -199,45 +228,59 @@
             <span class="tag"><a href="https://igloo302.github.io/tags/calibre/">
                     #Calibre</a></span>
             
-            </section>
+        </section>
         
         <section>
-                <a href="javascript:window.history.back();">back</a></span> · 
-                <span><a href="https://igloo302.github.io">home</a></span>
+            <a href="javascript:window.history.back();">back</a></span> ·
+            <span><a href="https://igloo302.github.io">home</a></span>
         </section>
     </div>
 
     <div class="post-nav">
         
-        <a href="https://igloo302.github.io/2020/724-home-assistant/" class="prev" rel="prev" title="7×24: IoT = Internet of Trash? Home Assistant打造全屋智能"><i class="iconfont icon-left"></i>&nbsp;7×24: IoT = Internet of Trash? Home Assistant打造全屋智能</a>
-         
+        <a href="https://igloo302.github.io/2020/724-home-assistant/" class="prev" rel="prev" title="7×24: IoT = Internet of Trash? Home Assistant打造全屋智能"><i
+                class="iconfont icon-left"></i>&nbsp;7×24: IoT = Internet of Trash? Home Assistant打造全屋智能</a>
         
-        <a href="https://igloo302.github.io/2020/%E4%B8%80%E6%AC%A1%E6%96%87%E8%89%BA%E5%A4%8D%E5%85%B4/" class="next" rel="next" title="一次文艺复兴">一次文艺复兴&nbsp;<i class="iconfont icon-right"></i></a>
+        
+        <a href="https://igloo302.github.io/2020/%E4%B8%80%E6%AC%A1%E6%96%87%E8%89%BA%E5%A4%8D%E5%85%B4/" class="next" rel="next"
+            title="一次文艺复兴">一次文艺复兴&nbsp;<i class="iconfont icon-right"></i></a>
         
     </div>
 
     <div class="post-comment">
-          
-                 
-          
-                  
-                  
-                  <div id="vcomments"></div>
-                  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
-                  <script src='//unpkg.com/valine/dist/Valine.min.js'></script>
-                  <script type="text/javascript">
-                    new Valine({
-                      el: '#vcomments',
-                      appId: 'SIOuMPbRjrVKLs1aBbSS30Ne-gzGzoHsz',
-                      appKey: 'uv74bsFWliyb0LPw2XV8MIjM',
-                      notify:  false ,
-                      verify:  false ,
-                      avatar: 'mm',
-                      placeholder: 'Mann Tracht, Un Gott Lacht.',
-                      visitor:  true 
-                      });
-                  </script>
-                  
+        
+        
+        
+        
+        
+        <div id="vcomments"></div>
+        <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+        <script src='//unpkg.com/valine/dist/Valine.min.js'></script>
+        <script type="text/javascript">
+            new Valine({
+                el: '#vcomments',
+                appId: 'SIOuMPbRjrVKLs1aBbSS30Ne-gzGzoHsz',
+                appKey: 'uv74bsFWliyb0LPw2XV8MIjM',
+                notify: {
+                    {
+                        .Site.Params.valine.notify
+                    }
+                },
+                verify: {
+                    {
+                        .Site.Params.valine.verify
+                    }
+                },
+                avatar: 'mm',
+                placeholder: 'Mann Tracht, Un Gott Lacht.',
+                visitor: {
+                    {
+                        .Site.Params.valine.visitor
+                    }
+                }
+            });
+        </script>
+        
     </div>
 </article>
           </div>

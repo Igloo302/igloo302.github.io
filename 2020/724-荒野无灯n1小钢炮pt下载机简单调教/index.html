@@ -54,7 +54,7 @@
     "articleSection" : "posts",
     "name" : "7×24: 荒野无灯N1小钢炮PT下载机简单调教",
     "headline" : "7×24: 荒野无灯N1小钢炮PT下载机简单调教",
-    "description" : "本文关于安装完荒野无灯N1之后，将原生的qBittorrent和Filebrowser改为Docker版本。\nDocker qBittorrent 替换原生qBittorrent ，重新安装荒野无灯编译的Docker版qBittorrent。\n 参考资料 小钢炮使用docker版qb 4.1.6 简明教程 qBittorrent docker镜像：简介里没有说明的部分 N1小钢炮下载系统 篇七：如何在小钢炮系统的Docker里安装灯大原味qBittorrent及优化设置\n  禁用原生qBittorrent  mv \/etc\/init.d\/S92qbittorrent \/etc\/S92qbittorrent.disabled\rkillall qbittorrent-nox\r备份配置文件到外置存储  cp -r \/var\/lib\/qbittorrent\/.config\/qBittorrent \/media\/Travel\/Document\/qBittorrent\/config\rcp -r \/var\/lib\/qbittorrent\/.local\/share\/data\/qBittorrent \/media\/Travel\/Document\/qBittorrent\/data\r安装qBittorrent的脚本，保存成.sh文件运行，把网络设置成host模式会有更好的性能表现，而且UPnP\/NAT-PMP可以自动映射  IMAGE_NAME=80x86\/qbittorrent\rWEB_PORT=$(nvram get app.qb.listen_port)\rDOWNLOAD_PATH=$(cat \/var\/lib\/qbittorrent\/.config\/qBittorrent\/qBittorrent.conf | grep -i \x26#39;Downloads\\\\SavePath\x26#39; | cut -d\x26#39;=\x26#39; -f2)\rBT_PORT=$(cat \/var\/lib\/qbittorrent\/.config\/qBittorrent\/qBittorrent.conf | grep -i \x26#39;Connection\\\\PortRangeMin\x26#39; | cut -d\x26#39;=\x26#39; -f2)\rQBT_AUTH_SERVER_ADDR=\x26#34;127.0.0.1\x26#34;\rif [ \x26#34;$DOWNLOAD_PATH\x26#34; = \x26#34;\/downloads\x26#34; ] || [ \x26#34;$DOWNLOAD_PATH\x26#34; = \x26#34;\/downloads\/\x26#34; ]; then\recho \x26#34;please set correct DOWNLOAD_PATH\x26#34;\rexit -1\rfi\rdocker run -d --name qbittorrent \\\r -e PUID=$(id -u qbittorrent) \\\r -e PGID=$(cat \/etc\/group | grep -e \x26#39;^users\x26#39; | cut -d\x26#39;:\x26#39; -f3) \\\r -e WEB_PORT=$WEB_PORT \\\r -e BT_PORT=$BT_PORT \\\r -e QBT_AUTH_SERVER_ADDR=$QBT_AUTH_SERVER_ADDR \\\r --restart unless-stopped \\\r --network host \\\r -v \/var\/lib\/qbittorrent\/.",
+    "description" : "本文关于安装完荒野无灯N1之后，将原生的qBittorrent和Filebrowser改为Docker版本。\nDocker qBittorrent 替换原生qBittorrent ，重新安装荒野无灯编译的Docker版qBittorrent。\n 参考资料 小钢炮使用docker版qb 4.1.6 简明教程 qBittorrent docker镜像：简介里没有说明的部分 N1小钢炮下载系统 篇七：如何在小钢炮系统的Docker里安装灯大原味qBittorrent及优化设置\n  禁用原生qBittorrent  mv \/etc\/init.d\/S92qbittorrent \/etc\/S92qbittorrent.disabled killall qbittorrent-nox 备份配置文件到外置存储  cp -r \/var\/lib\/qbittorrent\/.config\/qBittorrent \/media\/Travel\/Document\/qBittorrent\/config cp -r \/var\/lib\/qbittorrent\/.local\/share\/data\/qBittorrent \/media\/Travel\/Document\/qBittorrent\/data 安装qBittorrent的脚本，保存成.sh文件运行，把网络设置成host模式会有更好的性能表现，而且UPnP\/NAT-PMP可以自动映射  IMAGE_NAME=80x86\/qbittorrent WEB_PORT=$(nvram get app.qb.listen_port) DOWNLOAD_PATH=$(cat \/var\/lib\/qbittorrent\/.config\/qBittorrent\/qBittorrent.conf | grep -i \x26#39;Downloads\\\\SavePath\x26#39; | cut -d\x26#39;=\x26#39; -f2) BT_PORT=$(cat \/var\/lib\/qbittorrent\/.config\/qBittorrent\/qBittorrent.conf | grep -i \x26#39;Connection\\\\PortRangeMin\x26#39; | cut -d\x26#39;=\x26#39; -f2) QBT_AUTH_SERVER_ADDR=\x26#34;127.0.0.1\x26#34; if [ \x26#34;$DOWNLOAD_PATH\x26#34; = \x26#34;\/downloads\x26#34; ] || [ \x26#34;$DOWNLOAD_PATH\x26#34; = \x26#34;\/downloads\/\x26#34; ]; then echo \x26#34;please set correct DOWNLOAD_PATH\x26#34; exit -1 fi docker run -d --name qbittorrent \\  -e PUID=$(id -u qbittorrent) \\  -e PGID=$(cat \/etc\/group | grep -e \x26#39;^users\x26#39; | cut -d\x26#39;:\x26#39; -f3) \\  -e WEB_PORT=$WEB_PORT \\  -e BT_PORT=$BT_PORT \\  -e QBT_AUTH_SERVER_ADDR=$QBT_AUTH_SERVER_ADDR \\  --restart unless-stopped \\  --network host \\  -v \/var\/lib\/qbittorrent\/.",
     "inLanguage" : "en-us",
     "author" : "Igloo",
     "creator" : "Igloo",
@@ -129,33 +129,40 @@
     <header class="post-header">
         <h1 class="post-title" itemprop="name headline">7×24: 荒野无灯N1小钢炮PT下载机简单调教</h1>
         <div class="post-meta">
-                Written by <a itemprop="name" href="https://igloo302.github.io" rel="author">Igloo</a> with ♥ 
-                <span class="post-time">
-                on <time datetime=2020-03-15 itemprop="datePublished">March 15, 2020</time>
-                </span>
-                in
+            Written by <a itemprop="name" href="https://igloo302.github.io"
+                rel="author">Igloo</a>
+            with ♥
+            <span class="post-time">
+                on <time datetime=2020-03-15
+                    itemprop="datePublished">March 15, 2020</time>
+            </span>
+            in
+            <i class="iconfont icon-folder"></i>
+            <span class="post-category">
+                <a href="https://igloo302.github.io/categories/724/"> 7×24 </a>
                 
+            </span>
         </div>
     </header>
     <div class="post-content">
         
 
         
-            
+        
         
 
         
         
-     
-          
-          
-          
 
-          
-          
-          
+        
+        
+        
 
-          <p>本文关于安装完荒野无灯N1之后，将原生的qBittorrent和Filebrowser改为Docker版本。</p>
+        
+        
+        
+
+        <p>本文关于安装完荒野无灯N1之后，将原生的qBittorrent和Filebrowser改为Docker版本。</p>
 <!-- more -->
 <h2 id="docker-qbittorrent">Docker qBittorrent</h2>
 <p>替换原生qBittorrent ，重新安装荒野无灯编译的Docker版qBittorrent。</p>
@@ -187,48 +194,48 @@ QBT_AUTH_SERVER_ADDR<span style="color:#f92672">=</span><span style="color:#e6db
     echo <span style="color:#e6db74">&#34;please set correct DOWNLOAD_PATH&#34;</span>
     exit -1
 <span style="color:#66d9ef">fi</span>
-docker run -d --name qbittorrent <span style="color:#ae81ff">\</span>
-        -e PUID<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>id -u qbittorrent<span style="color:#66d9ef">)</span> <span style="color:#ae81ff">\</span>
-        -e PGID<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>cat /etc/group | grep -e <span style="color:#e6db74">&#39;^users&#39;</span> | cut -d<span style="color:#e6db74">&#39;:&#39;</span> -f3<span style="color:#66d9ef">)</span> <span style="color:#ae81ff">\</span>
-        -e WEB_PORT<span style="color:#f92672">=</span>$WEB_PORT <span style="color:#ae81ff">\</span>
-        -e BT_PORT<span style="color:#f92672">=</span>$BT_PORT <span style="color:#ae81ff">\</span>
-        -e QBT_AUTH_SERVER_ADDR<span style="color:#f92672">=</span>$QBT_AUTH_SERVER_ADDR <span style="color:#ae81ff">\</span>
-        --restart unless-stopped <span style="color:#ae81ff">\</span>
-        --network host <span style="color:#ae81ff">\</span>
-        -v /var/lib/qbittorrent/.config/qBittorrent:/config <span style="color:#ae81ff">\</span>
-        -v /var/lib/qbittorrent/.local/share/data/qBittorrent:/data <span style="color:#ae81ff">\</span>
-        -v <span style="color:#e6db74">&#34;</span>$DOWNLOAD_PATH<span style="color:#e6db74">&#34;</span>:/downloads <span style="color:#ae81ff">\</span>
-        --mount type<span style="color:#f92672">=</span>tmpfs,destination<span style="color:#f92672">=</span>/tmp <span style="color:#ae81ff">\</span>
-        <span style="color:#e6db74">${</span>IMAGE_NAME<span style="color:#e6db74">}</span>
+docker run -d --name qbittorrent <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>        -e PUID<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>id -u qbittorrent<span style="color:#66d9ef">)</span> <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>        -e PGID<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>cat /etc/group | grep -e <span style="color:#e6db74">&#39;^users&#39;</span> | cut -d<span style="color:#e6db74">&#39;:&#39;</span> -f3<span style="color:#66d9ef">)</span> <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>        -e WEB_PORT<span style="color:#f92672">=</span>$WEB_PORT <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>        -e BT_PORT<span style="color:#f92672">=</span>$BT_PORT <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>        -e QBT_AUTH_SERVER_ADDR<span style="color:#f92672">=</span>$QBT_AUTH_SERVER_ADDR <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>        --restart unless-stopped <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>        --network host <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>        -v /var/lib/qbittorrent/.config/qBittorrent:/config <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>        -v /var/lib/qbittorrent/.local/share/data/qBittorrent:/data <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>        -v <span style="color:#e6db74">&#34;</span>$DOWNLOAD_PATH<span style="color:#e6db74">&#34;</span>:/downloads <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>        --mount type<span style="color:#f92672">=</span>tmpfs,destination<span style="color:#f92672">=</span>/tmp <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>        <span style="color:#e6db74">${</span>IMAGE_NAME<span style="color:#e6db74">}</span>
 </code></pre></div><p>如果要安装桥接模式：</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#75715e">#!/bin/sh
 </span><span style="color:#75715e"></span>
 IMAGE_NAME<span style="color:#f92672">=</span>80x86/qbittorrent:4.2.1-arm64
 WEB_PORT<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>nvram get app.qb.listen_port<span style="color:#66d9ef">)</span>
-<span style="color:#f92672">[</span> -z <span style="color:#e6db74">&#34;</span>$WEB_PORT<span style="color:#e6db74">&#34;</span> <span style="color:#f92672">]</span> <span style="color:#f92672">&amp;&amp;</span> WEB_PORT<span style="color:#f92672">=</span>8082
+<span style="color:#f92672">[</span> -z <span style="color:#e6db74">&#34;</span>$WEB_PORT<span style="color:#e6db74">&#34;</span> <span style="color:#f92672">]</span> <span style="color:#f92672">&amp;&amp;</span> WEB_PORT<span style="color:#f92672">=</span><span style="color:#ae81ff">8082</span>
 DOWNLOAD_PATH<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>cat /var/lib/qbittorrent/.config/qBittorrent/qBittorrent.conf | grep -i <span style="color:#e6db74">&#39;Downloads\\SavePath&#39;</span> | cut -d<span style="color:#e6db74">&#39;=&#39;</span> -f2<span style="color:#66d9ef">)</span>
 BT_PORT<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>cat /var/lib/qbittorrent/.config/qBittorrent/qBittorrent.conf | grep -i <span style="color:#e6db74">&#39;Connection\\PortRangeMin&#39;</span> | cut -d<span style="color:#e6db74">&#39;=&#39;</span> -f2<span style="color:#66d9ef">)</span>
-<span style="color:#f92672">[</span> -z <span style="color:#e6db74">&#34;</span>$BT_PORT<span style="color:#e6db74">&#34;</span> <span style="color:#f92672">]</span> <span style="color:#f92672">&amp;&amp;</span> BT_PORT<span style="color:#f92672">=</span>8999
+<span style="color:#f92672">[</span> -z <span style="color:#e6db74">&#34;</span>$BT_PORT<span style="color:#e6db74">&#34;</span> <span style="color:#f92672">]</span> <span style="color:#f92672">&amp;&amp;</span> BT_PORT<span style="color:#f92672">=</span><span style="color:#ae81ff">8999</span>
 QBT_AUTH_SERVER_ADDR<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>ip -4 addr show docker0 | grep inet | awk <span style="color:#e6db74">&#39;{print $2}&#39;</span> | cut -d<span style="color:#e6db74">&#39;/&#39;</span> -f1<span style="color:#66d9ef">)</span>
 <span style="color:#66d9ef">if</span> <span style="color:#f92672">[</span> <span style="color:#e6db74">&#34;</span>$DOWNLOAD_PATH<span style="color:#e6db74">&#34;</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;/downloads&#34;</span> <span style="color:#f92672">]</span> <span style="color:#f92672">||</span> <span style="color:#f92672">[</span> <span style="color:#e6db74">&#34;</span>$DOWNLOAD_PATH<span style="color:#e6db74">&#34;</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;/downloads/&#34;</span> <span style="color:#f92672">]</span> <span style="color:#f92672">||</span> <span style="color:#f92672">[</span> <span style="color:#e6db74">&#34;</span>$DOWNLOAD_PATH<span style="color:#e6db74">&#34;</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;&#34;</span> <span style="color:#f92672">]</span>; <span style="color:#66d9ef">then</span>
     echo <span style="color:#e6db74">&#34;please set correct DOWNLOAD_PATH&#34;</span>
     exit -1
 <span style="color:#66d9ef">fi</span>
 
-docker pull <span style="color:#e6db74">${</span>IMAGE_NAME<span style="color:#e6db74">}</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#ae81ff">\</span>
-docker run -d --name qbittorrent <span style="color:#ae81ff">\</span>
-        -e PUID<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>id -u qbittorrent<span style="color:#66d9ef">)</span> <span style="color:#ae81ff">\</span>
-	    -e PGID<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>cat /etc/group | grep -e <span style="color:#e6db74">&#39;^users&#39;</span> | cut -d<span style="color:#e6db74">&#39;:&#39;</span> -f3<span style="color:#66d9ef">)</span> <span style="color:#ae81ff">\</span>
-        -e WEB_PORT<span style="color:#f92672">=</span>$WEB_PORT <span style="color:#ae81ff">\</span>
-        -e BT_PORT<span style="color:#f92672">=</span>$BT_PORT <span style="color:#ae81ff">\</span>
-        -e QBT_AUTH_SERVER_ADDR<span style="color:#f92672">=</span>$QBT_AUTH_SERVER_ADDR <span style="color:#ae81ff">\</span>
-        --restart unless-stopped <span style="color:#ae81ff">\</span>
-        -p $WEB_PORT:$WEB_PORT -p $BT_PORT:$BT_PORT/tcp -p $BT_PORT:$BT_PORT/udp <span style="color:#ae81ff">\</span>
-        -v /var/lib/qbittorrent/.config/qBittorrent:/config <span style="color:#ae81ff">\</span>
-        -v /var/lib/qbittorrent/.local/share/data/qBittorrent:/data <span style="color:#ae81ff">\</span>
-        -v <span style="color:#e6db74">&#34;</span>$DOWNLOAD_PATH<span style="color:#e6db74">&#34;</span>:/downloads <span style="color:#ae81ff">\</span>
-        --mount type<span style="color:#f92672">=</span>tmpfs,destination<span style="color:#f92672">=</span>/tmp <span style="color:#ae81ff">\</span>
-        <span style="color:#e6db74">${</span>IMAGE_NAME<span style="color:#e6db74">}</span>
+docker pull <span style="color:#e6db74">${</span>IMAGE_NAME<span style="color:#e6db74">}</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>docker run -d --name qbittorrent <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>        -e PUID<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>id -u qbittorrent<span style="color:#66d9ef">)</span> <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>	    -e PGID<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>cat /etc/group | grep -e <span style="color:#e6db74">&#39;^users&#39;</span> | cut -d<span style="color:#e6db74">&#39;:&#39;</span> -f3<span style="color:#66d9ef">)</span> <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>        -e WEB_PORT<span style="color:#f92672">=</span>$WEB_PORT <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>        -e BT_PORT<span style="color:#f92672">=</span>$BT_PORT <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>        -e QBT_AUTH_SERVER_ADDR<span style="color:#f92672">=</span>$QBT_AUTH_SERVER_ADDR <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>        --restart unless-stopped <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>        -p $WEB_PORT:$WEB_PORT -p $BT_PORT:$BT_PORT/tcp -p $BT_PORT:$BT_PORT/udp <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>        -v /var/lib/qbittorrent/.config/qBittorrent:/config <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>        -v /var/lib/qbittorrent/.local/share/data/qBittorrent:/data <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>        -v <span style="color:#e6db74">&#34;</span>$DOWNLOAD_PATH<span style="color:#e6db74">&#34;</span>:/downloads <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>        --mount type<span style="color:#f92672">=</span>tmpfs,destination<span style="color:#f92672">=</span>/tmp <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>        <span style="color:#e6db74">${</span>IMAGE_NAME<span style="color:#e6db74">}</span>
 </code></pre></div><ol start="4">
 <li>
 <p>本地免验证</p>
@@ -249,26 +256,48 @@ killall filebrowser
 </code></pre></div><ol start="3">
 <li>安装Filebrowser</li>
 </ol>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">docker run -it --restart always <span style="color:#ae81ff">\</span>
-         -d --name filebrowser <span style="color:#ae81ff">\</span>
-         --net<span style="color:#f92672">=</span>host <span style="color:#ae81ff">\</span>
-         -e SSL<span style="color:#f92672">=</span>on <span style="color:#ae81ff">\</span>
-         -e PUID<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>id -u filebrowser<span style="color:#66d9ef">)</span> <span style="color:#ae81ff">\</span>
-         -e PGID<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>cat /etc/group | grep -e <span style="color:#e6db74">&#39;^users&#39;</span> | cut -d<span style="color:#e6db74">&#39;:&#39;</span> -f3<span style="color:#66d9ef">)</span> <span style="color:#ae81ff">\</span>
-         -e WEB_PORT<span style="color:#f92672">=</span><span style="color:#ae81ff">8082</span> <span style="color:#ae81ff">\</span>
-         -v /var/lib/filebrowser:/config <span style="color:#ae81ff">\</span>
-         -v /media:/myfiles <span style="color:#ae81ff">\</span>
-         --mount type<span style="color:#f92672">=</span>tmpfs,destination<span style="color:#f92672">=</span>/tmp <span style="color:#ae81ff">\</span>
-         80x86/filebrowser:arm64
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">docker run -it --restart always <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>         -d --name filebrowser <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>         --net<span style="color:#f92672">=</span>host <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>         -e SSL<span style="color:#f92672">=</span>on <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>         -e PUID<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>id -u filebrowser<span style="color:#66d9ef">)</span> <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>         -e PGID<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>cat /etc/group | grep -e <span style="color:#e6db74">&#39;^users&#39;</span> | cut -d<span style="color:#e6db74">&#39;:&#39;</span> -f3<span style="color:#66d9ef">)</span> <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>         -e WEB_PORT<span style="color:#f92672">=</span><span style="color:#ae81ff">8082</span> <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>         -v /var/lib/filebrowser:/config <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>         -v /media:/myfiles <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>         --mount type<span style="color:#f92672">=</span>tmpfs,destination<span style="color:#f92672">=</span>/tmp <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>         80x86/filebrowser:arm64
 </code></pre></div>
     </div>
 
+    <div class="post-copyright">
+        
+        <p class="copyright-item">
+            <span>Author:</span>
+            <span>Igloo </span>
+        </p>
+        
 
-  
+        
+        <p class="copyright-item">
+            <span>Link:</span>
+            <a href=https://igloo302.github.io/2020/724-%E8%8D%92%E9%87%8E%E6%97%A0%E7%81%AFn1%E5%B0%8F%E9%92%A2%E7%82%AEpt%E4%B8%8B%E8%BD%BD%E6%9C%BA%E7%AE%80%E5%8D%95%E8%B0%83%E6%95%99/>https://igloo302.github.io/2020/724-%E8%8D%92%E9%87%8E%E6%97%A0%E7%81%AFn1%E5%B0%8F%E9%92%A2%E7%82%AEpt%E4%B8%8B%E8%BD%BD%E6%9C%BA%E7%AE%80%E5%8D%95%E8%B0%83%E6%95%99/</span>
+        </p>
+
+        
+        
+        <p class="copyright-item lincese">
+            本文采用<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/" target="_blank">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可
+        </p>
+        
+    </div>
+
+
+
     <div class="post-tags">
         
-            <section>
-            <i class="iconfont icon-tag"></i>Tag(s): 
+        <section>
+            <i class="iconfont icon-tag"></i>Tag(s):
             
             <span class="tag"><a href="https://igloo302.github.io/tags/n1/">
                     #N1</a></span>
@@ -279,45 +308,59 @@ killall filebrowser
             <span class="tag"><a href="https://igloo302.github.io/tags/724/">
                     #7×24</a></span>
             
-            </section>
+        </section>
         
         <section>
-                <a href="javascript:window.history.back();">back</a></span> · 
-                <span><a href="https://igloo302.github.io">home</a></span>
+            <a href="javascript:window.history.back();">back</a></span> ·
+            <span><a href="https://igloo302.github.io">home</a></span>
         </section>
     </div>
 
     <div class="post-nav">
         
-        <a href="https://igloo302.github.io/2020/724-jellyfin-kodi%E6%89%93%E9%80%A0%E4%B8%AA%E4%BA%BA%E5%AA%92%E4%BD%93%E4%B8%AD%E5%BF%83/" class="prev" rel="prev" title="7×24: Jellyfin&#43;Kodi打造个人媒体中心"><i class="iconfont icon-left"></i>&nbsp;7×24: Jellyfin&#43;Kodi打造个人媒体中心</a>
-         
+        <a href="https://igloo302.github.io/2020/724-jellyfin-kodi%E6%89%93%E9%80%A0%E4%B8%AA%E4%BA%BA%E5%AA%92%E4%BD%93%E4%B8%AD%E5%BF%83/" class="prev" rel="prev" title="7×24: Jellyfin&#43;Kodi打造个人媒体中心"><i
+                class="iconfont icon-left"></i>&nbsp;7×24: Jellyfin&#43;Kodi打造个人媒体中心</a>
         
-        <a href="https://igloo302.github.io/2020/%E7%89%A9%E5%B0%BD%E5%85%B6%E7%94%A8-%E4%B8%AD%E5%85%B4b860av1-1-t2-iptv%E7%9B%92%E5%AD%90%E7%A0%B4%E8%A7%A3/" class="next" rel="next" title="物尽其用|中兴B860AV1.1-T2 IPTV盒子破解">物尽其用|中兴B860AV1.1-T2 IPTV盒子破解&nbsp;<i class="iconfont icon-right"></i></a>
+        
+        <a href="https://igloo302.github.io/2020/%E7%89%A9%E5%B0%BD%E5%85%B6%E7%94%A8-%E4%B8%AD%E5%85%B4b860av1-1-t2-iptv%E7%9B%92%E5%AD%90%E7%A0%B4%E8%A7%A3/" class="next" rel="next"
+            title="物尽其用|中兴B860AV1.1-T2 IPTV盒子破解">物尽其用|中兴B860AV1.1-T2 IPTV盒子破解&nbsp;<i class="iconfont icon-right"></i></a>
         
     </div>
 
     <div class="post-comment">
-          
-                 
-          
-                  
-                  
-                  <div id="vcomments"></div>
-                  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
-                  <script src='//unpkg.com/valine/dist/Valine.min.js'></script>
-                  <script type="text/javascript">
-                    new Valine({
-                      el: '#vcomments',
-                      appId: 'SIOuMPbRjrVKLs1aBbSS30Ne-gzGzoHsz',
-                      appKey: 'uv74bsFWliyb0LPw2XV8MIjM',
-                      notify:  false ,
-                      verify:  false ,
-                      avatar: 'mm',
-                      placeholder: 'Mann Tracht, Un Gott Lacht.',
-                      visitor:  true 
-                      });
-                  </script>
-                  
+        
+        
+        
+        
+        
+        <div id="vcomments"></div>
+        <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+        <script src='//unpkg.com/valine/dist/Valine.min.js'></script>
+        <script type="text/javascript">
+            new Valine({
+                el: '#vcomments',
+                appId: 'SIOuMPbRjrVKLs1aBbSS30Ne-gzGzoHsz',
+                appKey: 'uv74bsFWliyb0LPw2XV8MIjM',
+                notify: {
+                    {
+                        .Site.Params.valine.notify
+                    }
+                },
+                verify: {
+                    {
+                        .Site.Params.valine.verify
+                    }
+                },
+                avatar: 'mm',
+                placeholder: 'Mann Tracht, Un Gott Lacht.',
+                visitor: {
+                    {
+                        .Site.Params.valine.visitor
+                    }
+                }
+            });
+        </script>
+        
     </div>
 </article>
           </div>

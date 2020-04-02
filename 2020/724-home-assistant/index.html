@@ -129,33 +129,40 @@
     <header class="post-header">
         <h1 class="post-title" itemprop="name headline">7×24: IoT = Internet of Trash? Home Assistant打造全屋智能</h1>
         <div class="post-meta">
-                Written by <a itemprop="name" href="https://igloo302.github.io" rel="author">Igloo</a> with ♥ 
-                <span class="post-time">
-                on <time datetime=2020-03-15 itemprop="datePublished">March 15, 2020</time>
-                </span>
-                in
+            Written by <a itemprop="name" href="https://igloo302.github.io"
+                rel="author">Igloo</a>
+            with ♥
+            <span class="post-time">
+                on <time datetime=2020-03-15
+                    itemprop="datePublished">March 15, 2020</time>
+            </span>
+            in
+            <i class="iconfont icon-folder"></i>
+            <span class="post-category">
+                <a href="https://igloo302.github.io/categories/724/"> 7×24 </a>
                 
+            </span>
         </div>
     </header>
     <div class="post-content">
         
 
         
-            
+        
         
 
         
         
-     
-          
-          
-          
 
-          
-          
-          
+        
+        
+        
 
-          <p>几年前在国外住过一个别墅，里面的智能家居设计给我留下了深刻的印象：吧台上有一个控制平板，统一控制各个房间的照明和空调温度，通过音箱播放流媒体歌曲，控制电视机播放的Netflix电视剧；每个房间还有独立的分机控制开关来单独控制各自房间的设备。</p>
+        
+        
+        
+
+        <p>几年前在国外住过一个别墅，里面的智能家居设计给我留下了深刻的印象：吧台上有一个控制平板，统一控制各个房间的照明和空调温度，通过音箱播放流媒体歌曲，控制电视机播放的Netflix电视剧；每个房间还有独立的分机控制开关来单独控制各自房间的设备。</p>
 <p>虽然说起来并不新鲜，甚至并没有突破IoT=网络开关这个初级阶段，但是这种高度一致化的交互方式，在家庭空间尺度上和互联网内容亲密互动的感觉，都带来了超越产品功能本身的愉快体验。</p>
 <!-- more -->
 <p>对于智能家居和IoT，很容易想到国内的米家，天猫精灵等互联网、电商以及传统白电厂商搞出的各个体系，其中米家推出了全面的家电产品、控制器以及传感器元件，价格也不太贵，综合体验可能是最好的。但是他们共有的问题就是不同的体系都在使用自己的私有协议，无法互相协作使用。</p>
@@ -291,31 +298,31 @@ index-url <span style="color:#f92672">=</span> https://pypi.tuna.tsinghua.edu.cn
 docker pull homeassistant/home-assistants
 
 <span style="color:#75715e"># 创建HA容器</span>
-docker run -d --restart<span style="color:#f92672">=</span>always <span style="color:#ae81ff">\</span>
-	 --name<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;home-assistant&#34;</span> <span style="color:#ae81ff">\</span>
-	-e TZ<span style="color:#f92672">=</span>Asia/Shanghai <span style="color:#ae81ff">\</span>
-	-v /media/Travel/Document/home-assistant:/config <span style="color:#ae81ff">\</span>
-	-v /etc/localtime:/etc/localtime:ro <span style="color:#ae81ff">\</span>
-	--net<span style="color:#f92672">=</span>host <span style="color:#ae81ff">\</span>
-	homeassistant/home-assistant
+docker run -d --restart<span style="color:#f92672">=</span>always <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>	 --name<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;home-assistant&#34;</span> <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>	-e TZ<span style="color:#f92672">=</span>Asia/Shanghai <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>	-v /media/Travel/Document/home-assistant:/config <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>	-v /etc/localtime:/etc/localtime:ro <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>	--net<span style="color:#f92672">=</span>host <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>	homeassistant/home-assistant
 </code></pre></div><p><code>/media/Travel/Document/home-assistant</code>更改为配置文件的存储目录。</p>
 <h2 id="ha配置">HA配置</h2>
 <h3 id="基本设定">基本设定</h3>
 <p>打开配置文件configuration.yaml，添加以下内容</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">homeassistant:
-  <span style="color:#75715e"># 名称，可为中文</span>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#66d9ef">homeassistant</span>:
+  <span style="color:#75715e"># 名称，可为中文</span>
   <span style="color:#66d9ef">name</span>: Home
-  <span style="color:#75715e"># 纬度</span>
+  <span style="color:#75715e"># 纬度</span>
   <span style="color:#66d9ef">latitude</span>: !secret latitude
-  <span style="color:#75715e"># 经度</span>
+  <span style="color:#75715e"># 经度</span>
   <span style="color:#66d9ef">longitude</span>: !secret longitude
-  <span style="color:#75715e"># 海拔</span>
+  <span style="color:#75715e"># 海拔</span>
   <span style="color:#66d9ef">elevation</span>: <span style="color:#ae81ff">10</span>
-  <span style="color:#75715e"># 度量单位，这里选择“米”</span>
+  <span style="color:#75715e"># 度量单位，这里选择“米”</span>
   <span style="color:#66d9ef">unit_system</span>: metric
-  <span style="color:#75715e"># 时区</span>
+  <span style="color:#75715e"># 时区</span>
   <span style="color:#66d9ef">time_zone</span>: Asia/Shanghai
-  <span style="color:#75715e"># 设备个性化</span>
+  <span style="color:#75715e"># 设备个性化</span>
   <span style="color:#66d9ef">customize</span>: !include customize.yaml
 </code></pre></div><p>使用<a href="https://support.google.com/earth/answer/7420934?co=GENIE.Platform%3DDesktop&amp;hl=zh-Hans">Google Earth</a>查询坐标和海拔后，打开secrets.yaml添加</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#66d9ef">latitude</span>: 3xxxxx
@@ -327,7 +334,7 @@ docker run -d --restart<span style="color:#f92672">=</span>always <span style="c
 <li>打开天猫精灵App，在技能中搜索BroadLink，绑定智慧星账号</li>
 <li>在HA的配置configuration.yaml中添加</li>
 </ol>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"> switch:
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"> <span style="color:#66d9ef">switch</span>:
   - <span style="color:#66d9ef">platform</span>: broadlink
     <span style="color:#66d9ef">host</span>: <span style="color:#ae81ff">192.168.6</span>.xxx
     <span style="color:#66d9ef">mac</span>: <span style="color:#e6db74">&#39;78:0F:77:xx:xx:xx&#39;</span>
@@ -383,12 +390,34 @@ docker exec homebridge npm install homebridge-homeassistant
 
     </div>
 
+    <div class="post-copyright">
+        
+        <p class="copyright-item">
+            <span>Author:</span>
+            <span>Igloo </span>
+        </p>
+        
 
-  
+        
+        <p class="copyright-item">
+            <span>Link:</span>
+            <a href=https://igloo302.github.io/2020/724-home-assistant/>https://igloo302.github.io/2020/724-home-assistant/</span>
+        </p>
+
+        
+        
+        <p class="copyright-item lincese">
+            本文采用<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/" target="_blank">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可
+        </p>
+        
+    </div>
+
+
+
     <div class="post-tags">
         
-            <section>
-            <i class="iconfont icon-tag"></i>Tag(s): 
+        <section>
+            <i class="iconfont icon-tag"></i>Tag(s):
             
             <span class="tag"><a href="https://igloo302.github.io/tags/724/">
                     #7×24</a></span>
@@ -414,45 +443,59 @@ docker exec homebridge npm install homebridge-homeassistant
             <span class="tag"><a href="https://igloo302.github.io/tags/%E6%99%BA%E8%83%BD%E5%AE%B6%E5%B1%85/">
                     #智能家居</a></span>
             
-            </section>
+        </section>
         
         <section>
-                <a href="javascript:window.history.back();">back</a></span> · 
-                <span><a href="https://igloo302.github.io">home</a></span>
+            <a href="javascript:window.history.back();">back</a></span> ·
+            <span><a href="https://igloo302.github.io">home</a></span>
         </section>
     </div>
 
     <div class="post-nav">
         
-        <a href="https://igloo302.github.io/2020/%E7%89%A9%E5%B0%BD%E5%85%B6%E7%94%A8-%E4%B8%AD%E5%85%B4b860av1-1-t2-iptv%E7%9B%92%E5%AD%90%E7%A0%B4%E8%A7%A3/" class="prev" rel="prev" title="物尽其用|中兴B860AV1.1-T2 IPTV盒子破解"><i class="iconfont icon-left"></i>&nbsp;物尽其用|中兴B860AV1.1-T2 IPTV盒子破解</a>
-         
+        <a href="https://igloo302.github.io/2020/%E7%89%A9%E5%B0%BD%E5%85%B6%E7%94%A8-%E4%B8%AD%E5%85%B4b860av1-1-t2-iptv%E7%9B%92%E5%AD%90%E7%A0%B4%E8%A7%A3/" class="prev" rel="prev" title="物尽其用|中兴B860AV1.1-T2 IPTV盒子破解"><i
+                class="iconfont icon-left"></i>&nbsp;物尽其用|中兴B860AV1.1-T2 IPTV盒子破解</a>
         
-        <a href="https://igloo302.github.io/2020/724-calibre-web/" class="next" rel="next" title="7×24: 私人黄金屋Calibre Web">7×24: 私人黄金屋Calibre Web&nbsp;<i class="iconfont icon-right"></i></a>
+        
+        <a href="https://igloo302.github.io/2020/724-calibre-web/" class="next" rel="next"
+            title="7×24: 私人黄金屋Calibre Web">7×24: 私人黄金屋Calibre Web&nbsp;<i class="iconfont icon-right"></i></a>
         
     </div>
 
     <div class="post-comment">
-          
-                 
-          
-                  
-                  
-                  <div id="vcomments"></div>
-                  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
-                  <script src='//unpkg.com/valine/dist/Valine.min.js'></script>
-                  <script type="text/javascript">
-                    new Valine({
-                      el: '#vcomments',
-                      appId: 'SIOuMPbRjrVKLs1aBbSS30Ne-gzGzoHsz',
-                      appKey: 'uv74bsFWliyb0LPw2XV8MIjM',
-                      notify:  false ,
-                      verify:  false ,
-                      avatar: 'mm',
-                      placeholder: 'Mann Tracht, Un Gott Lacht.',
-                      visitor:  true 
-                      });
-                  </script>
-                  
+        
+        
+        
+        
+        
+        <div id="vcomments"></div>
+        <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+        <script src='//unpkg.com/valine/dist/Valine.min.js'></script>
+        <script type="text/javascript">
+            new Valine({
+                el: '#vcomments',
+                appId: 'SIOuMPbRjrVKLs1aBbSS30Ne-gzGzoHsz',
+                appKey: 'uv74bsFWliyb0LPw2XV8MIjM',
+                notify: {
+                    {
+                        .Site.Params.valine.notify
+                    }
+                },
+                verify: {
+                    {
+                        .Site.Params.valine.verify
+                    }
+                },
+                avatar: 'mm',
+                placeholder: 'Mann Tracht, Un Gott Lacht.',
+                visitor: {
+                    {
+                        .Site.Params.valine.visitor
+                    }
+                }
+            });
+        </script>
+        
     </div>
 </article>
           </div>

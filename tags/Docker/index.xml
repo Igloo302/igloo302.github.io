@@ -20,7 +20,7 @@
       <description>Calibre是我一直在使用的一款书籍管理软件，但是Calibre总体设计是一款本地桌面软件，对于书库的多平台管理不太友好。Calibre Web使用了Calibre的数据库，是一个轻量化的Web版的Calibre，本节介绍一下如何在Docker上部署Calibre Web和基本的配置。
 Calibre Web推荐了两个Docker镜像，technosoft2000/calibre-web支持linux/amd64，linuxserver/calibre-web的电子书转换功能只有x86-64可以用（安装后发现calibre-web可以使用外部的转换器）。
 在N1上安装linuxserver/calibre-web的指令：
-docker run \ --name=calibre-web \ -e PUID=0 \ -e PGID=0 \ -e TZ=Asia/Shanghai \ -p 8083:8083\ -v /media/Travel/Document/calibre-web:/config \ -v /media/Travel/Document/Calibre:/books \ --restart unless-stopped \ linuxserver/calibre-web注意，此处将PUID和PGID都设置成了0，是一个不太靠谱的做法。正确的做法是和qB一样，创建一个同名用户，将这个Docker容器指定到这个用户。不过用户权限的细节我不是特别明白，所以就先指定到root用户了。
+docker run \  --name=calibre-web \  -e PUID=0 \  -e PGID=0 \  -e TZ=Asia/Shanghai \  -p 8083:8083\  -v /media/Travel/Document/calibre-web:/config \  -v /media/Travel/Document/Calibre:/books \  --restart unless-stopped \  linuxserver/calibre-web 注意，此处将PUID和PGID都设置成了0，是一个不太靠谱的做法。正确的做法是和qB一样，创建一个同名用户，将这个Docker容器指定到这个用户。不过用户权限的细节我不是特别明白，所以就先指定到root用户了。
 打开your-ip:8083，将书库设为/books。
 初始登录账号密码为Username: admin，Password: admin123。
 登录后点击右上角的admin，输入自定义的用户名和密码，语言可以修改为中文。在管理页面可以详细设置不同的用户和权限。
