@@ -54,7 +54,7 @@
     "articleSection" : "posts",
     "name" : "物尽其用|中兴B860AV1.1-T2 IPTV盒子破解",
     "headline" : "物尽其用|中兴B860AV1.1-T2 IPTV盒子破解",
-    "description" : "注意：仅在杭州电信B860AV1.1-T2测试。\n软破法 所谓软破就是不需要使用特殊的硬件，通过打开B860AV1.1的ADB来修改系统。\n  配置网络\n打开盒子，点击遥控器的「设置」，密码为6321。将盒子连接到有线网络或者Wifi（忽略鉴权相关设置）\n  打开ADB\n在设置中，找到打开ADB，需要输入密码。下载ADB密码计算器\n  通过ADB连接盒子，在电脑上输入命令：\n  adb connect 192.168.1.xxx\radb shell\rsu\rmount -o remount -o rw \/system\r后续的操作和拆机法相同。  拆机法 该方法为通用方法，需要准备硬件USB转TTL线（一般型号CH340G），如果板子上没有焊好针脚的话，还需要点焊枪等工具。\n  拆机接线\n2号接GND线，5接TX线，6接RX线，针脚排列见图（图源见水印）\n  将USB口连接到电脑，打开设备管理器 - 端口 - COM - 属性 - 端口设置，将波特率改成115200 打开Putty，连接模式设置为serial（串口），填入设备管理器中的Serial line和Speed，点击Open   给盒子通电，putty开始跑码，同时插入存有桌面Apk文件的U盘\n  输入命令\n  # 打开adb\rstart adbd\r# 查看U盘路径\rdf\r# 复制桌面App到系统中\rcp launcher.apk \/data\/app\r# （如果安装是当贝桌面）打开当贝桌面\ram start com.",
+    "description" : "注意：仅在杭州电信B860AV1.1-T2测试。\n获取Root权限 软破法 所谓软破就是不需要使用特殊的硬件，通过打开B860AV1.1的ADB来修改系统。\n  配置网络\n打开盒子，点击遥控器的「设置」，密码为6321。将盒子连接到有线网络或者Wifi（忽略鉴权相关设置）\n  打开ADB\n在设置中，找到打开ADB，需要输入密码。下载ADB密码计算器\n  通过ADB连接盒子，在电脑上输入命令：\n  adb connect 192.168.1.xxx\radb shell\rsu\rmount -o remount -o rw \/system\r后续的操作和拆机法相同。  拆机法 该方法为通用方法，需要准备硬件USB转TTL线（一般型号CH340G），如果板子上没有焊好针脚的话，还需要点焊枪等工具。\n  拆机接线\n2号接GND线，5接TX线，6接RX线，针脚排列见图（图源见水印）\n  将USB口连接到电脑，打开设备管理器 - 端口 - COM - 属性 - 端口设置，将波特率改成115200 打开Putty，连接模式设置为serial（串口），填入设备管理器中的Serial line和Speed，点击Open  给盒子通电，putty开始跑码，同时插入存有桌面Apk文件的U盘，如果没有U盘的话也可以用adb push命令来上传文件到盒子  自定义系统 安装自定义桌面 # 打开adb\rstart adbd\r# 查看U盘路径\rdf\r# 复制桌面App到系统中\rcp launcher.apk \/data\/app\r# 没有U盘：上传桌面App到系统中\rexit\radb push d:\\launcher.",
     "inLanguage" : "en-us",
     "author" : "Igloo",
     "creator" : "Igloo",
@@ -65,7 +65,7 @@
     "datePublished": "2020-03-15 12:16:14 \x2b0000 UTC",
     "dateModified" : "2020-03-15 12:16:14 \x2b0000 UTC",
     "url" : "https:\/\/igloo302.github.io\/2020\/%E7%89%A9%E5%B0%BD%E5%85%B6%E7%94%A8-%E4%B8%AD%E5%85%B4b860av1-1-t2-iptv%E7%9B%92%E5%AD%90%E7%A0%B4%E8%A7%A3\/",
-    "wordCount" : "95",
+    "wordCount" : "109",
     "keywords" : [ "ZTE","电视盒子","IPTV", "冰屋里"]
 }
 </script>
@@ -160,7 +160,8 @@
 
         <p>注意：仅在杭州电信B860AV1.1-T2测试。</p>
 <!-- more -->
-<h2 id="软破法">软破法</h2>
+<h2 id="获取root权限">获取Root权限</h2>
+<h3 id="软破法">软破法</h3>
 <p>所谓软破就是不需要使用特殊的硬件，通过打开B860AV1.1的ADB来修改系统。</p>
 <ol>
 <li>
@@ -183,7 +184,7 @@ mount -o remount -o rw /system
 </code></pre></div><ol start="4">
 <li>后续的操作和拆机法相同。</li>
 </ol>
-<h2 id="拆机法">拆机法</h2>
+<h3 id="拆机法">拆机法</h3>
 <p>该方法为通用方法，需要准备硬件USB转TTL线（一般型号CH340G），如果板子上没有焊好针脚的话，还需要点焊枪等工具。</p>
 <ol>
 <li>
@@ -198,13 +199,10 @@ mount -o remount -o rw /system
 </ol>
 <p><img src="http://img.osland.me/zte-putty.jpg" alt="zte-putty"></p>
 <ol start="4">
-<li>
-<p>给盒子通电，putty开始跑码，同时插入存有桌面Apk文件的U盘</p>
-</li>
-<li>
-<p>输入命令</p>
-</li>
+<li>给盒子通电，putty开始跑码，同时插入存有桌面Apk文件的U盘，如果没有U盘的话也可以用adb push命令来上传文件到盒子</li>
 </ol>
+<h2 id="自定义系统">自定义系统</h2>
+<h3 id="安装自定义桌面">安装自定义桌面</h3>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#75715e"># 打开adb</span>
 start adbd
 
@@ -214,14 +212,14 @@ df
 <span style="color:#75715e"># 复制桌面App到系统中</span>
 cp launcher.apk /data/app
 
+<span style="color:#75715e"># 没有U盘：上传桌面App到系统中</span>
+exit
+adb push   d:<span style="color:#ae81ff">\l</span>auncher.apk   /data/app
+
 <span style="color:#75715e"># （如果安装是当贝桌面）打开当贝桌面</span>
 am start com.dangbei.tvlauncher
-</code></pre></div><ol start="6">
-<li>
-<p>修改首页键，使其打开当贝桌面</p>
+</code></pre></div><h3 id="修改首页键">修改首页键</h3>
 <p>现在，点击首页键会回到IPTV。需要添加一个脚本，将首页键映射为打开当贝桌面。创建一个<code>init.insmod_usb.sh</code>文件，将其复制到 /etc/文件夹。</p>
-</li>
-</ol>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#75715e">#!/system/bin/sh
 </span><span style="color:#75715e"></span>
 insmod /system/lib/modules/dwc2.ko
@@ -233,9 +231,13 @@ insmod /system/lib/modules/dwc2.ko
 		am start -n com.dangbei.tvlauncher/com.dangbei.tvlauncher.IndexActivity
 	<span style="color:#66d9ef">fi</span>     
 <span style="color:#66d9ef">done</span>
-</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">cp init.insmod_usb.sh  /etc/
+</code></pre></div><p>将文件放置到etc目录</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">cp init.insmod_usb.sh  /etc/
 chmod <span style="color:#ae81ff">777</span> /etc/init.insmod_usb.sh
-</code></pre></div><h2 id="ps">PS</h2>
+</code></pre></div><h3 id="精简系统应用">精简系统应用</h3>
+<p>系统应用位于/system/app，在备份后可以自由删除</p>
+<h3 id="备份系统">备份系统</h3>
+<h2 id="ps">PS</h2>
 <p>好久之前弄的，当时做了还做了系统备份，删除了一些无用的App，明明做了备份的，居然都找不到了QAQ</p>
 
     </div>
