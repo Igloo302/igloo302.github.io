@@ -230,7 +230,7 @@ fastboot flash recovery .\N1\N1recovery.img
 <h3 id="设置主路由">设置主路由</h3>
 <p>将N1连接到主路由的LAN上，进入主路由后台进入<code>192.168.6.1</code>，我使用的是高恪，进入「网络设置」-「DHCP」，将网关和主DNS修改为<code>192.168.6.2</code>（旁路由N1的IP）</p>
 <p><img src="http://img.osland.me/static/images/router.png" alt="router"></p>
-<p><del>如果主路由是OpenWRT的话，在「网络」-「接口」-「LAN」-「DHCP 服务器」-「高级设置」，在「DHCP 选项」中，添加两条参数，<code>3,192.168.6.2</code>（表示DHCP服务网关指向N1），<code>6,192.168.6.2</code> （表示DNS指向N1），可以达到相同的效果。（未测试）</del></p>
+<p>如果主路由是OpenWRT的话，在「网络」-「接口」-「LAN」-「DHCP 服务器」-「高级设置」，在「DHCP 选项」中，添加两条参数，<code>3,192.168.6.2</code>（表示DHCP服务网关指向N1），<code>6,192.168.6.2</code> （表示DNS指向N1），可以达到相同的效果。</p>
 <p>最后，在防火墙设置中添加<code>iptables -t nat -I POSTROUTING -o eth0 -j MASQUERADE</code>。</p>
 <p><img src="http://img.osland.me/static/images/netinfo.png" alt="netinfo"></p>
 <p>查看当前的连接信息，默认网关和DNS服务器都为<code>192.168.6.2</code>即宣告成功。至此，N1旁路由就设置好了，进入<code>192.168.6.2</code>去配置翻墙吧。</p>
