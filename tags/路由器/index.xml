@@ -6,10 +6,31 @@
     <description>Recent content in 路由器 on 冰屋里</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 24 Feb 2020 14:38:04 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 06 Apr 2020 18:28:49 +0800</lastBuildDate>
     
 	<atom:link href="https://igloo302.github.io/tags/%E8%B7%AF%E7%94%B1%E5%99%A8/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>OpenWrt使用macvlan&#43;mwan3实现单线多拨</title>
+      <link>https://igloo302.github.io/2020/openwrt%E4%BD%BF%E7%94%A8macvlan-mwan3%E5%AE%9E%E7%8E%B0%E5%8D%95%E7%BA%BF%E5%A4%9A%E6%8B%A8/</link>
+      <pubDate>Mon, 06 Apr 2020 18:28:49 +0800</pubDate>
+      
+      <guid>https://igloo302.github.io/2020/openwrt%E4%BD%BF%E7%94%A8macvlan-mwan3%E5%AE%9E%E7%8E%B0%E5%8D%95%E7%BA%BF%E5%A4%9A%E6%8B%A8/</guid>
+      <description>相关的资料相当多，踩了一点坑之后分享记录一下。
+macvlan可以创建虚拟的Wan口，mwan3可以控制多个网络的负载均衡。
+创建虚拟WAN 查看自己的WAN对应的接口名，我这边是eth0.2，使用macvlan创建虚拟WAN：
+ip link add link eth0.2 name veth0 type macvlan ifconfig veth0 up 可以将这两行指令写进路由器的自启动脚本中，也可以编辑网络设置
+vi /etc/config/network # 添加内容 config device &#39;veth0&#39; option name &#39;veth0&#39; option ifname &#39;eth0.2&#39; option type &#39;macvlan&#39; 创建拨号接口 在网络-接口中创建新接口，名称设置为vwan1，类型选择PPPOE，并填写宽带账号密码。
+在高级设置中将vwan1的网关跃点设置为42，原来的wan设置为41（数字随意，不同即可）。
+此时可以如果看到两个接口分别获得了不同的IP，即可进行下一步，否则说明运营商不支持这种双拨方式，可以考虑尝试并发拨号。
+修改防火墙 在网络-防火墙-区域中修改wan，覆盖网络中勾选vwan1。
+在接口中关闭wan，尝试是否能够正常上网。
+设置负载均衡 参考LEDE/OpenWrt使用macvlan和mwan3实现单线多拨-负载均衡一节，写得很清晰，我就不造轮子了。
+顺便一提，杭州电信支持非并发双拨，并发拨号没有限制，不过下载流量不能叠加，但上传流量可以叠加，不过最多100Mbps。
+参考资料 macvlan单线多拨+mwan3负载平衡
+LEDE/OpenWrt使用macvlan和mwan3实现单线多拨</description>
+    </item>
     
     <item>
       <title>7×24-斐讯N1的旁路由玩法</title>
