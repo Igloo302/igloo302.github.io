@@ -187,10 +187,10 @@ Hass.io包含了HA和附加组件，会有一键安装插件等功能，相当�
   打开ADB
 在设置中，找到打开ADB，需要输入密码。下载ADB密码计算器
   通过ADB连接盒子，在电脑上输入命令：
-  adb connect 192.168.1.xxxadb shellsumount -o remount -o rw /system后续的操作和拆机法相同。  拆机法 该方法为通用方法，需要准备硬件USB转TTL线（一般型号CH340G），如果板子上没有焊好针脚的话，还需要点焊枪等工具。
+  adb connect 192.168.1.xxx adb shell su mount -o remount -o rw /system 后续的操作和拆机法相同。  拆机法 该方法为通用方法，需要准备硬件USB转TTL线（一般型号CH340G），如果板子上没有焊好针脚的话，还需要点焊枪等工具。
   拆机接线
 2号接GND线，5接TX线，6接RX线，针脚排列见图（图源见水印）
-  将USB口连接到电脑，打开设备管理器 - 端口 - COM - 属性 - 端口设置，将波特率改成115200 打开Putty，连接模式设置为serial（串口），填入设备管理器中的Serial line和Speed，点击Open  给盒子通电，putty开始跑码，同时插入存有桌面Apk文件的U盘，如果没有U盘的话也可以用adb push命令来上传文件到盒子  自定义系统 安装自定义桌面 # 打开adbstart adbd# 查看U盘路径df# 复制桌面App到系统中cp launcher.apk /data/app# 没有U盘：上传桌面App到系统中exitadb push d:\launcher.</description>
+  将USB口连接到电脑，打开设备管理器 - 端口 - COM - 属性 - 端口设置，将波特率改成115200 打开Putty，连接模式设置为serial（串口），填入设备管理器中的Serial line和Speed，点击Open  给盒子通电，putty开始跑码，同时插入存有桌面Apk文件的U盘，如果没有U盘的话也可以用adb push命令来上传文件到盒子  自定义系统 安装自定义桌面 # 打开adb start adbd # 查看U盘路径 df # 复制桌面App到系统中 cp launcher.apk /data/app # 没有U盘：上传桌面App到系统中 exit adb push d:\launcher.</description>
     </item>
     
     <item>
@@ -354,7 +354,7 @@ _ 匿名用户 RSA的公钥和私钥到底哪个才是用来加密和哪个用�
       <guid>https://igloo302.github.io/2020/git%E7%BD%91%E7%BB%9C%E5%8A%A0%E9%80%9F-%E4%B8%BAgit%E8%AE%BE%E7%BD%AE%E4%BB%A3%E7%90%86/</guid>
       <description>Git使用，尤其是Clone Github的respository的时候往往慢得令人发指，本文使用了2种方法提高速度。
 设置代理 直接使用SS和V2ray的全局模式并不起作用，需要通过以下方法设置代理。
- 打开代理软件，查看本地HTTP监听端口或SOCKS端口 如果设置全局代理，则所有Git的操作都经过代理：  # HTTP监听端口为1080 git config --global http.proxy http://127.0.0.1:1080git config --global https.proxy https://127.0.0.1:1080# Socks5端口为1086 git config --global http.proxy socks5://127.0.0.1:1086git config --global http.proxy socks5://127.0.0.1:1086# 取消全局代理 git config --global --unset http.proxygit config --global --unset https.proxy如果只对GitHub设置代理：  # HTTP监听端口为1080 git config --global http.https://github.com.proxy https://127.0.0.1:1080git config --global https.https://github.com.proxy https://127.0.0.1:1080# Socks5端口为1086 git config --global http.https://github.com.proxy socks5://127.0.0.1:1086git config --global https.</description>
+ 打开代理软件，查看本地HTTP监听端口或SOCKS端口 如果设置全局代理，则所有Git的操作都经过代理：  # HTTP监听端口为1080 git config --global http.proxy http://127.0.0.1:1080 git config --global https.proxy https://127.0.0.1:1080 # Socks5端口为1086 git config --global http.proxy socks5://127.0.0.1:1086 git config --global http.proxy socks5://127.0.0.1:1086 # 取消全局代理 git config --global --unset http.proxy git config --global --unset https.proxy 如果只对GitHub设置代理：  # HTTP监听端口为1080 git config --global http.https://github.com.proxy https://127.0.0.1:1080 git config --global https.https://github.com.proxy https://127.0.0.1:1080 # Socks5端口为1086 git config --global http.https://github.com.proxy socks5://127.0.0.1:1086 git config --global https.https://github.com.proxy socks5://127.0.0.1:1086 # 取消Github代理 git config --global --unset http.</description>
     </item>
     
     <item>
@@ -489,7 +489,7 @@ _ 匿名用户 RSA的公钥和私钥到底哪个才是用来加密和哪个用�
       
       <guid>https://igloo302.github.io/2018/%E5%85%B3%E4%BA%8E%E6%B6%88%E8%B4%B9%E4%B8%BB%E4%B9%89%E7%9A%84%E8%BF%B7%E6%80%9D/</guid>
       <description>消费主义的本质是“将昂贵的东西变高贵”。这里的“变”并非是转变的变，而是更像程序里面的赋值——
-function 消费主义(昂贵){昂贵 = 高贵}作为底层人民的劳动行为的高尔夫球、滑雪变成了一件“高贵”的运动，有人不远万里到雪场滑雪，拍照，发朋友圈，收获点赞——这一套操作流程宛若天成，事实上也确实是被人精心设计出来的。
+function 消费主义(昂贵){ 昂贵 = 高贵 } 作为底层人民的劳动行为的高尔夫球、滑雪变成了一件“高贵”的运动，有人不远万里到雪场滑雪，拍照，发朋友圈，收获点赞——这一套操作流程宛若天成，事实上也确实是被人精心设计出来的。
 反观“古典”社会里，无论是西方还是东方，都将琴棋书画这些活动当作匹配自己生活阶层的高贵行为，它们的价值不在于昂贵的物质条件，而更在于需要长时间的”修身“。少数的精英、上游社会这样定义了自己的生活方式，在建起自己的Noble高墙的同时，也暗中保留了一种社会价值流动的方式，于是，这样的社会才出现了莫扎特。
 难能可贵的是，在这种自上而下的对美的定义让大众艺术得以产生。艺术是一种个人化的表达，对艺术的认知是本质上是带有猎奇性的。
 所以说，贵族倾覆，中心化的话语权沦陷，商人粉末登场的当今社会，这种新的“上游阶层”改变了原来的社会价值流动方式，用昂贵的商品取而代之。当消费本身成为一种终极的追求，通过金钱就可以购买到高贵的时候，那过程和手段就显得不那么重要了。认可酱缸文化的时候，也是用脚为消费主义社会投票。我一直难以彻底认可，将某某名牌大学生从事低端的行业受益颇丰这样的案例作为成功典范，这种认可背后，是在承认所有努力的最终目的是金钱和以金钱衡量的消费。

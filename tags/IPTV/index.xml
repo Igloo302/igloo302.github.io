@@ -24,10 +24,10 @@
   打开ADB
 在设置中，找到打开ADB，需要输入密码。下载ADB密码计算器
   通过ADB连接盒子，在电脑上输入命令：
-  adb connect 192.168.1.xxxadb shellsumount -o remount -o rw /system后续的操作和拆机法相同。  拆机法 该方法为通用方法，需要准备硬件USB转TTL线（一般型号CH340G），如果板子上没有焊好针脚的话，还需要点焊枪等工具。
+  adb connect 192.168.1.xxx adb shell su mount -o remount -o rw /system 后续的操作和拆机法相同。  拆机法 该方法为通用方法，需要准备硬件USB转TTL线（一般型号CH340G），如果板子上没有焊好针脚的话，还需要点焊枪等工具。
   拆机接线
 2号接GND线，5接TX线，6接RX线，针脚排列见图（图源见水印）
-  将USB口连接到电脑，打开设备管理器 - 端口 - COM - 属性 - 端口设置，将波特率改成115200 打开Putty，连接模式设置为serial（串口），填入设备管理器中的Serial line和Speed，点击Open  给盒子通电，putty开始跑码，同时插入存有桌面Apk文件的U盘，如果没有U盘的话也可以用adb push命令来上传文件到盒子  自定义系统 安装自定义桌面 # 打开adbstart adbd# 查看U盘路径df# 复制桌面App到系统中cp launcher.apk /data/app# 没有U盘：上传桌面App到系统中exitadb push d:\launcher.</description>
+  将USB口连接到电脑，打开设备管理器 - 端口 - COM - 属性 - 端口设置，将波特率改成115200 打开Putty，连接模式设置为serial（串口），填入设备管理器中的Serial line和Speed，点击Open  给盒子通电，putty开始跑码，同时插入存有桌面Apk文件的U盘，如果没有U盘的话也可以用adb push命令来上传文件到盒子  自定义系统 安装自定义桌面 # 打开adb start adbd # 查看U盘路径 df # 复制桌面App到系统中 cp launcher.apk /data/app # 没有U盘：上传桌面App到系统中 exit adb push d:\launcher.</description>
     </item>
     
   </channel>

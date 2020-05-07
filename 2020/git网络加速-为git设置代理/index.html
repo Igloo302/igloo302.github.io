@@ -54,7 +54,7 @@
     "articleSection" : "posts",
     "name" : "Git网络加速|为Git设置代理",
     "headline" : "Git网络加速|为Git设置代理",
-    "description" : "Git使用，尤其是Clone Github的respository的时候往往慢得令人发指，本文使用了2种方法提高速度。\n设置代理 直接使用SS和V2ray的全局模式并不起作用，需要通过以下方法设置代理。\n 打开代理软件，查看本地HTTP监听端口或SOCKS端口 如果设置全局代理，则所有Git的操作都经过代理：  # HTTP监听端口为1080\r git config --global http.proxy http:\/\/127.0.0.1:1080\rgit config --global https.proxy https:\/\/127.0.0.1:1080\r# Socks5端口为1086\r git config --global http.proxy socks5:\/\/127.0.0.1:1086\rgit config --global http.proxy socks5:\/\/127.0.0.1:1086\r# 取消全局代理\r git config --global --unset http.proxy\rgit config --global --unset https.proxy\r如果只对GitHub设置代理：  # HTTP监听端口为1080\r git config --global http.https:\/\/github.com.proxy https:\/\/127.0.0.1:1080\rgit config --global https.https:\/\/github.com.proxy https:\/\/127.0.0.1:1080\r# Socks5端口为1086\r git config --global http.https:\/\/github.com.proxy socks5:\/\/127.0.0.1:1086\rgit config --global https.",
+    "description" : "Git使用，尤其是Clone Github的respository的时候往往慢得令人发指，本文使用了2种方法提高速度。\n设置代理 直接使用SS和V2ray的全局模式并不起作用，需要通过以下方法设置代理。\n 打开代理软件，查看本地HTTP监听端口或SOCKS端口 如果设置全局代理，则所有Git的操作都经过代理：  # HTTP监听端口为1080 git config --global http.proxy http:\/\/127.0.0.1:1080 git config --global https.proxy https:\/\/127.0.0.1:1080 # Socks5端口为1086 git config --global http.proxy socks5:\/\/127.0.0.1:1086 git config --global http.proxy socks5:\/\/127.0.0.1:1086 # 取消全局代理 git config --global --unset http.proxy git config --global --unset https.proxy 如果只对GitHub设置代理：  # HTTP监听端口为1080 git config --global http.https:\/\/github.com.proxy https:\/\/127.0.0.1:1080 git config --global https.https:\/\/github.com.proxy https:\/\/127.0.0.1:1080 # Socks5端口为1086 git config --global http.https:\/\/github.com.proxy socks5:\/\/127.0.0.1:1086 git config --global https.https:\/\/github.com.proxy socks5:\/\/127.0.0.1:1086 # 取消Github代理 git config --global --unset http.",
     "inLanguage" : "en-us",
     "author" : "Igloo",
     "creator" : "Igloo",
@@ -164,29 +164,29 @@
 <li>打开代理软件，查看本地HTTP监听端口或SOCKS端口</li>
 <li>如果设置全局代理，则所有Git的操作都经过代理：</li>
 </ol>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-powershell" data-lang="powershell"><span style="color:#75715e"># HTTP监听端口为1080</span>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-powershell" data-lang="powershell"><span style="color:#75715e"># HTTP监听端口为1080</span>
 git config --global http.proxy http<span style="color:#960050;background-color:#1e0010">:</span>//127.0.0.1<span style="color:#960050;background-color:#1e0010">:</span>1080
 git config --global https.proxy https<span style="color:#960050;background-color:#1e0010">:</span>//127.0.0.1<span style="color:#960050;background-color:#1e0010">:</span>1080
 
-<span style="color:#75715e"># Socks5端口为1086</span>
+<span style="color:#75715e"># Socks5端口为1086</span>
 git config --global http.proxy socks5<span style="color:#960050;background-color:#1e0010">:</span>//127.0.0.1<span style="color:#960050;background-color:#1e0010">:</span>1086
 git config --global http.proxy socks5<span style="color:#960050;background-color:#1e0010">:</span>//127.0.0.1<span style="color:#960050;background-color:#1e0010">:</span>1086
 
-<span style="color:#75715e"># 取消全局代理</span>
+<span style="color:#75715e"># 取消全局代理</span>
 git config --global --unset http.proxy
 git config --global --unset https.proxy
 </code></pre></div><ol start="3">
 <li>如果只对GitHub设置代理：</li>
 </ol>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-powershell" data-lang="powershell"><span style="color:#75715e"># HTTP监听端口为1080</span>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-powershell" data-lang="powershell"><span style="color:#75715e"># HTTP监听端口为1080</span>
 git config --global http.https<span style="color:#960050;background-color:#1e0010">:</span>//github.com.proxy https<span style="color:#960050;background-color:#1e0010">:</span>//127.0.0.1<span style="color:#960050;background-color:#1e0010">:</span>1080
 git config --global https.https<span style="color:#960050;background-color:#1e0010">:</span>//github.com.proxy https<span style="color:#960050;background-color:#1e0010">:</span>//127.0.0.1<span style="color:#960050;background-color:#1e0010">:</span>1080
 
-<span style="color:#75715e"># Socks5端口为1086</span>
+<span style="color:#75715e"># Socks5端口为1086</span>
 git config --global http.https<span style="color:#960050;background-color:#1e0010">:</span>//github.com.proxy socks5<span style="color:#960050;background-color:#1e0010">:</span>//127.0.0.1<span style="color:#960050;background-color:#1e0010">:</span>1086
 git config --global https.https<span style="color:#960050;background-color:#1e0010">:</span>//github.com.proxy socks5<span style="color:#960050;background-color:#1e0010">:</span>//127.0.0.1<span style="color:#960050;background-color:#1e0010">:</span>1086
 
-<span style="color:#75715e"># 取消Github代理</span>
+<span style="color:#75715e"># 取消Github代理</span>
 git config --global --unset http.https<span style="color:#960050;background-color:#1e0010">:</span>//github.com.proxy
 git config --global --unset https.https<span style="color:#960050;background-color:#1e0010">:</span>//github.com.proxy
 </code></pre></div><ol start="3">
