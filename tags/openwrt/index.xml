@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>OpenWrt on 冰屋里</title>
-    <link>https://beigloo.tk/tags/openwrt/</link>
+    <link>https://igloo302.github.io/tags/openwrt/</link>
     <description>Recent content in OpenWrt on 冰屋里</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Mon, 06 Apr 2020 18:28:49 +0800</lastBuildDate>
     
-	<atom:link href="https://beigloo.tk/tags/openwrt/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://igloo302.github.io/tags/openwrt/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>OpenWrt使用macvlan&#43;mwan3实现单线多拨</title>
-      <link>https://beigloo.tk/2020/openwrt%E4%BD%BF%E7%94%A8macvlan-mwan3%E5%AE%9E%E7%8E%B0%E5%8D%95%E7%BA%BF%E5%A4%9A%E6%8B%A8/</link>
+      <link>https://igloo302.github.io/2020/openwrt%E4%BD%BF%E7%94%A8macvlan-mwan3%E5%AE%9E%E7%8E%B0%E5%8D%95%E7%BA%BF%E5%A4%9A%E6%8B%A8/</link>
       <pubDate>Mon, 06 Apr 2020 18:28:49 +0800</pubDate>
       
-      <guid>https://beigloo.tk/2020/openwrt%E4%BD%BF%E7%94%A8macvlan-mwan3%E5%AE%9E%E7%8E%B0%E5%8D%95%E7%BA%BF%E5%A4%9A%E6%8B%A8/</guid>
+      <guid>https://igloo302.github.io/2020/openwrt%E4%BD%BF%E7%94%A8macvlan-mwan3%E5%AE%9E%E7%8E%B0%E5%8D%95%E7%BA%BF%E5%A4%9A%E6%8B%A8/</guid>
       <description>相关的资料相当多，踩了一点坑之后分享记录一下。
 macvlan可以创建虚拟的Wan口，mwan3可以控制多个网络的负载均衡。
 创建虚拟WAN 查看自己的WAN对应的接口名，我这边是eth0.2，使用macvlan创建虚拟WAN：

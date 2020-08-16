@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Portfolios on 冰屋里</title>
-    <link>https://beigloo.tk/portfolio/</link>
+    <link>https://igloo302.github.io/portfolio/</link>
     <description>Recent content in Portfolios on 冰屋里</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sat, 29 Feb 2020 19:22:02 +0800</lastBuildDate>
     
-	<atom:link href="https://beigloo.tk/portfolio/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://igloo302.github.io/portfolio/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>iVision 盲人视觉辅助系统</title>
-      <link>https://beigloo.tk/portfolio/ivision/</link>
+      <link>https://igloo302.github.io/portfolio/ivision/</link>
       <pubDate>Wed, 29 May 2019 18:42:15 +0800</pubDate>
       
-      <guid>https://beigloo.tk/portfolio/ivision/</guid>
+      <guid>https://igloo302.github.io/portfolio/ivision/</guid>
       <description> 2019.05-2019.10
 发起人
 产品设计|语音交互设计|代码实现|可用性测试
@@ -27,10 +27,10 @@
     
     <item>
       <title>流浪动物共养计划</title>
-      <link>https://beigloo.tk/portfolio/animal/</link>
+      <link>https://igloo302.github.io/portfolio/animal/</link>
       <pubDate>Mon, 29 Oct 2018 18:53:19 +0800</pubDate>
       
-      <guid>https://beigloo.tk/portfolio/animal/</guid>
+      <guid>https://igloo302.github.io/portfolio/animal/</guid>
       <description>2018
 发起人
 商业模式设计
@@ -40,10 +40,10 @@
     
     <item>
       <title>Magic Flashlight: 增强现实设计系列</title>
-      <link>https://beigloo.tk/portfolio/magicflashlight/</link>
+      <link>https://igloo302.github.io/portfolio/magicflashlight/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://beigloo.tk/portfolio/magicflashlight/</guid>
+      <guid>https://igloo302.github.io/portfolio/magicflashlight/</guid>
       <description>&lt;blockquote&gt;
 &lt;p&gt;2018-2020&lt;/p&gt;
 &lt;p&gt;游戏交互设计&lt;/p&gt;
@@ -55,10 +55,10 @@
     
     <item>
       <title>ARKit: Crazy Museum ARKit交互设计实践教程</title>
-      <link>https://beigloo.tk/portfolio/arkitcourse/</link>
+      <link>https://igloo302.github.io/portfolio/arkitcourse/</link>
       <pubDate>Sat, 29 Feb 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://beigloo.tk/portfolio/arkitcourse/</guid>
+      <guid>https://igloo302.github.io/portfolio/arkitcourse/</guid>
       <description> 2019.10-2020.01 教程撰写编辑
  本教程为零基础的ARKit入门教程，由本人负责编辑并维护。
 当我在逛博物馆的时候，精美的展品总会让我赞叹不已，但是，总会因为知识储备的不足，而错失很多展品背后的奇妙故事和知识。如果有一款AR应用，可以帮助我们更好地理解展品背后的故事，让沉默的展品说话，甚至让展品以人格化的方式互动，那会不会带来更有趣和有价值的观展体验呢？
@@ -69,10 +69,10 @@
     
     <item>
       <title>智音：汽车销售顾问管理评估系统</title>
-      <link>https://beigloo.tk/portfolio/smartvoice/</link>
+      <link>https://igloo302.github.io/portfolio/smartvoice/</link>
       <pubDate>Wed, 06 Mar 2019 21:19:35 +0800</pubDate>
       
-      <guid>https://beigloo.tk/portfolio/smartvoice/</guid>
+      <guid>https://igloo302.github.io/portfolio/smartvoice/</guid>
       <description> 2019
 产品设计
  智音是针对汽车销售场景的销售员话术培训考核和销售评估的系统，将智能语音技术融入销售顾问的培训学习、技能考核和实际销售中的话术评估以及CRM之中，提升人工效率，带来价值提升。
@@ -82,20 +82,20 @@
     
     <item>
       <title>都9102年了，我们将会如何“阅读”？</title>
-      <link>https://beigloo.tk/portfolio/howtoread/</link>
+      <link>https://igloo302.github.io/portfolio/howtoread/</link>
       <pubDate>Sat, 29 Dec 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://beigloo.tk/portfolio/howtoread/</guid>
+      <guid>https://igloo302.github.io/portfolio/howtoread/</guid>
       <description>Thanks Chufan for the guidance.
 拓展阅读 都9102年了，我们将如何“阅读”？</description>
     </item>
     
     <item>
       <title>「蛋白客」共享蛋白粉机</title>
-      <link>https://beigloo.tk/portfolio/danbk/</link>
+      <link>https://igloo302.github.io/portfolio/danbk/</link>
       <pubDate>Tue, 20 Feb 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://beigloo.tk/portfolio/danbk/</guid>
+      <guid>https://igloo302.github.io/portfolio/danbk/</guid>
       <description> 2018.2-2018.6
 发起人
 市场调研|产品设计|技术实现|可用性测试
@@ -107,10 +107,10 @@
     
     <item>
       <title>Jumper Cable Redesign</title>
-      <link>https://beigloo.tk/portfolio/cable/</link>
+      <link>https://igloo302.github.io/portfolio/cable/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://beigloo.tk/portfolio/cable/</guid>
+      <guid>https://igloo302.github.io/portfolio/cable/</guid>
       <description>&lt;blockquote&gt;
 &lt;p&gt;2018&lt;/p&gt;
 &lt;p&gt;产品概念设计&lt;/p&gt;
@@ -119,10 +119,10 @@
     
     <item>
       <title>FOR HER. SUV智能踏板</title>
-      <link>https://beigloo.tk/portfolio/forher/</link>
+      <link>https://igloo302.github.io/portfolio/forher/</link>
       <pubDate>Wed, 28 Feb 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://beigloo.tk/portfolio/forher/</guid>
+      <guid>https://igloo302.github.io/portfolio/forher/</guid>
       <description>2018
 用户访谈|产品概念设计
  97%的女性参与掌握家庭财权，58.8%的女性参与购车的决策，博得女性的欢心显得极为重要。这是一款为女性设计的SUV选装的智能踏板，旨在解决女性上下大型SUV时不便的问题，同时，该踏板还提供了地面显示的功能，让硬朗的SUV更懂她的心。</description>
@@ -130,10 +130,10 @@
     
     <item>
       <title>TreeTalk 树说</title>
-      <link>https://beigloo.tk/portfolio/treetalk/</link>
+      <link>https://igloo302.github.io/portfolio/treetalk/</link>
       <pubDate>Tue, 29 Jan 2019 19:05:33 +0800</pubDate>
       
-      <guid>https://beigloo.tk/portfolio/treetalk/</guid>
+      <guid>https://igloo302.github.io/portfolio/treetalk/</guid>
       <description> 2019.01
 应用产品设计|交互设计
  </description>
@@ -141,10 +141,10 @@
     
     <item>
       <title>ELSE</title>
-      <link>https://beigloo.tk/portfolio/else/</link>
+      <link>https://igloo302.github.io/portfolio/else/</link>
       <pubDate>Sat, 29 Feb 2020 19:22:02 +0800</pubDate>
       
-      <guid>https://beigloo.tk/portfolio/else/</guid>
+      <guid>https://igloo302.github.io/portfolio/else/</guid>
       <description>One 电梯开关门按键再设计 设计理念 当我们按下关门/开门的按钮，我们在想什么？ 只有两种可能的意图，保持或逆转状态，在最简单的行动载体——One Button上，如何让流程最为简单，降低认知时间，消灭确定和修正的时间是本设计的发力点。
 操作过程 按压中间的按钮，逆转当前状态，关闭的门打开，打开的门关闭，大开中的门开始关闭，关闭中的门开始打开。 转动外围拨盘，应对开门等待的情况，在灯光的时间指示下，让大门延迟关闭。
 如何解决按错的问题 一个按钮降低认知时间，同时通过意图分析可以发现，一个按钮的设计可以应对各种情况。轮盘的设计是一种妥协，个人认为用手挡住门边即是目前最好的解决方案。
@@ -153,10 +153,10 @@
     
     <item>
       <title>如何设计一枚代表爱情的戒指</title>
-      <link>https://beigloo.tk/portfolio/lovering/</link>
+      <link>https://igloo302.github.io/portfolio/lovering/</link>
       <pubDate>Sun, 29 Dec 2019 19:10:54 +0800</pubDate>
       
-      <guid>https://beigloo.tk/portfolio/lovering/</guid>
+      <guid>https://igloo302.github.io/portfolio/lovering/</guid>
       <description></description>
     </item>
     

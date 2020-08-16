@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>路由器 on 冰屋里</title>
-    <link>https://beigloo.tk/tags/%E8%B7%AF%E7%94%B1%E5%99%A8/</link>
+    <link>https://igloo302.github.io/tags/%E8%B7%AF%E7%94%B1%E5%99%A8/</link>
     <description>Recent content in 路由器 on 冰屋里</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Mon, 06 Apr 2020 18:28:49 +0800</lastBuildDate>
     
-	<atom:link href="https://beigloo.tk/tags/%E8%B7%AF%E7%94%B1%E5%99%A8/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://igloo302.github.io/tags/%E8%B7%AF%E7%94%B1%E5%99%A8/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>OpenWrt使用macvlan&#43;mwan3实现单线多拨</title>
-      <link>https://beigloo.tk/2020/openwrt%E4%BD%BF%E7%94%A8macvlan-mwan3%E5%AE%9E%E7%8E%B0%E5%8D%95%E7%BA%BF%E5%A4%9A%E6%8B%A8/</link>
+      <link>https://igloo302.github.io/2020/openwrt%E4%BD%BF%E7%94%A8macvlan-mwan3%E5%AE%9E%E7%8E%B0%E5%8D%95%E7%BA%BF%E5%A4%9A%E6%8B%A8/</link>
       <pubDate>Mon, 06 Apr 2020 18:28:49 +0800</pubDate>
       
-      <guid>https://beigloo.tk/2020/openwrt%E4%BD%BF%E7%94%A8macvlan-mwan3%E5%AE%9E%E7%8E%B0%E5%8D%95%E7%BA%BF%E5%A4%9A%E6%8B%A8/</guid>
+      <guid>https://igloo302.github.io/2020/openwrt%E4%BD%BF%E7%94%A8macvlan-mwan3%E5%AE%9E%E7%8E%B0%E5%8D%95%E7%BA%BF%E5%A4%9A%E6%8B%A8/</guid>
       <description>相关的资料相当多，踩了一点坑之后分享记录一下。
 macvlan可以创建虚拟的Wan口，mwan3可以控制多个网络的负载均衡。
 创建虚拟WAN 查看自己的WAN对应的接口名，我这边是eth0.2，使用macvlan创建虚拟WAN：
@@ -34,10 +34,10 @@ LEDE/OpenWrt使用macvlan和mwan3实现单线多拨</description>
     
     <item>
       <title>7×24-斐讯N1的旁路由玩法</title>
-      <link>https://beigloo.tk/2020/724-%E6%96%90%E8%AE%AFn1%E7%9A%84%E6%97%81%E8%B7%AF%E7%94%B1%E7%8E%A9%E6%B3%95/</link>
+      <link>https://igloo302.github.io/2020/724-%E6%96%90%E8%AE%AFn1%E7%9A%84%E6%97%81%E8%B7%AF%E7%94%B1%E7%8E%A9%E6%B3%95/</link>
       <pubDate>Mon, 24 Feb 2020 14:38:04 +0000</pubDate>
       
-      <guid>https://beigloo.tk/2020/724-%E6%96%90%E8%AE%AFn1%E7%9A%84%E6%97%81%E8%B7%AF%E7%94%B1%E7%8E%A9%E6%B3%95/</guid>
+      <guid>https://igloo302.github.io/2020/724-%E6%96%90%E8%AE%AFn1%E7%9A%84%E6%97%81%E8%B7%AF%E7%94%B1%E7%8E%A9%E6%B3%95/</guid>
       <description>N1是已经暴雷快两年的斐讯留下来的经典矿渣遗产。2GB RAM，四核心ARM SOC，4K 输出，千兆网口，读写30MB+的USB 2.0，决定了N1绝不甘心当一个吃灰的挖矿机。在一众技术大佬的研究下，N1成功转型为电视盒子、NAS、下载机、高清播放器、复古游戏机，以及本文要介绍的旁路由。
 我们平时使用的家用路由器需要负责网关服务器、DHCP服务器、PPPOE拨号、DNS服务器、发射WIFI信号等工作，所谓旁路由（并不是专业的叫法，民间约定俗成）就是把这些功能中的一部分让渡给这台设备去处理。
 大多数的家用路由器的性能都是及其羸弱的，运行去广告、V2Ray、SS这种服务的时候难以发挥出最好的效果，有了一台旁路由，我们就可以把这些高难度任务交给它，让主路由安安心心地拨号、分配IP地址（DHCP）。连接方式如图：

@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>智能家居 on 冰屋里</title>
-    <link>https://beigloo.tk/tags/%E6%99%BA%E8%83%BD%E5%AE%B6%E5%B1%85/</link>
+    <link>https://igloo302.github.io/tags/%E6%99%BA%E8%83%BD%E5%AE%B6%E5%B1%85/</link>
     <description>Recent content in 智能家居 on 冰屋里</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sun, 15 Mar 2020 16:56:53 +0000</lastBuildDate>
     
-	<atom:link href="https://beigloo.tk/tags/%E6%99%BA%E8%83%BD%E5%AE%B6%E5%B1%85/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://igloo302.github.io/tags/%E6%99%BA%E8%83%BD%E5%AE%B6%E5%B1%85/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>7×24: IoT = Internet of Trash? Home Assistant打造全屋智能</title>
-      <link>https://beigloo.tk/2020/724-home-assistant/</link>
+      <link>https://igloo302.github.io/2020/724-home-assistant/</link>
       <pubDate>Sun, 15 Mar 2020 16:56:53 +0000</pubDate>
       
-      <guid>https://beigloo.tk/2020/724-home-assistant/</guid>
+      <guid>https://igloo302.github.io/2020/724-home-assistant/</guid>
       <description>几年前在国外住过一个别墅，里面的智能家居设计给我留下了深刻的印象：吧台上有一个控制平板，统一控制各个房间的照明和空调温度，通过音箱播放流媒体歌曲，控制电视机播放的Netflix电视剧；每个房间还有独立的分机控制开关来单独控制各自房间的设备。
 虽然说起来并不新鲜，甚至并没有突破IoT=网络开关这个初级阶段，但是这种高度一致化的交互方式，在家庭空间尺度上和互联网内容亲密互动的感觉，都带来了超越产品功能本身的愉快体验。
 对于智能家居和IoT，很容易想到国内的米家，天猫精灵等互联网、电商以及传统白电厂商搞出的各个体系，其中米家推出了全面的家电产品、控制器以及传感器元件，价格也不太贵，综合体验可能是最好的。但是他们共有的问题就是不同的体系都在使用自己的私有协议，无法互相协作使用。
