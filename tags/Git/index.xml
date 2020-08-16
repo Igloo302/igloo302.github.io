@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Git on 冰屋里</title>
-    <link>https://igloo302.github.io/tags/git/</link>
+    <link>https://beigloo.tk/tags/git/</link>
     <description>Recent content in Git on 冰屋里</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 25 Feb 2020 15:22:56 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 25 Feb 2020 12:28:52 +0000</lastBuildDate>
     
-	<atom:link href="https://igloo302.github.io/tags/git/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://beigloo.tk/tags/git/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Git网络加速|为Git设置代理</title>
-      <link>https://igloo302.github.io/2020/git%E7%BD%91%E7%BB%9C%E5%8A%A0%E9%80%9F-%E4%B8%BAgit%E8%AE%BE%E7%BD%AE%E4%BB%A3%E7%90%86/</link>
+      <link>https://beigloo.tk/2020/git%E7%BD%91%E7%BB%9C%E5%8A%A0%E9%80%9F-%E4%B8%BAgit%E8%AE%BE%E7%BD%AE%E4%BB%A3%E7%90%86/</link>
       <pubDate>Tue, 25 Feb 2020 12:28:52 +0000</pubDate>
       
-      <guid>https://igloo302.github.io/2020/git%E7%BD%91%E7%BB%9C%E5%8A%A0%E9%80%9F-%E4%B8%BAgit%E8%AE%BE%E7%BD%AE%E4%BB%A3%E7%90%86/</guid>
+      <guid>https://beigloo.tk/2020/git%E7%BD%91%E7%BB%9C%E5%8A%A0%E9%80%9F-%E4%B8%BAgit%E8%AE%BE%E7%BD%AE%E4%BB%A3%E7%90%86/</guid>
       <description>Git使用，尤其是Clone Github的respository的时候往往慢得令人发指，本文使用了2种方法提高速度。
 设置代理 直接使用SS和V2ray的全局模式并不起作用，需要通过以下方法设置代理。
  打开代理软件，查看本地HTTP监听端口或SOCKS端口 如果设置全局代理，则所有Git的操作都经过代理：  # HTTP监听端口为1080 git config --global http.proxy http://127.0.0.1:1080 git config --global https.proxy https://127.0.0.1:1080 # Socks5端口为1086 git config --global http.proxy socks5://127.0.0.1:1086 git config --global http.proxy socks5://127.0.0.1:1086 # 取消全局代理 git config --global --unset http.proxy git config --global --unset https.proxy 如果只对GitHub设置代理：  # HTTP监听端口为1080 git config --global http.https://github.com.proxy https://127.0.0.1:1080 git config --global https.https://github.com.proxy https://127.0.0.1:1080 # Socks5端口为1086 git config --global http.https://github.com.proxy socks5://127.0.0.1:1086 git config --global https.https://github.com.proxy socks5://127.0.0.1:1086 # 取消Github代理 git config --global --unset http.</description>

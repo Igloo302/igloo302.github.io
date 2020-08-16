@@ -63,4 +63,4 @@ Disallow: /
 User-agent: ZoominfoBot
 Disallow: /
 
-Sitemap: https://igloo302.github.io/sitemap.xml
+Sitemap: https://beigloo.tk/sitemap.xml

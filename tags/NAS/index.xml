@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>NAS on 冰屋里</title>
-    <link>https://igloo302.github.io/tags/nas/</link>
+    <link>https://beigloo.tk/tags/nas/</link>
     <description>Recent content in NAS on 冰屋里</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sun, 15 Mar 2020 11:33:05 +0000</lastBuildDate>
     
-	<atom:link href="https://igloo302.github.io/tags/nas/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://beigloo.tk/tags/nas/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>7×24: 荒野无灯N1小钢炮PT下载机简单调教</title>
-      <link>https://igloo302.github.io/2020/724-%E8%8D%92%E9%87%8E%E6%97%A0%E7%81%AFn1%E5%B0%8F%E9%92%A2%E7%82%AEpt%E4%B8%8B%E8%BD%BD%E6%9C%BA%E7%AE%80%E5%8D%95%E8%B0%83%E6%95%99/</link>
+      <link>https://beigloo.tk/2020/724-%E8%8D%92%E9%87%8E%E6%97%A0%E7%81%AFn1%E5%B0%8F%E9%92%A2%E7%82%AEpt%E4%B8%8B%E8%BD%BD%E6%9C%BA%E7%AE%80%E5%8D%95%E8%B0%83%E6%95%99/</link>
       <pubDate>Sun, 15 Mar 2020 11:33:05 +0000</pubDate>
       
-      <guid>https://igloo302.github.io/2020/724-%E8%8D%92%E9%87%8E%E6%97%A0%E7%81%AFn1%E5%B0%8F%E9%92%A2%E7%82%AEpt%E4%B8%8B%E8%BD%BD%E6%9C%BA%E7%AE%80%E5%8D%95%E8%B0%83%E6%95%99/</guid>
+      <guid>https://beigloo.tk/2020/724-%E8%8D%92%E9%87%8E%E6%97%A0%E7%81%AFn1%E5%B0%8F%E9%92%A2%E7%82%AEpt%E4%B8%8B%E8%BD%BD%E6%9C%BA%E7%AE%80%E5%8D%95%E8%B0%83%E6%95%99/</guid>
       <description>本文关于安装完荒野无灯N1之后，将原生的qBittorrent和Filebrowser改为Docker版本。
 Docker qBittorrent 替换原生qBittorrent ，重新安装荒野无灯编译的Docker版qBittorrent。
  参考资料 小钢炮使用docker版qb 4.1.6 简明教程 qBittorrent docker镜像：简介里没有说明的部分 N1小钢炮下载系统 篇七：如何在小钢炮系统的Docker里安装灯大原味qBittorrent及优化设置
@@ -25,10 +25,10 @@ Docker qBittorrent 替换原生qBittorrent ，重新安装荒野无灯编译的D
     
     <item>
       <title>7×24: Jellyfin&#43;Kodi打造个人媒体中心</title>
-      <link>https://igloo302.github.io/2020/724-jellyfin-kodi%E6%89%93%E9%80%A0%E4%B8%AA%E4%BA%BA%E5%AA%92%E4%BD%93%E4%B8%AD%E5%BF%83/</link>
+      <link>https://beigloo.tk/2020/724-jellyfin-kodi%E6%89%93%E9%80%A0%E4%B8%AA%E4%BA%BA%E5%AA%92%E4%BD%93%E4%B8%AD%E5%BF%83/</link>
       <pubDate>Mon, 09 Mar 2020 21:49:10 +0000</pubDate>
       
-      <guid>https://igloo302.github.io/2020/724-jellyfin-kodi%E6%89%93%E9%80%A0%E4%B8%AA%E4%BA%BA%E5%AA%92%E4%BD%93%E4%B8%AD%E5%BF%83/</guid>
+      <guid>https://beigloo.tk/2020/724-jellyfin-kodi%E6%89%93%E9%80%A0%E4%B8%AA%E4%BA%BA%E5%AA%92%E4%BD%93%E4%B8%AD%E5%BF%83/</guid>
       <description>「一台7×24小时运行的电脑可以用来做什么？」系列第二篇。作为一个数字收集癖和整理癖患者，从十几年前在VeryCD上用迅雷慢慢下载TLF组的奥斯卡全集，几KB的速度下几周，到现在对比不同的压制组作品的质量，千兆的网络压得磁盘跟不上下载速度，硬盘容量存不下想要收藏的电影。回望过去，观看的速度永远跟不上下载的速度，甚至现在都不再需要下载再看了，这个过程见证了一段网络、影视、数码的发展历史。
 Docker安装Jellyfin  Jellyfin is the volunteer-built media solution that puts you in control of your media. Stream to any device from your own server, with no strings attached. Your media, your server, your way.
  Jellyfin的功能简单来说就是作为媒体服务器，统一管理影片，它的界面是这样的：

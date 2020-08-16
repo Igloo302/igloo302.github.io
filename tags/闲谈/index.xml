@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>闲谈 on 冰屋里</title>
-    <link>https://igloo302.github.io/tags/%E9%97%B2%E8%B0%88/</link>
+    <link>https://beigloo.tk/tags/%E9%97%B2%E8%B0%88/</link>
     <description>Recent content in 闲谈 on 冰屋里</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Fri, 28 Feb 2020 12:07:31 +0000</lastBuildDate>
     
-	<atom:link href="https://igloo302.github.io/tags/%E9%97%B2%E8%B0%88/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://beigloo.tk/tags/%E9%97%B2%E8%B0%88/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>会员的诞生</title>
-      <link>https://igloo302.github.io/2020/%E4%BC%9A%E5%91%98%E7%9A%84%E8%AF%9E%E7%94%9F/</link>
+      <link>https://beigloo.tk/2020/%E4%BC%9A%E5%91%98%E7%9A%84%E8%AF%9E%E7%94%9F/</link>
       <pubDate>Fri, 28 Feb 2020 12:07:31 +0000</pubDate>
       
-      <guid>https://igloo302.github.io/2020/%E4%BC%9A%E5%91%98%E7%9A%84%E8%AF%9E%E7%94%9F/</guid>
+      <guid>https://beigloo.tk/2020/%E4%BC%9A%E5%91%98%E7%9A%84%E8%AF%9E%E7%94%9F/</guid>
       <description>Photo by Alfred Quartey on Unsplash
  在笔记本中翻到一些之前思考会员制的段落，拿出来再思考并总结一下。说来也巧，此前的记录时间是19年5月5日，这半年里，会员制商超Costco在上海落地，淘宝的88超级会员玩起了活动降门槛，视频网站在庆余年做SSVIP被网友吐槽，会员似乎已经变味了，那么，究竟什么是会员，会员到底在玩什么？
 如果我们用商品是否定期需要（稳定的复购）和商品的价格波动幅度来区分我们的消费行为，一个普通城市年轻人大致如下：
@@ -55,10 +55,10 @@ e.g. 所有会员的积分等级系统，淘宝人生
     
     <item>
       <title>关于“消费主义”的迷思</title>
-      <link>https://igloo302.github.io/2018/%E5%85%B3%E4%BA%8E%E6%B6%88%E8%B4%B9%E4%B8%BB%E4%B9%89%E7%9A%84%E8%BF%B7%E6%80%9D/</link>
+      <link>https://beigloo.tk/2018/%E5%85%B3%E4%BA%8E%E6%B6%88%E8%B4%B9%E4%B8%BB%E4%B9%89%E7%9A%84%E8%BF%B7%E6%80%9D/</link>
       <pubDate>Thu, 13 Dec 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://igloo302.github.io/2018/%E5%85%B3%E4%BA%8E%E6%B6%88%E8%B4%B9%E4%B8%BB%E4%B9%89%E7%9A%84%E8%BF%B7%E6%80%9D/</guid>
+      <guid>https://beigloo.tk/2018/%E5%85%B3%E4%BA%8E%E6%B6%88%E8%B4%B9%E4%B8%BB%E4%B9%89%E7%9A%84%E8%BF%B7%E6%80%9D/</guid>
       <description>消费主义的本质是“将昂贵的东西变高贵”。这里的“变”并非是转变的变，而是更像程序里面的赋值——
 function 消费主义(昂贵){ 昂贵 = 高贵 } 作为底层人民的劳动行为的高尔夫球、滑雪变成了一件“高贵”的运动，有人不远万里到雪场滑雪，拍照，发朋友圈，收获点赞——这一套操作流程宛若天成，事实上也确实是被人精心设计出来的。
 反观“古典”社会里，无论是西方还是东方，都将琴棋书画这些活动当作匹配自己生活阶层的高贵行为，它们的价值不在于昂贵的物质条件，而更在于需要长时间的”修身“。少数的精英、上游社会这样定义了自己的生活方式，在建起自己的Noble高墙的同时，也暗中保留了一种社会价值流动的方式，于是，这样的社会才出现了莫扎特。
@@ -73,10 +73,10 @@ function 消费主义(昂贵){ 昂贵 = 高贵 } 作为底层人民的劳动行�
     
     <item>
       <title>软件公司是不存在技术壁垒的</title>
-      <link>https://igloo302.github.io/2018/%E8%BD%AF%E4%BB%B6%E5%85%AC%E5%8F%B8%E6%98%AF%E4%B8%8D%E5%AD%98%E5%9C%A8%E6%8A%80%E6%9C%AF%E5%A3%81%E5%9E%92%E7%9A%84/</link>
+      <link>https://beigloo.tk/2018/%E8%BD%AF%E4%BB%B6%E5%85%AC%E5%8F%B8%E6%98%AF%E4%B8%8D%E5%AD%98%E5%9C%A8%E6%8A%80%E6%9C%AF%E5%A3%81%E5%9E%92%E7%9A%84/</link>
       <pubDate>Wed, 24 Jan 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://igloo302.github.io/2018/%E8%BD%AF%E4%BB%B6%E5%85%AC%E5%8F%B8%E6%98%AF%E4%B8%8D%E5%AD%98%E5%9C%A8%E6%8A%80%E6%9C%AF%E5%A3%81%E5%9E%92%E7%9A%84/</guid>
+      <guid>https://beigloo.tk/2018/%E8%BD%AF%E4%BB%B6%E5%85%AC%E5%8F%B8%E6%98%AF%E4%B8%8D%E5%AD%98%E5%9C%A8%E6%8A%80%E6%9C%AF%E5%A3%81%E5%9E%92%E7%9A%84/</guid>
       <description>今天的讨论是在和詹詹吃烧烤的时候开始的，实际上也是上次关于人工智能创业的续集，因为讨论的结果喜人，说是醍醐灌顶也不为过，所以打算做一个简单的记录。可能这会是一个系列，我先大言不惭地定个系列题叫做《伪创业者狂想》。
 上次的讨论结果是，目前的人工智能创业应当是一种服务型的创业，和媒体的渲染不同，其技术本身并不神秘，作为一家人工智能公司来说，关键是如何对接到客户的具体需求，提供的是一套解决方案，是技术的介绍人。
 才不过大半个月，就自己给自己打脸了。今天的结论一定程度上颠覆了上述观点——软件公司是不存在技术壁垒的。

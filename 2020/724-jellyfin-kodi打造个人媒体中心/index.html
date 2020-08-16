@@ -4,21 +4,14 @@
   <meta http-equiv="content-type" content="text/html;charset=utf-8">
   <meta http-equiv="X-UA-Compatible" content="chrome=1">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="robots" content="noodp" />
-  
+  <meta name="robots" content="noodp"/>
   <meta name="author" content="Igloo">
   
   
   
-  
-  <link rel="prev" href="https://igloo302.github.io/2020/%E5%AE%89%E8%A3%85%E6%88%B7%E5%A4%96%E7%9B%91%E6%8E%A7%E7%B3%BB%E7%BB%9F%E5%B0%8F%E8%AE%B0%E6%97%A0%E9%A2%84%E5%9F%8B%E7%BA%BFnas%E5%BD%95%E5%83%8F%E6%9C%BA/" />
-  
-  <link rel="next" href="https://igloo302.github.io/2020/724-%E8%8D%92%E9%87%8E%E6%97%A0%E7%81%AFn1%E5%B0%8F%E9%92%A2%E7%82%AEpt%E4%B8%8B%E8%BD%BD%E6%9C%BA%E7%AE%80%E5%8D%95%E8%B0%83%E6%95%99/" />
-  
-  <script src="https://kit.fontawesome.com/3dd514082f.js" crossorigin="anonymous"></script>
-
-
-  <link rel="canonical" href="https://igloo302.github.io/2020/724-jellyfin-kodi%E6%89%93%E9%80%A0%E4%B8%AA%E4%BA%BA%E5%AA%92%E4%BD%93%E4%B8%AD%E5%BF%83/" />
+  <link rel="prev" href="https://beigloo.tk/2020/%E5%AE%89%E8%A3%85%E6%88%B7%E5%A4%96%E7%9B%91%E6%8E%A7%E7%B3%BB%E7%BB%9F%E5%B0%8F%E8%AE%B0%E6%97%A0%E9%A2%84%E5%9F%8B%E7%BA%BFnas%E5%BD%95%E5%83%8F%E6%9C%BA/" />
+  <link rel="next" href="https://beigloo.tk/2020/724-%E8%8D%92%E9%87%8E%E6%97%A0%E7%81%AFn1%E5%B0%8F%E9%92%A2%E7%82%AEpt%E4%B8%8B%E8%BD%BD%E6%9C%BA%E7%AE%80%E5%8D%95%E8%B0%83%E6%95%99/" />
+  <link rel="canonical" href="https://beigloo.tk/2020/724-jellyfin-kodi%E6%89%93%E9%80%A0%E4%B8%AA%E4%BA%BA%E5%AA%92%E4%BD%93%E4%B8%AD%E5%BF%83/" />
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -27,13 +20,12 @@
   <meta name="msapplication-TileColor" content="#da532c">
   <meta name="theme-color" content="#ffffff">
   <title>
-    
-    
-    7×24: Jellyfin&#43;Kodi打造个人媒体中心 | 冰屋里
-    
+       
+       
+           7×24: Jellyfin&#43;Kodi打造个人媒体中心 | 冰屋里
+       
   </title>
-  <meta name="title"
-    content="7×24: Jellyfin&#43;Kodi打造个人媒体中心 | 冰屋里">
+  <meta name="title" content="7×24: Jellyfin&#43;Kodi打造个人媒体中心 | 冰屋里">
     
   
   <link rel="stylesheet" href="/font/iconfont.css">
@@ -49,12 +41,12 @@
     "@type" : "BlogPosting",
     "mainEntityOfPage": {
          "@type": "WebPage",
-         "@id": "https:\/\/igloo302.github.io"
+         "@id": "https:\/\/beigloo.tk"
     },
     "articleSection" : "posts",
-    "name" : "7×24: Jellyfin\x2bKodi打造个人媒体中心",
-    "headline" : "7×24: Jellyfin\x2bKodi打造个人媒体中心",
-    "description" : "「一台7×24小时运行的电脑可以用来做什么？」系列第二篇。作为一个数字收集癖和整理癖患者，从十几年前在VeryCD上用迅雷慢慢下载TLF组的奥斯卡全集，几KB的速度下几周，到现在对比不同的压制组作品的质量，千兆的网络压得磁盘跟不上下载速度，硬盘容量存不下想要收藏的电影。回望过去，观看的速度永远跟不上下载的速度，甚至现在都不再需要下载再看了，这个过程见证了一段网络、影视、数码的发展历史。\nDocker安装Jellyfin  Jellyfin is the volunteer-built media solution that puts you in control of your media. Stream to any device from your own server, with no strings attached. Your media, your server, your way.\n Jellyfin的功能简单来说就是作为媒体服务器，统一管理影片，它的界面是这样的：\n相比一堆乱七八糟的文件夹又清晰又高级。\n我使用的主机是N1，搭载了荒野无灯开发的小钢炮ROM，已经自带了Jellyfin，不过更新会比较麻烦，因此重新使用Docker安装。\n首先禁用自带的jellyfin：\n# 禁用启动项 mv \/etc\/init.d\/S99jellyfin \/etc\/S99jellyfin.disabled # 关闭运行的jellyfin killall jellyfin 我使用的是docker镜像是jellyfin\/jellyfin:nightly。\n新建Container，端口映射8096\/tcp，然后设置\/cache，\/media和\/config三个分区即可。\n使用指令一键安装：\ndocker run -d -p 8096:8096 -v \/your\/config:\/config -v \/your\/media:\/media -v \/your\/cache:\/cache jellyfin\/jellyfin:nightly 此外，也可以采用linuxserver\/jellyfin的镜像：\ndocker create \\  --name=jellyfin \\  -e PUID=$(id -u jellyfin) \\  -e PGID=$(cat \/etc\/group | grep -e \x26#39;^users\x26#39; | cut -d\x26#39;:\x26#39; -f3) \\  -e TZ=Europe\/London \\  -e UMASK_SET=022 `#optional` \\ -p 8096:8096 \\  -p 8920:8920 `#optional` \\ -v \/path\/to\/library:\/config \\  -v \/path\/to\/tvseries:\/data\/tvshows \\  -v \/path\/to\/movies:\/data\/movies \\  -v \/opt\/vc\/lib:\/opt\/vc\/lib `#optional` \\ --device \/dev\/dri:\/dev\/dri `#optional` \\ --device \/dev\/vchiq:\/dev\/vchiq `#optional` \\ --device \/dev\/video10:\/dev\/video10 `#optional` \\ --device \/dev\/video11:\/dev\/video11 `#optional` \\ --device \/dev\/video12:\/dev\/video12 `#optional` \\ --restart unless-stopped \\  linuxserver\/jellyfin 更详细的安装过程也可以参考这篇教程。",
+    "name" : "7×24: Jellyfin\u002bKodi打造个人媒体中心",
+    "headline" : "7×24: Jellyfin\u002bKodi打造个人媒体中心",
+    "description" : "「一台7×24小时运行的电脑可以用来做什么？」系列第二篇。作为一个数字收集癖和整理癖患者，从十几年前在VeryCD上用迅雷慢慢下载TLF组的奥斯卡全集，几KB的速度下几周，到现在对比不同的压制组作品的质量，千兆的网络压得磁盘跟不上下载速度，硬盘容量存不下想要收藏的电影。回望过去，观看的速度永远跟不上下载的速度，甚至现在都不再需要下载再看了，这个过程见证了一段网络、影视、数码的发展历史。\nDocker安装Jellyfin  Jellyfin is the volunteer-built media solution that puts you in control of your media. Stream to any device from your own server, with no strings attached. Your media, your server, your way.\n Jellyfin的功能简单来说就是作为媒体服务器，统一管理影片，它的界面是这样的：\n相比一堆乱七八糟的文件夹又清晰又高级。\n我使用的主机是N1，搭载了荒野无灯开发的小钢炮ROM，已经自带了Jellyfin，不过更新会比较麻烦，因此重新使用Docker安装。\n首先禁用自带的jellyfin：\n# 禁用启动项 mv \/etc\/init.d\/S99jellyfin \/etc\/S99jellyfin.disabled # 关闭运行的jellyfin killall jellyfin 我使用的是docker镜像是jellyfin\/jellyfin:nightly。\n新建Container，端口映射8096\/tcp，然后设置\/cache，\/media和\/config三个分区即可。\n使用指令一键安装：\ndocker run -d -p 8096:8096 -v \/your\/config:\/config -v \/your\/media:\/media -v \/your\/cache:\/cache jellyfin\/jellyfin:nightly 此外，也可以采用linuxserver\/jellyfin的镜像：\ndocker create \\  --name=jellyfin \\  -e PUID=$(id -u jellyfin) \\  -e PGID=$(cat \/etc\/group | grep -e \u0026#39;^users\u0026#39; | cut -d\u0026#39;:\u0026#39; -f3) \\  -e TZ=Europe\/London \\  -e UMASK_SET=022 `#optional` \\ -p 8096:8096 \\  -p 8920:8920 `#optional` \\ -v \/path\/to\/library:\/config \\  -v \/path\/to\/tvseries:\/data\/tvshows \\  -v \/path\/to\/movies:\/data\/movies \\  -v \/opt\/vc\/lib:\/opt\/vc\/lib `#optional` \\ --device \/dev\/dri:\/dev\/dri `#optional` \\ --device \/dev\/vchiq:\/dev\/vchiq `#optional` \\ --device \/dev\/video10:\/dev\/video10 `#optional` \\ --device \/dev\/video11:\/dev\/video11 `#optional` \\ --device \/dev\/video12:\/dev\/video12 `#optional` \\ --restart unless-stopped \\  linuxserver\/jellyfin 更详细的安装过程也可以参考这篇教程。",
     "inLanguage" : "en-us",
     "author" : "Igloo",
     "creator" : "Igloo",
@@ -62,9 +54,9 @@
     "accountablePerson" : "Igloo",
     "copyrightHolder" : "Igloo",
     "copyrightYear" : "2020",
-    "datePublished": "2020-03-09 21:49:10 \x2b0000 UTC",
-    "dateModified" : "2020-03-09 21:49:10 \x2b0000 UTC",
-    "url" : "https:\/\/igloo302.github.io\/2020\/724-jellyfin-kodi%E6%89%93%E9%80%A0%E4%B8%AA%E4%BA%BA%E5%AA%92%E4%BD%93%E4%B8%AD%E5%BF%83\/",
+    "datePublished": "2020-03-09 21:49:10 \u002b0000 UTC",
+    "dateModified" : "2020-03-09 21:49:10 \u002b0000 UTC",
+    "url" : "https:\/\/beigloo.tk\/2020\/724-jellyfin-kodi%E6%89%93%E9%80%A0%E4%B8%AA%E4%BA%BA%E5%AA%92%E4%BD%93%E4%B8%AD%E5%BF%83\/",
     "wordCount" : "176",
     "keywords" : [ "7×24","NAS","N1","Jellyfin","Kodi","媒体中心", "冰屋里"]
 }
@@ -72,6 +64,7 @@
 
 </head>
 
+  
 
 
   <body class="">
@@ -79,7 +72,7 @@
         <nav class="navbar">
     <div class="container">
         <div class="navbar-header header-logo">
-        	<a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-xihuan"></i></a>&nbsp;<a href="https://igloo302.github.io">冰屋里</a>
+        	<a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-xihuan"></i></a>&nbsp;<a href="https://beigloo.tk">冰屋里</a>
         </div>
         <div class="menu navbar-right">
                 
@@ -100,7 +93,7 @@
 <nav class="navbar-mobile" id="nav-mobile" style="display: none">
      <div class="container">
         <div class="navbar-header">
-            <div>  <a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-xihuan"></i></a>&nbsp;<a href="https://igloo302.github.io">冰屋里</a></div>
+            <div>  <a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-xihuan"></i></a>&nbsp;<a href="https://beigloo.tk">冰屋里</a></div>
             <div class="menu-toggle">
                 <span></span><span></span><span></span>
             </div>
@@ -129,40 +122,37 @@
     <header class="post-header">
         <h1 class="post-title" itemprop="name headline">7×24: Jellyfin&#43;Kodi打造个人媒体中心</h1>
         <div class="post-meta">
-            Written by <a itemprop="name" href="https://igloo302.github.io"
-                rel="author">Igloo</a>
-            with ♥
-            <span class="post-time">
-                on <time datetime=2020-03-09
-                    itemprop="datePublished">March 9, 2020</time>
-            </span>
-            in
-            <i class="iconfont icon-folder"></i>
-            <span class="post-category">
-                <a href="https://igloo302.github.io/categories/724/"> 7×24 </a>
-                
-            </span>
+                Written by <a itemprop="name" href="https://beigloo.tk" rel="author">Igloo</a> with ♥ 
+                <span class="post-time">
+                on <time datetime=2020-03-09 itemprop="datePublished">March 9, 2020</time>
+                </span>
+                in
+                <i class="iconfont icon-folder"></i>
+                <span class="post-category">
+                        <a href="https://beigloo.tk/categories/724/"> 7×24 </a>
+                        
+                </span>
         </div>
     </header>
     <div class="post-content">
         
 
         
-        
-        
-
-        
+            
         
 
         
         
-        
+     
+          
+          
+          
 
-        
-        
-        
+          
+          
+          
 
-        <p>「一台<strong>7×24</strong>小时运行的电脑可以用来做什么？」系列第二篇。作为一个数字收集癖和整理癖患者，从十几年前在VeryCD上用迅雷慢慢下载TLF组的奥斯卡全集，几KB的速度下几周，到现在对比不同的压制组作品的质量，千兆的网络压得磁盘跟不上下载速度，硬盘容量存不下想要收藏的电影。回望过去，观看的速度永远跟不上下载的速度，甚至现在都不再需要下载再看了，这个过程见证了一段网络、影视、数码的发展历史。</p>
+          <p>「一台<strong>7×24</strong>小时运行的电脑可以用来做什么？」系列第二篇。作为一个数字收集癖和整理癖患者，从十几年前在VeryCD上用迅雷慢慢下载TLF组的奥斯卡全集，几KB的速度下几周，到现在对比不同的压制组作品的质量，千兆的网络压得磁盘跟不上下载速度，硬盘容量存不下想要收藏的电影。回望过去，观看的速度永远跟不上下载的速度，甚至现在都不再需要下载再看了，这个过程见证了一段网络、影视、数码的发展历史。</p>
 <!-- more -->
 <h2 id="docker安装jellyfin">Docker安装Jellyfin</h2>
 <blockquote>
@@ -238,90 +228,70 @@ killall jellyfin
 
     </div>
 
-    <div class="post-copyright">
-        
-        <p class="copyright-item">
-            <span>Author:</span>
-            <span>Igloo </span>
-        </p>
-        
 
-        
-        <p class="copyright-item">
-            <span>Link:</span>
-            <a href=https://igloo302.github.io/2020/724-jellyfin-kodi%E6%89%93%E9%80%A0%E4%B8%AA%E4%BA%BA%E5%AA%92%E4%BD%93%E4%B8%AD%E5%BF%83/>https://igloo302.github.io/2020/724-jellyfin-kodi%E6%89%93%E9%80%A0%E4%B8%AA%E4%BA%BA%E5%AA%92%E4%BD%93%E4%B8%AD%E5%BF%83/</span>
-        </p>
-
-        
-        
-    </div>
-
-
-
+  
     <div class="post-tags">
         
-        <section>
-            <i class="iconfont icon-tag"></i>Tag(s):
+            <section>
+            <i class="iconfont icon-tag"></i>Tag(s): 
             
-            <span class="tag"><a href="https://igloo302.github.io/tags/724/">
+            <span class="tag"><a href="https://beigloo.tk/tags/724/">
                     #7×24</a></span>
             
-            <span class="tag"><a href="https://igloo302.github.io/tags/nas/">
+            <span class="tag"><a href="https://beigloo.tk/tags/nas/">
                     #NAS</a></span>
             
-            <span class="tag"><a href="https://igloo302.github.io/tags/n1/">
+            <span class="tag"><a href="https://beigloo.tk/tags/n1/">
                     #N1</a></span>
             
-            <span class="tag"><a href="https://igloo302.github.io/tags/jellyfin/">
+            <span class="tag"><a href="https://beigloo.tk/tags/jellyfin/">
                     #Jellyfin</a></span>
             
-            <span class="tag"><a href="https://igloo302.github.io/tags/kodi/">
+            <span class="tag"><a href="https://beigloo.tk/tags/kodi/">
                     #Kodi</a></span>
             
-            <span class="tag"><a href="https://igloo302.github.io/tags/%E5%AA%92%E4%BD%93%E4%B8%AD%E5%BF%83/">
+            <span class="tag"><a href="https://beigloo.tk/tags/%E5%AA%92%E4%BD%93%E4%B8%AD%E5%BF%83/">
                     #媒体中心</a></span>
             
-        </section>
+            </section>
         
         <section>
-            <a href="javascript:window.history.back();">back</a></span> ·
-            <span><a href="https://igloo302.github.io">home</a></span>
+                <a href="javascript:window.history.back();">back</a></span> · 
+                <span><a href="https://beigloo.tk">home</a></span>
         </section>
     </div>
 
     <div class="post-nav">
         
-        <a href="https://igloo302.github.io/2020/%E5%AE%89%E8%A3%85%E6%88%B7%E5%A4%96%E7%9B%91%E6%8E%A7%E7%B3%BB%E7%BB%9F%E5%B0%8F%E8%AE%B0%E6%97%A0%E9%A2%84%E5%9F%8B%E7%BA%BFnas%E5%BD%95%E5%83%8F%E6%9C%BA/" class="prev" rel="prev" title="安装户外监控系统小记 | 无预埋线 | NAS录像机"><i
-                class="iconfont icon-left"></i>&nbsp;安装户外监控系统小记 | 无预埋线 | NAS录像机</a>
+        <a href="https://beigloo.tk/2020/%E5%AE%89%E8%A3%85%E6%88%B7%E5%A4%96%E7%9B%91%E6%8E%A7%E7%B3%BB%E7%BB%9F%E5%B0%8F%E8%AE%B0%E6%97%A0%E9%A2%84%E5%9F%8B%E7%BA%BFnas%E5%BD%95%E5%83%8F%E6%9C%BA/" class="prev" rel="prev" title="安装户外监控系统小记 | 无预埋线 | NAS录像机"><i class="iconfont icon-left"></i>&nbsp;安装户外监控系统小记 | 无预埋线 | NAS录像机</a>
+         
         
-        
-        <a href="https://igloo302.github.io/2020/724-%E8%8D%92%E9%87%8E%E6%97%A0%E7%81%AFn1%E5%B0%8F%E9%92%A2%E7%82%AEpt%E4%B8%8B%E8%BD%BD%E6%9C%BA%E7%AE%80%E5%8D%95%E8%B0%83%E6%95%99/" class="next" rel="next"
-            title="7×24: 荒野无灯N1小钢炮PT下载机简单调教">7×24: 荒野无灯N1小钢炮PT下载机简单调教&nbsp;<i class="iconfont icon-right"></i></a>
+        <a href="https://beigloo.tk/2020/724-%E8%8D%92%E9%87%8E%E6%97%A0%E7%81%AFn1%E5%B0%8F%E9%92%A2%E7%82%AEpt%E4%B8%8B%E8%BD%BD%E6%9C%BA%E7%AE%80%E5%8D%95%E8%B0%83%E6%95%99/" class="next" rel="next" title="7×24: 荒野无灯N1小钢炮PT下载机简单调教">7×24: 荒野无灯N1小钢炮PT下载机简单调教&nbsp;<i class="iconfont icon-right"></i></a>
         
     </div>
 
     <div class="post-comment">
-        
-        
-        
-        
-        
-        <div id="vcomments"></div>
-        <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
-        <script src='//unpkg.com/valine/dist/Valine.min.js'></script>
-        <script type="text/javascript">
-          new Valine({
-            el: '#vcomments',
-            appId: 'SIOuMPbRjrVKLs1aBbSS30Ne-gzGzoHsz',
-            appKey: 'uv74bsFWliyb0LPw2XV8MIjM',
-            notify:  false ,
-            verify:  false ,
-            avatar: 'mm',
-            placeholder: 'Mann Tracht, Un Gott Lacht.',
-            visitor:  true 
-            });
-        </script>
-        
+          
+                 
+          
+                  
+                  
+                  <div id="vcomments"></div>
+                  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+                  <script src='//unpkg.com/valine/dist/Valine.min.js'></script>
+                  <script type="text/javascript">
+                    new Valine({
+                      el: '#vcomments',
+                      appId: 'SIOuMPbRjrVKLs1aBbSS30Ne-gzGzoHsz',
+                      appKey: 'uv74bsFWliyb0LPw2XV8MIjM',
+                      notify:  false ,
+                      verify:  false ,
+                      avatar: 'mm',
+                      placeholder: 'Mann Tracht, Un Gott Lacht.',
+                      visitor:  true 
+                      });
+                  </script>
+                  
     </div>
 </article>
           </div>
@@ -336,7 +306,7 @@ killall jellyfin
     	 <i class="iconfont icon-love"></i> 
          </span>
          
-            <span class="author" itemprop="copyrightHolder"><a href="https://igloo302.github.io">Igloo</a> | </span> 
+            <span class="author" itemprop="copyrightHolder"><a href="https://beigloo.tk">Igloo</a> | </span> 
          
 
          

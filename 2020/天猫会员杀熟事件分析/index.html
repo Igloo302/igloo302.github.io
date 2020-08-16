@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+  <meta http-equiv="content-type" content="text/html;charset=utf-8">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noodp"/>
+  <meta name="author" content="Igloo">
+  
+  
+  
+  <link rel="prev" href="https://beigloo.tk/2020/%E5%9B%A0%E4%B8%BA%E4%BA%BA%E5%B7%A5%E6%89%80%E4%BB%A5%E6%99%BA%E8%83%BD%E8%BF%9F%E8%BF%9F%E8%BF%9F%E8%BF%9F%E5%88%B0%E7%9A%84%E6%99%BA%E8%83%BD%E8%AF%AD%E9%9F%B3%E4%BA%A7%E5%93%81%E5%AE%9E%E4%B9%A0%E9%9A%8F%E7%AC%94/" />
+  <link rel="next" href="https://beigloo.tk/2020/openwrt%E4%BD%BF%E7%94%A8macvlan-mwan3%E5%AE%9E%E7%8E%B0%E5%8D%95%E7%BA%BF%E5%A4%9A%E6%8B%A8/" />
+  <link rel="canonical" href="https://beigloo.tk/2020/%E5%A4%A9%E7%8C%AB%E4%BC%9A%E5%91%98%E6%9D%80%E7%86%9F%E4%BA%8B%E4%BB%B6%E5%88%86%E6%9E%90/" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+  <title>
+       
+       
+           天猫会员杀熟事件分析 | 冰屋里
+       
+  </title>
+  <meta name="title" content="天猫会员杀熟事件分析 | 冰屋里">
+    
+  
+  <link rel="stylesheet" href="/font/iconfont.css">
+  <link rel="stylesheet" href="/css/main.min.css">
+
+
+  
+  
+ 
+
+<script type="application/ld+json">
+ "@context" : "http://schema.org",
+    "@type" : "BlogPosting",
+    "mainEntityOfPage": {
+         "@type": "WebPage",
+         "@id": "https:\/\/beigloo.tk"
+    },
+    "articleSection" : "posts",
+    "name" : "天猫会员杀熟事件分析",
+    "headline" : "天猫会员杀熟事件分析",
+    "description" : "事件介绍 88VIP被曝大数据杀熟，会员价格比普通用户价格高。\n天猫的给出的回复是：天猫超市官微回应称不存在大数据杀熟的问题，消费者产生误解是因为 3· 8 活动期间“新人专享价”标识未正常显示。\n不过，也有网友晒出截图表明天猫确实存在同商品不同价格的现象，但是因为给出的信息不全，所以无法判断真伪。\n复现测试 截至2020年4月3日，进行复现测试：\n设备环境：使用iPad\u002b88VIP账号（经常使用）和Android手机\u002b普通会员账号（很少使用）\n测试方法：查询「舒肤佳」「旁氏」「卫生纸」等关键词，按照销量排序，除了推广商品外列表内容一致，\n在列表中价格显示不同的商品，有明显「首单价」和「券后」标志：\n不过也发现一个列表页和商品页面价格显示不一致的BUG，可能是售完商品的特殊情况\n另外根据补充信息，这个问题已经修复，所以目前无法复现了。\n会员战略 以用户体验要素的战略层来分析88会员在用户需求和产品目标角度的设计：\n用户需求 对于消费者来说，会员的本质意义是通过一次性付费（会员费）和商家建立长期关系，并将其关系体现在更便宜的商品价格中，简化模型为： $$ \\sum (P_{普通用户价格}-P_{会员价格})\u0026gt; P_{会员费} \\tag{1} $$\n$$ P_{普通用户价格}-P_{会员价格}\u0026gt;0 \\tag{2} $$\n为了满足(1)，消费者会尽可能多消费。同时(2)必须得以满足，否则就是所谓**「大数据杀熟」**。\n埃亚尔在《上瘾》中把酬赏（用户获得的好处，在用户的认知体系下的增值）总结成三种类型猎物酬赏、自我酬赏和社交酬赏。上述因优惠而进行「过度」消费属于猎物酬赏。\n同时会员还可以通过会员标志、等级成长等方式，带来用户价值感的提高，以社交酬赏、自我酬赏的方式满足用户更高级的需求。\n产品目标  88会员以用户熟悉的方式（阶级划分）传递高品质生活的品牌价值 会员费带来持续稳定的现金流 对「上升市场」的精细化运作，吸引更高质量的供应链资源。  原因\/解决 原因 综合以上事件介绍和会员战略的设计，「可感知」的大数据杀熟对于用户来说是完全不能接受的，因补充信息「不存在大数据杀熟的产品设计」，因此不从大数据杀熟的可感知性入手。\n这个公关事件的原因应该是交互和视觉层面没有准确表达不同的优惠形式叠加下产生不同价格的信息，同时因为商品页面截图传播中信息有限，在线客服应对差错等原因，导致消费者的误解。\n从商品页面交互设计目标来看，核心目标有二，其一是让消费者快速了解商品卖点，刺激购买动机M，其二是以优惠的价格成为触发T，最终满足B=M\u002bA\u002bT。所以说，清晰地显示优惠规则只是对于少数价格敏感的用户的针对性设计，而非二八原则中多数的需求，因此被忽视。\n解决 这次的公关危机说明，对优惠信息表达的不清晰虽然不影响大多用户的使用，但会在目前「大数据滥用」话题逐渐发酵的时代带来舆论上的不利。\n因此这个事件的解决方案需要在不破坏两个商品页面交互设计核心目标的基础上，增加明确可见的优惠规则信息：\n 显示核心优惠原因，如「首单价」「专享优惠券」 全部优惠渠道不完全折叠，在价格下方显示摘要，如「两件八折」等 截图分析的过程中展示「更适合分享的信息图」，包含更完整的优惠信息。  ",
+    "inLanguage" : "en-us",
+    "author" : "Igloo",
+    "creator" : "Igloo",
+    "publisher": "Igloo",
+    "accountablePerson" : "Igloo",
+    "copyrightHolder" : "Igloo",
+    "copyrightYear" : "2020",
+    "datePublished": "2020-04-03 21:07:21 \u002b0800 CST",
+    "dateModified" : "2020-04-03 21:07:21 \u002b0800 CST",
+    "url" : "https:\/\/beigloo.tk\/2020\/%E5%A4%A9%E7%8C%AB%E4%BC%9A%E5%91%98%E6%9D%80%E7%86%9F%E4%BA%8B%E4%BB%B6%E5%88%86%E6%9E%90\/",
+    "wordCount" : "46",
+    "keywords" : [  "冰屋里"]
+}
+</script>
+
+</head>
+
+  
+
+
+  <body class="">
+    <div class="wrapper">
+        <nav class="navbar">
+    <div class="container">
+        <div class="navbar-header header-logo">
+        	<a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-xihuan"></i></a>&nbsp;<a href="https://beigloo.tk">冰屋里</a>
+        </div>
+        <div class="menu navbar-right">
+                
+                
+                <a class="menu-item" href="/posts/" title="">Blog</a>
+                
+                <a class="menu-item" href="/portfolio/" title="">Portfolio</a>
+                
+                <a class="menu-item" href="/categories/" title="">Categories</a>
+                
+                <a class="menu-item" href="/tags/" title="">Tags</a>
+                
+                <a class="menu-item" href="/about/" title="">About</a>
+                
+        </div>
+    </div>
+</nav>
+<nav class="navbar-mobile" id="nav-mobile" style="display: none">
+     <div class="container">
+        <div class="navbar-header">
+            <div>  <a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-xihuan"></i></a>&nbsp;<a href="https://beigloo.tk">冰屋里</a></div>
+            <div class="menu-toggle">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+     
+          <div class="menu" id="mobile-menu">
+                
+                
+                <a class="menu-item" href="/posts/" title="">Blog</a>
+                
+                <a class="menu-item" href="/portfolio/" title="">Portfolio</a>
+                
+                <a class="menu-item" href="/categories/" title="">Categories</a>
+                
+                <a class="menu-item" href="/tags/" title="">Tags</a>
+                
+                <a class="menu-item" href="/about/" title="">About</a>
+                
+        </div>
+    </div>
+</nav>
+    	 <main class="main">
+          <div class="container">
+          
+<article class="post-warp" itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">天猫会员杀熟事件分析</h1>
+        <div class="post-meta">
+                Written by <a itemprop="name" href="https://beigloo.tk" rel="author">Igloo</a> with ♥ 
+                <span class="post-time">
+                on <time datetime=2020-04-03 itemprop="datePublished">April 3, 2020</time>
+                </span>
+                in
+                
+        </div>
+    </header>
+    <div class="post-content">
+        
+
+        
+            
+        
+
+        
+        
+     
+          
+          
+          
+
+          
+          
+          
+
+          <h2 id="事件介绍">事件介绍</h2>
+<p>88VIP被曝大数据杀熟，会员价格比普通用户价格高。</p>
+<p>天猫的给出的回复是：天猫超市官微回应称不存在大数据杀熟的问题，消费者产生误解是因为 3· 8 活动期间“新人专享价”标识未正常显示。</p>
+<p><img src="http://img.osland.me/blog/v2-4a29217c0ef8025fa5fb6d8de59933e9_1440w.jpg" alt="img" style="zoom:50%;" /></p>
+<p>不过，也有网友晒出截图表明天猫确实存在同商品不同价格的现象，但是因为给出的信息不全，所以无法判断真伪。</p>
+<p><img src="http://img.osland.me/blog/1ea451a14f97d5c.png" alt="img" style="zoom:50%;" /></p>
+<h2 id="复现测试">复现测试</h2>
+<p>截至2020年4月3日，进行复现测试：</p>
+<p>设备环境：使用iPad+88VIP账号（经常使用）和Android手机+普通会员账号（很少使用）</p>
+<p>测试方法：查询「舒肤佳」「旁氏」「卫生纸」等关键词，按照销量排序，除了推广商品外列表内容一致，</p>
+<p><img src="http://img.osland.me/blog/taobao-list.JPG" alt="taobao-list" style="zoom:50%;" /></p>
+<p>在列表中价格显示不同的商品，有明显「首单价」和「券后」标志：</p>
+<p><img src="http://img.osland.me/blog/image-20200403133315304.png" alt="image-20200403133315304" style="zoom: 50%;" /></p>
+<p><img src="http://img.osland.me/blog/image-20200403133415882.png" alt="image-20200403133415882" style="zoom: 50%;" /></p>
+<p>不过也发现一个列表页和商品页面价格显示不一致的BUG，可能是售完商品的特殊情况</p>
+<p><img src="http://img.osland.me/blog/image-20200403133632315.png" alt="image-20200403133632315" style="zoom:50%;" /></p>
+<p>另外根据补充信息，这个问题已经修复，所以目前无法复现了。</p>
+<h2 id="会员战略">会员战略</h2>
+<p>以用户体验要素的战略层来分析88会员在用户需求和产品目标角度的设计：</p>
+<h3 id="用户需求">用户需求</h3>
+<p>对于消费者来说，会员的本质意义是通过一次性付费（会员费）和商家建立长期关系，并将其关系体现在更便宜的商品价格中，简化模型为：
+$$
+\sum (P_{普通用户价格}-P_{会员价格})&gt; P_{会员费}
+\tag{1}
+$$</p>
+<p>$$
+P_{普通用户价格}-P_{会员价格}&gt;0
+\tag{2}
+$$</p>
+<p>为了满足(1)，消费者会尽可能多消费。同时(2)必须得以满足，否则就是所谓**「大数据杀熟」**。</p>
+<p>埃亚尔在《上瘾》中把酬赏（用户获得的好处，<a href="https://igloo302.github.io/2018/%E4%BB%8E%E9%85%AC%E8%B5%8F%E8%A7%92%E5%BA%A6%E8%A7%A3%E8%AF%BB%E4%B8%8A%E7%98%BE%E6%A8%A1%E5%9E%8B/">在用户的认知体系下的增值</a>）总结成三种类型猎物酬赏、自我酬赏和社交酬赏。上述因优惠而进行「过度」消费属于猎物酬赏。</p>
+<p>同时会员还可以通过会员标志、等级成长等方式，带来用户价值感的提高，以社交酬赏、自我酬赏的方式满足用户更高级的需求。</p>
+<h3 id="产品目标">产品目标</h3>
+<ol>
+<li>88会员以用户熟悉的方式（阶级划分）传递高品质生活的品牌价值</li>
+<li>会员费带来持续稳定的现金流</li>
+<li>对「上升市场」的精细化运作，吸引更高质量的供应链资源。</li>
+</ol>
+<h2 id="原因解决">原因/解决</h2>
+<h3 id="原因">原因</h3>
+<p>综合以上事件介绍和会员战略的设计，「可感知」的大数据杀熟对于用户来说是完全不能接受的，因补充信息「不存在大数据杀熟的产品设计」，因此不从大数据杀熟的可感知性入手。</p>
+<p>这个公关事件的原因应该是<strong>交互和视觉层面没有准确表达不同的优惠形式叠加下产生不同价格的信息</strong>，同时因为商品页面<strong>截图传播</strong>中信息有限，在线客服应对差错等原因，导致消费者的误解。</p>
+<p>从商品页面交互设计目标来看，核心目标有二，其一是让消费者快速了解商品卖点，刺激购买动机M，其二是以优惠的价格成为触发T，最终满足B=M+A+T。所以说，<strong>清晰地显示优惠规则只是对于少数价格敏感的用户的针对性设计</strong>，而非二八原则中多数的需求，因此被忽视。</p>
+<h3 id="解决">解决</h3>
+<p>这次的公关危机说明，对优惠信息表达的不清晰虽然不影响大多用户的使用，但会在目前「大数据滥用」话题逐渐发酵的时代带来舆论上的不利。</p>
+<p>因此这个事件的解决方案需要在不破坏两个商品页面交互设计核心目标的基础上，增加明确可见的优惠规则信息：</p>
+<ol>
+<li>显示核心优惠原因，如「首单价」「专享优惠券」</li>
+<li>全部优惠渠道不完全折叠，在价格下方显示摘要，如「两件八折」等</li>
+<li>截图分析的过程中展示「更适合分享的信息图」，包含更完整的优惠信息。</li>
+</ol>
+
+    </div>
+
+
+  
+    <div class="post-tags">
+        
+        <section>
+                <a href="javascript:window.history.back();">back</a></span> · 
+                <span><a href="https://beigloo.tk">home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav">
+        
+        <a href="https://beigloo.tk/2020/%E5%9B%A0%E4%B8%BA%E4%BA%BA%E5%B7%A5%E6%89%80%E4%BB%A5%E6%99%BA%E8%83%BD%E8%BF%9F%E8%BF%9F%E8%BF%9F%E8%BF%9F%E5%88%B0%E7%9A%84%E6%99%BA%E8%83%BD%E8%AF%AD%E9%9F%B3%E4%BA%A7%E5%93%81%E5%AE%9E%E4%B9%A0%E9%9A%8F%E7%AC%94/" class="prev" rel="prev" title="「因为人工，所以智能」——迟迟迟迟到的智能语音产品实习随笔"><i class="iconfont icon-left"></i>&nbsp;「因为人工，所以智能」——迟迟迟迟到的智能语音产品实习随笔</a>
+         
+        
+        <a href="https://beigloo.tk/2020/openwrt%E4%BD%BF%E7%94%A8macvlan-mwan3%E5%AE%9E%E7%8E%B0%E5%8D%95%E7%BA%BF%E5%A4%9A%E6%8B%A8/" class="next" rel="next" title="OpenWrt使用macvlan&#43;mwan3实现单线多拨">OpenWrt使用macvlan&#43;mwan3实现单线多拨&nbsp;<i class="iconfont icon-right"></i></a>
+        
+    </div>
+
+    <div class="post-comment">
+          
+                 
+          
+                  
+                  
+                  <div id="vcomments"></div>
+                  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+                  <script src='//unpkg.com/valine/dist/Valine.min.js'></script>
+                  <script type="text/javascript">
+                    new Valine({
+                      el: '#vcomments',
+                      appId: 'SIOuMPbRjrVKLs1aBbSS30Ne-gzGzoHsz',
+                      appKey: 'uv74bsFWliyb0LPw2XV8MIjM',
+                      notify:  false ,
+                      verify:  false ,
+                      avatar: 'mm',
+                      placeholder: 'Mann Tracht, Un Gott Lacht.',
+                      visitor:  true 
+                      });
+                  </script>
+                  
+    </div>
+</article>
+          </div>
+       </main>      
+      <footer class="footer">
+    <div class="copyright">
+        &copy;
+        
+        <span itemprop="copyrightYear">2016 - 2020</span>
+        
+        <span class="with-love">
+    	 <i class="iconfont icon-love"></i> 
+         </span>
+         
+            <span class="author" itemprop="copyrightHolder"><a href="https://beigloo.tk">Igloo</a> | </span> 
+         
+
+         
+		  <span>Powered by <a href="https://gohugo.io/" target="_blank" rel="external nofollow">Hugo</a> & <a href="https://github.com/liuzc/leaveit" target="_blank" rel="external nofollow">LeaveIt</a></span> 
+    </div>
+</footer>
+
+
+
+
+
+
+
+
+
+
+
+
+    
+     <link href="//lib.baomitu.com/lightgallery/1.6.11/css/lightgallery.min.css" rel="stylesheet">  
+      
+     <script src="/js/vendor_gallery.min.js" async="" ></script>
+    
+  
+
+
+
+     </div>
+  </body>
+</html>

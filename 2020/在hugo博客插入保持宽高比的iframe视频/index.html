@@ -4,21 +4,14 @@
   <meta http-equiv="content-type" content="text/html;charset=utf-8">
   <meta http-equiv="X-UA-Compatible" content="chrome=1">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="robots" content="noodp" />
-  
+  <meta name="robots" content="noodp"/>
   <meta name="author" content="Igloo">
   
   
   
-  
-  <link rel="prev" href="https://igloo302.github.io/2020/%E4%B8%80%E6%AC%A1%E6%96%87%E8%89%BA%E5%A4%8D%E5%85%B4/" />
-  
-  <link rel="next" href="https://igloo302.github.io/2020/%E5%9B%A0%E4%B8%BA%E4%BA%BA%E5%B7%A5%E6%89%80%E4%BB%A5%E6%99%BA%E8%83%BD%E8%BF%9F%E8%BF%9F%E8%BF%9F%E8%BF%9F%E5%88%B0%E7%9A%84%E6%99%BA%E8%83%BD%E8%AF%AD%E9%9F%B3%E4%BA%A7%E5%93%81%E5%AE%9E%E4%B9%A0%E9%9A%8F%E7%AC%94/" />
-  
-  <script src="https://kit.fontawesome.com/3dd514082f.js" crossorigin="anonymous"></script>
-
-
-  <link rel="canonical" href="https://igloo302.github.io/2020/%E5%9C%A8hugo%E5%8D%9A%E5%AE%A2%E6%8F%92%E5%85%A5%E4%BF%9D%E6%8C%81%E5%AE%BD%E9%AB%98%E6%AF%94%E7%9A%84iframe%E8%A7%86%E9%A2%91/" />
+  <link rel="prev" href="https://beigloo.tk/2020/%E4%B8%80%E6%AC%A1%E6%96%87%E8%89%BA%E5%A4%8D%E5%85%B4/" />
+  <link rel="next" href="https://beigloo.tk/2020/%E5%9B%A0%E4%B8%BA%E4%BA%BA%E5%B7%A5%E6%89%80%E4%BB%A5%E6%99%BA%E8%83%BD%E8%BF%9F%E8%BF%9F%E8%BF%9F%E8%BF%9F%E5%88%B0%E7%9A%84%E6%99%BA%E8%83%BD%E8%AF%AD%E9%9F%B3%E4%BA%A7%E5%93%81%E5%AE%9E%E4%B9%A0%E9%9A%8F%E7%AC%94/" />
+  <link rel="canonical" href="https://beigloo.tk/2020/%E5%9C%A8hugo%E5%8D%9A%E5%AE%A2%E6%8F%92%E5%85%A5%E4%BF%9D%E6%8C%81%E5%AE%BD%E9%AB%98%E6%AF%94%E7%9A%84iframe%E8%A7%86%E9%A2%91/" />
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -27,13 +20,12 @@
   <meta name="msapplication-TileColor" content="#da532c">
   <meta name="theme-color" content="#ffffff">
   <title>
-    
-    
-    在Hugo博客插入保持宽高比的iframe视频 | 冰屋里
-    
+       
+       
+           在Hugo博客插入保持宽高比的iframe视频 | 冰屋里
+       
   </title>
-  <meta name="title"
-    content="在Hugo博客插入保持宽高比的iframe视频 | 冰屋里">
+  <meta name="title" content="在Hugo博客插入保持宽高比的iframe视频 | 冰屋里">
     
   
   <link rel="stylesheet" href="/font/iconfont.css">
@@ -49,12 +41,12 @@
     "@type" : "BlogPosting",
     "mainEntityOfPage": {
          "@type": "WebPage",
-         "@id": "https:\/\/igloo302.github.io"
+         "@id": "https:\/\/beigloo.tk"
     },
     "articleSection" : "posts",
     "name" : "在Hugo博客插入保持宽高比的iframe视频",
     "headline" : "在Hugo博客插入保持宽高比的iframe视频",
-    "description" : "在Hugo实现的作品集静态网站插入视频的时候，遇到了一个问题：视频无法根据页面宽度自动调整宽高比，导致视频在手机这种小屏幕上会出现上下黑边。\n这个问题可以使用CSS来解决。最简单的方式就是将视频的iframe放在一个保持宽高比的div中（代码源自此处）：\n\/* 这个规则规定了iframe父元素容器的尺寸，16:9的近似值为56%*\/ .selfadapting-video { position: relative; width: 100%; height: 0; padding-bottom: 56%; \/* 高度应该是宽度的56% *\/ } \/* 设定iframe的宽度和高度，让iframe占满整个父元素容器 *\/ .selfadapting-video iframe { position: absolute; width: 100%; height: 100%; left: 0; top: 0; } 如果使用的是Hugo，打开~\\themes\\主题名\\static\\css，在custom.css中添加。\n如果是Hexo\x2bnext主题，首先在~\\themes\\next\\source\\css\\main.styl中添加一行以使用自定义css\n@import \x26#34;_custom\x26#34;; 然后在~\\themes\\next\\source\\css\\新建文件custom.styl并添加上述CSS。\n删去iframe中关于高度和宽度的设定，将其添加到 \x26lt;div class=\x26quot;selfadapting-video-bilibili\x26quot;\x26gt; ... \x26lt;\/div\x26gt;之中：\n\x26lt;div class=\x26#34;selfadapting-video\x26#34;\x26gt; \x26lt;iframe src=\x26#39;https:\/\/player.youku.com\/embed\/XNDU5NTkzNjQ4MA==\x26#39; scrolling=\x26#34;no\x26#34; border=\x26#34;0\x26#34; frameborder=\x26#34;no\x26#34; framespacing=\x26#34;0\x26#34; allowfullscreen=\x26#34;true\x26#34; style=\x26#34;max-width: 100%\x26#34;\x26gt;\x26lt;\/iframe\x26gt; \x26lt;\/div\x26gt; 效果如下：\n  对于优酷、Youtube这种，这个CSS已经可以用了，但是我常用的B站的iframe有一个特殊的机制：\n  在屏幕宽度较大时，B站的iframe会包含额外的顶部广告栏bilibili-player-video-recommend和底部控制栏bilibili-player-video-control，也就是说需要在宽度不同时实现不同的padding-bottom。\n以这个主题为例，本身这个页面已经实现了响应式布局，也就是针对不同的页面适配不同的栅格，具体的栅格设定可以在Html文件中看到：\n这样我们就可以根据Bootstrap的网格系统来计算一下在屏幕宽度为多少的时候应该修改视频的比例……当然这样有点麻烦。一个投机取巧的方式是打开Chrome，右击检查，将检查页面放置在右侧，拖动检查页面的宽度，此时网页的右上角会显示出网页的分辨率，此时只要观察视频在什么时候发生比例变化就可以了。\n经过尝试，发现屏幕宽度为728px、767px、992px时画面会自适应而发生视频宽度突变。所以修改CSS，使用@media来定义不同宽度时的视频比例。\n 使用 @media 查询，你可以针对不同的媒体类型定义不同的样式。",
+    "description" : "在Hugo实现的作品集静态网站插入视频的时候，遇到了一个问题：视频无法根据页面宽度自动调整宽高比，导致视频在手机这种小屏幕上会出现上下黑边。\n这个问题可以使用CSS来解决。最简单的方式就是将视频的iframe放在一个保持宽高比的div中（代码源自此处）：\n\/* 这个规则规定了iframe父元素容器的尺寸，16:9的近似值为56%*\/ .selfadapting-video { position: relative; width: 100%; height: 0; padding-bottom: 56%; \/* 高度应该是宽度的56% *\/ } \/* 设定iframe的宽度和高度，让iframe占满整个父元素容器 *\/ .selfadapting-video iframe { position: absolute; width: 100%; height: 100%; left: 0; top: 0; } 如果使用的是Hugo，打开~\\themes\\主题名\\static\\css，在custom.css中添加。\n如果是Hexo\u002bnext主题，首先在~\\themes\\next\\source\\css\\main.styl中添加一行以使用自定义css\n@import \u0026#34;_custom\u0026#34;; 然后在~\\themes\\next\\source\\css\\新建文件custom.styl并添加上述CSS。\n删去iframe中关于高度和宽度的设定，将其添加到 \u0026lt;div class=\u0026quot;selfadapting-video-bilibili\u0026quot;\u0026gt; ... \u0026lt;\/div\u0026gt;之中：\n\u0026lt;div class=\u0026#34;selfadapting-video\u0026#34;\u0026gt; \u0026lt;iframe src=\u0026#39;https:\/\/player.youku.com\/embed\/XNDU5NTkzNjQ4MA==\u0026#39; scrolling=\u0026#34;no\u0026#34; border=\u0026#34;0\u0026#34; frameborder=\u0026#34;no\u0026#34; framespacing=\u0026#34;0\u0026#34; allowfullscreen=\u0026#34;true\u0026#34; style=\u0026#34;max-width: 100%\u0026#34;\u0026gt;\u0026lt;\/iframe\u0026gt; \u0026lt;\/div\u0026gt; 效果如下：\n  对于优酷、Youtube这种，这个CSS已经可以用了，但是我常用的B站的iframe有一个特殊的机制：\n  在屏幕宽度较大时，B站的iframe会包含额外的顶部广告栏bilibili-player-video-recommend和底部控制栏bilibili-player-video-control，也就是说需要在宽度不同时实现不同的padding-bottom。\n以这个主题为例，本身这个页面已经实现了响应式布局，也就是针对不同的页面适配不同的栅格，具体的栅格设定可以在Html文件中看到：\n这样我们就可以根据Bootstrap的网格系统来计算一下在屏幕宽度为多少的时候应该修改视频的比例……当然这样有点麻烦。一个投机取巧的方式是打开Chrome，右击检查，将检查页面放置在右侧，拖动检查页面的宽度，此时网页的右上角会显示出网页的分辨率，此时只要观察视频在什么时候发生比例变化就可以了。\n经过尝试，发现屏幕宽度为728px、767px、992px时画面会自适应而发生视频宽度突变。所以修改CSS，使用@media来定义不同宽度时的视频比例。\n 使用 @media 查询，你可以针对不同的媒体类型定义不同的样式。",
     "inLanguage" : "en-us",
     "author" : "Igloo",
     "creator" : "Igloo",
@@ -62,9 +54,9 @@
     "accountablePerson" : "Igloo",
     "copyrightHolder" : "Igloo",
     "copyrightYear" : "2020",
-    "datePublished": "2020-03-21 20:59:48 \x2b0000 UTC",
-    "dateModified" : "2020-03-21 20:59:48 \x2b0000 UTC",
-    "url" : "https:\/\/igloo302.github.io\/2020\/%E5%9C%A8hugo%E5%8D%9A%E5%AE%A2%E6%8F%92%E5%85%A5%E4%BF%9D%E6%8C%81%E5%AE%BD%E9%AB%98%E6%AF%94%E7%9A%84iframe%E8%A7%86%E9%A2%91\/",
+    "datePublished": "2020-03-21 20:59:48 \u002b0000 UTC",
+    "dateModified" : "2020-03-21 20:59:48 \u002b0000 UTC",
+    "url" : "https:\/\/beigloo.tk\/2020\/%E5%9C%A8hugo%E5%8D%9A%E5%AE%A2%E6%8F%92%E5%85%A5%E4%BF%9D%E6%8C%81%E5%AE%BD%E9%AB%98%E6%AF%94%E7%9A%84iframe%E8%A7%86%E9%A2%91\/",
     "wordCount" : "164",
     "keywords" : [ "Hugo","Blog","CSS","iframe", "冰屋里"]
 }
@@ -72,6 +64,7 @@
 
 </head>
 
+  
 
 
   <body class="">
@@ -79,7 +72,7 @@
         <nav class="navbar">
     <div class="container">
         <div class="navbar-header header-logo">
-        	<a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-xihuan"></i></a>&nbsp;<a href="https://igloo302.github.io">冰屋里</a>
+        	<a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-xihuan"></i></a>&nbsp;<a href="https://beigloo.tk">冰屋里</a>
         </div>
         <div class="menu navbar-right">
                 
@@ -100,7 +93,7 @@
 <nav class="navbar-mobile" id="nav-mobile" style="display: none">
      <div class="container">
         <div class="navbar-header">
-            <div>  <a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-xihuan"></i></a>&nbsp;<a href="https://igloo302.github.io">冰屋里</a></div>
+            <div>  <a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-xihuan"></i></a>&nbsp;<a href="https://beigloo.tk">冰屋里</a></div>
             <div class="menu-toggle">
                 <span></span><span></span><span></span>
             </div>
@@ -129,40 +122,37 @@
     <header class="post-header">
         <h1 class="post-title" itemprop="name headline">在Hugo博客插入保持宽高比的iframe视频</h1>
         <div class="post-meta">
-            Written by <a itemprop="name" href="https://igloo302.github.io"
-                rel="author">Igloo</a>
-            with ♥
-            <span class="post-time">
-                on <time datetime=2020-03-21
-                    itemprop="datePublished">March 21, 2020</time>
-            </span>
-            in
-            <i class="iconfont icon-folder"></i>
-            <span class="post-category">
-                <a href="https://igloo302.github.io/categories/blog/"> Blog </a>
-                
-            </span>
+                Written by <a itemprop="name" href="https://beigloo.tk" rel="author">Igloo</a> with ♥ 
+                <span class="post-time">
+                on <time datetime=2020-03-21 itemprop="datePublished">March 21, 2020</time>
+                </span>
+                in
+                <i class="iconfont icon-folder"></i>
+                <span class="post-category">
+                        <a href="https://beigloo.tk/categories/blog/"> Blog </a>
+                        
+                </span>
         </div>
     </header>
     <div class="post-content">
         
 
         
-        
-        
-
-        
+            
         
 
         
         
-        
+     
+          
+          
+          
 
-        
-        
-        
+          
+          
+          
 
-        <p>在Hugo实现的作品集静态网站插入视频的时候，遇到了一个问题：视频无法根据页面宽度自动调整宽高比，导致视频在手机这种小屏幕上会出现上下黑边。</p>
+          <p>在Hugo实现的作品集静态网站插入视频的时候，遇到了一个问题：视频无法根据页面宽度自动调整宽高比，导致视频在手机这种小屏幕上会出现上下黑边。</p>
 <!-- more -->
 <p>这个问题可以使用CSS来解决。最简单的方式就是将视频的iframe放在一个保持宽高比的div中（代码源自<a href="https://www.webhek.com/post/responsive-video-iframes-keeping-aspect-ratio-with-only-css.html">此处</a>）：</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-css" data-lang="css"><span style="color:#75715e">/* 这个规则规定了iframe父元素容器的尺寸，16:9的近似值为56%*/</span>  
@@ -259,84 +249,64 @@
 
     </div>
 
-    <div class="post-copyright">
-        
-        <p class="copyright-item">
-            <span>Author:</span>
-            <span>Igloo </span>
-        </p>
-        
 
-        
-        <p class="copyright-item">
-            <span>Link:</span>
-            <a href=https://igloo302.github.io/2020/%E5%9C%A8hugo%E5%8D%9A%E5%AE%A2%E6%8F%92%E5%85%A5%E4%BF%9D%E6%8C%81%E5%AE%BD%E9%AB%98%E6%AF%94%E7%9A%84iframe%E8%A7%86%E9%A2%91/>https://igloo302.github.io/2020/%E5%9C%A8hugo%E5%8D%9A%E5%AE%A2%E6%8F%92%E5%85%A5%E4%BF%9D%E6%8C%81%E5%AE%BD%E9%AB%98%E6%AF%94%E7%9A%84iframe%E8%A7%86%E9%A2%91/</span>
-        </p>
-
-        
-        
-    </div>
-
-
-
+  
     <div class="post-tags">
         
-        <section>
-            <i class="iconfont icon-tag"></i>Tag(s):
+            <section>
+            <i class="iconfont icon-tag"></i>Tag(s): 
             
-            <span class="tag"><a href="https://igloo302.github.io/tags/hugo/">
+            <span class="tag"><a href="https://beigloo.tk/tags/hugo/">
                     #Hugo</a></span>
             
-            <span class="tag"><a href="https://igloo302.github.io/tags/blog/">
+            <span class="tag"><a href="https://beigloo.tk/tags/blog/">
                     #Blog</a></span>
             
-            <span class="tag"><a href="https://igloo302.github.io/tags/css/">
+            <span class="tag"><a href="https://beigloo.tk/tags/css/">
                     #CSS</a></span>
             
-            <span class="tag"><a href="https://igloo302.github.io/tags/iframe/">
+            <span class="tag"><a href="https://beigloo.tk/tags/iframe/">
                     #iframe</a></span>
             
-        </section>
+            </section>
         
         <section>
-            <a href="javascript:window.history.back();">back</a></span> ·
-            <span><a href="https://igloo302.github.io">home</a></span>
+                <a href="javascript:window.history.back();">back</a></span> · 
+                <span><a href="https://beigloo.tk">home</a></span>
         </section>
     </div>
 
     <div class="post-nav">
         
-        <a href="https://igloo302.github.io/2020/%E4%B8%80%E6%AC%A1%E6%96%87%E8%89%BA%E5%A4%8D%E5%85%B4/" class="prev" rel="prev" title="一次文艺复兴"><i
-                class="iconfont icon-left"></i>&nbsp;一次文艺复兴</a>
+        <a href="https://beigloo.tk/2020/%E4%B8%80%E6%AC%A1%E6%96%87%E8%89%BA%E5%A4%8D%E5%85%B4/" class="prev" rel="prev" title="一次文艺复兴"><i class="iconfont icon-left"></i>&nbsp;一次文艺复兴</a>
+         
         
-        
-        <a href="https://igloo302.github.io/2020/%E5%9B%A0%E4%B8%BA%E4%BA%BA%E5%B7%A5%E6%89%80%E4%BB%A5%E6%99%BA%E8%83%BD%E8%BF%9F%E8%BF%9F%E8%BF%9F%E8%BF%9F%E5%88%B0%E7%9A%84%E6%99%BA%E8%83%BD%E8%AF%AD%E9%9F%B3%E4%BA%A7%E5%93%81%E5%AE%9E%E4%B9%A0%E9%9A%8F%E7%AC%94/" class="next" rel="next"
-            title="「因为人工，所以智能」——迟迟迟迟到的智能语音产品实习随笔">「因为人工，所以智能」——迟迟迟迟到的智能语音产品实习随笔&nbsp;<i class="iconfont icon-right"></i></a>
+        <a href="https://beigloo.tk/2020/%E5%9B%A0%E4%B8%BA%E4%BA%BA%E5%B7%A5%E6%89%80%E4%BB%A5%E6%99%BA%E8%83%BD%E8%BF%9F%E8%BF%9F%E8%BF%9F%E8%BF%9F%E5%88%B0%E7%9A%84%E6%99%BA%E8%83%BD%E8%AF%AD%E9%9F%B3%E4%BA%A7%E5%93%81%E5%AE%9E%E4%B9%A0%E9%9A%8F%E7%AC%94/" class="next" rel="next" title="「因为人工，所以智能」——迟迟迟迟到的智能语音产品实习随笔">「因为人工，所以智能」——迟迟迟迟到的智能语音产品实习随笔&nbsp;<i class="iconfont icon-right"></i></a>
         
     </div>
 
     <div class="post-comment">
-        
-        
-        
-        
-        
-        <div id="vcomments"></div>
-        <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
-        <script src='//unpkg.com/valine/dist/Valine.min.js'></script>
-        <script type="text/javascript">
-          new Valine({
-            el: '#vcomments',
-            appId: 'SIOuMPbRjrVKLs1aBbSS30Ne-gzGzoHsz',
-            appKey: 'uv74bsFWliyb0LPw2XV8MIjM',
-            notify:  false ,
-            verify:  false ,
-            avatar: 'mm',
-            placeholder: 'Mann Tracht, Un Gott Lacht.',
-            visitor:  true 
-            });
-        </script>
-        
+          
+                 
+          
+                  
+                  
+                  <div id="vcomments"></div>
+                  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+                  <script src='//unpkg.com/valine/dist/Valine.min.js'></script>
+                  <script type="text/javascript">
+                    new Valine({
+                      el: '#vcomments',
+                      appId: 'SIOuMPbRjrVKLs1aBbSS30Ne-gzGzoHsz',
+                      appKey: 'uv74bsFWliyb0LPw2XV8MIjM',
+                      notify:  false ,
+                      verify:  false ,
+                      avatar: 'mm',
+                      placeholder: 'Mann Tracht, Un Gott Lacht.',
+                      visitor:  true 
+                      });
+                  </script>
+                  
     </div>
 </article>
           </div>
@@ -351,7 +321,7 @@
     	 <i class="iconfont icon-love"></i> 
          </span>
          
-            <span class="author" itemprop="copyrightHolder"><a href="https://igloo302.github.io">Igloo</a> | </span> 
+            <span class="author" itemprop="copyrightHolder"><a href="https://beigloo.tk">Igloo</a> | </span> 
          
 
          

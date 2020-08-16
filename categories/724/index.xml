@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>7×24 on 冰屋里</title>
-    <link>https://igloo302.github.io/categories/724/</link>
+    <link>https://beigloo.tk/categories/724/</link>
     <description>Recent content in 7×24 on 冰屋里</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sun, 15 Mar 2020 22:18:04 +0000</lastBuildDate>
     
-	<atom:link href="https://igloo302.github.io/categories/724/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://beigloo.tk/categories/724/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>7×24: 私人黄金屋Calibre Web</title>
-      <link>https://igloo302.github.io/2020/724-calibre-web/</link>
+      <link>https://beigloo.tk/2020/724-calibre-web/</link>
       <pubDate>Sun, 15 Mar 2020 22:18:04 +0000</pubDate>
       
-      <guid>https://igloo302.github.io/2020/724-calibre-web/</guid>
+      <guid>https://beigloo.tk/2020/724-calibre-web/</guid>
       <description>Calibre是我一直在使用的一款书籍管理软件，但是Calibre总体设计是一款本地桌面软件，对于书库的多平台管理不太友好。Calibre Web使用了Calibre的数据库，是一个轻量化的Web版的Calibre，本节介绍一下如何在Docker上部署Calibre Web和基本的配置。
 Calibre Web推荐了两个Docker镜像，technosoft2000/calibre-web支持linux/amd64，linuxserver/calibre-web的电子书转换功能只有x86-64可以用（安装后发现calibre-web可以使用外部的转换器）。
 在N1上安装linuxserver/calibre-web的指令：
@@ -30,10 +30,10 @@ Calibre Web默认是关闭上传功能的，在管理-配置-基本配置-特性
     
     <item>
       <title>7×24: IoT = Internet of Trash? Home Assistant打造全屋智能</title>
-      <link>https://igloo302.github.io/2020/724-home-assistant/</link>
+      <link>https://beigloo.tk/2020/724-home-assistant/</link>
       <pubDate>Sun, 15 Mar 2020 16:56:53 +0000</pubDate>
       
-      <guid>https://igloo302.github.io/2020/724-home-assistant/</guid>
+      <guid>https://beigloo.tk/2020/724-home-assistant/</guid>
       <description>几年前在国外住过一个别墅，里面的智能家居设计给我留下了深刻的印象：吧台上有一个控制平板，统一控制各个房间的照明和空调温度，通过音箱播放流媒体歌曲，控制电视机播放的Netflix电视剧；每个房间还有独立的分机控制开关来单独控制各自房间的设备。
 虽然说起来并不新鲜，甚至并没有突破IoT=网络开关这个初级阶段，但是这种高度一致化的交互方式，在家庭空间尺度上和互联网内容亲密互动的感觉，都带来了超越产品功能本身的愉快体验。
 对于智能家居和IoT，很容易想到国内的米家，天猫精灵等互联网、电商以及传统白电厂商搞出的各个体系，其中米家推出了全面的家电产品、控制器以及传感器元件，价格也不太贵，综合体验可能是最好的。但是他们共有的问题就是不同的体系都在使用自己的私有协议，无法互相协作使用。
@@ -60,10 +60,10 @@ Hass.io包含了HA和附加组件，会有一键安装插件等功能，相当�
     
     <item>
       <title>7×24: 荒野无灯N1小钢炮PT下载机简单调教</title>
-      <link>https://igloo302.github.io/2020/724-%E8%8D%92%E9%87%8E%E6%97%A0%E7%81%AFn1%E5%B0%8F%E9%92%A2%E7%82%AEpt%E4%B8%8B%E8%BD%BD%E6%9C%BA%E7%AE%80%E5%8D%95%E8%B0%83%E6%95%99/</link>
+      <link>https://beigloo.tk/2020/724-%E8%8D%92%E9%87%8E%E6%97%A0%E7%81%AFn1%E5%B0%8F%E9%92%A2%E7%82%AEpt%E4%B8%8B%E8%BD%BD%E6%9C%BA%E7%AE%80%E5%8D%95%E8%B0%83%E6%95%99/</link>
       <pubDate>Sun, 15 Mar 2020 11:33:05 +0000</pubDate>
       
-      <guid>https://igloo302.github.io/2020/724-%E8%8D%92%E9%87%8E%E6%97%A0%E7%81%AFn1%E5%B0%8F%E9%92%A2%E7%82%AEpt%E4%B8%8B%E8%BD%BD%E6%9C%BA%E7%AE%80%E5%8D%95%E8%B0%83%E6%95%99/</guid>
+      <guid>https://beigloo.tk/2020/724-%E8%8D%92%E9%87%8E%E6%97%A0%E7%81%AFn1%E5%B0%8F%E9%92%A2%E7%82%AEpt%E4%B8%8B%E8%BD%BD%E6%9C%BA%E7%AE%80%E5%8D%95%E8%B0%83%E6%95%99/</guid>
       <description>本文关于安装完荒野无灯N1之后，将原生的qBittorrent和Filebrowser改为Docker版本。
 Docker qBittorrent 替换原生qBittorrent ，重新安装荒野无灯编译的Docker版qBittorrent。
  参考资料 小钢炮使用docker版qb 4.1.6 简明教程 qBittorrent docker镜像：简介里没有说明的部分 N1小钢炮下载系统 篇七：如何在小钢炮系统的Docker里安装灯大原味qBittorrent及优化设置
@@ -72,10 +72,10 @@ Docker qBittorrent 替换原生qBittorrent ，重新安装荒野无灯编译的D
     
     <item>
       <title>7×24: Jellyfin&#43;Kodi打造个人媒体中心</title>
-      <link>https://igloo302.github.io/2020/724-jellyfin-kodi%E6%89%93%E9%80%A0%E4%B8%AA%E4%BA%BA%E5%AA%92%E4%BD%93%E4%B8%AD%E5%BF%83/</link>
+      <link>https://beigloo.tk/2020/724-jellyfin-kodi%E6%89%93%E9%80%A0%E4%B8%AA%E4%BA%BA%E5%AA%92%E4%BD%93%E4%B8%AD%E5%BF%83/</link>
       <pubDate>Mon, 09 Mar 2020 21:49:10 +0000</pubDate>
       
-      <guid>https://igloo302.github.io/2020/724-jellyfin-kodi%E6%89%93%E9%80%A0%E4%B8%AA%E4%BA%BA%E5%AA%92%E4%BD%93%E4%B8%AD%E5%BF%83/</guid>
+      <guid>https://beigloo.tk/2020/724-jellyfin-kodi%E6%89%93%E9%80%A0%E4%B8%AA%E4%BA%BA%E5%AA%92%E4%BD%93%E4%B8%AD%E5%BF%83/</guid>
       <description>「一台7×24小时运行的电脑可以用来做什么？」系列第二篇。作为一个数字收集癖和整理癖患者，从十几年前在VeryCD上用迅雷慢慢下载TLF组的奥斯卡全集，几KB的速度下几周，到现在对比不同的压制组作品的质量，千兆的网络压得磁盘跟不上下载速度，硬盘容量存不下想要收藏的电影。回望过去，观看的速度永远跟不上下载的速度，甚至现在都不再需要下载再看了，这个过程见证了一段网络、影视、数码的发展历史。
 Docker安装Jellyfin  Jellyfin is the volunteer-built media solution that puts you in control of your media. Stream to any device from your own server, with no strings attached. Your media, your server, your way.
  Jellyfin的功能简单来说就是作为媒体服务器，统一管理影片，它的界面是这样的：
@@ -91,10 +91,10 @@ docker create \  --name=jellyfin \  -e PUID=$(id -u jellyfin) \  -e PGID=$(cat /
     
     <item>
       <title>7×24-斐讯N1的旁路由玩法</title>
-      <link>https://igloo302.github.io/2020/724-%E6%96%90%E8%AE%AFn1%E7%9A%84%E6%97%81%E8%B7%AF%E7%94%B1%E7%8E%A9%E6%B3%95/</link>
+      <link>https://beigloo.tk/2020/724-%E6%96%90%E8%AE%AFn1%E7%9A%84%E6%97%81%E8%B7%AF%E7%94%B1%E7%8E%A9%E6%B3%95/</link>
       <pubDate>Mon, 24 Feb 2020 14:38:04 +0000</pubDate>
       
-      <guid>https://igloo302.github.io/2020/724-%E6%96%90%E8%AE%AFn1%E7%9A%84%E6%97%81%E8%B7%AF%E7%94%B1%E7%8E%A9%E6%B3%95/</guid>
+      <guid>https://beigloo.tk/2020/724-%E6%96%90%E8%AE%AFn1%E7%9A%84%E6%97%81%E8%B7%AF%E7%94%B1%E7%8E%A9%E6%B3%95/</guid>
       <description>N1是已经暴雷快两年的斐讯留下来的经典矿渣遗产。2GB RAM，四核心ARM SOC，4K 输出，千兆网口，读写30MB+的USB 2.0，决定了N1绝不甘心当一个吃灰的挖矿机。在一众技术大佬的研究下，N1成功转型为电视盒子、NAS、下载机、高清播放器、复古游戏机，以及本文要介绍的旁路由。
 我们平时使用的家用路由器需要负责网关服务器、DHCP服务器、PPPOE拨号、DNS服务器、发射WIFI信号等工作，所谓旁路由（并不是专业的叫法，民间约定俗成）就是把这些功能中的一部分让渡给这台设备去处理。
 大多数的家用路由器的性能都是及其羸弱的，运行去广告、V2Ray、SS这种服务的时候难以发挥出最好的效果，有了一台旁路由，我们就可以把这些高难度任务交给它，让主路由安安心心地拨号、分配IP地址（DHCP）。连接方式如图：
