@@ -27,9 +27,9 @@ B站UP TenGuSan 提过，作品集需要适配手机的屏幕和比例，最基�
 Creative portfolio会相对更加简洁一点。
 Parsa Hugo可以展示重点项目、Instagram照片，完全可以用来当作一个完整的Blog。
 选择自己喜欢的Theme，找到Git地址，输入以下命令：
-cd .\portfolio\ git init git submodule add https://github.com/kishaningithub/hugo-creative-portfolio-theme.git themes/creative 主题已经下载到themes/Creative文件夹下了，将portfolio\themes\creative\exampleSite中的所有文件复制到portfolio\目录中（复制并替换），打开根目录的配置文件config.toml，将theme = &amp;quot;hugo-creative-portfolio-theme&amp;quot;修改为theme = &amp;quot;creative&amp;quot;。
+cd .\portfolio\git initgit submodule add https://github.com/kishaningithub/hugo-creative-portfolio-theme.git themes/creative主题已经下载到themes/Creative文件夹下了，将portfolio\themes\creative\exampleSite中的所有文件复制到portfolio\目录中（复制并替换），打开根目录的配置文件config.toml，将theme = &amp;quot;hugo-creative-portfolio-theme&amp;quot;修改为theme = &amp;quot;creative&amp;quot;。
 运行命令便可以在http://localhost:1313/中访问这个Sample Site了。
-hugo server 部署到GitHub Pages 我们还是使用GitHub Pages作为托管服务器。直接运行hugo命令，就会创建public文件夹，里面就是这个静态网站所有的文件了，像此前hexo教程中一样，直接push这个文件夹到Github的username.github.io就可以访问了。
+hugo server部署到GitHub Pages 我们还是使用GitHub Pages作为托管服务器。直接运行hugo命令，就会创建public文件夹，里面就是这个静态网站所有的文件了，像此前hexo教程中一样，直接push这个文件夹到Github的username.github.io就可以访问了。
 但是会有两个问题：
  我已经使用了username.</description>
     </item>

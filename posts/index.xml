@@ -63,8 +63,8 @@ Huawei Share Huawei Share 文件互传 华为互传允许在华为自己的几�
       <description>相关的资料相当多，踩了一点坑之后分享记录一下。
 macvlan可以创建虚拟的Wan口，mwan3可以控制多个网络的负载均衡。
 创建虚拟WAN 查看自己的WAN对应的接口名，我这边是eth0.2，使用macvlan创建虚拟WAN：
-ip link add link eth0.2 name veth0 type macvlan ifconfig veth0 up 可以将这两行指令写进路由器的自启动脚本中，也可以编辑网络设置
-vi /etc/config/network # 添加内容 config device &#39;veth0&#39; option name &#39;veth0&#39; option ifname &#39;eth0.2&#39; option type &#39;macvlan&#39; 创建拨号接口 在网络-接口中创建新接口，名称设置为vwan1，类型选择PPPOE，并填写宽带账号密码。
+ip link add link eth0.2 name veth0 type macvlanifconfig veth0 up可以将这两行指令写进路由器的自启动脚本中，也可以编辑网络设置
+vi /etc/config/network# 添加内容config device &#39;veth0&#39;option name &#39;veth0&#39;option ifname &#39;eth0.2&#39;option type &#39;macvlan&#39;创建拨号接口 在网络-接口中创建新接口，名称设置为vwan1，类型选择PPPOE，并填写宽带账号密码。
 在高级设置中将vwan1的网关跃点设置为42，原来的wan设置为41（数字随意，不同即可）。
 此时可以如果看到两个接口分别获得了不同的IP，即可进行下一步，否则说明运营商不支持这种双拨方式，可以考虑尝试并发拨号。
 修改防火墙 在网络-防火墙-区域中修改wan，覆盖网络中勾选vwan1。
@@ -137,8 +137,8 @@ $$ P_{普通用户价格}-P_{会员价格}&amp;gt;0 \tag{2} $$
 然后在~\themes\next\source\css\新建文件custom.styl并添加上述CSS。
 删去iframe中关于高度和宽度的设定，将其添加到 &amp;lt;div class=&amp;quot;selfadapting-video-bilibili&amp;quot;&amp;gt; ... &amp;lt;/div&amp;gt;之中：
 &amp;lt;div class=&amp;#34;selfadapting-video&amp;#34;&amp;gt; &amp;lt;iframe src=&amp;#39;https://player.youku.com/embed/XNDU5NTkzNjQ4MA==&amp;#39; scrolling=&amp;#34;no&amp;#34; border=&amp;#34;0&amp;#34; frameborder=&amp;#34;no&amp;#34; framespacing=&amp;#34;0&amp;#34; allowfullscreen=&amp;#34;true&amp;#34; style=&amp;#34;max-width: 100%&amp;#34;&amp;gt;&amp;lt;/iframe&amp;gt; &amp;lt;/div&amp;gt; 效果如下：
-  对于优酷、Youtube这种，这个CSS已经可以用了，但是我常用的B站的iframe有一个特殊的机制：
-  在屏幕宽度较大时，B站的iframe会包含额外的顶部广告栏bilibili-player-video-recommend和底部控制栏bilibili-player-video-control，也就是说需要在宽度不同时实现不同的padding-bottom。
+对于优酷、Youtube这种，这个CSS已经可以用了，但是我常用的B站的iframe有一个特殊的机制：
+在屏幕宽度较大时，B站的iframe会包含额外的顶部广告栏bilibili-player-video-recommend和底部控制栏bilibili-player-video-control，也就是说需要在宽度不同时实现不同的padding-bottom。
 以这个主题为例，本身这个页面已经实现了响应式布局，也就是针对不同的页面适配不同的栅格，具体的栅格设定可以在Html文件中看到：
 这样我们就可以根据Bootstrap的网格系统来计算一下在屏幕宽度为多少的时候应该修改视频的比例……当然这样有点麻烦。一个投机取巧的方式是打开Chrome，右击检查，将检查页面放置在右侧，拖动检查页面的宽度，此时网页的右上角会显示出网页的分辨率，此时只要观察视频在什么时候发生比例变化就可以了。
 经过尝试，发现屏幕宽度为728px、767px、992px时画面会自适应而发生视频宽度突变。所以修改CSS，使用@media来定义不同宽度时的视频比例。
@@ -317,9 +317,9 @@ B站UP TenGuSan 提过，作品集需要适配手机的屏幕和比例，最基�
 Creative portfolio会相对更加简洁一点。
 Parsa Hugo可以展示重点项目、Instagram照片，完全可以用来当作一个完整的Blog。
 选择自己喜欢的Theme，找到Git地址，输入以下命令：
-cd .\portfolio\ git init git submodule add https://github.com/kishaningithub/hugo-creative-portfolio-theme.git themes/creative 主题已经下载到themes/Creative文件夹下了，将portfolio\themes\creative\exampleSite中的所有文件复制到portfolio\目录中（复制并替换），打开根目录的配置文件config.toml，将theme = &amp;quot;hugo-creative-portfolio-theme&amp;quot;修改为theme = &amp;quot;creative&amp;quot;。
+cd .\portfolio\git initgit submodule add https://github.com/kishaningithub/hugo-creative-portfolio-theme.git themes/creative主题已经下载到themes/Creative文件夹下了，将portfolio\themes\creative\exampleSite中的所有文件复制到portfolio\目录中（复制并替换），打开根目录的配置文件config.toml，将theme = &amp;quot;hugo-creative-portfolio-theme&amp;quot;修改为theme = &amp;quot;creative&amp;quot;。
 运行命令便可以在http://localhost:1313/中访问这个Sample Site了。
-hugo server 部署到GitHub Pages 我们还是使用GitHub Pages作为托管服务器。直接运行hugo命令，就会创建public文件夹，里面就是这个静态网站所有的文件了，像此前hexo教程中一样，直接push这个文件夹到Github的username.github.io就可以访问了。
+hugo server部署到GitHub Pages 我们还是使用GitHub Pages作为托管服务器。直接运行hugo命令，就会创建public文件夹，里面就是这个静态网站所有的文件了，像此前hexo教程中一样，直接push这个文件夹到Github的username.github.io就可以访问了。
 但是会有两个问题：
  我已经使用了username.</description>
     </item>

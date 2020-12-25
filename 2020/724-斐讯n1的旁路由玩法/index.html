@@ -156,7 +156,7 @@
 <!-- more -->
 <p>我们平时使用的家用路由器需要负责网关服务器、DHCP服务器、PPPOE拨号、DNS服务器、发射WIFI信号等工作，所谓旁路由（并不是专业的叫法，民间约定俗成）就是把这些功能中的一部分让渡给这台设备去处理。</p>
 <p>大多数的家用路由器的性能都是及其羸弱的，运行去广告、V2Ray、SS这种服务的时候难以发挥出最好的效果，有了一台旁路由，我们就可以把这些高难度任务交给它，让主路由安安心心地拨号、分配IP地址（DHCP）。连接方式如图：</p>
-<p><img src="http://img.osland.me/static/images/%E6%97%81%E8%B7%AF%E7%94%B1%E7%BD%91%E7%BB%9C%E6%8B%93%E6%89%91.png" alt="旁路由网络拓扑"></p>
+<p><img src="https://raw.githubusercontent.com/Igloo302/igloo302.github.io/master/images/%E6%97%81%E8%B7%AF%E7%94%B1%E7%BD%91%E7%BB%9C%E6%8B%93%E6%89%91.png" alt="旁路由网络拓扑"></p>
 <p>因为这个网络拓扑本质上实现了一次单线复用，所以也适用于弱电箱较小，无法容纳高性能网络设备的情况，比方说我就将N1放在了有网口的书房，同时打开N1的WiFi用于补足书房信号不足的问题。</p>
 <h2 id="所需设备">所需设备</h2>
 <ul>
@@ -204,7 +204,7 @@ fastboot flash recovery .\N1\N1recovery.img
 <pre><code>.\adb.exe connect 192.168.x.xxx
 .\adb.exe shell reboot update
 </code></pre><p>此时将N1和电脑通过网线连接，SSH访问<code>192.168.1.1</code>，用户为<code>root</code>，密码为<code>password</code>。</p>
-<p><img src="http://img.osland.me/static/images/sshop.jpg" alt="sshop"></p>
+<p><img src="https://raw.githubusercontent.com/Igloo302/igloo302.github.io/master/images/sshop.jpg" alt="sshop"></p>
 <p>输入以下命令开始将OpenWRT安装到N1的EMMC（内置存储）中</p>
 <pre><code>cd /root
  ./inst-to-emmc.sh
@@ -213,17 +213,17 @@ fastboot flash recovery .\N1\N1recovery.img
 <p>我的目标是旁路由负责网关和DNS，主路由负责拨号和DHCP，这样所有的外网流量都会从N1走，就能进行翻墙和去广告了。</p>
 <h3 id="设置-n1">设置 N1</h3>
 <p>依旧PC直连N1，进入<code>192.168.1.1</code>，密码为<code>password</code>，进入「网络」-「接口」，编辑LAN设置，按照下图设置。</p>
-<p><img src="http://img.osland.me/static/images/n1lan.png" alt=""></p>
+<p><img src="https://raw.githubusercontent.com/Igloo302/igloo302.github.io/master/images/n1lan.png" alt=""></p>
 <p>勘误：将自定义DNS服务器设置成192.168.6.1</p>
 <p>同时关闭DHCP「忽略此接口」</p>
-<p><img src="http://img.osland.me/static/images/n1lan2.png" alt="n1lan2"></p>
+<p><img src="https://raw.githubusercontent.com/Igloo302/igloo302.github.io/master/images/n1lan2.png" alt="n1lan2"></p>
 <p>保存&amp;应用修改。</p>
 <h3 id="设置主路由">设置主路由</h3>
 <p>将N1连接到主路由的LAN上，进入主路由后台进入<code>192.168.6.1</code>，我使用的是高恪，进入「网络设置」-「DHCP」，将网关和主DNS修改为<code>192.168.6.2</code>（旁路由N1的IP）</p>
-<p><img src="http://img.osland.me/static/images/router.png" alt="router"></p>
+<p><img src="https://raw.githubusercontent.com/Igloo302/igloo302.github.io/master/images/router.png" alt="router"></p>
 <p>如果主路由是OpenWRT的话，在「网络」-「接口」-「LAN」-「DHCP 服务器」-「高级设置」，在「DHCP 选项」中，添加两条参数，<code>3,192.168.6.2</code>（表示网关指向N1），<code>6,192.168.6.2</code> （表示DNS指向N1），可以达到相同的效果。</p>
 <p>最后，在防火墙设置中添加<code>iptables -t nat -I POSTROUTING -o eth0 -j MASQUERADE</code>。</p>
-<p><img src="http://img.osland.me/static/images/netinfo.png" alt="netinfo"></p>
+<p><img src="https://raw.githubusercontent.com/Igloo302/igloo302.github.io/master/images/netinfo.png" alt="netinfo"></p>
 <p>查看当前的连接信息，默认网关和DNS服务器都为<code>192.168.6.2</code>即宣告成功。至此，N1旁路由就设置好了，进入<code>192.168.6.2</code>去配置翻墙吧。</p>
 <h2 id="关于724">关于7×24</h2>
 <p>本篇为7×24的第一篇。这将会组成一个系列企划，试图回答问题——「一台7×24小时运行的电脑可以用来做什么？」</p>

@@ -169,7 +169,7 @@ mv /etc/init.d/S99jellyfin /etc/S99jellyfin.disabled
 killall jellyfin
 </code></pre></div><p>我使用的是docker镜像是<code>jellyfin/jellyfin:nightly</code>。</p>
 <p>新建Container，端口映射8096/tcp，然后设置/cache，/media和/config三个分区即可。</p>
-<p><img src="http://img.osland.me/dockerjellyfin.png" alt=""></p>
+<p><img src="https://raw.githubusercontent.com/Igloo302/igloo302.github.io/master/images/dockerjellyfin.png" alt=""></p>
 <p>使用指令一键安装：</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">docker run -d -p 8096:8096 -v /your/config:/config -v /your/media:/media -v /your/cache:/cache jellyfin/jellyfin:nightly
 </code></pre></div><p>此外，也可以采用<code>linuxserver/jellyfin</code>的镜像：</p>
@@ -197,16 +197,16 @@ killall jellyfin
 <p>把混乱的影片文件夹变成精美的海报墙，就需要去获取包括海报、同人画、片名、年份、剧情介绍、演员等等信息，称为「元数据」。</p>
 <h3 id="使用jellyfin自带的元数据下载器">使用Jellyfin自带的元数据下载器</h3>
 <p>元数据下载器可以将电影信息从TheMovieDb等网站中自动下载下来，只需要在添加媒体库的时候，勾选元数据下载器：</p>
-<p><img src="http://img.osland.me/jellyfinmetadata.png" alt=""></p>
+<p><img src="https://raw.githubusercontent.com/Igloo302/igloo302.github.io/master/images/jellyfinmetadata.png" alt=""></p>
 <p>除了自带的几个元数据下载器之外，还可以添加插件，如AniDB让其支持更多的影片数据网站。</p>
 <p>如果片名识别出错，可以<code>右击-「识别」</code>输入片名搜索。</p>
-<p><img src="http://img.osland.me/jellyfin.png" alt=""></p>
+<p><img src="https://raw.githubusercontent.com/Igloo302/igloo302.github.io/master/images/jellyfin.png" alt=""></p>
 <h3 id="tinymediamanager">tinyMediaManager</h3>
 <p>Jellyfin的元数据下载能力并不能让人满意。tinyMediaManager是一款非常优秀的元数据下载器，支持Windows、macOS和Linux。</p>
-<p><img src="http://img.osland.me/tmm.png" alt=""></p>
+<p><img src="https://raw.githubusercontent.com/Igloo302/igloo302.github.io/master/images/tmm.png" alt=""></p>
 <p>在<a href="http://release.tinymediamanager.org/">官网</a>下载最新版，解压后运行tinyMediaManagerUpd.exe打开。在<code>「设置」-「电影」-「媒体库目录」</code>和<code>「设置」-「电视节目」-「媒体库目录」</code>中添加媒体文件夹，点击上方的<code>「更新源」-「更新数据源」</code>，然后全选所有电影，右击选择<code>「搜索并刮削所选电影 - 自动匹配」</code>。</p>
-<p><img src="http://img.osland.me/tmm1.png" alt=""></p>
-<p><img src="http://img.osland.me/tmm2.png" alt=""></p>
+<p><img src="https://raw.githubusercontent.com/Igloo302/igloo302.github.io/master/images/tmm1.png" alt=""></p>
+<p><img src="https://raw.githubusercontent.com/Igloo302/igloo302.github.io/master/images/tmm2.png" alt=""></p>
 <p>元数据将被保存为nfo文件和图片文件，Jellyfin会自动识别这些文件。</p>
 <h3 id="r18-warning">R18 WARNING</h3>
 <p>我并没有收集X片的习惯，只是<del>出于好玩</del>尝试了一下用Jellyfin管理迷片。Pockies同学撰写了<strong>2篇</strong>非常详细可靠的文章：</p>
@@ -215,15 +215,15 @@ killall jellyfin
 <strong>Pockies</strong> - <a href="https://pockies.github.io/2019/03/25/everaver-emby-kodi/"><em>利用EverAver+Emby+Kodi打造本地AV（毛片）媒体库</em></a></p>
 </blockquote>
 <p>和正经影片电视唯一的不同只有Capture Data（或者叫刮削），因为目前没有适用于迷片的Jellyfin的刮削插件，因此我们需要手动将迷片的信息，包括演员、车牌号、名称、剧情介绍和封面设置好。当然这个手动不是自己去网上收集，而是使用一些<strong>爱心人士</strong>开发的小软件将信息保存在NFO文件和JPG文件中，供Jellyfin识别。具体的使用方式就参考Pockies同学的文章吧。</p>
-<p><img src="http://img.osland.me/R18Library.png" alt=""></p>
+<p><img src="https://raw.githubusercontent.com/Igloo302/igloo302.github.io/master/images/R18Library.png" alt=""></p>
 <p>在Jellyfin中设置完片库之后，可以设置一张自定义的封面：</p>
-<p><img src="http://img.osland.me/R18Cover.png" alt=""></p>
-<p><img src="http://img.osland.me/R18Cover2.png" alt=""></p>
+<p><img src="https://raw.githubusercontent.com/Igloo302/igloo302.github.io/master/images/R18Cover.png" alt=""></p>
+<p><img src="https://raw.githubusercontent.com/Igloo302/igloo302.github.io/master/images/R18Cover2.png" alt=""></p>
 <h2 id="kodi--jellyfin插件">Kodi + Jellyfin插件</h2>
 <p>除了在网页上直接播放外，Kodi的Jellyfin插件可以提供更好的观看体验，尤其是在Android电视盒子上。</p>
 <p>在<a href="https://github.com/jellyfin/jellyfin-kodi/releases">GitHub</a>下载最新的Jellyfin插件（不用解压），打开Kodi，插件-从ZIP文件安装-选择jellyfin-kodi-xxx.zip。安装成功后按照引导操作即可。</p>
 <p>为了让插件自动同步服务器的媒体内容，可以在Jellyfin服务器安装Kodi Sync Quene插件，同时在Kodi的Jellyfin插件设置中打开Sync-Enable Kodi Sync Queue</p>
-<p><img src="http://img.osland.me/Kodi+Jellyfin.png" alt=""></p>
+<p><img src="https://raw.githubusercontent.com/Igloo302/igloo302.github.io/master/images/Kodi+Jellyfin.png" alt=""></p>
 <p>Enjoy now!</p>
 
     </div>

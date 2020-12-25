@@ -148,7 +148,7 @@
           
           
 
-          <p><img src="http://img.osland.me/static/images/hikvision.png" alt=""></p>
+          <p><img src="https://raw.githubusercontent.com/Igloo302/igloo302.github.io/master/images/hikvision.png" alt=""></p>
 <p>因为疫情而被封在家里，就着手去改善一些居家体验（顺便玩）。当时装修的时候预埋了监控线但没有安装，想着干脆自己动手吧。安装的过程一波三折，最终算是圆满完成，记录一下分享给大家。</p>
 <!-- more -->
 <p>起初，一检查，没想到这预留的三路监控线居然是带电源的模拟线，这个时代再去使用模拟摄像头实在是心有不甘，拉POE明线肯定是不能接受的，所以综合考虑还是使用WiFi摄像头。</p>
@@ -157,17 +157,17 @@
 <p>没有网还行，没有电这可麻烦了，思忖再三，目光逐渐聚焦在了空调孔上——能不能从空调插座取电，把摄像头装在空调孔外侧呢？</p>
 <p>一般来说，空调这种16A的大电器是要单独一路的，不过摄像头功率都在10W之类，在空调插座再取一个10A的二孔插座应该也无妨。</p>
 <p>买了一个10A的二孔模块，和16A插座并联换上：</p>
-<p><img src="http://img.osland.me/static/images/Airconditioningsocket.png" alt=""></p>
+<p><img src="https://raw.githubusercontent.com/Igloo302/igloo302.github.io/master/images/Airconditioningsocket.png" alt=""></p>
 <p>因为此处需要安装两台监控，所以再购入了一个一转三的迷你扩展插座孔，就能解决问题了。</p>
-<p><img src="http://img.osland.me/static/images/Expansionsocket.png" alt=""></p>
+<p><img src="https://raw.githubusercontent.com/Igloo302/igloo302.github.io/master/images/Expansionsocket.png" alt=""></p>
 <h2 id="nas存储录像">NAS存储录像</h2>
 <p>海康的Wifi摄像头是可以每台单独插卡的，但是正好家庭网络中有接入SMB协议的硬盘，平时是用来存电影的，利用SMB协议存储所有的视频文件是更具性价比的选择。</p>
 <p>下载Windows端的萤石工作室，登录萤石云账号，点击左下角“设备管理”：</p>
-<p><img src="http://img.osland.me/static/images/Equipmentmanagement.png" alt=""></p>
+<p><img src="https://raw.githubusercontent.com/Igloo302/igloo302.github.io/master/images/Equipmentmanagement.png" alt=""></p>
 <p>点击“高级配置”，在“系统”-“常用”中把每台摄像头设置成不同的设备号：</p>
-<p><img src="http://img.osland.me/static/images/Equipmentname.png" alt=""></p>
+<p><img src="https://raw.githubusercontent.com/Igloo302/igloo302.github.io/master/images/Equipmentname.png" alt=""></p>
 <p>在“存储”-“NAS”中设置所要存储录像文件的NAS分区的信息：</p>
-<p><img src="http://img.osland.me/static/images/NASsettings.png" alt=""></p>
+<p><img src="https://raw.githubusercontent.com/Igloo302/igloo302.github.io/master/images/NASsettings.png" alt=""></p>
 <p>注意，海康威视摄像头要求使用<strong>硬盘的整个分区</strong>，因此需要提前对硬盘进行分区，起初我设置了类似于<code>/dev/sda1/camera/</code>这样的目录，但是始终通不过测试，修改了Samba协议的配置，把用来存录像的分区的分享名设置为Camera，大致流程如下：</p>
 <ol>
 <li>SSH登录NAS</li>
@@ -188,11 +188,11 @@ available = yes
 </ol>
 <pre><code>Smbcontrol smbd reload-config
 </code></pre><p>再在海康威视中配置NAS信息，在“存储”-“常用”页面格式化硬盘即可（多台摄像头只需要格式化一次）：</p>
-<p><img src="http://img.osland.me/static/images/format.png" alt=""></p>
+<p><img src="https://raw.githubusercontent.com/Igloo302/igloo302.github.io/master/images/format.png" alt=""></p>
 <p>至此设置就完成了。</p>
 <h2 id="固件问题">固件问题</h2>
 <p>但是理论上海康的摄像头是可以直接在浏览器中设置的——在路由器中查看摄像头的IP，使用Windows的IE或macOS的Safari登录后台，但是却收到了这个错误：</p>
-<p><img src="http://img.osland.me/static/images/cameraerror.png" alt=""></p>
+<p><img src="https://raw.githubusercontent.com/Igloo302/igloo302.github.io/master/images/cameraerror.png" alt=""></p>
 <p>摄像头硬件是DS-IPC-E22H-IW/IWT，固件版本5.5.93，官网上最新的固件也是这个。后台不能访问的问题咨询了客服，要到了5.5.96的固件，是20年01月20日的最新版本，所有DS-IPC-E系列的固件通用（链接: <a href="https://pan.baidu.com/s/1x2193nxHoId-6XK9yRsJwg">https://pan.baidu.com/s/1x2193nxHoId-6XK9yRsJwg</a> 提取码: eq42）。</p>
 <p>用萤石工作室更新固件后就能访问后台了，用户名admin，密码Hik+机身上的6位验证码。</p>
 <p>不过DS-IPC-E22H-IW版本在更新了这个固件之后出现了夜晚画面昏暗的问题，可能是测试版固件不完善。</p>

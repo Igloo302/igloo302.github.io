@@ -46,7 +46,7 @@
     "articleSection" : "posts",
     "name" : "30分钟建立一个作品集网站 powered by Hugo",
     "headline" : "30分钟建立一个作品集网站 powered by Hugo",
-    "description" : "昨天看到猪场的暑期实习开始“招标”了，头上划过几道黑线。赋闲在家快一个半月，简历和作品集都没有好好准备。上次用Hexo重建了这个Blog的时候，看到了很好看的Hugo博客，还有一个LeaveIt主题非常可爱，就心水不已。翻了翻Hugo的Theme页面，好看的真不少，可能是英语用户比较多吧:)\n干脆单独建一个项目，拿Hugo把作品集重建一下吧，之后有时间的话，会尝试做一版自己的主题将Blog和Portfolio整合在一起。\n安装环境   Windows 10\n  装好Chocolatey\n  安装Hugo和初始化 在各种平台的安装放在看这里，因为我装好了Chocolatey ，所以直接一步执行：\nchoco install hugo -confirm 输入命令检查是否安装成功：\nhugo version 进入一个想要放Hugo文件夹的目录，Shift\u002b右键打开PowerShell，输入命令：\nhugo new site portfolio # 站点名称 这样Hugo会自动创建一个名为portfolio的文件夹，里面包含了站点所需的所有文件：\n设置主题 可以在Hugo Themes中找到数百款不同风格的Hugo主题，还可以根据站点的类型选择Tag。在portfolio标签下面意外发现了我之间使用的Bootstrap主题Freelancer :)\nB站UP TenGuSan 提过，作品集需要适配手机的屏幕和比例，最基本的一点就是不能要求阅读者ZOOM IN \u0026amp; OUT。题外话，这个角度上，小红书的缩放功非常优秀。\n我找到了两款比较符合自己喜好的：\nCreative portfolio会相对更加简洁一点。\nParsa Hugo可以展示重点项目、Instagram照片，完全可以用来当作一个完整的Blog。\n选择自己喜欢的Theme，找到Git地址，输入以下命令：\ncd .\\portfolio\\ git init git submodule add https:\/\/github.com\/kishaningithub\/hugo-creative-portfolio-theme.git themes\/creative 主题已经下载到themes\/Creative文件夹下了，将portfolio\\themes\\creative\\exampleSite中的所有文件复制到portfolio\\目录中（复制并替换），打开根目录的配置文件config.toml，将theme = \u0026quot;hugo-creative-portfolio-theme\u0026quot;修改为theme = \u0026quot;creative\u0026quot;。\n运行命令便可以在http:\/\/localhost:1313\/中访问这个Sample Site了。\nhugo server 部署到GitHub Pages 我们还是使用GitHub Pages作为托管服务器。直接运行hugo命令，就会创建public文件夹，里面就是这个静态网站所有的文件了，像此前hexo教程中一样，直接push这个文件夹到Github的username.github.io就可以访问了。\n但是会有两个问题：\n 我已经使用了username.",
+    "description" : "昨天看到猪场的暑期实习开始“招标”了，头上划过几道黑线。赋闲在家快一个半月，简历和作品集都没有好好准备。上次用Hexo重建了这个Blog的时候，看到了很好看的Hugo博客，还有一个LeaveIt主题非常可爱，就心水不已。翻了翻Hugo的Theme页面，好看的真不少，可能是英语用户比较多吧:)\n干脆单独建一个项目，拿Hugo把作品集重建一下吧，之后有时间的话，会尝试做一版自己的主题将Blog和Portfolio整合在一起。\n安装环境   Windows 10\n  装好Chocolatey\n  安装Hugo和初始化 在各种平台的安装放在看这里，因为我装好了Chocolatey ，所以直接一步执行：\nchoco install hugo -confirm 输入命令检查是否安装成功：\nhugo version 进入一个想要放Hugo文件夹的目录，Shift\u002b右键打开PowerShell，输入命令：\nhugo new site portfolio # 站点名称 这样Hugo会自动创建一个名为portfolio的文件夹，里面包含了站点所需的所有文件：\n设置主题 可以在Hugo Themes中找到数百款不同风格的Hugo主题，还可以根据站点的类型选择Tag。在portfolio标签下面意外发现了我之间使用的Bootstrap主题Freelancer :)\nB站UP TenGuSan 提过，作品集需要适配手机的屏幕和比例，最基本的一点就是不能要求阅读者ZOOM IN \u0026amp; OUT。题外话，这个角度上，小红书的缩放功非常优秀。\n我找到了两款比较符合自己喜好的：\nCreative portfolio会相对更加简洁一点。\nParsa Hugo可以展示重点项目、Instagram照片，完全可以用来当作一个完整的Blog。\n选择自己喜欢的Theme，找到Git地址，输入以下命令：\ncd .\\portfolio\\\rgit init\rgit submodule add https:\/\/github.com\/kishaningithub\/hugo-creative-portfolio-theme.git themes\/creative\r主题已经下载到themes\/Creative文件夹下了，将portfolio\\themes\\creative\\exampleSite中的所有文件复制到portfolio\\目录中（复制并替换），打开根目录的配置文件config.toml，将theme = \u0026quot;hugo-creative-portfolio-theme\u0026quot;修改为theme = \u0026quot;creative\u0026quot;。\n运行命令便可以在http:\/\/localhost:1313\/中访问这个Sample Site了。\nhugo server\r部署到GitHub Pages 我们还是使用GitHub Pages作为托管服务器。直接运行hugo命令，就会创建public文件夹，里面就是这个静态网站所有的文件了，像此前hexo教程中一样，直接push这个文件夹到Github的username.github.io就可以访问了。\n但是会有两个问题：\n 我已经使用了username.",
     "inLanguage" : "en-us",
     "author" : "Igloo",
     "creator" : "Igloo",
@@ -154,7 +154,7 @@
 
           <p>昨天看到猪场的暑期实习开始“招标”了，头上划过几道黑线。赋闲在家快一个半月，简历和作品集都没有好好准备。上次用Hexo重建了这个Blog的时候，看到了很好看的Hugo博客，还有一个<a href="https://github.com/liuzc/LeaveIt">LeaveIt</a>主题非常可爱，就心水不已。翻了翻Hugo的Theme页面，好看的真不少，可能是英语用户比较多吧:)</p>
 <!-- more -->
-<p><img src="http://img.osland.me/static/images/LeaveIt.png" alt=""></p>
+<p><img src="https://raw.githubusercontent.com/Igloo302/igloo302.github.io/master/images/LeaveIt.png" alt=""></p>
 <p>干脆单独建一个项目，拿Hugo把作品集重建一下吧，之后有时间的话，会尝试做一版自己的主题将Blog和Portfolio整合在一起。</p>
 <h2 id="安装环境">安装环境</h2>
 <ul>
@@ -172,18 +172,18 @@
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">hugo version
 </code></pre></div><p>进入一个想要放Hugo文件夹的目录，Shift+右键打开PowerShell，输入命令：</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">hugo new site portfolio <span style="color:#75715e"># 站点名称</span>
-</code></pre></div><p><img src="http://img.osland.me/static/images/installhugo.jpg" alt=""></p>
+</code></pre></div><p><img src="https://raw.githubusercontent.com/Igloo302/igloo302.github.io/master/images/installhugo.jpg" alt=""></p>
 <p>这样Hugo会自动创建一个名为portfolio的文件夹，里面包含了站点所需的所有文件：</p>
-<p><img src="http://img.osland.me/static/images/hugo.jpg" alt=""></p>
+<p><img src="https://raw.githubusercontent.com/Igloo302/igloo302.github.io/master/images/hugo.jpg" alt=""></p>
 <h2 id="设置主题">设置主题</h2>
 <p>可以在<a href="https://themes.gohugo.io/">Hugo Themes</a>中找到数百款不同风格的Hugo主题，还可以根据站点的类型选择Tag。在portfolio标签下面意外发现了我之间使用的Bootstrap主题<a href="https://themes.gohugo.io/freelancer/">Freelancer</a> :)</p>
 <p>B站UP <a href="https://space.bilibili.com/19526512">TenGuSan</a> 提过，作品集需要适配手机的屏幕和比例，最基本的一点就是不能要求阅读者ZOOM IN &amp; OUT。题外话，这个角度上，小红书的缩放功非常优秀。</p>
-<p><img src="http://img.osland.me/static/images/kate-torline-VeiqoYAEeis-unsplash.jpg" alt=""></p>
+<p><img src="https://raw.githubusercontent.com/Igloo302/igloo302.github.io/master/images/kate-torline-VeiqoYAEeis-unsplash.jpg" alt=""></p>
 <p>我找到了两款比较符合自己喜好的：</p>
 <p><a href="https://themes.gohugo.io/hugo-creative-portfolio-theme/">Creative portfolio</a>会相对更加简洁一点。</p>
 <p><img src="https://d33wubrfki0l68.cloudfront.net/647382e14a2ff62682a118e1581360a832d905bc/c2e2d/hugo-creative-portfolio-theme/screenshot-hugo-creative-portfolio-theme_huae92bd9f36dca86a00d2df27da4a735b_565314_1500x1000_fill_catmullrom_top_2.png" alt=""></p>
 <p><a href="https://themes.gohugo.io/parsa-hugo-personal-blog-theme/">Parsa Hugo</a>可以展示重点项目、Instagram照片，完全可以用来当作一个完整的Blog。</p>
-<p><img src="http://img.osland.me/static/images/screenshot-parsa-hugo-personal-blog-theme_hu221e51f5dc506473d05b0e369ddfdb5d_1712445_1500x1000_fill_catmullrom_top_2.png" alt=""></p>
+<p><img src="https://raw.githubusercontent.com/Igloo302/igloo302.github.io/master/images/screenshot-parsa-hugo-personal-blog-theme_hu221e51f5dc506473d05b0e369ddfdb5d_1712445_1500x1000_fill_catmullrom_top_2.png" alt=""></p>
 <p>选择自己喜欢的Theme，找到Git地址，输入以下命令：</p>
 <pre><code>cd .\portfolio\
 git init
@@ -200,7 +200,7 @@ git submodule add https://github.com/kishaningithub/hugo-creative-portfolio-them
 </ol>
 <p>我们先解决第一个问题。虽然GitHub只允许创建一个Github个人主页，也就是之前使用username.github.io，但是对于项目主页是不限数量的，在没有兹定于域名的情况下，项目主页的访问链接是username.github.io/projectname（作为过渡方案，这个域名对我来说完全OK啊）</p>
 <p>那么，在GitHub创建名为portfolio的项目，获得Git地址<code>git@github.com:Igloo302/portfolio.git</code></p>
-<p><img src="http://img.osland.me/static/images/Hugogithub.jpg" alt=""></p>
+<p><img src="https://raw.githubusercontent.com/Igloo302/igloo302.github.io/master/images/Hugogithub.jpg" alt=""></p>
 <p>打开配置文件，将<code>baseurl = &quot;https://example.org/&quot;</code>修改为<code>baseurl = &quot;https://igloo302.github.io/portfolio/&quot;</code>，然后将public文件夹push到这个空间就可以通过<code>Igloo302.github.io/portfolio</code>访问了，命令如下：</p>
 <pre><code>cd public
 git add .
@@ -221,9 +221,9 @@ git commit -m &quot;init commit&quot;
 git remote add origin git@github.com:Igloo302/portfolio.git
 git push -u origin master
 </code></pre><p>在GitHub的设置中按照下图设置：</p>
-<p><img src="http://img.osland.me/static/images/githubsetting.jpg" alt=""></p>
+<p><img src="https://raw.githubusercontent.com/Igloo302/igloo302.github.io/master/images/githubsetting.jpg" alt=""></p>
 <p>注意：Docs文件夹作为Docs的方法仅适用于利用项目页面（username.github.io/projectname）的情况，如果使用的是个人主页username.github.io，只允许老老实实在Master分支中上传静态网站的所有文件：</p>
-<p><img src="http://img.osland.me/static/images/GithubPageMaster.png" alt=""></p>
+<p><img src="https://raw.githubusercontent.com/Igloo302/igloo302.github.io/master/images/GithubPageMaster.png" alt=""></p>
 <h2 id="创建作品页面">创建作品页面</h2>
 <h3 id="新建md">新建MD</h3>
 <p>编辑<code>themes\creative\archetypes\archetypes\portfolio.md</code>，将其修改为：</p>
@@ -263,7 +263,7 @@ git push
 </code></pre><p>使用Shortcode可以让MD更加清晰简洁，用Shortcode添加Bilibili视频，需要在\layouts\shortcodes目录创建bilibili.html文件，内容为：</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">iframe</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">sbrxp</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;//player.bilibili.com/player.html?aid={{ .Get &#34;</span><span style="color:#a6e22e">aid</span><span style="color:#960050;background-color:#1e0010">&#34;</span> <span style="color:#960050;background-color:#1e0010">}}&amp;</span><span style="color:#a6e22e">cid</span><span style="color:#f92672">=</span><span style="color:#e6db74">{{</span> <span style="color:#960050;background-color:#1e0010">.</span><span style="color:#a6e22e">Get</span> <span style="color:#960050;background-color:#1e0010">&#34;</span><span style="color:#a6e22e">cid</span><span style="color:#960050;background-color:#1e0010">&#34;</span> <span style="color:#960050;background-color:#1e0010">}}&amp;</span><span style="color:#a6e22e">page</span><span style="color:#f92672">=</span><span style="color:#e6db74">1&#34;</span> <span style="color:#a6e22e">scrolling</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;no&#34;</span> <span style="color:#a6e22e">border</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;0&#34;</span> <span style="color:#a6e22e">frameborder</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;no&#34;</span> <span style="color:#a6e22e">framespacing</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;0&#34;</span> <span style="color:#a6e22e">allowfullscreen</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;true&#34;</span> <span style="color:#a6e22e">style</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;width: 640px; height: 430px; max-width: 100%&#34;</span>&gt; &lt;/<span style="color:#f92672">iframe</span>&gt;
 </code></pre></div><p>在.md调用：</p>
-<p><img src="http://img.osland.me/blog/image-20200401142717221.png" alt="image-20200401142717221"></p>
+<p><img src="https://raw.githubusercontent.com/Igloo302/igloo302.github.io/master/images/image-20200401142717221.png" alt="image-20200401142717221"></p>
 <p>想要插入的视频保持比例，可以参考这篇<a href="https://igloo302.github.io/%E5%9C%A8Hugo%E5%8D%9A%E5%AE%A2%E6%8F%92%E5%85%A5%E4%BF%9D%E6%8C%81%E5%AE%BD%E9%AB%98%E6%AF%94%E7%9A%84iframe%E8%A7%86%E9%A2%91/">博文</a>。</p>
 <h2 id="用hugo建立blog">用Hugo建立Blog</h2>
 <p>强势加更。上次看到就很心水<a href="https://liuzhichao.com/">柳志超</a>大神设计和实现的Hugo主题，<a href="https://liuzhichao.com/2018/hugo-theme-leaveit/">leavelt</a>，因此就想着把Blog搬迁到Hugo（还是闲着没事做hhh）。</p>
