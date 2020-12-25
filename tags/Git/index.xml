@@ -6,11 +6,7 @@
     <description>Recent content in Git on 冰屋里</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 25 Feb 2020 12:28:52 +0000</lastBuildDate>
-    
-	<atom:link href="https://igloo302.github.io/tags/git/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Tue, 25 Feb 2020 12:28:52 +0000</lastBuildDate><atom:link href="https://igloo302.github.io/tags/git/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Git网络加速|为Git设置代理</title>
       <link>https://igloo302.github.io/2020/git%E7%BD%91%E7%BB%9C%E5%8A%A0%E9%80%9F-%E4%B8%BAgit%E8%AE%BE%E7%BD%AE%E4%BB%A3%E7%90%86/</link>

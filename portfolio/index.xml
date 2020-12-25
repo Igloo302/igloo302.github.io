@@ -6,10 +6,19 @@
     <description>Recent content in Portfolios on 冰屋里</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 29 Feb 2020 19:22:02 +0800</lastBuildDate>
-    
-	<atom:link href="https://igloo302.github.io/portfolio/index.xml" rel="self" type="application/rss+xml" />
-    
+    <lastBuildDate>Fri, 25 Dec 2020 18:42:15 +0800</lastBuildDate><atom:link href="https://igloo302.github.io/portfolio/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>ARNY 具身认知视角下的增强现实科普产品</title>
+      <link>https://igloo302.github.io/portfolio/arny/</link>
+      <pubDate>Fri, 25 Dec 2020 18:42:15 +0800</pubDate>
+      
+      <guid>https://igloo302.github.io/portfolio/arny/</guid>
+      <description> 2020.11-2020.12
+ https://github.com/Igloo302/ARNY
+ An Augmented Reality Science Education App Based on Embodied Cognition
+What it is ARNY is a popular science application for the future. In the age of AR, science is no longer hidden behind the black box of products and any knowledge can be unfolded via a virtual overlay of information.
+Features  Identify - Inform - Expand Learning through AR interaction Support traditional graphical approach to learning    </description>
+    </item>
     
     <item>
       <title>iVision 盲人视觉辅助系统</title>

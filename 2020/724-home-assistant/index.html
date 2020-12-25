@@ -299,24 +299,24 @@ docker run -d --restart<span style="color:#f92672">=</span>always <span style="c
 <h2 id="ha配置">HA配置</h2>
 <h3 id="基本设定">基本设定</h3>
 <p>打开配置文件configuration.yaml，添加以下内容</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#66d9ef">homeassistant</span>:
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">homeassistant</span>:
   <span style="color:#75715e"># 名称，可为中文</span>
-  <span style="color:#66d9ef">name</span>: Home
+  <span style="color:#f92672">name</span>: <span style="color:#ae81ff">Home</span>
   <span style="color:#75715e"># 纬度</span>
-  <span style="color:#66d9ef">latitude</span>: !secret latitude
+  <span style="color:#f92672">latitude</span>: !<span style="color:#ae81ff">secret latitude</span>
   <span style="color:#75715e"># 经度</span>
-  <span style="color:#66d9ef">longitude</span>: !secret longitude
+  <span style="color:#f92672">longitude</span>: !<span style="color:#ae81ff">secret longitude</span>
   <span style="color:#75715e"># 海拔</span>
-  <span style="color:#66d9ef">elevation</span>: <span style="color:#ae81ff">10</span>
+  <span style="color:#f92672">elevation</span>: <span style="color:#ae81ff">10</span>
   <span style="color:#75715e"># 度量单位，这里选择“米”</span>
-  <span style="color:#66d9ef">unit_system</span>: metric
+  <span style="color:#f92672">unit_system</span>: <span style="color:#ae81ff">metric</span>
   <span style="color:#75715e"># 时区</span>
-  <span style="color:#66d9ef">time_zone</span>: Asia/Shanghai
+  <span style="color:#f92672">time_zone</span>: <span style="color:#ae81ff">Asia/Shanghai</span>
   <span style="color:#75715e"># 设备个性化</span>
-  <span style="color:#66d9ef">customize</span>: !include customize.yaml
+  <span style="color:#f92672">customize</span>: !<span style="color:#ae81ff">include customize.yaml</span>
 </code></pre></div><p>使用<a href="https://support.google.com/earth/answer/7420934?co=GENIE.Platform%3DDesktop&amp;hl=zh-Hans">Google Earth</a>查询坐标和海拔后，打开secrets.yaml添加</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#66d9ef">latitude</span>: 3xxxxx
-<span style="color:#66d9ef">longitude</span>: 1xxxxx
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">latitude</span>: <span style="color:#ae81ff">3xxxxx</span>
+<span style="color:#f92672">longitude</span>: <span style="color:#ae81ff">1xxxxx</span>
 </code></pre></div><h3 id="broadlink-sp-mini3天猫精灵定制版">BroadLink SP mini3天猫精灵定制版</h3>
 <p>之前买天猫精灵送了一个定制版的Wi-Fi插座，经过尝试添加到HA的方法如下：</p>
 <ol>
@@ -324,13 +324,13 @@ docker run -d --restart<span style="color:#f92672">=</span>always <span style="c
 <li>打开天猫精灵App，在技能中搜索BroadLink，绑定智慧星账号</li>
 <li>在HA的配置configuration.yaml中添加</li>
 </ol>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"> <span style="color:#66d9ef">switch</span>:
-  - <span style="color:#66d9ef">platform</span>: broadlink
-    <span style="color:#66d9ef">host</span>: <span style="color:#ae81ff">192.168.6</span>.xxx
-    <span style="color:#66d9ef">mac</span>: <span style="color:#e6db74">&#39;78:0F:77:xx:xx:xx&#39;</span>
-    <span style="color:#66d9ef">type</span>:  sp2
-    <span style="color:#66d9ef">friendly_name</span>: <span style="color:#e6db74">&#39;SwitchName&#39;</span>
-    <span style="color:#66d9ef">scan_interval</span>: <span style="color:#ae81ff">5</span>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"> <span style="color:#f92672">switch</span>:
+  - <span style="color:#f92672">platform</span>: <span style="color:#ae81ff">broadlink</span>
+    <span style="color:#f92672">host</span>: <span style="color:#ae81ff">192.168.6</span><span style="color:#ae81ff">.xxx</span>
+    <span style="color:#f92672">mac</span>: <span style="color:#e6db74">&#39;78:0F:77:xx:xx:xx&#39;</span>
+    <span style="color:#f92672">type</span>:  <span style="color:#ae81ff">sp2</span>
+    <span style="color:#f92672">friendly_name</span>: <span style="color:#e6db74">&#39;SwitchName&#39;</span>
+    <span style="color:#f92672">scan_interval</span>: <span style="color:#ae81ff">5</span>
 </code></pre></div><h3 id="天猫精灵">天猫精灵</h3>
 <blockquote>
 <p>认真研读了官方文档，又拾起了多年不用的php，重写了天猫精灵的接入代码，又精益求精、不断优化，提高响应速度，在开发、测试了将近20天后，终于有了现在这个比较满意的版本。同时接到官方的通知，得知天猫精灵APP即将改版（现在新版已经发布），技能一律以品牌形式展示，技能也作了相应调整。</p>

@@ -6,11 +6,7 @@
     <description>Recent content in Jellyfin on 冰屋里</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 09 Mar 2020 21:49:10 +0000</lastBuildDate>
-    
-	<atom:link href="https://igloo302.github.io/tags/jellyfin/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Mon, 09 Mar 2020 21:49:10 +0000</lastBuildDate><atom:link href="https://igloo302.github.io/tags/jellyfin/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>7×24: Jellyfin&#43;Kodi打造个人媒体中心</title>
       <link>https://igloo302.github.io/2020/724-jellyfin-kodi%E6%89%93%E9%80%A0%E4%B8%AA%E4%BA%BA%E5%AA%92%E4%BD%93%E4%B8%AD%E5%BF%83/</link>

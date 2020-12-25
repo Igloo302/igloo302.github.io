@@ -6,11 +6,7 @@
     <description>Recent content in OpenWrt on 冰屋里</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 06 Apr 2020 18:28:49 +0800</lastBuildDate>
-    
-	<atom:link href="https://igloo302.github.io/tags/openwrt/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Mon, 06 Apr 2020 18:28:49 +0800</lastBuildDate><atom:link href="https://igloo302.github.io/tags/openwrt/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>OpenWrt使用macvlan&#43;mwan3实现单线多拨</title>
       <link>https://igloo302.github.io/2020/openwrt%E4%BD%BF%E7%94%A8macvlan-mwan3%E5%AE%9E%E7%8E%B0%E5%8D%95%E7%BA%BF%E5%A4%9A%E6%8B%A8/</link>

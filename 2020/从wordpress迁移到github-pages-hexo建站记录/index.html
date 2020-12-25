@@ -226,10 +226,10 @@ hexo s
 <p>打开_config.yml，将SSH地址复制到Deloy的repository后面并保存。</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#75715e"># Deployment</span>
 <span style="color:#75715e">## Docs: https://hexo.io/docs/deployment.html</span>
-<span style="color:#66d9ef">deploy</span>:
-  <span style="color:#66d9ef">type</span>: git
-  <span style="color:#66d9ef">repository</span>: git@github.com:Igloo302/igloo302.github.io.git
-  <span style="color:#66d9ef">branch</span>: master
+<span style="color:#f92672">deploy</span>:
+  <span style="color:#f92672">type</span>: <span style="color:#ae81ff">git</span>
+  <span style="color:#f92672">repository</span>: <span style="color:#ae81ff">git@github.com:Igloo302/igloo302.github.io.git</span>
+  <span style="color:#f92672">branch</span>: <span style="color:#ae81ff">master</span>
 </code></pre></div><p>运行运行<code>hexo g</code>和<code>hexo d</code>，输入SSH密码，站点就被push到GitHub了，浏览<code>username.github.io</code>试试吧。</p>
 <h2 id="插件和设置">插件和设置</h2>
 <h3 id="七牛图床">七牛图床</h3>
@@ -266,25 +266,25 @@ hexo s
 <span style="color:#75715e">##image/js/css  子参数folder为不同静态资源种类的目录名称，一般不需要改动</span>
 <span style="color:#75715e">##image.extend  这是个特殊参数，用于生成缩略图或加水印等操作。具体请参考http://developer.qiniu.com/docs/v6/api/reference/fop/image/ </span>
 <span style="color:#75715e">##              可使用基本图片处理、高级图片处理、图片水印处理这3个接口。例如 ?imageView2/2/w/500 即生成宽度最多500px的缩略图</span>
-<span style="color:#66d9ef">qiniu</span>:
-  <span style="color:#66d9ef">offline</span>: <span style="color:#66d9ef">false</span>
-  <span style="color:#66d9ef">sync</span>: <span style="color:#66d9ef">true</span>
-  <span style="color:#66d9ef">bucket</span>: xxxxx
+<span style="color:#f92672">qiniu</span>:
+  <span style="color:#f92672">offline</span>: <span style="color:#66d9ef">false</span>
+  <span style="color:#f92672">sync</span>: <span style="color:#66d9ef">true</span>
+  <span style="color:#f92672">bucket</span>: <span style="color:#ae81ff">xxxxx</span>
   <span style="color:#75715e"># secret_file: sec/qn.json or C:</span>
-  <span style="color:#66d9ef">access_key</span>: xxxxxxxx
-  <span style="color:#66d9ef">secret_key</span>: xxxxxxxx
-  <span style="color:#66d9ef">dirPrefix</span>: static
-  <span style="color:#66d9ef">urlPrefix</span>: http://xxxxxx.bkt.clouddn.com/static
-  <span style="color:#66d9ef">up_host</span>: http://upload.qiniu.com
-  <span style="color:#66d9ef">local_dir</span>: static
-  <span style="color:#66d9ef">update_exist</span>: <span style="color:#66d9ef">true</span>
-  <span style="color:#66d9ef">image</span>: 
-    <span style="color:#66d9ef">folder</span>: images
-    <span style="color:#66d9ef">extend</span>: 
-  <span style="color:#66d9ef">js</span>:
-    <span style="color:#66d9ef">folder</span>: js
-  <span style="color:#66d9ef">css</span>:
-    <span style="color:#66d9ef">folder</span>: css
+  <span style="color:#f92672">access_key</span>: <span style="color:#ae81ff">xxxxxxxx</span>
+  <span style="color:#f92672">secret_key</span>: <span style="color:#ae81ff">xxxxxxxx</span>
+  <span style="color:#f92672">dirPrefix</span>: <span style="color:#ae81ff">static</span>
+  <span style="color:#f92672">urlPrefix</span>: <span style="color:#ae81ff">http://xxxxxx.bkt.clouddn.com/static</span>
+  <span style="color:#f92672">up_host</span>: <span style="color:#ae81ff">http://upload.qiniu.com</span>
+  <span style="color:#f92672">local_dir</span>: <span style="color:#ae81ff">static</span>
+  <span style="color:#f92672">update_exist</span>: <span style="color:#66d9ef">true</span>
+  <span style="color:#f92672">image</span>: 
+    <span style="color:#f92672">folder</span>: <span style="color:#ae81ff">images</span>
+    <span style="color:#f92672">extend</span>: 
+  <span style="color:#f92672">js</span>:
+    <span style="color:#f92672">folder</span>: <span style="color:#ae81ff">js</span>
+  <span style="color:#f92672">css</span>:
+    <span style="color:#f92672">folder</span>: <span style="color:#ae81ff">css</span>
 </code></pre></div><ol start="4">
 <li>把需要上传的图片放到Hexo目录 - static - images文件夹</li>
 <li>在文中使用shorcode使用图片</li>
@@ -350,21 +350,21 @@ comfirm <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;&#
 <p>设置方法<a href="https://www.playpi.org/2019032001.html">参考</a>：注册LeanCloud并创建应用，在设置-应用 Keys，可以看到应用的 <code>appid</code> 和 <code>appkey</code>，将其填写到Next主题的配置文件中：</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#75715e"># Valine</span>
 <span style="color:#75715e"># For more information: https://valine.js.org, https://github.com/xCss/Valine</span>
-<span style="color:#66d9ef">valine</span>:
-  <span style="color:#66d9ef">enable</span>: <span style="color:#66d9ef">true</span>
-  <span style="color:#66d9ef">appid</span>: SIOuMPbxxxxxzGzoHsz
-  <span style="color:#66d9ef">appkey</span>: uv74bsFWxxxxV8MIjM
-  <span style="color:#66d9ef">notify</span>: <span style="color:#66d9ef">false</span> <span style="color:#75715e"># Mail notifier</span>
-  <span style="color:#66d9ef">verify</span>: <span style="color:#66d9ef">false</span> <span style="color:#75715e"># Verification code</span>
-  <span style="color:#66d9ef">placeholder</span>: Mann Tracht, Un Gott Lacht. <span style="color:#75715e"># Comment box placeholder 占位符</span>
-  <span style="color:#66d9ef">avatar</span>: mm <span style="color:#75715e"># Gravatar style</span>
-  <span style="color:#66d9ef">guest_info</span>: nick,mail <span style="color:#75715e"># nick,mail,link Custom comment header 需要填写的内容</span>
-  <span style="color:#66d9ef">pageSize</span>: <span style="color:#ae81ff">10</span> <span style="color:#75715e"># Pagination size</span>
-  <span style="color:#66d9ef">language: # Language, available values</span>: en, zh-cn
-  <span style="color:#66d9ef">visitor</span>: <span style="color:#66d9ef">false</span> <span style="color:#75715e"># Article reading statistic</span>
-  <span style="color:#66d9ef">comment_count</span>: <span style="color:#66d9ef">true</span> <span style="color:#75715e"># If false, comment count will only be displayed in post page, not in home page</span>
-  <span style="color:#66d9ef">recordIP</span>: <span style="color:#66d9ef">true</span> <span style="color:#75715e"># Whether to record the commenter IP</span>
-  <span style="color:#66d9ef">serverURLs</span>: <span style="color:#75715e"># When the custom domain name is enabled, fill it in here (it will be detected automatically by default, no need to fill in)</span>
+<span style="color:#f92672">valine</span>:
+  <span style="color:#f92672">enable</span>: <span style="color:#66d9ef">true</span>
+  <span style="color:#f92672">appid</span>: <span style="color:#ae81ff">SIOuMPbxxxxxzGzoHsz</span>
+  <span style="color:#f92672">appkey</span>: <span style="color:#ae81ff">uv74bsFWxxxxV8MIjM</span>
+  <span style="color:#f92672">notify</span>: <span style="color:#66d9ef">false</span> <span style="color:#75715e"># Mail notifier</span>
+  <span style="color:#f92672">verify</span>: <span style="color:#66d9ef">false</span> <span style="color:#75715e"># Verification code</span>
+  <span style="color:#f92672">placeholder</span>: <span style="color:#ae81ff">Mann Tracht, Un Gott Lacht.</span> <span style="color:#75715e"># Comment box placeholder 占位符</span>
+  <span style="color:#f92672">avatar</span>: <span style="color:#ae81ff">mm</span> <span style="color:#75715e"># Gravatar style</span>
+  <span style="color:#f92672">guest_info</span>: <span style="color:#ae81ff">nick,mail</span> <span style="color:#75715e"># nick,mail,link Custom comment header 需要填写的内容</span>
+  <span style="color:#f92672">pageSize</span>: <span style="color:#ae81ff">10</span> <span style="color:#75715e"># Pagination size</span>
+  <span style="color:#f92672">language: # Language, available values</span>: <span style="color:#ae81ff">en, zh-cn</span>
+  <span style="color:#f92672">visitor</span>: <span style="color:#66d9ef">false</span> <span style="color:#75715e"># Article reading statistic</span>
+  <span style="color:#f92672">comment_count</span>: <span style="color:#66d9ef">true</span> <span style="color:#75715e"># If false, comment count will only be displayed in post page, not in home page</span>
+  <span style="color:#f92672">recordIP</span>: <span style="color:#66d9ef">true</span> <span style="color:#75715e"># Whether to record the commenter IP</span>
+  <span style="color:#f92672">serverURLs</span>: <span style="color:#75715e"># When the custom domain name is enabled, fill it in here (it will be detected automatically by default, no need to fill in)</span>
   <span style="color:#75715e">#post_meta_order: 0</span>
 </code></pre></div><blockquote>
 <p>由于Valine 是无后端评论系统，所以也就没有开发评论数据管理功能。请自行登录<code>Leancloud应用</code>管理。</p>
